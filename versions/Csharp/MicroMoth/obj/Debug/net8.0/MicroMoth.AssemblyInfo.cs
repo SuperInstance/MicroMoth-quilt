@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Lightweight Quantum computing library for Csharp projects.")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.1.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+ce780fd316dc888386e46739e0661fd0731aa957")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+31ae1431f389bae8dd31edc7674395832ec45924")]
 [assembly: System.Reflection.AssemblyProductAttribute("Moth.MicroMoth")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Moth.MicroMoth")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.1.0")]
