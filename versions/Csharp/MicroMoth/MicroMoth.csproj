@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;netstandard2.1</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -9,13 +10,25 @@
     <AssemblyName>Moth.MicroMoth</AssemblyName>
 
     <PackageId>Moth.MicroMoth</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Authors>Astryd Park</Authors>
     <Company>Moth</Company>
 
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <Description>Lightweight Quantum computing library for Csharp projects.</Description>
+    <Description>A lightweight, dependency-free Quantum computing library for Csharp projects. (Especially for Godot (.NET) and Unity.)</Description>
     <PackageTags>quantumcomputing;micromoth;quantum;</PackageTags>
+
+    <!-- for NuGet Gallery -->
+    <PackageReadmeFile>MicroMothCSharp.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/moth-quantum/MicroMoth</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/moth-quantum/MicroMoth.git</RepositoryUrl>
+    <Copyright>Copyright (c) Moth 2026</Copyright>
+    <PackageReleaseNotes>Adds .NET Standard 2.1 support for Unity as well as Godot(.NET 8)</PackageReleaseNotes>
+
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../MicroMothCSharp.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 </Project>

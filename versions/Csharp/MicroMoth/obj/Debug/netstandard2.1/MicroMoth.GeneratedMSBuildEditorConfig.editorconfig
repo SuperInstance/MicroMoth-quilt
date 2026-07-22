@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = MicroMoth
+build_property.ProjectDir = /Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

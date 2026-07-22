@@ -237,7 +237,9 @@ public static class Simulator
         map.Fill(-1);
         foreach (var g in qc.Data) if (g.Op == GateOp.M) map[g.B] = g.A;
 
-        var rng = seed is int sd ? new Random(sd) : Random.Shared; // **seed** ability for game development
+        // var rng = seed is int sd ? new Random(sd) : Random.Shared; // **seed** ability for game development
+        // changed this to support Unity's .NET Standard 2.1 as well. (It doesn't have Random.Shared)
+        var rng = seed is int sd ? new Random(sd) : SharedRandom;
         var outcomes = new int[shots];
         for (int k = 0; k < shots; k++)
         {
@@ -252,6 +254,13 @@ public static class Simulator
         }
         return outcomes;
     }
+
+    #if NET6_0_OR_GREATER
+    static Random SharedRandom => Random.Shared; // supports Godot
+    #else
+    [ThreadStatic] static Random? _rng;
+    static Random SharedRandom => _rng ??= new Random(); // supports Unity
+    #endif
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     static double Norm2(Complex z) => z.Real * z.Real + z.Imaginary * z.Imaginary;

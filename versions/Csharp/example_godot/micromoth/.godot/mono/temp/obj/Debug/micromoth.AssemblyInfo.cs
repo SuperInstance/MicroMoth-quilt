@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("micromoth")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31ae1431f389bae8dd31edc7674395832ec45924")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3f1a892c39910fd57e827e90b8a8e05fb16f5b0")]
 [assembly: System.Reflection.AssemblyProductAttribute("micromoth")]
 [assembly: System.Reflection.AssemblyTitleAttribute("micromoth")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,10 @@
+/Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/bin/Debug/netstandard2.1/Moth.MicroMoth.deps.json
+/Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/bin/Debug/netstandard2.1/Moth.MicroMoth.dll
+/Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/bin/Debug/netstandard2.1/Moth.MicroMoth.pdb
+/Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/obj/Debug/netstandard2.1/MicroMoth.GeneratedMSBuildEditorConfig.editorconfig
+/Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/obj/Debug/netstandard2.1/MicroMoth.AssemblyInfoInputs.cache
+/Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/obj/Debug/netstandard2.1/MicroMoth.AssemblyInfo.cs
+/Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/obj/Debug/netstandard2.1/MicroMoth.csproj.CoreCompileInputs.cache
+/Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/obj/Debug/netstandard2.1/MicroMoth.sourcelink.json
+/Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/obj/Debug/netstandard2.1/Moth.MicroMoth.dll
+/Users/astrydpark/work/GitHub/MicroMoth/versions/Csharp/MicroMoth/obj/Debug/netstandard2.1/Moth.MicroMoth.pdb
