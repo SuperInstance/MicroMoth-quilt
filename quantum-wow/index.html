@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>quantum wow — MicroMoth demo</title>
+<meta name="description" content="Click-and-play quantum randomness, simulated locally via MicroMoth, with a BYO-key upgrade path to real IBM quantum hardware." />
+<style>
+  :root {
+    --cream: #faf6ec;
+    --cream-2: #f2ecdd;
+    --ink: #1c1a16;
+    --ink-soft: #55503f;
+    --accent: #6b4fd6;
+    --accent-2: #2e8b57;
+    --border: #e4dcc6;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px 64px;
+  }
+  main {
+    width: 100%;
+    max-width: 560px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .subtitle {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin: 0 0 28px;
+    line-height: 1.5;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .card h2 {
+    font-size: 1rem;
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  button.qw-btn {
+    appearance: none;
+    border: none;
+    background: var(--ink);
+    color: var(--cream);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+  button.qw-btn:hover { background: var(--accent); }
+  button.qw-btn:active { transform: translateY(1px); }
+  button.qw-btn:disabled { opacity: 0.6; cursor: wait; }
+  .result-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .result-tile {
+    flex: 1;
+    min-width: 140px;
+    background: var(--cream-2);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+  .result-tile .label {
+    color: var(--ink-soft);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  .result-tile .value {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.95rem;
+    word-break: break-all;
+  }
+  .coin-face {
+    font-size: 2rem;
+    text-align: center;
+    padding: 6px 0;
+  }
+  #field-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
+    margin-top: 14px;
+  }
+  #field-grid .cell {
+    aspect-ratio: 1;
+    border-radius: 6px;
+    background: var(--accent);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .footnote {
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  code {
+    background: var(--cream-2);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 0.85em;
+  }
+  a { color: var(--accent); }
+  #widget-slot { margin-top: 4px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>&#9883; quantum wow</h1>
+  <p class="subtitle">
+    A click-and-play demo of the <code>quantum-wow.js</code> plugin, built on
+    <a href="https://github.com/SuperInstance/micromoth-quilt" target="_blank" rel="noopener noreferrer">MicroMoth</a>
+    — a tiny zero-dependency quantum statevector simulator. No key needed to play;
+    paste a Moth API key below to attempt real IBM-hardware quantum measurements instead.
+  </p>
+
+  <div class="card">
+    <h2>Quantum seed</h2>
+    <button class="qw-btn" id="seed-btn" type="button">Draw a quantum seed</button>
+    <div class="result-row" id="seed-result" hidden>
+      <div class="result-tile">
+        <div class="label">seed (hex)</div>
+        <div class="value" id="seed-hex">&mdash;</div>
+      </div>
+      <div class="result-tile">
+        <div class="label">raw bits</div>
+        <div class="value" id="seed-bits">&mdash;</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Quantum coin</h2>
+    <button class="qw-btn" id="coin-btn" type="button">Flip a quantum coin</button>
+    <div class="coin-face" id="coin-face" hidden>&mdash;</div>
+  </div>
+
+  <div class="card">
+    <h2>Quantum field</h2>
+    <button class="qw-btn" id="field-btn" type="button">Sample a quantum value field</button>
+    <div id="field-grid"></div>
+    <div class="footnote">Each cell's opacity comes from one measured quantum byte.</div>
+  </div>
+
+  <div class="card">
+    <h2>Backend</h2>
+    <div id="widget-slot"></div>
+    <p class="footnote" id="quantum-wow-explainer">
+      By default everything above runs on a real (simulated) quantum circuit —
+      Hadamard gates plus measurement — computed locally in your browser via MicroMoth,
+      no network call and no key required. Paste a Moth Quantum API key
+      (<a href="https://platform.mothquantum.com/keys" target="_blank" rel="noopener noreferrer">platform.mothquantum.com/keys</a>)
+      to attempt real Born-rule measurements on IBM quantum hardware instead. If that
+      call can't complete for any reason, this demo says so and falls back to the
+      simulated result automatically &mdash; you always get an answer.
+    </p>
+  </div>
+</main>
+
+<script type="module">
+  import { QuantumWow, mountWidget } from './quantum-wow.js';
+
+  const qw = new QuantumWow();
+  mountWidget(document.getElementById('widget-slot'), qw, {
+    explainerUrl: '#quantum-wow-explainer',
+  });
+
+  function withBusy(btn, fn) {
+    return async (...args) => {
+      btn.disabled = true;
+      const original = btn.textContent;
+      try {
+        await fn(...args);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = original;
+      }
+    };
+  }
+
+  const seedBtn = document.getElementById('seed-btn');
+  const seedResult = document.getElementById('seed-result');
+  const seedHex = document.getElementById('seed-hex');
+  const seedBits = document.getElementById('seed-bits');
+  seedBtn.addEventListener('click', withBusy(seedBtn, async () => {
+    seedBtn.textContent = 'Measuring…';
+    const { seed, bits, mode, degraded } = await qw.quantumSeed(32);
+    seedHex.textContent = '0x' + seed + (mode === 'real' ? ' (real)' : ' (simulated)') + (degraded ? ' — degraded' : '');
+    seedBits.textContent = bits;
+    seedResult.hidden = false;
+  }));
+
+  const coinBtn = document.getElementById('coin-btn');
+  const coinFace = document.getElementById('coin-face');
+  coinBtn.addEventListener('click', withBusy(coinBtn, async () => {
+    coinBtn.textContent = 'Flipping…';
+    const { result, mode } = await qw.quantumCoin();
+    coinFace.textContent = (result === 'heads' ? '\u{1FA99} heads' : '\u{1FA99} tails') + ` (${mode})`;
+    coinFace.hidden = false;
+  }));
+
+  const fieldBtn = document.getElementById('field-btn');
+  const fieldGrid = document.getElementById('field-grid');
+  for (let i = 0; i < 24; i++) {
+    const cell = document.createElement('div');
+    cell.className = 'cell';
+    cell.style.opacity = '0.15';
+    fieldGrid.appendChild(cell);
+  }
+  fieldBtn.addEventListener('click', withBusy(fieldBtn, async () => {
+    fieldBtn.textContent = 'Sampling…';
+    const { values } = await qw.quantumField(24);
+    const cells = fieldGrid.querySelectorAll('.cell');
+    values.forEach((v, i) => {
+      if (!cells[i]) return;
+      cells[i].style.opacity = String(0.15 + v * 0.85);
+      cells[i].style.transform = `scale(${0.85 + v * 0.15})`;
+    });
+  }));
+</script>
+</body>
+</html>
