@@ -14,6 +14,10 @@ lane reads on day one. Claim tags: **VERIFIED** (run this date),
 | Tracked files at seal | 260 | VERIFIED (`git ls-files` → manifest) |
 | Seal | `receipts/import-baseline.json` (sha256 per file) | VERIFIED (regenerable) |
 
+The seal covers every tracked file except the manifest itself — a
+sha256 self-digest is a fixed point no content can satisfy, so the
+tool excludes it by name and records the exclusion inside the seal.
+
 ## Live checks performed at seal
 
 1. **Import is functional** — a 2-qubit Bell circuit (`h`, `cx`, `measure`)

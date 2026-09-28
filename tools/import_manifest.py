@@ -48,12 +48,17 @@ def head_commit() -> str:
 
 
 def build() -> dict:
-    files = {rel: sha256(LAB / rel) for rel in tracked_files()}
+    # Fixed-point note: the manifest cannot embed a digest of itself (a
+    # sha256 self-reference is uncomputable), so it is excluded from the
+    # files map and recorded explicitly instead.
+    self_rel = MANIFEST.relative_to(LAB).as_posix()
+    files = {rel: sha256(LAB / rel) for rel in tracked_files() if rel != self_rel}
     return {
         "schema": "micromoth-quilt/import-baseline@v1",
         "upstream": UPSTREAM,
         "baseline_commit": head_commit(),
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "self": self_rel + " (excluded: sha256 fixed-point, cannot embed own digest)",
         "doctrine": "regenerate via tools/import_manifest.py; never edit by hand",
         "files": files,
     }
