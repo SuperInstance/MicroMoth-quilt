@@ -35,7 +35,9 @@ def sha256(path: Path) -> str:
 def tracked_files() -> list[str]:
     out = subprocess.run(
         ["git", "-C", str(LAB), "ls-files"], capture_output=True, text=True, check=True)
-    return [l for l in out.stdout.splitlines() if l]
+    # The manifest must never hash itself: no fixed point exists (writing the
+    # file changes the bytes the entry commits to). Excluded by path.
+    return [l for l in out.stdout.splitlines() if l and l != "receipts/import-baseline.json"]
 
 
 def head_commit() -> str:
