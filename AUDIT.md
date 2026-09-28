@@ -172,3 +172,29 @@ the receipt (single root seed — the exp012-exp014 multi-root
 crossing-rate doctrine applies: SKELETON 5/9 > pool 4/12 >> unaided
 0/11; the H1 refutation is for the BALANCE witness only, exp001's
 mode=any product-state lottery champions stand).
+`receipts/exp006-ghz-seeded.json` — qcells-lab exp006 (Finding 3
+candidate (a)): exp005 froze the unseeded engine on n=3 balanced GHZ;
+the ranked first fix was a GHZ-prefix seeded restart — loadCoev
+doctrine (seeds around champs, pong-quilt #73) applied at birth. Two
+seeded lanes on identical named seeds (root 7, train 101, verify 202,
+512 shots) and the exp004 jitter-dropped replace/indel policy. Lane A
+seed [h(0),cx(0,1)] — bare skeleton, birth balance 0.0, one indel from
+correlation. Lane B seed [h(0),cx(0,1),h(2)] — partial entangler,
+birth balance 0.2422, the anti-laundering seed-choice control.
+Verdict: lane A CROSSES — verify balance 0.4824 by gen 2 via a
+non-canonical crx route [h(0),crx(pi,0,2),cx(0,1)] the unaided search
+never found; lane B TRAPS — never sampled above its 0.2422 birth
+fitness in 8 gens x pop 16 = 120 draws, champion == seed genome.
+Seed CHOICE beats seed FITNESS (Finding 4 born here). The exp001
+control guard re-ran in-harness byte-identical. 15 witness-ledger
+rows (expanded champion + measure surface), PROOF head
+`bfe7bd25cd7b6f79`, replay OK. `tests/test_exp006_receipt.py` adds
+10 pins: chain re-derived in-repo, seed-in-WORLD-row doctrine,
+executable sealed champion with live WORLD histogram (crx angle
+expansion pinned against genome-circuit semantics), control-guard
+flag, live seed-choice prelude re-derivation, lane A crosses / lane B
+traps curve pins, honest-limit scope, in-memory tamper trip. Honest
+limits inside the receipt (single root seed — the later multi-root
+crossing-rate doctrine post-dates this experiment; the seeded lanes
+answer SEEDING, exp005's unaided freeze stands; lane B's trap is a
+120-draw negative search result, not a universal claim).
