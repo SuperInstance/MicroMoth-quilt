@@ -1,0 +1,1572 @@
+{
+ "directive": "exp005-008's frozen-unaided verdicts and the seeded-crossing lane were all recorded under a 6-gate budget. If the ceiling ever mattered, 'mutation locality is the bottleneck' would be confounded by a short leash: a cloud capped at 6 gates can never express redundant or temporizing circuits. exp009 isolates the ceiling as the single varied variable on the one lane that reliably crosses (the doctrine lane: seedA GHZ3 skeleton [h(0),cx(0,1),cx(1,2)], n=4 GHZ balance targets ('0000','1111'), restrict=('replace','indel'), same named seeds root 7 / train 101 / verify 202 / 512 shots, exp004 jitter-dropped policy). Budget swept 6 -> 8 -> 12 at identical everything-else. Design pins BEFORE running: if crossing speed and held-out verify are budget-invariant AND telemetry shows champion length never reached the ceiling, the ceiling is not a binding constraint on this target class and the frozen-unaided verdicts stand as engine laws, not leash artifacts; if a larger budget crosses FASTER, the doctrine gains its first boundary condition. Telemetry records champion length per generation so 'did anyone even try to use the extra room' is answered from data, not assumed.",
+ "engine": {
+  "name": "micromoth",
+  "note": "same vendored copy as the exp001-exp008 receipts; lab vendored copy byte-identical",
+  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df"
+ },
+ "experiment": "qcells/exp009",
+ "honest_limits": [
+  "verdict is scoped to this exact lane: single root seed 7, n=4 GHZ balance target, pop 16, 12 generations, exp004 jitter-dropped replace/indel policy, seeded GHZ3-skeleton restart \u2014 the no-op conclusion does NOT generalize to lanes whose champions press the ceiling",
+  "the no-op mechanism is proven from telemetry (max_champion_len_seen=4 < 6 at every budget), not assumed: budget only gates the move choice at len>=budget, which never occurred. A lane that reaches the ceiling can behave differently, and this seal says nothing about it",
+  "the frozen-unaided verdicts of exp005-008 stand as engine laws for the BALANCE witness at n<=4 with this policy, not as artifacts of the 6-gate leash \u2014 but only for the search-space region this lane occupies; 'a longer leash would not unfreeze it' is proven for the unseeded cloud's reachable region, not exhaustively for all birth states",
+  "the sealed champion is the exp008 NON-canonical partial-rotation route ([h(0),cx(0,1),crx(pi,1,3),cx(1,2)]): the budget sweep seals the same crossing under three leashes, it does not discover a new route",
+  "the sealed crossing is the seeded mechanism on a single root; under the exp012-exp014 doctrine crossing claims carry N/M roots + gen range, never a bare 'crosses' \u2014 this seal carries N/M = 1 root (root 7)"
+ ],
+ "ledger": [
+  {
+   "args": {
+    "kind": "qc-exp009-budget-sweep-champion",
+    "m": 4,
+    "n": 4,
+    "program": [
+     [
+      "h",
+      0
+     ],
+     [
+      "cx",
+      0,
+      1
+     ],
+     [
+      "crx",
+      3.141592653589793,
+      1,
+      3
+     ],
+     [
+      "cx",
+      1,
+      2
+     ],
+     [
+      "m",
+      0,
+      0
+     ],
+     [
+      "m",
+      1,
+      1
+     ],
+     [
+      "m",
+      2,
+      2
+     ],
+     [
+      "m",
+      3,
+      3
+     ]
+    ]
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "74ac4ec1f0643496",
+   "op": "BIND",
+   "prev_hash": "0000000000000000",
+   "seq": 0,
+   "witness": {
+    "program_sha256": "922bd8ced06062c6fe1063a2831c015e28ab5714c6a458833db1782407cc1ed5"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "h",
+     0
+    ],
+    "ticker": 1
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "c87dfa98065ff3f5",
+   "op": "EFFECT",
+   "prev_hash": "74ac4ec1f0643496",
+   "seq": 1,
+   "witness": {
+    "state_sha256": "d69f643cacc78ab3014955de7098b7ea38af81c415cb80f40fe242a2c8881966"
+   }
+  },
+  {
+   "args": {
+    "ticker": 1
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "fba9a2ec4939e2a8",
+   "op": "TICK",
+   "prev_hash": "c87dfa98065ff3f5",
+   "seq": 2,
+   "witness": {
+    "state_sha256": "d69f643cacc78ab3014955de7098b7ea38af81c415cb80f40fe242a2c8881966"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "cx",
+     0,
+     1
+    ],
+    "ticker": 2
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "37ee17b596c64876",
+   "op": "EFFECT",
+   "prev_hash": "fba9a2ec4939e2a8",
+   "seq": 3,
+   "witness": {
+    "state_sha256": "6f799cbf99a059a6ead911958d645ee461c260605cc5712110707f59d85f6336"
+   }
+  },
+  {
+   "args": {
+    "ticker": 2
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "01ba27242fd83fec",
+   "op": "TICK",
+   "prev_hash": "37ee17b596c64876",
+   "seq": 4,
+   "witness": {
+    "state_sha256": "6f799cbf99a059a6ead911958d645ee461c260605cc5712110707f59d85f6336"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "crx",
+     3.141592653589793,
+     1,
+     3
+    ],
+    "ticker": 3
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "1a14235aa2c57870",
+   "op": "EFFECT",
+   "prev_hash": "01ba27242fd83fec",
+   "seq": 5,
+   "witness": {
+    "state_sha256": "7f4a8078009c05d73b55f2bcb413a760c82944a309de0cd28be11996141d2629"
+   }
+  },
+  {
+   "args": {
+    "ticker": 3
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "dd2eb42f67bec4e4",
+   "op": "TICK",
+   "prev_hash": "1a14235aa2c57870",
+   "seq": 6,
+   "witness": {
+    "state_sha256": "7f4a8078009c05d73b55f2bcb413a760c82944a309de0cd28be11996141d2629"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "cx",
+     1,
+     2
+    ],
+    "ticker": 4
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "9af0fbda802c3411",
+   "op": "EFFECT",
+   "prev_hash": "dd2eb42f67bec4e4",
+   "seq": 7,
+   "witness": {
+    "state_sha256": "1e457f98f6c5f034ee5872d494aae3115fd26dc6afaf5d6952725f9d108d3d76"
+   }
+  },
+  {
+   "args": {
+    "ticker": 4
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "95098ce8cc78c2ad",
+   "op": "TICK",
+   "prev_hash": "9af0fbda802c3411",
+   "seq": 8,
+   "witness": {
+    "state_sha256": "1e457f98f6c5f034ee5872d494aae3115fd26dc6afaf5d6952725f9d108d3d76"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     0,
+     0
+    ],
+    "ticker": 5
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "777b4f16b3592c46",
+   "op": "EFFECT",
+   "prev_hash": "95098ce8cc78c2ad",
+   "seq": 9,
+   "witness": {
+    "state_sha256": "1e457f98f6c5f034ee5872d494aae3115fd26dc6afaf5d6952725f9d108d3d76"
+   }
+  },
+  {
+   "args": {
+    "ticker": 5
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "1fb5d51d4c3c47e0",
+   "op": "TICK",
+   "prev_hash": "777b4f16b3592c46",
+   "seq": 10,
+   "witness": {
+    "state_sha256": "1e457f98f6c5f034ee5872d494aae3115fd26dc6afaf5d6952725f9d108d3d76"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     1,
+     1
+    ],
+    "ticker": 6
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "88ae5e27d133a395",
+   "op": "EFFECT",
+   "prev_hash": "1fb5d51d4c3c47e0",
+   "seq": 11,
+   "witness": {
+    "state_sha256": "1e457f98f6c5f034ee5872d494aae3115fd26dc6afaf5d6952725f9d108d3d76"
+   }
+  },
+  {
+   "args": {
+    "ticker": 6
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "492cd476fc93df25",
+   "op": "TICK",
+   "prev_hash": "88ae5e27d133a395",
+   "seq": 12,
+   "witness": {
+    "state_sha256": "1e457f98f6c5f034ee5872d494aae3115fd26dc6afaf5d6952725f9d108d3d76"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     2,
+     2
+    ],
+    "ticker": 7
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "04538c1d44fe9762",
+   "op": "EFFECT",
+   "prev_hash": "492cd476fc93df25",
+   "seq": 13,
+   "witness": {
+    "state_sha256": "1e457f98f6c5f034ee5872d494aae3115fd26dc6afaf5d6952725f9d108d3d76"
+   }
+  },
+  {
+   "args": {
+    "ticker": 7
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "003219c17b3a32eb",
+   "op": "TICK",
+   "prev_hash": "04538c1d44fe9762",
+   "seq": 14,
+   "witness": {
+    "state_sha256": "1e457f98f6c5f034ee5872d494aae3115fd26dc6afaf5d6952725f9d108d3d76"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     3,
+     3
+    ],
+    "ticker": 8
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "ad64d9607f9253b6",
+   "op": "EFFECT",
+   "prev_hash": "003219c17b3a32eb",
+   "seq": 15,
+   "witness": {
+    "state_sha256": "1e457f98f6c5f034ee5872d494aae3115fd26dc6afaf5d6952725f9d108d3d76"
+   }
+  },
+  {
+   "args": {
+    "ticker": 8
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "af355332c2ddc74f",
+   "op": "TICK",
+   "prev_hash": "ad64d9607f9253b6",
+   "seq": 16,
+   "witness": {
+    "state_sha256": "1e457f98f6c5f034ee5872d494aae3115fd26dc6afaf5d6952725f9d108d3d76"
+   }
+  },
+  {
+   "args": {
+    "seed": 202,
+    "shots": 512
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "079a833edd412b00",
+   "op": "WORLD",
+   "prev_hash": "af355332c2ddc74f",
+   "seq": 17,
+   "witness": {
+    "counts": {
+     "0000": 247,
+     "1111": 265
+    }
+   }
+  },
+  {
+   "args": {
+    "rows": 18
+   },
+   "cell": "3f7d14b01c42353c",
+   "hash": "ef538852ee95f4ad",
+   "op": "PROOF",
+   "prev_hash": "079a833edd412b00",
+   "seq": 18
+  }
+ ],
+ "protocol": "12 generations x pop 16 per budget arm, gate budget swept 6/8/12 (control arm runs the default budget 6), train/verify seed split; n_qubits=4, targets=('0000','1111'), mode='balance'; exp004 jitter-dropped replace/indel policy (restrict=('replace','indel')); success = held-out verify balance >= 0.45; crx genome thetas are search-space units multiplied by pi at circuit build (the exp006 pi-expansion encoding)",
+ "results": {
+  "budget_invariance": {
+   "byte_identical_outcomes": true,
+   "identical_curves_all_budgets": true,
+   "note": "identical is the honest result, not a harness bug: champion length never exceeded 4 at any budget (max_champion_len_seen=4), and a 4-gate champion's indel children top out at 5 gates < 6 \u2014 the budget only enters the move choice at len>=budget, which never occurs. A budget sweep can only be a no-op on this lane, and it was.",
+   "same_champion_all_budgets": true,
+   "same_crossing_gen_all_budgets": true,
+   "same_heldout_verify_all_budgets": true
+  },
+  "budgets": {
+   "12": {
+    "budget": 12,
+    "champion_genome": [
+     [
+      "h",
+      0
+     ],
+     [
+      "cx",
+      0,
+      1
+     ],
+     [
+      "crx",
+      1.0,
+      1,
+      3
+     ],
+     [
+      "cx",
+      1,
+      2
+     ]
+    ],
+    "champion_len": 4,
+    "champion_train_balance": 0.498046875,
+    "champion_verify_balance": 0.482421875,
+    "first_verify_ge_045_gen": 5,
+    "fitness_by_generation": [
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 0,
+      "train_balance": 0.0,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 1,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 2,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 3,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 4,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 5,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 6,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 7,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 8,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 9,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 10,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 11,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     }
+    ],
+    "max_champion_len_seen": 4,
+    "seed_genome": [
+     [
+      "h",
+      0
+     ],
+     [
+      "cx",
+      0,
+      1
+     ],
+     [
+      "cx",
+      1,
+      2
+     ]
+    ]
+   },
+   "6": {
+    "budget": 6,
+    "champion_genome": [
+     [
+      "h",
+      0
+     ],
+     [
+      "cx",
+      0,
+      1
+     ],
+     [
+      "crx",
+      1.0,
+      1,
+      3
+     ],
+     [
+      "cx",
+      1,
+      2
+     ]
+    ],
+    "champion_len": 4,
+    "champion_train_balance": 0.498046875,
+    "champion_verify_balance": 0.482421875,
+    "first_verify_ge_045_gen": 5,
+    "fitness_by_generation": [
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 0,
+      "train_balance": 0.0,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 1,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 2,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 3,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 4,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 5,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 6,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 7,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 8,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 9,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 10,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 11,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     }
+    ],
+    "max_champion_len_seen": 4,
+    "seed_genome": [
+     [
+      "h",
+      0
+     ],
+     [
+      "cx",
+      0,
+      1
+     ],
+     [
+      "cx",
+      1,
+      2
+     ]
+    ]
+   },
+   "8": {
+    "budget": 8,
+    "champion_genome": [
+     [
+      "h",
+      0
+     ],
+     [
+      "cx",
+      0,
+      1
+     ],
+     [
+      "crx",
+      1.0,
+      1,
+      3
+     ],
+     [
+      "cx",
+      1,
+      2
+     ]
+    ],
+    "champion_len": 4,
+    "champion_train_balance": 0.498046875,
+    "champion_verify_balance": 0.482421875,
+    "first_verify_ge_045_gen": 5,
+    "fitness_by_generation": [
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 0,
+      "train_balance": 0.0,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 1,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 2,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 3,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "rx",
+        0.75,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 4,
+      "train_balance": 0.082,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.0762
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 5,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 6,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 7,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 8,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 9,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 10,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     },
+     {
+      "champion_genome": [
+       [
+        "h",
+        0
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "crx",
+        1.0,
+        1,
+        3
+       ],
+       [
+        "cx",
+        1,
+        2
+       ]
+      ],
+      "gen": 11,
+      "train_balance": 0.498,
+      "verdict": "PROMOTE",
+      "verify_balance": 0.4824
+     }
+    ],
+    "max_champion_len_seen": 4,
+    "seed_genome": [
+     [
+      "h",
+      0
+     ],
+     [
+      "cx",
+      0,
+      1
+     ],
+     [
+      "cx",
+      1,
+      2
+     ]
+    ]
+   }
+  },
+  "champion": [
+   [
+    "h",
+    0
+   ],
+   [
+    "cx",
+    0,
+    1
+   ],
+   [
+    "crx",
+    1.0,
+    1,
+    3
+   ],
+   [
+    "cx",
+    1,
+    2
+   ]
+  ],
+  "champion_expanded_program": [
+   [
+    "h",
+    0
+   ],
+   [
+    "cx",
+    0,
+    1
+   ],
+   [
+    "crx",
+    3.141592653589793,
+    1,
+    3
+   ],
+   [
+    "cx",
+    1,
+    2
+   ],
+   [
+    "m",
+    0,
+    0
+   ],
+   [
+    "m",
+    1,
+    1
+   ],
+   [
+    "m",
+    2,
+    2
+   ],
+   [
+    "m",
+    3,
+    3
+   ]
+  ],
+  "champion_len": 4,
+  "champion_train_balance": 0.498046875,
+  "champion_verify_balance": 0.482421875,
+  "control_reproduces_exp001": true,
+  "first_verify_ge_045_gen": 5,
+  "lane": "seedA GHZ3 skeleton, restrict=('replace','indel')",
+  "ledger_head": "ef538852ee95f4ad",
+  "ledger_rows": 19,
+  "n_qubits": 4,
+  "success_threshold_verify_balance": 0.45,
+  "targets": [
+   "0000",
+   "1111"
+  ]
+ },
+ "schema": "micromoth-receipt-v1",
+ "seeds": {
+  "root": 7,
+  "shots": 512,
+  "train": 101,
+  "verify": 202
+ },
+ "status": "SEALED",
+ "title": "exp009 budget-length control sweep at n=4: the 6-gate ceiling is NOT binding (no-op sweep)"
+}
