@@ -1,0 +1,1678 @@
+{
+ "schema": "micromoth-receipt-v1",
+ "experiment": "qcells/exp011",
+ "status": "SEALED",
+ "title": "Reach-class mutators on the frozen unaided n=3 GHZ-balance lane: NON-CHAMPION-PARENT cloud crosses UNSEEDED (first unaided crossing; root-lottery, not reach law)",
+ "directive": "exp005 froze the unaided n=3 GHZ-balance search at pop 16 (12 gens, champion 0.000). exp009 (budget 4/6/8) and exp010 (pop 16/32/64) both VERIFIED the freeze is not a leash artifact: draws alone do not fix it, reach does. Finding 3's remaining reach-class candidate is a WIDER MUTATOR [never run \u2014 this experiment]. Signal density is 2.6% (52/2000 random genomes, exp005); the winning genome is ~2 indels outside the frozen champion neighborhood. Three arms, all on the exact exp005 unaided lane (no seed, targets (\"000\",\"111\"), mode=\"balance\", jitter-dropped replace/indel classes, same named seeds), 12 gens x pop 16: A TWO-MOVE children (mutate_classed applied twice per child, doubling neighborhood diameter per draw); B NON-CHAMPION-PARENT cloud (parent_pool=True: each child mutated from a parent sampled uniformly from champion + already-generated children \u2014 diversity via genealogy, not move count); C BOTH. Interpretation pinned BEFORE running: if any arm crosses to verify >= 0.45, champion-locality gains its mutator boundary condition; if all freeze, \"birth proximity is the whole game\" (exp006) hardens from INFERRED to boundary-tested engine law. Success = held-out balance >= 0.45.",
+ "engine": {
+  "name": "micromoth",
+  "note": "same vendored copy as the exp001-exp010 receipts; lab vendored copy byte-identical",
+  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df"
+ },
+ "seeds": {
+  "root": 7,
+  "train": 101,
+  "verify": 202,
+  "shots": 512
+ },
+ "protocol": "12 generations x pop 16 on the exact exp005 unaided lane (n_qubits=3, targets=(\"000\",\"111\"), mode=\"balance\", no seed, exp004 jitter-dropped policy restrict=('replace','indel'), gate budget 6, train/verify seed split) under three reach-class mutator arms: two_move / parent_pool / both; control arm = default lane run in-harness against the exp001 receipt; success bar = held-out verify balance >= 0.45",
+ "results": {
+  "sealed_lane": "unaided reach-mutator sweep (two_move / parent_pool / both)",
+  "arms": {
+   "two_move": {
+    "champion_genome": [
+     [
+      "h",
+      2
+     ],
+     [
+      "cx",
+      0,
+      1
+     ],
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "rx",
+      1.0,
+      1
+     ]
+    ],
+    "champion_len": 5,
+    "champion_train_balance": 0.255859375,
+    "champion_verify_balance": 0.2421875,
+    "first_verify_ge_045_gen": null,
+    "gens_champion_nonzero": 12,
+    "fitness_by_generation": [
+     {
+      "gen": 0,
+      "train_p": 0.0352,
+      "verify_p": 0.0371,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "crx",
+        0.75,
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 1,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     },
+     {
+      "gen": 2,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     },
+     {
+      "gen": 3,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     },
+     {
+      "gen": 4,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     },
+     {
+      "gen": 5,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     },
+     {
+      "gen": 6,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     },
+     {
+      "gen": 7,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     },
+     {
+      "gen": 8,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     },
+     {
+      "gen": 9,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     },
+     {
+      "gen": 10,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     },
+     {
+      "gen": 11,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        2
+       ],
+       [
+        "cx",
+        0,
+        1
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "rx",
+        1.0,
+        1
+       ]
+      ]
+     }
+    ]
+   },
+   "parent_pool": {
+    "champion_genome": [
+     [
+      "swap",
+      2,
+      1
+     ],
+     [
+      "rx",
+      0.5,
+      2
+     ],
+     [
+      "cx",
+      1,
+      2
+     ],
+     [
+      "cx",
+      2,
+      1
+     ],
+     [
+      "rz",
+      0.5,
+      0
+     ],
+     [
+      "cx",
+      1,
+      0
+     ]
+    ],
+    "champion_len": 6,
+    "champion_train_balance": 0.498046875,
+    "champion_verify_balance": 0.482421875,
+    "first_verify_ge_045_gen": 5,
+    "gens_champion_nonzero": 12,
+    "fitness_by_generation": [
+     {
+      "gen": 0,
+      "train_p": 0.1289,
+      "verify_p": 0.1074,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "h",
+        0
+       ],
+       [
+        "h",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 1,
+      "train_p": 0.1387,
+      "verify_p": 0.1152,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "h",
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "crx",
+        0.5,
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 2,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "cx",
+        1,
+        2
+       ],
+       [
+        "cx",
+        2,
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "crx",
+        0.5,
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 3,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "cx",
+        1,
+        2
+       ],
+       [
+        "cx",
+        2,
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "crx",
+        0.5,
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 4,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "cx",
+        1,
+        2
+       ],
+       [
+        "cx",
+        2,
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "crx",
+        0.5,
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 5,
+      "train_p": 0.498,
+      "verify_p": 0.4824,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "cx",
+        1,
+        2
+       ],
+       [
+        "cx",
+        2,
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "cx",
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 6,
+      "train_p": 0.498,
+      "verify_p": 0.4824,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "cx",
+        1,
+        2
+       ],
+       [
+        "cx",
+        2,
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "cx",
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 7,
+      "train_p": 0.498,
+      "verify_p": 0.4824,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "cx",
+        1,
+        2
+       ],
+       [
+        "cx",
+        2,
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "cx",
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 8,
+      "train_p": 0.498,
+      "verify_p": 0.4824,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "cx",
+        1,
+        2
+       ],
+       [
+        "cx",
+        2,
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "cx",
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 9,
+      "train_p": 0.498,
+      "verify_p": 0.4824,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "cx",
+        1,
+        2
+       ],
+       [
+        "cx",
+        2,
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "cx",
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 10,
+      "train_p": 0.498,
+      "verify_p": 0.4824,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "cx",
+        1,
+        2
+       ],
+       [
+        "cx",
+        2,
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "cx",
+        1,
+        0
+       ]
+      ]
+     },
+     {
+      "gen": 11,
+      "train_p": 0.498,
+      "verify_p": 0.4824,
+      "promoted": true,
+      "genome": [
+       [
+        "swap",
+        2,
+        1
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "cx",
+        1,
+        2
+       ],
+       [
+        "cx",
+        2,
+        1
+       ],
+       [
+        "rz",
+        0.5,
+        0
+       ],
+       [
+        "cx",
+        1,
+        0
+       ]
+      ]
+     }
+    ],
+    "champion_expanded_program": [
+     [
+      "swap",
+      2,
+      1
+     ],
+     [
+      "rx",
+      1.5707963267948966,
+      2
+     ],
+     [
+      "cx",
+      1,
+      2
+     ],
+     [
+      "cx",
+      2,
+      1
+     ],
+     [
+      "rz",
+      1.5707963267948966,
+      0
+     ],
+     [
+      "cx",
+      1,
+      0
+     ],
+     [
+      "m",
+      0,
+      0
+     ],
+     [
+      "m",
+      1,
+      1
+     ],
+     [
+      "m",
+      2,
+      2
+     ]
+    ],
+    "verify_counts": {
+     "111": 265,
+     "000": 247
+    },
+    "train_counts": {
+     "111": 257,
+     "000": 255
+    }
+   },
+   "both": {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      1,
+      0
+     ],
+     [
+      "rx",
+      0.5,
+      2
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "champion_len": 4,
+    "champion_train_balance": 0.255859375,
+    "champion_verify_balance": 0.2421875,
+    "first_verify_ge_045_gen": null,
+    "gens_champion_nonzero": 10,
+    "fitness_by_generation": [
+     {
+      "gen": 0,
+      "train_p": 0.0,
+      "verify_p": 0.0,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 1,
+      "train_p": 0.0,
+      "verify_p": 0.0,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 2,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        1,
+        0
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 3,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        1,
+        0
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 4,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        1,
+        0
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 5,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        1,
+        0
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 6,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        1,
+        0
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 7,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        1,
+        0
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 8,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        1,
+        0
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 9,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        1,
+        0
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 10,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        1,
+        0
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     },
+     {
+      "gen": 11,
+      "train_p": 0.2559,
+      "verify_p": 0.2422,
+      "promoted": true,
+      "genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        1,
+        0
+       ],
+       [
+        "rx",
+        0.5,
+        2
+       ],
+       [
+        "x",
+        2
+       ]
+      ]
+     }
+    ]
+   }
+  },
+  "crossing_arm": "parent_pool",
+  "frozen_arms": [
+   "two_move",
+   "both"
+  ],
+  "crossing_verify_balance": 0.482421875,
+  "frozen_plateau_balance": 0.2421875,
+  "exp005_reference": "unaided lane frozen: 12 gens pop 16, champion 0.000, signal density 2.6%",
+  "exp006_cross_reference": "seeded GHZ-prefix crossing (exp006) landed on the SAME held-out balance 0.482421875 (247/512) by an independent route",
+  "control_reproduces_exp001": true,
+  "ledger_rows": 21,
+  "ledger_head": "d270d30e9de8ab84"
+ },
+ "honest_limits": [
+  "verdict is scoped to this exact lane: single root seed 7, n=3 GHZ balance targets, pop 16, 12 generations, exp004 jitter-dropped replace/indel policy, unaided (no seed)",
+  "the crossing is a ROOT-LOTTERY, not a reach law: exp012 replicated the parent_pool arm across 3 fresh root seeds (11/23/42) and crossed 0/3 \u2014 quote this receipt as 1-in-4 rate evidence, never as 'genealogy fixes the freeze'",
+  "two_move and both arms FROZE at the partial plateau 0.2422 (Finding 4 class: the min-witness rewards half-built correlation; the single winning move is too rare) \u2014 doubling move count does not fix the freeze, genealogy did, once",
+  "telemetry logs promoted (champion) rows only; the cloud max child balance is not directly recorded \u2014 the freeze/plateau verdicts rest on promoted curves across 3 arms x 12 gens",
+  "balance is an entanglement gate for THIS target pair; it says nothing about other entanglement witnesses"
+ ],
+ "ledger": [
+  {
+   "args": {
+    "kind": "qc-exp011-nonchampion-parent-champion",
+    "m": 3,
+    "n": 3,
+    "program": [
+     [
+      "swap",
+      2,
+      1
+     ],
+     [
+      "rx",
+      1.5707963267948966,
+      2
+     ],
+     [
+      "cx",
+      1,
+      2
+     ],
+     [
+      "cx",
+      2,
+      1
+     ],
+     [
+      "rz",
+      1.5707963267948966,
+      0
+     ],
+     [
+      "cx",
+      1,
+      0
+     ],
+     [
+      "m",
+      0,
+      0
+     ],
+     [
+      "m",
+      1,
+      1
+     ],
+     [
+      "m",
+      2,
+      2
+     ]
+    ]
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "93d7229b92a15e52",
+   "op": "BIND",
+   "prev_hash": "0000000000000000",
+   "seq": 0,
+   "witness": {
+    "program_sha256": "55fcb0ab6f6c6dee9d6db1e9375cf4984f0a20f5425936688009ab2fb37d7acc"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "swap",
+     2,
+     1
+    ],
+    "ticker": 1
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "e0a3d6f1bbdc4f95",
+   "op": "EFFECT",
+   "prev_hash": "93d7229b92a15e52",
+   "seq": 1,
+   "witness": {
+    "state_sha256": "45168ce3f5d1e56476cea48b33f9a2899ca380ae6269629e87e59d00d1e6a1f6"
+   }
+  },
+  {
+   "args": {
+    "ticker": 1
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "20d5ad64b68d4ce6",
+   "op": "TICK",
+   "prev_hash": "e0a3d6f1bbdc4f95",
+   "seq": 2,
+   "witness": {
+    "state_sha256": "45168ce3f5d1e56476cea48b33f9a2899ca380ae6269629e87e59d00d1e6a1f6"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "rx",
+     1.5707963267948966,
+     2
+    ],
+    "ticker": 2
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "8fc135a2294999ad",
+   "op": "EFFECT",
+   "prev_hash": "20d5ad64b68d4ce6",
+   "seq": 3,
+   "witness": {
+    "state_sha256": "f027b19fba672a8875c8c496b80379b2dee18f901ac213f5910fef56bf01a43f"
+   }
+  },
+  {
+   "args": {
+    "ticker": 2
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "4b556f43a349c440",
+   "op": "TICK",
+   "prev_hash": "8fc135a2294999ad",
+   "seq": 4,
+   "witness": {
+    "state_sha256": "f027b19fba672a8875c8c496b80379b2dee18f901ac213f5910fef56bf01a43f"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "cx",
+     1,
+     2
+    ],
+    "ticker": 3
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "ccdba7cfc33c5c94",
+   "op": "EFFECT",
+   "prev_hash": "4b556f43a349c440",
+   "seq": 5,
+   "witness": {
+    "state_sha256": "f027b19fba672a8875c8c496b80379b2dee18f901ac213f5910fef56bf01a43f"
+   }
+  },
+  {
+   "args": {
+    "ticker": 3
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "07d82429af835d5f",
+   "op": "TICK",
+   "prev_hash": "ccdba7cfc33c5c94",
+   "seq": 6,
+   "witness": {
+    "state_sha256": "f027b19fba672a8875c8c496b80379b2dee18f901ac213f5910fef56bf01a43f"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "cx",
+     2,
+     1
+    ],
+    "ticker": 4
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "4ed57ddca465e7ce",
+   "op": "EFFECT",
+   "prev_hash": "07d82429af835d5f",
+   "seq": 7,
+   "witness": {
+    "state_sha256": "1436d8e0a101e47ee70ede2957d3cdbc15de104e3f0a7c5cc6609dd3497efae5"
+   }
+  },
+  {
+   "args": {
+    "ticker": 4
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "dd6c538d2f016eec",
+   "op": "TICK",
+   "prev_hash": "4ed57ddca465e7ce",
+   "seq": 8,
+   "witness": {
+    "state_sha256": "1436d8e0a101e47ee70ede2957d3cdbc15de104e3f0a7c5cc6609dd3497efae5"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "rz",
+     1.5707963267948966,
+     0
+    ],
+    "ticker": 5
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "2092f31fc66e4b41",
+   "op": "EFFECT",
+   "prev_hash": "dd6c538d2f016eec",
+   "seq": 9,
+   "witness": {
+    "state_sha256": "f4ddc33fcafa29102a1bd427004dd9b09fb95699df138d3b96f65a14c52a4675"
+   }
+  },
+  {
+   "args": {
+    "ticker": 5
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "060084097243de58",
+   "op": "TICK",
+   "prev_hash": "2092f31fc66e4b41",
+   "seq": 10,
+   "witness": {
+    "state_sha256": "f4ddc33fcafa29102a1bd427004dd9b09fb95699df138d3b96f65a14c52a4675"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "cx",
+     1,
+     0
+    ],
+    "ticker": 6
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "235b5df32290416c",
+   "op": "EFFECT",
+   "prev_hash": "060084097243de58",
+   "seq": 11,
+   "witness": {
+    "state_sha256": "eb6a4ddc4e4eaafe8ebd0f7ff47cc285b78dc85b002755e00d0f5ac2cffec3d7"
+   }
+  },
+  {
+   "args": {
+    "ticker": 6
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "cff4c8f5f0a470c2",
+   "op": "TICK",
+   "prev_hash": "235b5df32290416c",
+   "seq": 12,
+   "witness": {
+    "state_sha256": "eb6a4ddc4e4eaafe8ebd0f7ff47cc285b78dc85b002755e00d0f5ac2cffec3d7"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     0,
+     0
+    ],
+    "ticker": 7
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "0ae8f3789a30379b",
+   "op": "EFFECT",
+   "prev_hash": "cff4c8f5f0a470c2",
+   "seq": 13,
+   "witness": {
+    "state_sha256": "eb6a4ddc4e4eaafe8ebd0f7ff47cc285b78dc85b002755e00d0f5ac2cffec3d7"
+   }
+  },
+  {
+   "args": {
+    "ticker": 7
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "1bc1ab896943bd78",
+   "op": "TICK",
+   "prev_hash": "0ae8f3789a30379b",
+   "seq": 14,
+   "witness": {
+    "state_sha256": "eb6a4ddc4e4eaafe8ebd0f7ff47cc285b78dc85b002755e00d0f5ac2cffec3d7"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     1,
+     1
+    ],
+    "ticker": 8
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "84c11813345aaeea",
+   "op": "EFFECT",
+   "prev_hash": "1bc1ab896943bd78",
+   "seq": 15,
+   "witness": {
+    "state_sha256": "eb6a4ddc4e4eaafe8ebd0f7ff47cc285b78dc85b002755e00d0f5ac2cffec3d7"
+   }
+  },
+  {
+   "args": {
+    "ticker": 8
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "a0728ffe8655f3a9",
+   "op": "TICK",
+   "prev_hash": "84c11813345aaeea",
+   "seq": 16,
+   "witness": {
+    "state_sha256": "eb6a4ddc4e4eaafe8ebd0f7ff47cc285b78dc85b002755e00d0f5ac2cffec3d7"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     2,
+     2
+    ],
+    "ticker": 9
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "57e650285a8eaa7b",
+   "op": "EFFECT",
+   "prev_hash": "a0728ffe8655f3a9",
+   "seq": 17,
+   "witness": {
+    "state_sha256": "eb6a4ddc4e4eaafe8ebd0f7ff47cc285b78dc85b002755e00d0f5ac2cffec3d7"
+   }
+  },
+  {
+   "args": {
+    "ticker": 9
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "a85b5c294e0d46f6",
+   "op": "TICK",
+   "prev_hash": "57e650285a8eaa7b",
+   "seq": 18,
+   "witness": {
+    "state_sha256": "eb6a4ddc4e4eaafe8ebd0f7ff47cc285b78dc85b002755e00d0f5ac2cffec3d7"
+   }
+  },
+  {
+   "args": {
+    "seed": 202,
+    "shots": 512
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "6509c89f398f16b3",
+   "op": "WORLD",
+   "prev_hash": "a85b5c294e0d46f6",
+   "seq": 19,
+   "witness": {
+    "counts": {
+     "000": 247,
+     "111": 265
+    }
+   }
+  },
+  {
+   "args": {
+    "rows": 20
+   },
+   "cell": "ed450b8f48d7bec2",
+   "hash": "d270d30e9de8ab84",
+   "op": "PROOF",
+   "prev_hash": "6509c89f398f16b3",
+   "seq": 20
+  }
+ ]
+}
