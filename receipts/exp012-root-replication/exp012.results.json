@@ -1,0 +1,262 @@
+{
+  "experiment": "exp012_seed_replication",
+  "question": "does exp011 arm B (parent_pool genealogy reach) replicate across root seeds, or is the unaided crossing a root-7 lottery?",
+  "design": "only root seed varies (11/23/42 new; 7 = exp011); train=101 verify=202 shots=512 targets 000/111 n=3 balance pop16 gens12 jitter-dropped replace/indel one-move cloud; per-root unaided baseline arm as the freeze control",
+  "success_threshold": 0.45,
+  "runs": [
+    {
+      "root_seed": 11,
+      "arm": "unaided",
+      "champion_genome": [
+        [
+          "rz",
+          0.5,
+          1
+        ],
+        [
+          "rz",
+          0.5,
+          2
+        ],
+        [
+          "rx",
+          0.25,
+          0
+        ]
+      ],
+      "champion_len": 3,
+      "champion_train_p": 0.0,
+      "champion_verify_p": 0.0,
+      "first_ge_045_gen": null,
+      "crossed": false,
+      "champ_balances": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_seed": 11,
+      "arm": "poolB",
+      "champion_genome": [
+        [
+          "h",
+          1
+        ],
+        [
+          "rz",
+          1.0,
+          0
+        ],
+        [
+          "rz",
+          0.5,
+          2
+        ],
+        [
+          "h",
+          0
+        ],
+        [
+          "crx",
+          0.75,
+          1,
+          2
+        ],
+        [
+          "rx",
+          0.25,
+          0
+        ]
+      ],
+      "champion_len": 6,
+      "champion_train_p": 0.220703125,
+      "champion_verify_p": 0.203125,
+      "first_ge_045_gen": null,
+      "crossed": false,
+      "champ_balances": [
+        0.0,
+        0.0352,
+        0.0352,
+        0.1289,
+        0.1387,
+        0.1387,
+        0.1387,
+        0.1387,
+        0.1387,
+        0.1387,
+        0.1387,
+        0.2207
+      ]
+    },
+    {
+      "root_seed": 23,
+      "arm": "unaided",
+      "champion_genome": [
+        [
+          "swap",
+          0,
+          2
+        ],
+        [
+          "rz",
+          0.75,
+          1
+        ],
+        [
+          "h",
+          1
+        ]
+      ],
+      "champion_len": 3,
+      "champion_train_p": 0.0,
+      "champion_verify_p": 0.0,
+      "first_ge_045_gen": null,
+      "crossed": false,
+      "champ_balances": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_seed": 23,
+      "arm": "poolB",
+      "champion_genome": [
+        [
+          "swap",
+          0,
+          2
+        ],
+        [
+          "rz",
+          0.75,
+          1
+        ],
+        [
+          "h",
+          1
+        ]
+      ],
+      "champion_len": 3,
+      "champion_train_p": 0.0,
+      "champion_verify_p": 0.0,
+      "first_ge_045_gen": null,
+      "crossed": false,
+      "champ_balances": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_seed": 42,
+      "arm": "unaided",
+      "champion_genome": [
+        [
+          "cx",
+          2,
+          1
+        ],
+        [
+          "h",
+          2
+        ],
+        [
+          "x",
+          2
+        ]
+      ],
+      "champion_len": 3,
+      "champion_train_p": 0.0,
+      "champion_verify_p": 0.0,
+      "first_ge_045_gen": null,
+      "crossed": false,
+      "champ_balances": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "root_seed": 42,
+      "arm": "poolB",
+      "champion_genome": [
+        [
+          "cx",
+          2,
+          1
+        ],
+        [
+          "h",
+          2
+        ],
+        [
+          "x",
+          2
+        ]
+      ],
+      "champion_len": 3,
+      "champion_train_p": 0.0,
+      "champion_verify_p": 0.0,
+      "first_ge_045_gen": null,
+      "crossed": false,
+      "champ_balances": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "poolB_crosses_new_roots": [],
+  "poolB_total_crosses_incl_exp011": [
+    7
+  ],
+  "unaided_crosses": [],
+  "replication_verdict": "ROOT-LOTTERY"
+}
