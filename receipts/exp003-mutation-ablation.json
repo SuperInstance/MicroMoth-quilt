@@ -1,0 +1,359 @@
+{
+ "choreography": "BIND program cell -> EFFECT per gate application (sha256 statevector witness) -> TICK monotonic clock per gate (ticker in args, never in payload; the TICK row itself carries the statevector witness) -> WORLD seeded shot-sampling (seed named, never UNSEALED) -> PROOF chain head",
+ "directive": "exp001 stalled at 0.502 for gens 1-3 and crossed at gen 4; the suspicion was that discrete gate moves (replace/insert) are load-bearing and theta-jitter is not. Same search, same named seeds, four arms: control (full mutate) / replace-only / indel-only / jitter-only. mutate_classed draws the SAME move value from the same rng stream, only application is restricted; a class that cannot apply is RESAMPLED, never silently replaced by another class; a hard no-move raises MutationDeadlock and that IS the arm's result, recorded, never worked around silently.",
+ "engine": {
+  "name": "micromoth",
+  "note": "same vendored copy as the exp001/exp002 receipts; lab vendored copy byte-identical",
+  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df"
+ },
+ "experiment": "qcells/exp003",
+ "honest_limits": [
+  "the sealed ledger is the control/replace champion program (genome + measure surface); the two arms differ in WHEN they reached it (gen 4 vs gen 1), so one executable seal covers both crossing arms; the non-crossing arms are pinned by results fields plus live re-derivation in the test file, not by additional ledgers",
+  "all champions are PRODUCT states: the home target (mode=any P(01)) is a product-state lottery (lab exp007 finding), so this receipt seals mutation-class mechanics, not entanglement search",
+  "the jitter-only deadlock is specific to the root-7 seed champion (no rotation gate present at birth); the ablation says nothing about jitter on rotation-bearing champions",
+  "single root seed (root 7): the multi-root crossing-rate doctrine (lab exp014) post-dates this experiment; every crossing claim in this receipt carries the single-root limit"
+ ],
+ "ledger": [
+  {
+   "args": {
+    "kind": "qc-exp003-ablation-champion",
+    "m": 2,
+    "n": 2,
+    "program": [
+     [
+      "h",
+      1
+     ],
+     [
+      "h",
+      1
+     ],
+     [
+      "x",
+      0
+     ],
+     [
+      "m",
+      0,
+      0
+     ],
+     [
+      "m",
+      1,
+      1
+     ]
+    ]
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "2434a481e2de3818",
+   "op": "BIND",
+   "prev_hash": "0000000000000000",
+   "seq": 0,
+   "witness": {
+    "program_sha256": "1bf93e237c9184b04ba588281ee4fbb4b72eb4755c16422cb1d9da4cb62ee347"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "h",
+     1
+    ],
+    "ticker": 1
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "afafd9b0f6669508",
+   "op": "EFFECT",
+   "prev_hash": "2434a481e2de3818",
+   "seq": 1,
+   "witness": {
+    "state_sha256": "37774fb52ecd2af6b304008fe95e2587be5bfdc1f7a369c6361edfe2d7cc637e"
+   }
+  },
+  {
+   "args": {
+    "ticker": 1
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "358e888f6520fda5",
+   "op": "TICK",
+   "prev_hash": "afafd9b0f6669508",
+   "seq": 2,
+   "witness": {
+    "state_sha256": "37774fb52ecd2af6b304008fe95e2587be5bfdc1f7a369c6361edfe2d7cc637e"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "h",
+     1
+    ],
+    "ticker": 2
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "f244e2b5e0559502",
+   "op": "EFFECT",
+   "prev_hash": "358e888f6520fda5",
+   "seq": 3,
+   "witness": {
+    "state_sha256": "1c3067c329aee9610384a7e67dd6ae82c76822f5363c60a7c18152883261bac0"
+   }
+  },
+  {
+   "args": {
+    "ticker": 2
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "fab1e45e8f05c58e",
+   "op": "TICK",
+   "prev_hash": "f244e2b5e0559502",
+   "seq": 4,
+   "witness": {
+    "state_sha256": "1c3067c329aee9610384a7e67dd6ae82c76822f5363c60a7c18152883261bac0"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "x",
+     0
+    ],
+    "ticker": 3
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "a2a049a0709727a7",
+   "op": "EFFECT",
+   "prev_hash": "fab1e45e8f05c58e",
+   "seq": 5,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "ticker": 3
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "7b094abb21aa11b8",
+   "op": "TICK",
+   "prev_hash": "a2a049a0709727a7",
+   "seq": 6,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     0,
+     0
+    ],
+    "ticker": 4
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "be063a3a0b39717e",
+   "op": "EFFECT",
+   "prev_hash": "7b094abb21aa11b8",
+   "seq": 7,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "ticker": 4
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "974bcf8cd74d48fc",
+   "op": "TICK",
+   "prev_hash": "be063a3a0b39717e",
+   "seq": 8,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     1,
+     1
+    ],
+    "ticker": 5
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "5d3375a6b27eb843",
+   "op": "EFFECT",
+   "prev_hash": "974bcf8cd74d48fc",
+   "seq": 9,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "ticker": 5
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "a6af2d7e8bfc0dc8",
+   "op": "TICK",
+   "prev_hash": "5d3375a6b27eb843",
+   "seq": 10,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "seed": 202,
+    "shots": 512
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "a05ab8104418e882",
+   "op": "WORLD",
+   "prev_hash": "a6af2d7e8bfc0dc8",
+   "seq": 11,
+   "witness": {
+    "counts": {
+     "01": 512
+    }
+   }
+  },
+  {
+   "args": {
+    "rows": 12
+   },
+   "cell": "cddf274e55f14f73",
+   "hash": "ade3dc62f7e589e9",
+   "op": "PROOF",
+   "prev_hash": "a05ab8104418e882",
+   "seq": 12
+  }
+ ],
+ "protocol": "8 generations x pop 16, gate budget 6, train/verify seed split; four arms via the mutate_classed seam (control / replace_only / indel_only / jitter_only); control must reproduce exp001 byte-for-byte (curve + champion) or the runner refuses to write results",
+ "results": {
+  "arms": [
+   {
+    "arm": "control",
+    "champion": [
+     [
+      "h",
+      1
+     ],
+     [
+      "h",
+      1
+     ],
+     [
+      "x",
+      0
+     ]
+    ],
+    "champion_len": 3,
+    "champion_train_p": 1.0,
+    "champion_verify_p": 1.0,
+    "first_verify_perfect_gen": 4,
+    "note": "reproduces exp001 curve + champion byte-for-byte (harness changed nothing)",
+    "restrict": null
+   },
+   {
+    "arm": "replace_only",
+    "champion": [
+     [
+      "h",
+      1
+     ],
+     [
+      "h",
+      1
+     ],
+     [
+      "x",
+      0
+     ]
+    ],
+    "champion_len": 3,
+    "champion_train_p": 1.0,
+    "champion_verify_p": 1.0,
+    "first_verify_perfect_gen": 1,
+    "note": "same champion as control but crosses at gen 1 vs gen 4: the control stall was other classes burning draws, not search difficulty",
+    "restrict": [
+     "replace"
+    ]
+   },
+   {
+    "arm": "indel_only",
+    "champion": [
+     [
+      "cx",
+      0,
+      1
+     ],
+     [
+      "h",
+      0
+     ]
+    ],
+    "champion_len": 2,
+    "champion_train_p": 0.501953125,
+    "champion_verify_p": 0.517578125,
+    "first_verify_perfect_gen": null,
+    "note": "never crosses: 0.502 plateau all 8 gens; length plumbing alone is not a fitness engine",
+    "restrict": [
+     "indel"
+    ]
+   },
+   {
+    "arm": "jitter_only",
+    "deadlock": "no applicable mutation for champion [['h', 1], ['cx', 0, 1], ['h', 0]] at gen 0",
+    "note": "the seed champion carries no rotation gate, so theta-jitter can never apply; the ablation records the deadlock instead of silently substituting another class",
+    "restrict": [
+     "jitter"
+    ]
+   }
+  ],
+  "champion_P01": {
+   "train": 1.0,
+   "verify": 1.0
+  },
+  "control_reproduces_exp001": true,
+  "ledger_head": "ade3dc62f7e589e9",
+  "ledger_rows": 13,
+  "program": [
+   [
+    "h",
+    1
+   ],
+   [
+    "h",
+    1
+   ],
+   [
+    "x",
+    0
+   ],
+   [
+    "m",
+    0,
+    0
+   ],
+   [
+    "m",
+    1,
+    1
+   ]
+  ],
+  "replay": "OK \u2014 chain, per-gate state witnesses, seeded histogram all reproduced"
+ },
+ "schema": "micromoth-receipt-v1",
+ "seeds": {
+  "root": 7,
+  "shots": 512,
+  "train": 101,
+  "verify": 202
+ },
+ "status": "SEALED",
+ "title": "Mutation-class ablation \u2014 the discrete gate neighborhood is the engine (Finding 2)"
+}

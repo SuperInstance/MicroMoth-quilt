@@ -76,3 +76,25 @@ identical to the exp001 seal, in-memory tamper trip. Honest limits
 inside the receipt (all champions are product states — the sweep
 seals selection mechanics, not entanglement search; λ resolution
 stops at one breakpoint).
+
+`receipts/exp003-mutation-ablation.json` — qcells-lab exp003 (Finding 2
+follow-up): the exp001 search gains a `mutate_classed` seam and four
+ablation arms run on identical named seeds (root 7, train 101, verify
+202, 512 shots): control / replace-only / indel-only / jitter-only. A
+non-applicable class is resampled, never silently replaced; a hard
+no-move raises MutationDeadlock, recorded as that arm's result.
+Verdict: control reproduces exp001 byte-for-byte; replace-only reaches
+the identical champion but crosses at gen 1 vs gen 4 (the control
+stall was other classes burning draws, not search difficulty);
+indel-only never crosses (verify P(01) = 265/512, re-derived live by
+the pins); jitter-only deadlocks at gen 0 (no rotation gate in the
+seed champion). 13 witness-ledger rows for the sealed ablation
+champion (genome + measure surface), PROOF head `ade3dc62f7e589e9`,
+replay OK. `tests/test_exp003_receipt.py` adds 9 pins: chain
+re-derived in-repo, seed-in-WORLD-row doctrine, executable champion
+(512/512 verify shots in `01`), control==exp001 seal, replace crosses
+earlier on the same champion, indel non-crossing arm re-derived live,
+jitter deadlock recorded-not-worked-around, in-memory tamper trip.
+Honest limits inside the receipt (single root seed — the multi-root
+crossing-rate doctrine post-dates this experiment; all champions are
+product states; the jitter deadlock is birth-genome-specific).
