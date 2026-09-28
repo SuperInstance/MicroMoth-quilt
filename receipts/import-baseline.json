@@ -2,6 +2,7 @@
   "schema": "micromoth-quilt/import-baseline@v1",
   "upstream": "moth-quantum/MicroMoth",
   "baseline_commit": "3be5096b768c23221f44382d20eacf86d506b04b",
+  "generated_at": "2026-09-28T22:57:27.502538+00:00",
   "generated_at": "2026-09-28T22:03:12.830788+00:00",
   "self": "receipts/import-baseline.json (excluded: sha256 fixed-point, cannot embed own digest)",
   "doctrine": "regenerate via tools/import_manifest.py; never edit by hand",

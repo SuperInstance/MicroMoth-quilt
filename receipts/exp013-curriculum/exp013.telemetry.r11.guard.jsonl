@@ -1,0 +1,8 @@
+{"gen": 0, "genome": [["rz", 0.5, 1], ["rz", 0.25, 0], ["h", 0]], "promoted": true, "train_p": 0.502, "verify_p": 0.5176}
+{"gen": 1, "genome": [["rz", 0.5, 1], ["rz", 0.25, 0], ["h", 0]], "promoted": true, "train_p": 0.502, "verify_p": 0.5176}
+{"gen": 2, "genome": [["rz", 0.5, 1], ["rz", 0.25, 0], ["h", 0]], "promoted": true, "train_p": 0.502, "verify_p": 0.5176}
+{"gen": 3, "genome": [["rz", 0.5, 1], ["rz", 0.25, 0], ["h", 0]], "promoted": true, "train_p": 0.502, "verify_p": 0.5176}
+{"gen": 4, "genome": [["rz", 0.5, 1], ["rz", 0.25, 0], ["h", 0]], "promoted": true, "train_p": 0.502, "verify_p": 0.5176}
+{"gen": 5, "genome": [["rz", 0.5, 1], ["rz", 0.25, 0], ["rx", 1.0, 0]], "promoted": true, "train_p": 1.0, "verify_p": 1.0}
+{"gen": 6, "genome": [["rz", 0.5, 1], ["rz", 0.25, 0], ["rx", 1.0, 0]], "promoted": true, "train_p": 1.0, "verify_p": 1.0}
+{"gen": 7, "genome": [["rz", 0.5, 1], ["rz", 0.25, 0], ["rx", 1.0, 0]], "promoted": true, "train_p": 1.0, "verify_p": 1.0}
