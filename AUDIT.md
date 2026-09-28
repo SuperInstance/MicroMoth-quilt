@@ -142,3 +142,33 @@ scope, in-memory tamper trip. Honest limits inside the receipt
 (single root seed — the later multi-root crossing-rate doctrine
 post-dates this experiment; champion-local mutator; n=3 GHZ balance
 witness, not a universal no-entanglement claim).
+
+`receipts/exp007-bell-balance.json` — qcells-lab exp007 (the n=2
+home-turf CONTROL for the exp006 doctrine): does the exp005 stall
+reproduce on the engine's 2-qubit home turf once fitness is an
+entanglement witness? Target: Bell balance ('01','10'),
+mode='balance' — a deterministic product state scores 0.0, so balance
+gates entanglement at n=2 exactly as at n=3. Three lanes on identical
+named seeds (root 7, train 101, verify 202, 512 shots) and the exp004
+jitter-dropped replace/indel policy. Lane A seed [h(0),cx(0,1)] — the
+PHI+ skeleton, birth balance 0.0 against the PSI targets (target
+mismatch, not weakness), one x insert from psi+. Lane B seed
+[h(0),h(1)] — |++>, birth 0.2344, a true trap (|+> is an X eigenstate,
+any cx insert is a no-op). Unseeded control: random 3-gate birth.
+Verdict: unseeded H1 ('home turf is easy') REFUTED for the balance
+witness — home turf freezes at the ~0.23 plateau all 8 generations;
+lane A CROSSES at gen 5 via the x-insert route [x(1),h(0),cx(0,1)] to
+verify balance 0.4824; lane B TRAPS with champion == seed genome for
+all 8 generations. The zero-fitness skeleton is still the only
+crossing. 13 witness-ledger rows (expanded champion + measure
+surface), PROOF head `a62029c424a2f0fe`, replay OK.
+`tests/test_exp007_receipt.py` adds 10 pins: chain re-derived
+in-repo, seed-in-WORLD-row doctrine, executable sealed champion with
+live WORLD histogram, control-guard flag, live seed-prelude
+re-derivation (phi+ scores 0.0 by target mismatch; |++> slope
+present), lane A crosses / lane B traps / unseeded freezes curve
+pins, honest-limit scope, in-memory tamper trip. Honest limits inside
+the receipt (single root seed — the exp012-exp014 multi-root
+crossing-rate doctrine applies: SKELETON 5/9 > pool 4/12 >> unaided
+0/11; the H1 refutation is for the BALANCE witness only, exp001's
+mode=any product-state lottery champions stand).
