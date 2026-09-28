@@ -1,0 +1,12 @@
+{"gen": 0, "genome": [["rz", 0.5, 1], ["rz", 0.5, 2], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.0, "verify_p": 0.0}
+{"gen": 1, "genome": [["h", 1], ["rz", 0.5, 2], ["h", 2], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.0352, "verify_p": 0.0371}
+{"gen": 2, "genome": [["h", 1], ["rz", 0.5, 2], ["h", 2], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.0352, "verify_p": 0.0371}
+{"gen": 3, "genome": [["h", 1], ["rz", 0.5, 2], ["h", 0], ["h", 2], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.1289, "verify_p": 0.1074}
+{"gen": 4, "genome": [["h", 1], ["crx", 0.5, 1, 2], ["rz", 0.5, 2], ["h", 0], ["rz", 0.5, 1], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.1387, "verify_p": 0.1152}
+{"gen": 5, "genome": [["h", 1], ["crx", 0.5, 1, 2], ["rz", 0.5, 2], ["h", 0], ["rz", 0.5, 1], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.1387, "verify_p": 0.1152}
+{"gen": 6, "genome": [["h", 1], ["crx", 0.5, 1, 2], ["rz", 0.5, 2], ["h", 0], ["rz", 0.5, 1], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.1387, "verify_p": 0.1152}
+{"gen": 7, "genome": [["h", 1], ["crx", 0.5, 1, 2], ["rz", 0.5, 2], ["h", 0], ["rz", 0.5, 1], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.1387, "verify_p": 0.1152}
+{"gen": 8, "genome": [["h", 1], ["crx", 0.5, 1, 2], ["rz", 0.5, 2], ["h", 0], ["rz", 0.5, 1], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.1387, "verify_p": 0.1152}
+{"gen": 9, "genome": [["h", 1], ["crx", 0.5, 1, 2], ["rz", 0.5, 2], ["h", 0], ["rz", 0.5, 1], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.1387, "verify_p": 0.1152}
+{"gen": 10, "genome": [["h", 1], ["crx", 0.5, 1, 2], ["rz", 0.5, 2], ["h", 0], ["rz", 0.5, 1], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.1387, "verify_p": 0.1152}
+{"gen": 11, "genome": [["h", 1], ["rz", 1.0, 0], ["rz", 0.5, 2], ["h", 0], ["crx", 0.75, 1, 2], ["rx", 0.25, 0]], "promoted": true, "train_p": 0.2207, "verify_p": 0.2031}
