@@ -44,3 +44,19 @@ tool excludes it by name and records the exclusion inside the seal.
 
 Sealed by the CCC main session, 2026-09-28 (Asia/Shanghai). FAIL-first
 evidence for the pins is in the PR body that introduced this file.
+
+## The lane woke — experiment receipts (2026-09-28)
+
+The lane is no longer sleeping: CELL-MAPPING (#3 merged) and the
+seed-plumbing wrapper (#4 merged) let micromoth circuits emit quilt
+witness ledgers. The first experiment receipt is sealed at
+`receipts/exp001-bias-search.json` — qcells-lab exp001, a
+champion-seeded search toward |01⟩ (8 gens × pop 16, train/verify
+seed split), 13 witness-ledger rows, PROOF head `7417f8a8ad75a2aa`,
+replay OK. `tests/test_exp001_receipt.py` re-derives the fnv1a-64
+chain in-repo, pins the seed-in-every-WORLD-row doctrine, and trips
+RED on any tamper with the seal. Honest limits ride inside the
+receipt (degenerate `h;h` champion; mid-circuit `m` is a sampling
+event, never a state mutation). Regeneration doctrine above is
+unchanged — experiment receipts are additive, never edits to the
+import baseline.

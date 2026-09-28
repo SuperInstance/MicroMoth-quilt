@@ -1,15 +1,15 @@
 {
   "schema": "micromoth-quilt/import-baseline@v1",
   "upstream": "moth-quantum/MicroMoth",
-  "baseline_commit": "ae9516b45c3c935fbf71d219b79ca2cf12d207e5",
-  "generated_at": "2026-09-28T04:23:22.348591+00:00",
+  "baseline_commit": "5eb1619a145f63aae8b2f0b2990e20d2364aed8e",
+  "generated_at": "2026-09-28T05:35:23.064647+00:00",
   "self": "receipts/import-baseline.json (excluded: sha256 fixed-point, cannot embed own digest)",
   "doctrine": "regenerate via tools/import_manifest.py; never edit by hand",
   "files": {
     ".github/workflows/build.yml": "a32d142ab7818dac70f171d24cf2c0a9dfbb657b0d6bd601e708988c00c29734",
     ".gitignore": "4d09deb4f581acfa308d7aa59f0a8bf164d03869ef48fe76ca1674e3d35dd346",
     ".readthedocs.yaml": "f4e57da23f3d493768e7cca9f4cd7959eb9d4b2f41a8e246510a43cd43678da7",
-    "AUDIT.md": "a25a2e92485202b7a4faa27d10e43ef75a1b6fa95cf390d17ab4dd5a07c3b167",
+    "AUDIT.md": "5eb1fcaaa098389c446a2a659e3792edda75c07c484e97a82291119021d4b505",
     "LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
     "README.md": "88a3012b109288647001c439ac51293bbb43acbf8c1cbefecefd753c8169832b",
     "docs/CELL-MAPPING.md": "dd036dcc3e82502fa147a337519c678c821070ba1986b05060af12b27fa3227f",
