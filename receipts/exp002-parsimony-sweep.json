@@ -1,0 +1,254 @@
+{
+ "choreography": "BIND program cell -> EFFECT per gate application (sha256 statevector witness) -> TICK monotonic clock per gate (ticker in args, never in payload) -> WORLD seeded shot-sampling (seed named, never UNSEALED) -> PROOF chain head",
+ "directive": "exp001's champion [h(1),h(1),x(0)] reaches P(01)=1.0 carrying a dead identity pair (h;h). Add a per-gate penalty on the TRAIN selection score only (verify promotion gate untouched) and observe whether the genome shrinks without fitness collapse.",
+ "engine": {
+  "name": "micromoth",
+  "note": "same vendored copy as the exp001 receipt; lab vendored copy byte-identical",
+  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df"
+ },
+ "experiment": "qcells/exp002",
+ "honest_limits": [
+  "parsimony penalty touches the TRAIN selection score only; the verify promotion gate is untouched, so the sealed 1.0 verify figures are not shaped by the pressure being tested",
+  "all three champions are PRODUCT states: the home target (mode=any P(01)) is a product-state lottery (lab exp007 finding), so this receipt seals selection-pressure mechanics, not entanglement search",
+  "parsimony 0.02 and 0.05 land on the identical len-1 champion: the sweep has a single pressure breakpoint between 0.00 and 0.02; finer lambda resolution was not run"
+ ],
+ "ledger": [
+  {
+   "args": {
+    "kind": "qc-exp002-parsimony-champion",
+    "m": 2,
+    "n": 2,
+    "program": [
+     [
+      "x",
+      0
+     ],
+     [
+      "m",
+      0,
+      0
+     ],
+     [
+      "m",
+      1,
+      1
+     ]
+    ]
+   },
+   "cell": "9c79228f6bd47b2a",
+   "hash": "1b00d25ae6ddcad1",
+   "op": "BIND",
+   "prev_hash": "0000000000000000",
+   "seq": 0,
+   "witness": {
+    "program_sha256": "248304cc58b63cf11a3c7c8e1d876de7b846b29ca7759afd46cb6ea84017e49b"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "x",
+     0
+    ],
+    "ticker": 1
+   },
+   "cell": "9c79228f6bd47b2a",
+   "hash": "a23df5deb29f37e3",
+   "op": "EFFECT",
+   "prev_hash": "1b00d25ae6ddcad1",
+   "seq": 1,
+   "witness": {
+    "state_sha256": "2cf31c8a22045ca2bfd2e1baa3b3a1a1bdd67b5a1508de70c0941ce57e9e65ca"
+   }
+  },
+  {
+   "args": {
+    "ticker": 1
+   },
+   "cell": "9c79228f6bd47b2a",
+   "hash": "8ae9988fc9ad3989",
+   "op": "TICK",
+   "prev_hash": "a23df5deb29f37e3",
+   "seq": 2,
+   "witness": {
+    "state_sha256": "2cf31c8a22045ca2bfd2e1baa3b3a1a1bdd67b5a1508de70c0941ce57e9e65ca"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     0,
+     0
+    ],
+    "ticker": 2
+   },
+   "cell": "9c79228f6bd47b2a",
+   "hash": "e1ecc82d99c31c82",
+   "op": "EFFECT",
+   "prev_hash": "8ae9988fc9ad3989",
+   "seq": 3,
+   "witness": {
+    "state_sha256": "2cf31c8a22045ca2bfd2e1baa3b3a1a1bdd67b5a1508de70c0941ce57e9e65ca"
+   }
+  },
+  {
+   "args": {
+    "ticker": 2
+   },
+   "cell": "9c79228f6bd47b2a",
+   "hash": "71bfe097076c77ca",
+   "op": "TICK",
+   "prev_hash": "e1ecc82d99c31c82",
+   "seq": 4,
+   "witness": {
+    "state_sha256": "2cf31c8a22045ca2bfd2e1baa3b3a1a1bdd67b5a1508de70c0941ce57e9e65ca"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     1,
+     1
+    ],
+    "ticker": 3
+   },
+   "cell": "9c79228f6bd47b2a",
+   "hash": "9e2f9578a99838a8",
+   "op": "EFFECT",
+   "prev_hash": "71bfe097076c77ca",
+   "seq": 5,
+   "witness": {
+    "state_sha256": "2cf31c8a22045ca2bfd2e1baa3b3a1a1bdd67b5a1508de70c0941ce57e9e65ca"
+   }
+  },
+  {
+   "args": {
+    "ticker": 3
+   },
+   "cell": "9c79228f6bd47b2a",
+   "hash": "b8b49dd981b3f40e",
+   "op": "TICK",
+   "prev_hash": "9e2f9578a99838a8",
+   "seq": 6,
+   "witness": {
+    "state_sha256": "2cf31c8a22045ca2bfd2e1baa3b3a1a1bdd67b5a1508de70c0941ce57e9e65ca"
+   }
+  },
+  {
+   "args": {
+    "seed": 202,
+    "shots": 512
+   },
+   "cell": "9c79228f6bd47b2a",
+   "hash": "b7795a6b2675ea2e",
+   "op": "WORLD",
+   "prev_hash": "b8b49dd981b3f40e",
+   "seq": 7,
+   "witness": {
+    "counts": {
+     "01": 512
+    }
+   }
+  },
+  {
+   "args": {
+    "rows": 8
+   },
+   "cell": "9c79228f6bd47b2a",
+   "hash": "c5e9be966abaf0db",
+   "op": "PROOF",
+   "prev_hash": "b7795a6b2675ea2e",
+   "seq": 8
+  }
+ ],
+ "protocol": "8 generations x pop 16, gate budget 6, train/verify seed split; three arms parsimony 0.00 / 0.02 / 0.05, identical named seeds per arm; parsimony penalizes per-gate genome length on the TRAIN selection score only",
+ "results": {
+  "arms": [
+   {
+    "champion": [
+     [
+      "h",
+      1
+     ],
+     [
+      "h",
+      1
+     ],
+     [
+      "x",
+      0
+     ]
+    ],
+    "champion_len": 3,
+    "champion_train_p": 1.0,
+    "champion_verify_p": 1.0,
+    "first_verify_perfect_gen": 4,
+    "note": "control: reproduces exp001 curve + champion byte-for-byte",
+    "parsimony": 0.0
+   },
+   {
+    "champion": [
+     [
+      "x",
+      0
+     ]
+    ],
+    "champion_len": 1,
+    "champion_train_p": 1.0,
+    "champion_verify_p": 1.0,
+    "first_verify_perfect_gen": 3,
+    "note": "dead identity pair dropped; shortest genome at verify 1.0",
+    "parsimony": 0.02
+   },
+   {
+    "champion": [
+     [
+      "x",
+      0
+     ]
+    ],
+    "champion_len": 1,
+    "champion_train_p": 1.0,
+    "champion_verify_p": 1.0,
+    "first_verify_perfect_gen": 3,
+    "note": "same len-1 champion as 0.02; no fitness collapse observed",
+    "parsimony": 0.05
+   }
+  ],
+  "champion_P01": {
+   "train": 1.0,
+   "verify": 1.0
+  },
+  "control_reproduces_exp001": true,
+  "ledger_head": "c5e9be966abaf0db",
+  "ledger_rows": 9,
+  "program": [
+   [
+    "x",
+    0
+   ],
+   [
+    "m",
+    0,
+    0
+   ],
+   [
+    "m",
+    1,
+    1
+   ]
+  ],
+  "replay": "OK \u2014 chain, per-gate state witnesses, seeded histogram all reproduced"
+ },
+ "schema": "micromoth-receipt-v1",
+ "seeds": {
+  "root": 7,
+  "shots": 512,
+  "train": 101,
+  "verify": 202
+ },
+ "status": "SEALED",
+ "title": "Parsimony pressure vs the degenerate champion (Finding 1 follow-up)"
+}

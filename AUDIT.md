@@ -60,3 +60,19 @@ receipt (degenerate `h;h` champion; mid-circuit `m` is a sampling
 event, never a state mutation). Regeneration doctrine above is
 unchanged — experiment receipts are additive, never edits to the
 import baseline.
+
+`receipts/exp002-parsimony-sweep.json` — qcells-lab exp002 (Finding 1
+follow-up): the exp001 search gains a per-gate parsimony penalty on
+the TRAIN selection score only (verify promotion gate untouched),
+swept over λ 0.00/0.02/0.05 on identical named seeds (root 7, train
+101, verify 202, 512 shots). Control reproduces exp001 byte-for-byte;
+both pressure arms collapse to the len-1 champion [x(0)] at verify
+1.0. 9 witness-ledger rows for the sealed parsimony champion
+(genome + measure surface), PROOF head `c5e9be966abaf0db`, replay OK.
+`tests/test_exp002_receipt.py` adds 7 pins: chain re-derived in-repo,
+seed-in-WORLD-row doctrine, executable len-1 champion (512/512
+verify shots in `01` under the vendored engine), control-arm champion
+identical to the exp001 seal, in-memory tamper trip. Honest limits
+inside the receipt (all champions are product states — the sweep
+seals selection mechanics, not entanglement search; λ resolution
+stops at one breakpoint).
