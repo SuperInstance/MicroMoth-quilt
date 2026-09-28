@@ -98,3 +98,26 @@ jitter deadlock recorded-not-worked-around, in-memory tamper trip.
 Honest limits inside the receipt (single root seed — the multi-root
 crossing-rate doctrine post-dates this experiment; all champions are
 product states; the jitter deadlock is birth-genome-specific).
+
+`receipts/exp004-jitter-drop.json` — qcells-lab exp004 (Finding 2
+policy follow-up): the exp003 ablation finding is promoted to POLICY.
+Same search, same named seeds (root 7, train 101, verify 202, 512
+shots), one change — the jitter branch is dropped entirely
+(`mutate_classed restrict=("replace","indel")`), zero harness change,
+reusing exp003's ablation seam as the policy knob. Verdict: control
+still reproduces exp001 byte-for-byte; both arms reach the identical
+champion [h(1),h(1),x(0)] at held-out verify 1.000, but the
+jitter-dropped policy crosses at gen 2 vs the control's gen 4 — same
+honesty, twice the convergence; jitter was only burning candidate
+draws in the mixed neighborhood. 13 witness-ledger rows for the sealed
+policy champion (genome + measure surface), PROOF head
+`7bffc7144b684ccb`, replay OK. `tests/test_exp004_receipt.py` adds 9
+pins: chain re-derived in-repo, seed-in-WORLD-row doctrine, executable
+champion (512/512 verify shots in `01`), control==exp001 seal,
+no-jitter crosses earlier on the same champion, cross-receipt
+champion agreement with the exp003 ablation seal, honest-limit scope
+pins, in-memory tamper trip. Honest limits inside the receipt
+(single root seed — the multi-root crossing-rate doctrine post-dates
+this experiment; product-state target; policy scoped to discrete-gate
+search — continuous-only lanes cannot leave the start genome without
+the gate classes they were never given).

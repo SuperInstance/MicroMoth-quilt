@@ -1,0 +1,316 @@
+{
+ "choreography": "BIND program cell -> EFFECT per gate application (sha256 statevector witness) -> TICK monotonic clock per gate (ticker in args, never in payload; the TICK row itself carries the statevector witness) -> WORLD seeded shot-sampling (seed named, never UNSEALED) -> PROOF chain head",
+ "directive": "exp003 ablated the mutation classes and found the discrete gate neighborhood is the engine; exp004 promotes that finding to POLICY: same search, same named seeds, one change \u2014 the jitter branch is dropped entirely (mutate_classed restrict=('replace','indel')), zero harness change. Control lane re-run inside this harness must still reproduce exp001 byte-for-byte or the runner refuses to write results.",
+ "engine": {
+  "name": "micromoth",
+  "note": "same vendored copy as the exp001-exp003 receipts; lab vendored copy byte-identical",
+  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df"
+ },
+ "experiment": "qcells/exp004",
+ "honest_limits": [
+  "the sealed ledger is the shared champion program (genome + measure surface); the two arms differ only in WHEN they reached it (gen 4 vs gen 2), so one executable seal covers both arms",
+  "policy verdict is scoped to this discrete-gate search target: exp003 showed continuous-only search cannot even leave the start genome when the target needs gates it was never given, so 'drop jitter' is not a universal recommendation",
+  "both champions are PRODUCT states on the mode=any P(01) home target (a product-state lottery per lab exp007); this receipt seals convergence policy, not entanglement search",
+  "single root seed (root 7): the multi-root crossing-rate doctrine (lab exp014) post-dates this experiment; every crossing claim in this receipt carries the single-root limit"
+ ],
+ "ledger": [
+  {
+   "args": {
+    "kind": "qc-exp004-jitter-drop-champion",
+    "m": 2,
+    "n": 2,
+    "program": [
+     [
+      "h",
+      1
+     ],
+     [
+      "h",
+      1
+     ],
+     [
+      "x",
+      0
+     ],
+     [
+      "m",
+      0,
+      0
+     ],
+     [
+      "m",
+      1,
+      1
+     ]
+    ]
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "0fa37de7b2dce010",
+   "op": "BIND",
+   "prev_hash": "0000000000000000",
+   "seq": 0,
+   "witness": {
+    "program_sha256": "1bf93e237c9184b04ba588281ee4fbb4b72eb4755c16422cb1d9da4cb62ee347"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "h",
+     1
+    ],
+    "ticker": 1
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "2bf43fa0d633b6c8",
+   "op": "EFFECT",
+   "prev_hash": "0fa37de7b2dce010",
+   "seq": 1,
+   "witness": {
+    "state_sha256": "37774fb52ecd2af6b304008fe95e2587be5bfdc1f7a369c6361edfe2d7cc637e"
+   }
+  },
+  {
+   "args": {
+    "ticker": 1
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "e8dd96b2f5498d9a",
+   "op": "TICK",
+   "prev_hash": "2bf43fa0d633b6c8",
+   "seq": 2,
+   "witness": {
+    "state_sha256": "37774fb52ecd2af6b304008fe95e2587be5bfdc1f7a369c6361edfe2d7cc637e"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "h",
+     1
+    ],
+    "ticker": 2
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "667eb6cade0e941f",
+   "op": "EFFECT",
+   "prev_hash": "e8dd96b2f5498d9a",
+   "seq": 3,
+   "witness": {
+    "state_sha256": "1c3067c329aee9610384a7e67dd6ae82c76822f5363c60a7c18152883261bac0"
+   }
+  },
+  {
+   "args": {
+    "ticker": 2
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "fd431198b16e5b20",
+   "op": "TICK",
+   "prev_hash": "667eb6cade0e941f",
+   "seq": 4,
+   "witness": {
+    "state_sha256": "1c3067c329aee9610384a7e67dd6ae82c76822f5363c60a7c18152883261bac0"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "x",
+     0
+    ],
+    "ticker": 3
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "3567aae57485cee6",
+   "op": "EFFECT",
+   "prev_hash": "fd431198b16e5b20",
+   "seq": 5,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "ticker": 3
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "88a301865fd4f099",
+   "op": "TICK",
+   "prev_hash": "3567aae57485cee6",
+   "seq": 6,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     0,
+     0
+    ],
+    "ticker": 4
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "f76d9fc978b376fb",
+   "op": "EFFECT",
+   "prev_hash": "88a301865fd4f099",
+   "seq": 7,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "ticker": 4
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "6ece75a72ff89d47",
+   "op": "TICK",
+   "prev_hash": "f76d9fc978b376fb",
+   "seq": 8,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     1,
+     1
+    ],
+    "ticker": 5
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "cb42fd8359be665d",
+   "op": "EFFECT",
+   "prev_hash": "6ece75a72ff89d47",
+   "seq": 9,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "ticker": 5
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "c1551e2bf76a0a2c",
+   "op": "TICK",
+   "prev_hash": "cb42fd8359be665d",
+   "seq": 10,
+   "witness": {
+    "state_sha256": "5669a92d729e846247c1792bd9b6f098de783886ae30f29b09b52d573c849f02"
+   }
+  },
+  {
+   "args": {
+    "seed": 202,
+    "shots": 512
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "1c110afbb36c8781",
+   "op": "WORLD",
+   "prev_hash": "c1551e2bf76a0a2c",
+   "seq": 11,
+   "witness": {
+    "counts": {
+     "01": 512
+    }
+   }
+  },
+  {
+   "args": {
+    "rows": 12
+   },
+   "cell": "f0884a7e8b8a88d3",
+   "hash": "7bffc7144b684ccb",
+   "op": "PROOF",
+   "prev_hash": "1c110afbb36c8781",
+   "seq": 12
+  }
+ ],
+ "protocol": "8 generations x pop 16, gate budget 6, train/verify seed split; two arms via the exp003 mutate_classed seam (control = full mutate / no_jitter = restrict ('replace','indel')); control must reproduce exp001 byte-for-byte (curve + champion) or the runner refuses to write results",
+ "results": {
+  "arms": [
+   {
+    "arm": "control",
+    "champion": [
+     [
+      "h",
+      1
+     ],
+     [
+      "h",
+      1
+     ],
+     [
+      "x",
+      0
+     ]
+    ],
+    "champion_len": 3,
+    "champion_train_p": 1.0,
+    "champion_verify_p": 1.0,
+    "first_verify_perfect_gen": 4,
+    "note": "reproduces exp001 curve + champion byte-for-byte (policy harness changed nothing)",
+    "restrict": null
+   },
+   {
+    "arm": "no_jitter",
+    "champion": [
+     [
+      "h",
+      1
+     ],
+     [
+      "h",
+      1
+     ],
+     [
+      "x",
+      0
+     ]
+    ],
+    "champion_len": 3,
+    "champion_train_p": 1.0,
+    "champion_verify_p": 1.0,
+    "first_verify_perfect_gen": 2,
+    "note": "identical champion, held-out verify 1.000, convergence twice as fast (gen 2 vs gen 4): jitter was only burning candidate draws in the mixed neighborhood",
+    "restrict": [
+     "replace",
+     "indel"
+    ]
+   }
+  ],
+  "champion": [
+   [
+    "h",
+    1
+   ],
+   [
+    "h",
+    1
+   ],
+   [
+    "x",
+    0
+   ]
+  ],
+  "control_reproduces_exp001": true,
+  "ledger_head": "7bffc7144b684ccb",
+  "ledger_rows": 13,
+  "policy_verdict": "same champion, same held-out honesty, 2x convergence: the exp003 recommendation holds at the policy level"
+ },
+ "schema": "micromoth-receipt-v1",
+ "seeds": {
+  "root": 7,
+  "shots": 512,
+  "train": 101,
+  "verify": 202
+ },
+ "status": "SEALED",
+ "title": "Jitter-drop policy \u2014 convergence 2x faster, champion unchanged (Finding 2 policy follow-up)"
+}
