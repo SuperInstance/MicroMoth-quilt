@@ -1,3 +1,8 @@
+// Mirrored from ../versions/JavaScript/micromoth.js so this folder is a
+// self-contained, copy-pasteable drop-in (quantum-wow.js + micromoth.js).
+// Keep the two files identical; the canonical/maintained copy lives at
+// versions/JavaScript/micromoth.js.
+//
 // (C) Copyright Moth Quantum 2025.
 //
 // This code is licensed under the Apache License, Version 2.0. You may
