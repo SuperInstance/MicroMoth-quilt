@@ -1,0 +1,576 @@
+{
+ "choreography": "BIND program cell -> EFFECT per gate application (sha256 statevector witness) -> TICK monotonic clock per gate (ticker in args, never in payload; the TICK row itself carries the statevector witness) -> WORLD seeded shot-sampling (seed named, never UNSEALED) -> PROOF chain head",
+ "directive": "exp004's jitter-drop policy resolved the 2-qubit |01> problem; exp005 asks whether the same engine generalizes UP to an entangled target. Design pin BEFORE running (anti-laundering): a bare counts-set target {000,111} is hit by any deterministic product state, so fitness is the balance witness min(c000,c111)/shots \u2014 both GHZ branches must fire on the same circuit. Same named seeds as exp001-exp004 (root 7, train 101, verify 202, 512 shots), same exp004 policy restrict=('replace','indel'). The runner re-runs the default 2-qubit exp001 control lane inside THIS harness config and refuses to write results if it drifts.",
+ "engine": {
+  "name": "micromoth",
+  "note": "same vendored copy as the exp001-exp004 receipts; lab vendored copy byte-identical",
+  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df"
+ },
+ "experiment": "qcells/exp005",
+ "honest_limits": [
+  "frozen verdict is scoped to this exact lane: single root seed 7, n=3 GHZ balance target, pop 16, 12 generations, exp004 jitter-dropped replace/indel policy",
+  "the balance witness gates entanglement for this target (product states score 0.0), but a 0.000 champion score is a negative search result on this witness, not a proof that no circuit in the budget can reach the target",
+  "the later multi-root crossing-rate doctrine (lab exp012-exp014) post-dates this experiment; it strengthens the freeze verdict but is not retroactively sealed here",
+  "mid-circuit m rows are sampling events, never state mutations; the EFFECT/TICK state witnesses are the load-bearing evidence"
+ ],
+ "ledger": [
+  {
+   "args": {
+    "kind": "qc-exp005-frozen-champion",
+    "m": 3,
+    "n": 3,
+    "program": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ],
+     [
+      "m",
+      0,
+      0
+     ],
+     [
+      "m",
+      1,
+      1
+     ],
+     [
+      "m",
+      2,
+      2
+     ]
+    ]
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "0c02c006325ff45b",
+   "op": "BIND",
+   "prev_hash": "0000000000000000",
+   "seq": 0,
+   "witness": {
+    "program_sha256": "3b2aba163942275d2545cac6ca3c45f695e1e4a574f372a3af95498f74d8512e"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "h",
+     1
+    ],
+    "ticker": 1
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "ce7d6d08ce0bba82",
+   "op": "EFFECT",
+   "prev_hash": "0c02c006325ff45b",
+   "seq": 1,
+   "witness": {
+    "state_sha256": "d1f957d766f2229aa7d342f75f77db3c66863014f1d2f4cca85886060d349ea2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 1
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "37f42538d084923c",
+   "op": "TICK",
+   "prev_hash": "ce7d6d08ce0bba82",
+   "seq": 2,
+   "witness": {
+    "state_sha256": "d1f957d766f2229aa7d342f75f77db3c66863014f1d2f4cca85886060d349ea2"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "cx",
+     2,
+     0
+    ],
+    "ticker": 2
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "d306a0b7e245d28d",
+   "op": "EFFECT",
+   "prev_hash": "37f42538d084923c",
+   "seq": 3,
+   "witness": {
+    "state_sha256": "d1f957d766f2229aa7d342f75f77db3c66863014f1d2f4cca85886060d349ea2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 2
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "f6d07207de6c81b6",
+   "op": "TICK",
+   "prev_hash": "d306a0b7e245d28d",
+   "seq": 4,
+   "witness": {
+    "state_sha256": "d1f957d766f2229aa7d342f75f77db3c66863014f1d2f4cca85886060d349ea2"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "x",
+     2
+    ],
+    "ticker": 3
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "63980768900fd30d",
+   "op": "EFFECT",
+   "prev_hash": "f6d07207de6c81b6",
+   "seq": 5,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 3
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "2fb976857f05f67d",
+   "op": "TICK",
+   "prev_hash": "63980768900fd30d",
+   "seq": 6,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     0,
+     0
+    ],
+    "ticker": 4
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "8a9e668de2a11f28",
+   "op": "EFFECT",
+   "prev_hash": "2fb976857f05f67d",
+   "seq": 7,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 4
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "c436cb02cd8baf72",
+   "op": "TICK",
+   "prev_hash": "8a9e668de2a11f28",
+   "seq": 8,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     1,
+     1
+    ],
+    "ticker": 5
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "f20ca492829246cb",
+   "op": "EFFECT",
+   "prev_hash": "c436cb02cd8baf72",
+   "seq": 9,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 5
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "e5ff2b824f31f548",
+   "op": "TICK",
+   "prev_hash": "f20ca492829246cb",
+   "seq": 10,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     2,
+     2
+    ],
+    "ticker": 6
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "f371b3a5919fce9c",
+   "op": "EFFECT",
+   "prev_hash": "e5ff2b824f31f548",
+   "seq": 11,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 6
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "9646c4ba440d6da1",
+   "op": "TICK",
+   "prev_hash": "f371b3a5919fce9c",
+   "seq": 12,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "seed": 202,
+    "shots": 512
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "42f9a0de82d853db",
+   "op": "WORLD",
+   "prev_hash": "9646c4ba440d6da1",
+   "seq": 13,
+   "witness": {
+    "counts": {
+     "100": 247,
+     "110": 265
+    }
+   }
+  },
+  {
+   "args": {
+    "rows": 14
+   },
+   "cell": "d0ae1fea7ff283fc",
+   "hash": "eaba19fd5cc1c15e",
+   "op": "PROOF",
+   "prev_hash": "42f9a0de82d853db",
+   "seq": 14
+  }
+ ],
+ "protocol": "12 generations x pop 16, gate budget 6, train/verify seed split; n_qubits=3, targets=('000','111'), mode='balance'; exp004 jitter-dropped policy restrict=('replace','indel'); success bar = held-out verify balance >= 0.45",
+ "results": {
+  "champion": [
+   [
+    "h",
+    1
+   ],
+   [
+    "cx",
+    2,
+    0
+   ],
+   [
+    "x",
+    2
+   ]
+  ],
+  "champion_len": 3,
+  "champion_train_balance": 0.0,
+  "champion_verify_balance": 0.0,
+  "control_reproduces_exp001": true,
+  "first_verify_ge_045_gen": null,
+  "fitness_by_generation": [
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 0,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 1,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 2,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 3,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 4,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 5,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 6,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 7,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 8,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 9,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 10,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   },
+   {
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "gen": 11,
+    "train_balance": 0.0,
+    "verdict": "PROMOTE",
+    "verify_balance": 0.0
+   }
+  ],
+  "ledger_head": "eaba19fd5cc1c15e",
+  "ledger_rows": 15,
+  "mode": "balance",
+  "n_qubits": 3,
+  "policy": "drop jitter (restrict=('replace','indel'))",
+  "prelude": {
+   "hand_ghz_balance": 0.4824,
+   "product_h0_balance": 0.0,
+   "witness_gates_entanglement": true
+  },
+  "replay": "OK \u2014 chain, per-gate/TICK state witnesses, seeded histogram all reproduced",
+  "success_bar_verify_balance": 0.45,
+  "targets": [
+   "000",
+   "111"
+  ]
+ },
+ "schema": "micromoth-receipt-v1",
+ "seeds": {
+  "root": 7,
+  "shots": 512,
+  "train": 101,
+  "verify": 202
+ },
+ "status": "SEALED",
+ "title": "n=3 GHZ balance target \u2014 the unaided engine is frozen on entanglement search"
+}

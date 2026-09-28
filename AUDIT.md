@@ -121,3 +121,24 @@ pins, in-memory tamper trip. Honest limits inside the receipt
 this experiment; product-state target; policy scoped to discrete-gate
 search — continuous-only lanes cannot leave the start genome without
 the gate classes they were never given).
+
+`receipts/exp005-ghz-balance.json` — qcells-lab exp005 (the Finding-3
+precursor): the engine leaves its 2-qubit home target for n=3 balanced
+GHZ {|000>,|111>}. Anti-laundering pin recorded before the lab run: a
+bare counts-set target is satisfied by deterministic product |000>, so
+fitness is the balance witness min(c000,c111)/shots; the prelude
+measured hand GHZ balance 0.4824 vs product 0.000. Same named seeds as
+exp001-exp004 (root 7, train 101, verify 202, 512 shots), same exp004
+jitter-dropped replace/indel policy. Verdict: FROZEN — the exp001
+control guard reproduces byte-identical inside this harness, while the
+n=3 lane sits at train/verify balance 0.000 for all 12 generations;
+the sealed champion [h(1),cx(2,0),x(2)] lands only in {100,110} on
+the named verify seed. 15 witness-ledger rows (program + measure
+surface), PROOF head `eaba19fd5cc1c15e`, replay OK. `tests/test_exp005_receipt.py`
+adds 9 pins: chain re-derived in-repo, seed-in-WORLD-row doctrine,
+executable frozen champion with live WORLD histogram, control-guard
+flag, live prelude re-derivation, frozen-curve pins, honest-limit
+scope, in-memory tamper trip. Honest limits inside the receipt
+(single root seed — the later multi-root crossing-rate doctrine
+post-dates this experiment; champion-local mutator; n=3 GHZ balance
+witness, not a universal no-entanglement claim).
