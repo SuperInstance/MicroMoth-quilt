@@ -1,0 +1,1201 @@
+{
+ "schema": "micromoth-receipt-v1",
+ "experiment": "qcells/exp010",
+ "status": "SEALED",
+ "title": "Pop 16/32/64 scaling on the frozen unaided n=3 GHZ-balance lane: POP-INVARIANT FREEZE \u2014 population multiplies draws, not reach",
+ "directive": "exp005 froze the unaided n=3 GHZ-balance search at pop 16 (12 gens, champion 0.000, 180 champion-local draws, zero signal hits). Finding 3's ranked candidates: (a) GHZ-prefix seeding [exp006 CONFIRMED], (b) pop 64 for the n=3 lane [NEVER RUN], (c) curriculum [exp007 covered the n=2 control]. This experiment runs (b): the exact exp005 unaided lane (no seed, jitter-dropped replace/indel cloud, targets (\"000\",\"111\"), mode=\"balance\", same named seeds) at pop 32 and pop 64, pop 16 re-run as the in-sweep anchor. Interpretation pinned BEFORE running (anti-laundering): exp005 measured signal density 52/2000 random genomes (2.6%). A champion-local cloud of size P per gen that never leaves the champion's neighborhood draws from roughly the same local move distribution regardless of P \u2014 pop scaling multiplies DRAWS, not REACH. If pop 64 stays frozen, the locality verdict gains its pop boundary condition (draws alone don't fix it; you need reach \u2014 seeding, curriculum, or a wider mutator). If it crosses, the 'frozen forever' verdicts were population-starvation, not engine law, and exp005's Finding 3 wording needs a pop caveat. Success = held-out balance >= 0.45 (same threshold as exp005-009).",
+ "engine": {
+  "name": "micromoth",
+  "note": "same vendored copy as the exp001-exp009 receipts; lab vendored copy byte-identical",
+  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df"
+ },
+ "seeds": {
+  "root": 7,
+  "train": 101,
+  "verify": 202,
+  "shots": 512
+ },
+ "protocol": "12 generations x pop in {16,32,64} on the exact exp005 unaided lane (n_qubits=3, targets=('000','111'), mode='balance', no seed, exp004 jitter-dropped policy restrict=('replace','indel'), gate budget 6, train/verify seed split); control arm = default lane 8 gens run in-harness against the exp001 receipt (harness-not-at-fault doctrine); success bar = held-out verify balance >= 0.45",
+ "results": {
+  "sealed_lane": "unaided pop sweep (pop 16 re-run / 32 / 64)",
+  "champion": [
+   [
+    "h",
+    1
+   ],
+   [
+    "cx",
+    2,
+    0
+   ],
+   [
+    "x",
+    2
+   ]
+  ],
+  "champion_expanded_program": [
+   [
+    "h",
+    1
+   ],
+   [
+    "cx",
+    2,
+    0
+   ],
+   [
+    "x",
+    2
+   ],
+   [
+    "m",
+    0,
+    0
+   ],
+   [
+    "m",
+    1,
+    1
+   ],
+   [
+    "m",
+    2,
+    2
+   ]
+  ],
+  "champion_len": 3,
+  "champion_train_balance": 0.0,
+  "champion_verify_balance": 0.0,
+  "first_verify_ge_045_gen": null,
+  "max_champion_train_p_seen": 0.0,
+  "mode": "balance",
+  "n_qubits": 3,
+  "policy": "drop jitter (restrict=('replace','indel'))",
+  "targets": [
+   "000",
+   "111"
+  ],
+  "success_threshold_verify_balance": 0.45,
+  "exp005_reference": "pop=16 frozen 12 gens, champion 0.000, signal density 2.6% (52/2000)",
+  "prelude": {
+   "random_genome_signal_density": 0.026,
+   "frozen_champion_verify_counts": {
+    "110": 265,
+    "100": 247
+   },
+   "frozen_champion_lands_only_in": [
+    "100",
+    "110"
+   ]
+  },
+  "pop_arms": {
+   "16": {
+    "pop": 16,
+    "seeded": false,
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "champion_len": 3,
+    "champion_train_balance": 0.0,
+    "champion_verify_balance": 0.0,
+    "first_verify_ge_045_gen": null,
+    "max_champion_train_p_seen": 0.0,
+    "fitness_by_generation": [
+     {
+      "gen": 0,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 1,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 2,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 3,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 4,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 5,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 6,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 7,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 8,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 9,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 10,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 11,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     }
+    ]
+   },
+   "32": {
+    "pop": 32,
+    "seeded": false,
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "champion_len": 3,
+    "champion_train_balance": 0.0,
+    "champion_verify_balance": 0.0,
+    "first_verify_ge_045_gen": null,
+    "max_champion_train_p_seen": 0.0,
+    "fitness_by_generation": [
+     {
+      "gen": 0,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 1,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 2,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 3,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 4,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 5,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 6,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 7,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 8,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 9,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 10,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 11,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     }
+    ]
+   },
+   "64": {
+    "pop": 64,
+    "seeded": false,
+    "champion_genome": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ]
+    ],
+    "champion_len": 3,
+    "champion_train_balance": 0.0,
+    "champion_verify_balance": 0.0,
+    "first_verify_ge_045_gen": null,
+    "max_champion_train_p_seen": 0.0,
+    "fitness_by_generation": [
+     {
+      "gen": 0,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 1,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 2,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 3,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 4,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 5,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 6,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 7,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 8,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 9,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 10,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     },
+     {
+      "gen": 11,
+      "champion_genome": [
+       [
+        "h",
+        1
+       ],
+       [
+        "cx",
+        2,
+        0
+       ],
+       [
+        "x",
+        2
+       ]
+      ],
+      "train_balance": 0.0,
+      "verify_balance": 0.0,
+      "verdict": "PROMOTE"
+     }
+    ]
+   }
+  },
+  "pop_invariance": {
+   "byte_identical_outcomes": true,
+   "scope": "champion genome, champion balances, and the full 12-gen promoted curve identical at pop 16/32/64; only the pop label differs",
+   "note": "pop multiplies draws, not reach: max_champion_train_p_seen=0.0 at every pop across all 12 gens \u2014 zero promotions at 4x the draw budget; the locality verdict gains its pop boundary condition (draws alone don't fix it; reach-class fixes per exp011 genealogy doctrine)"
+  },
+  "control_reproduces_exp001": true,
+  "ledger_rows": 15,
+  "ledger_head": "5b7e7dd7b67d9542"
+ },
+ "honest_limits": [
+  "verdict is scoped to this exact lane: single root seed 7, n=3 GHZ balance target, pop in {16,32,64}, 12 generations, exp004 jitter-dropped replace/indel policy, unaided (no seed)",
+  "telemetry logs promoted (champion) rows only; the cloud's max child balance is not directly recorded \u2014 the freeze verdict rests on 'zero promotions across 3 pops x 12 gens', i.e. no child ever beat 0.0 by any margin",
+  "pop-invariance at 16/32/64 does NOT prove the freeze holds at every population; it proves the 4x draw-budget range accessible to this lab is not the constraint class \u2014 reach is (exp011 genealogy doctrine)",
+  "this freeze contributes 3 configs (pop16/32/64) to the unaided 0/11 crossing-rate table; under the exp012-exp014 doctrine the freeze is the law and the crossing is always a rate \u2014 quote this receipt as freeze evidence, never as a bare 'cannot cross'",
+  "balance is an entanglement gate for THIS target pair; it says nothing about other entanglement witnesses"
+ ],
+ "ledger": [
+  {
+   "args": {
+    "kind": "qc-exp010-pop-invariant-champion",
+    "m": 3,
+    "n": 3,
+    "program": [
+     [
+      "h",
+      1
+     ],
+     [
+      "cx",
+      2,
+      0
+     ],
+     [
+      "x",
+      2
+     ],
+     [
+      "m",
+      0,
+      0
+     ],
+     [
+      "m",
+      1,
+      1
+     ],
+     [
+      "m",
+      2,
+      2
+     ]
+    ]
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "7b8b01dd7cb0ed49",
+   "op": "BIND",
+   "prev_hash": "0000000000000000",
+   "seq": 0,
+   "witness": {
+    "program_sha256": "3b2aba163942275d2545cac6ca3c45f695e1e4a574f372a3af95498f74d8512e"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "h",
+     1
+    ],
+    "ticker": 1
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "283bfc9e77935d41",
+   "op": "EFFECT",
+   "prev_hash": "7b8b01dd7cb0ed49",
+   "seq": 1,
+   "witness": {
+    "state_sha256": "d1f957d766f2229aa7d342f75f77db3c66863014f1d2f4cca85886060d349ea2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 1
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "8f614b1808128376",
+   "op": "TICK",
+   "prev_hash": "283bfc9e77935d41",
+   "seq": 2,
+   "witness": {
+    "state_sha256": "d1f957d766f2229aa7d342f75f77db3c66863014f1d2f4cca85886060d349ea2"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "cx",
+     2,
+     0
+    ],
+    "ticker": 2
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "00d0d8d7afa869b5",
+   "op": "EFFECT",
+   "prev_hash": "8f614b1808128376",
+   "seq": 3,
+   "witness": {
+    "state_sha256": "d1f957d766f2229aa7d342f75f77db3c66863014f1d2f4cca85886060d349ea2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 2
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "ee485fde650732a2",
+   "op": "TICK",
+   "prev_hash": "00d0d8d7afa869b5",
+   "seq": 4,
+   "witness": {
+    "state_sha256": "d1f957d766f2229aa7d342f75f77db3c66863014f1d2f4cca85886060d349ea2"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "x",
+     2
+    ],
+    "ticker": 3
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "9df66c679f78406e",
+   "op": "EFFECT",
+   "prev_hash": "ee485fde650732a2",
+   "seq": 5,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 3
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "ecbf747bd11abfe6",
+   "op": "TICK",
+   "prev_hash": "9df66c679f78406e",
+   "seq": 6,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     0,
+     0
+    ],
+    "ticker": 4
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "b49777d57bd2dd62",
+   "op": "EFFECT",
+   "prev_hash": "ecbf747bd11abfe6",
+   "seq": 7,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 4
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "8cb9a9c84a2dcdcf",
+   "op": "TICK",
+   "prev_hash": "b49777d57bd2dd62",
+   "seq": 8,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     1,
+     1
+    ],
+    "ticker": 5
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "e8a17244cd755e9b",
+   "op": "EFFECT",
+   "prev_hash": "8cb9a9c84a2dcdcf",
+   "seq": 9,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 5
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "175e7ce5beb42be3",
+   "op": "TICK",
+   "prev_hash": "e8a17244cd755e9b",
+   "seq": 10,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "gate": [
+     "m",
+     2,
+     2
+    ],
+    "ticker": 6
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "4fb8e08fb92e7cf2",
+   "op": "EFFECT",
+   "prev_hash": "175e7ce5beb42be3",
+   "seq": 11,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "ticker": 6
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "afe384837cddc973",
+   "op": "TICK",
+   "prev_hash": "4fb8e08fb92e7cf2",
+   "seq": 12,
+   "witness": {
+    "state_sha256": "0e8b8229491b03265adba2af254460ee018c19e6dd15b648216ba9904ce4d2c2"
+   }
+  },
+  {
+   "args": {
+    "seed": 202,
+    "shots": 512
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "c8689333f4ca5278",
+   "op": "WORLD",
+   "prev_hash": "afe384837cddc973",
+   "seq": 13,
+   "witness": {
+    "counts": {
+     "100": 247,
+     "110": 265
+    }
+   }
+  },
+  {
+   "args": {
+    "rows": 14
+   },
+   "cell": "7b375c733eb8071e",
+   "hash": "5b7e7dd7b67d9542",
+   "op": "PROOF",
+   "prev_hash": "c8689333f4ca5278",
+   "seq": 14
+  }
+ ]
+}
