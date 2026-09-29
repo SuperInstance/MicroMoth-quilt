@@ -1,0 +1,36 @@
+{
+  "round": 42,
+  "shape": "measurement_map_swap",
+  "mutation_desc": "output-bit assembly writes out_list[bit] instead of out_list[qc.num_clbits-1-bit] (bit-order flip)",
+  "roots": [
+    7,
+    11,
+    23
+  ],
+  "ts": "2026-09-29T00:13:13Z",
+  "caught": true,
+  "verdict": "caught",
+  "new_failures": [
+    "tests/test_exp002_receipt.py::TestExp002Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp003_receipt.py::TestExp003Receipt::test_indel_arm_never_crosses_and_champion_rederived_live",
+    "tests/test_exp003_receipt.py::TestExp003Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp004_receipt.py::TestExp004Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp005_receipt.py::TestExp005Receipt::test_frozen_champion_program_executable",
+    "tests/test_exp006_receipt.py::TestExp006Receipt::test_seed_choice_control_live",
+    "tests/test_exp007_receipt.py::TestExp007Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp007_receipt.py::TestExp007Receipt::test_seed_prelude_live",
+    "tests/test_exp008_receipt.py::TestExp008Receipt::test_seed_prelude_live",
+    "tests/test_exp009_receipt.py::TestExp009Receipt::test_seed_genome_birth_is_zero_fitness",
+    "tests/test_exp010_receipt.py::TestExp010Receipt::test_frozen_champion_executable_and_zero_balance",
+    "tests/test_exp012_receipt.py::TestExp012Receipt::test_pi_expansion_honesty_on_best_new_root_champion"
+  ],
+  "baseline_failures_present": [
+    "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
+  ],
+  "rc": 1,
+  "battery_ms": 1818,
+  "failed_n": 13,
+  "passed_n": 131,
+  "error_n": 0,
+  "canary": null
+}

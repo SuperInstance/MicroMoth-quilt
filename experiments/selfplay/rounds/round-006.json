@@ -1,0 +1,45 @@
+{
+  "round": 6,
+  "shape": "opcode_swap",
+  "mutation_desc": "single-qubit dispatch: x gate performs superpose, h gate performs bit-flip",
+  "roots": [
+    7,
+    11,
+    23
+  ],
+  "ts": "2026-09-29T00:11:56Z",
+  "caught": true,
+  "verdict": "caught",
+  "new_failures": [
+    "tests/test_cell_mapping.py::TestDeterminismHole::test_unseeded_sampling_is_not_reproducible",
+    "tests/test_cell_mapping.py::TestTickMonotonicityNuance::test_state_returns_but_clock_must_not",
+    "tests/test_cell_mapping.py::TestViewPurity::test_probabilities_dict_is_pure",
+    "tests/test_exp002_receipt.py::TestExp002Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp003_receipt.py::TestExp003Receipt::test_indel_arm_never_crosses_and_champion_rederived_live",
+    "tests/test_exp003_receipt.py::TestExp003Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp004_receipt.py::TestExp004Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp005_receipt.py::TestExp005Receipt::test_frozen_champion_program_executable",
+    "tests/test_exp005_receipt.py::TestExp005Receipt::test_prelude_witness_gates_entanglement_live",
+    "tests/test_exp006_receipt.py::TestExp006Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp006_receipt.py::TestExp006Receipt::test_seed_choice_control_live",
+    "tests/test_exp007_receipt.py::TestExp007Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp007_receipt.py::TestExp007Receipt::test_seed_prelude_live",
+    "tests/test_exp008_receipt.py::TestExp008Receipt::test_lanes_freeze_cross_and_trap_escape",
+    "tests/test_exp008_receipt.py::TestExp008Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp008_receipt.py::TestExp008Receipt::test_seed_prelude_live",
+    "tests/test_exp009_receipt.py::TestExp009Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp009_receipt.py::TestExp009Receipt::test_seed_genome_birth_is_zero_fitness",
+    "tests/test_exp010_receipt.py::TestExp010Receipt::test_frozen_champion_executable_and_zero_balance",
+    "tests/test_exp012_receipt.py::TestExp012Receipt::test_pi_expansion_honesty_on_best_new_root_champion",
+    "tests/test_exp013_receipt.py::TestExp013Receipt::test_pi_expansion_root42_champion_reproduces_sealed_counts"
+  ],
+  "baseline_failures_present": [
+    "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
+  ],
+  "rc": 1,
+  "battery_ms": 3502,
+  "failed_n": 22,
+  "passed_n": 122,
+  "error_n": 0,
+  "canary": null
+}

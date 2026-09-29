@@ -1,0 +1,160 @@
+{
+  "schema": "micromoth-quilt/exp-receipt@v1",
+  "receipt_kind": "results",
+  "experiment": "exp016-hybrid",
+  "status": "SEALED",
+  "title": "skeleton-seed + MAP-Elites archive hybrid on the exp014 fresh-root panel \u2014 ARCHIVE NEUTRAL (6/8, top of the pre-registered neutral band): the archive converts the champion-local hard class (29/31/37) but loses the easy class (17/19); SKELETON-IS-A-RATE stands",
+  "directive": "2026-09-29: iterate locally on MicroMoth-quilt (qcells lab, workspace/labs/qcells)",
+  "engine": {
+    "name": "micromoth",
+    "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
+    "note": "matches the import-baseline manifest pin on main"
+  },
+  "seeds": {
+    "roots": [
+      3,
+      5,
+      13,
+      17,
+      19,
+      29,
+      31,
+      37
+    ],
+    "shots": 512,
+    "train": 101,
+    "verify": 202
+  },
+  "question": "does the MAP-Elites archive regime (exp015) change the skeleton-seed crossing rate that exp014 pinned at 4/8 under champion-local search on the same 8 fresh roots (3/5/13/17/19/29/31/37)?",
+  "design": "hybrid ONLY: exp006 skeleton birth [h(0),cx(0,1)] + exp015's exact archive regime (A1 BD=verify_balance_bucket x circuit_length 36 cells drives emission, A2 balance x verify-counts entropy passive; fitness=train balance only, verify descriptor-only; uniform occupied-cell parents, one mutate_classed move); NO transplant; roots = exp014's exact fresh panel 3/5/13/17/19/29/31/37; 12 gens x pop 16; exact exp005 lane (targets 000/111, balance, n=3, train101/verify202/shots512, budget 6, restrict=('replace','indel'))",
+  "success_threshold_verify_balance": 0.45,
+  "pre_run_pin": ">=7/8 cross = ARCHIVE AMPLIFIES SEEDING (coverage retains discarded signal, rate moves up); 3-6/8 = ARCHIVE NEUTRAL (SKELETON-IS-A-RATE stands, root-disjoint draws read as N/M per ROOT-LOTTERY); <=2/8 = CHAMPION LOCALITY IS THE LAW (archive dilutes the seed signal)",
+  "artifacts": [
+    "exp016.results.json",
+    "exp016.telemetry.control.jsonl",
+    "exp016.telemetry.r13.hybrid.jsonl",
+    "exp016.telemetry.r17.hybrid.jsonl",
+    "exp016.telemetry.r19.hybrid.jsonl",
+    "exp016.telemetry.r29.hybrid.jsonl",
+    "exp016.telemetry.r3.hybrid.jsonl",
+    "exp016.telemetry.r31.hybrid.jsonl",
+    "exp016.telemetry.r37.hybrid.jsonl",
+    "exp016.telemetry.r5.hybrid.jsonl",
+    "exp016_qd_seed_archive.py"
+  ],
+  "integrity": {
+    "exp016.results.json": "b77afd3cac7a8cddbee9c8d68a4168fef6cf1e024b73c066b8e74119d4c3542a",
+    "exp016.telemetry.control.jsonl": "ae0f1bbfc6e57ddeedb2aff9e131f1d4b89fabd10274e6dad301efd346261c8c",
+    "exp016.telemetry.r13.hybrid.jsonl": "bde3e87deb5ee623ebba231487a5bf4ffb4d7724e2e531e37aa2e462cfe9cf98",
+    "exp016.telemetry.r17.hybrid.jsonl": "0ef8abc1efe4765cc1c2550b3fcf259c9beb1857a1039c33183c40088929425d",
+    "exp016.telemetry.r19.hybrid.jsonl": "9e51c982491ecb281c6e2389e06fe60678da775e1c323f7e87db9fe41f505558",
+    "exp016.telemetry.r29.hybrid.jsonl": "053c433ae2314f98d6e46ca4a026c9dd22b07d2b6277e2d586f7925c618fd449",
+    "exp016.telemetry.r3.hybrid.jsonl": "2121199bc310a020ae1c0b1c447f08377844e5e43e29e1431ace1998abacb853",
+    "exp016.telemetry.r31.hybrid.jsonl": "3e70f28e551b76ab6867b06cdfb469e7ef477cae4cb0491bcc96a854f3b5e98e",
+    "exp016.telemetry.r37.hybrid.jsonl": "62cc190b0790e312c4299750c47694bda82ffab9f8e0eac5973dc628b69e7d64",
+    "exp016.telemetry.r5.hybrid.jsonl": "5f1c869299cdcc3dbdf7dcdbcad69eafad6c0d0cfdb92f322aeefafcb00f4bb2",
+    "exp016_qd_seed_archive.py": "0126faa4a095b975da05b28fa6f9e6550c72b272965a9d2d187476626cea3ce8"
+  },
+  "results": {
+    "verdict": "ARCHIVE NEUTRAL: hybrid crosses 6/8 ([3, 5, 13, 29, 31, 37]) vs champion-local 4/8 ([3, 13, 17, 19]); agreement [3, 13], hybrid-only [5, 29, 31, 37], champion-only [17, 19] \u2014 SKELETON-IS-A-RATE stands, the crossing rides the birth seed alone (exp012 ROOT-LOTTERY doctrine: N/M, never mechanism victory)",
+    "guard_exp001_reproduced": true,
+    "hybrid_crosses": [
+      3,
+      5,
+      13,
+      29,
+      31,
+      37
+    ],
+    "hybrid_cross_fraction": "6/8",
+    "root_agreement_with_exp014": {
+      "both_cross": [
+        3,
+        13
+      ],
+      "hybrid_only": [
+        5,
+        29,
+        31,
+        37
+      ],
+      "champion_local_only": [
+        17,
+        19
+      ]
+    },
+    "crossing_table": {
+      "r3.hybrid": {
+        "crossed": true,
+        "first_ge_045_gen": 5,
+        "max_elite_verify": 0.4824,
+        "a1_coverage_gt0": 10,
+        "deadlock": null
+      },
+      "r5.hybrid": {
+        "crossed": true,
+        "first_ge_045_gen": 5,
+        "max_elite_verify": 0.4824,
+        "a1_coverage_gt0": 8,
+        "deadlock": null
+      },
+      "r13.hybrid": {
+        "crossed": true,
+        "first_ge_045_gen": 4,
+        "max_elite_verify": 0.4824,
+        "a1_coverage_gt0": 12,
+        "deadlock": null
+      },
+      "r17.hybrid": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.4355,
+        "a1_coverage_gt0": 9,
+        "deadlock": null
+      },
+      "r19.hybrid": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.2422,
+        "a1_coverage_gt0": 8,
+        "deadlock": null
+      },
+      "r29.hybrid": {
+        "crossed": true,
+        "first_ge_045_gen": 4,
+        "max_elite_verify": 0.4824,
+        "a1_coverage_gt0": 12,
+        "deadlock": null
+      },
+      "r31.hybrid": {
+        "crossed": true,
+        "first_ge_045_gen": 7,
+        "max_elite_verify": 0.4824,
+        "a1_coverage_gt0": 9,
+        "deadlock": null
+      },
+      "r37.hybrid": {
+        "crossed": true,
+        "first_ge_045_gen": 3,
+        "max_elite_verify": 0.4824,
+        "a1_coverage_gt0": 9,
+        "deadlock": null
+      }
+    }
+  },
+  "cross_receipts": {
+    "exp005": "the freeze being tested: unaided single-fitness champion search stays at champion_verify_balance 0.0 on this lane",
+    "exp012": "ROOT-LOTTERY doctrine (merged PR #17): crossing claims carry N/M roots + measured rate, never bare 'crosses' \u2014 the 6/8-vs-4/8 root-disjoint draw is read exactly that way here",
+    "exp013": "partial-plateau class (merged PR #18): r19's 0.2422 hybrid max is that class, named not rounded",
+    "exp014": "the comparator: SKELETON IS A RATE, champion-local 4/8 on this exact panel (receipt commit 793a771, PR #19 Casey-gated at seal time \u2014 comparator data embedded in results.json with provenance, no pin depends on exp014 files being on main)",
+    "exp015": "the archive regime being hybridized (PR #21 Casey-gated at seal time): elitism-artifact partial signal, skeleton 3/3 on roots 7/11/23 \u2014 this experiment extends the regime comparison to the discriminating fresh-root panel"
+  },
+  "honest_limits": [
+    "ARCHIVE NEUTRAL is the pre-registered 3-6/8 band verdict, and 6/8 sits at its TOP edge \u2014 the honest read is 'no evidence the archive moves the crossing rate' combined with the observed asymmetry, not 'proven identical': hybrid crosses 6/8 ({3,5,13,29,31,37}) vs champion-local 4/8 ({3,13,17,19}), agreement only {3,13}. Per exp012 ROOT-LOTTERY doctrine a root-disjoint draw of this size is an N/M rate read, not a mechanism victory.",
+    "ASYMMETRY NAMED, NOT EXPLAINED: the archive converts the champion-local HARD class (29/31/37 all cross, gens 4/7/3) but LOSES the EASY class (17 stops at 0.4355, 19 at 0.2422 \u2014 the exp013 partial plateau). Coverage-driven parents sample partial-plateau cells that pull children off the champion-local route on easy roots. A 'CHAMPION LOCALITY IS THE LAW' reading is available on the easy class alone; the pre-registered band (count over the whole panel) governs the verdict, the asymmetry is reported for the follow-up lane.",
+    "Root 19's 0.2422 and root 17's 0.4355 are NAMED at their measured values, never rounded up to the 0.45 bar.",
+    "results-style receipt (no witness LEDGER; exp001 remains the lane's only LEDGER receipt) \u2014 sealed artifacts are runner + results.json + telemetry jsonl, and the receipt's sha256 table must match every file byte-for-byte or the seal is void. The runner is sealed as the exact bytes executed in the qcells lab (workspace/labs/qcells).",
+    "The exp014 comparator is embedded with provenance (commit 793a771, PR #19 Casey-gated, NOT merged at seal time); if exp014's merged numbers ever disagree, this receipt's comparator pins must be re-audited, not silently trusted.",
+    "12 gens x pop 16 is the exp015 archive budget, not an asymptotic sample: a rate difference smaller than one root-in-8 is below this experiment's resolution."
+  ]
+}

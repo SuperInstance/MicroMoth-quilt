@@ -1,0 +1,24 @@
+{
+  "round": 28,
+  "shape": "noise_mixing_swap",
+  "mutation_desc": "[canary-07 seed=sha256('canary-07')] measurement-error mixing weights inverted on both branches",
+  "roots": [
+    7,
+    11,
+    23
+  ],
+  "ts": "2026-09-29T00:12:41Z",
+  "caught": false,
+  "verdict": "missed",
+  "new_failures": [],
+  "baseline_failures_present": [
+    "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
+  ],
+  "rc": 1,
+  "battery_ms": 2903,
+  "failed_n": 1,
+  "passed_n": 143,
+  "error_n": 0,
+  "canary": "canary-07",
+  "canary_seed": "a32aef422f0f1007"
+}
