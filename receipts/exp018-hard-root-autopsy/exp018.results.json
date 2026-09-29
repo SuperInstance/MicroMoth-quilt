@@ -1,0 +1,388 @@
+{
+  "experiment": "exp018_hard_root_autopsy",
+  "question": "hard roots 29/31/37 resist champion-local skeleton and reach arms (exp014 0/3 frozen) but crossed under the exp016 archive regime (3/3) \u2014 did the winning move class (2q gate touching wire 2, pre-registered from exp016's actual hard-root champions) ever get drawn in the unaided birth cloud, and if so could selection see it? Reach problem vs fitness/witness problem.",
+  "design": "exact exp005 unaided lane (targets 000/111, balance, n=3, train101/verify202/shots512, budget 6, DEFAULT unrestricted mutate, champion-local parenting, held-out promotion), 12 gens x pop 16, hard roots 29/31/37 + control root 13 (easy class, regime-robust) under the identical instrumented harness; instrumented mutate_telem records move class + win2-draw per child with rng-stream equivalence pinned over 800 states; guard: instrumented loop reproduces exp001 curve+champion byte-identically; per-child verify computed post-hoc (reseeds global random, search stream untouched \u2014 guard proves it); win2 signature pre-registered from exp016 champions (r29 swap(0,2)+cx(0,2), r31 swap(0,2)+crx(2,0)+cx(0,1), r37 cx(0,2)); tier A = any 2q gate touching wire 2, tier B = tier A + h present",
+  "win2_signature_source": "experiments/exp016.results.json @ commit fba4ec7 (PR #22 Casey-gated at run time, embedded provenance)",
+  "success_threshold_verify_balance": 0.45,
+  "pre_run_pin": "never-drawn = REACH PROBLEM; drawn-but-never-promoted = WITNESS/FITNESS PROBLEM (exp015 elitism-artifact mechanism at champion-search scale); promoted-but-stalled = SLOPE-TRAP AT SCALE; all reads are difference reads vs control r13 per ROOT-LOTTERY doctrine",
+  "exp014_comparator": "champion-local skeleton hard roots 0/3 frozen",
+  "exp016_comparator": {
+    "29": {
+      "crossed": true,
+      "first_ge_045_gen": 4,
+      "max_elite_genome": [
+        [
+          "swap",
+          0,
+          2
+        ],
+        [
+          "h",
+          0
+        ],
+        [
+          "cx",
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ]
+    },
+    "31": {
+      "crossed": true,
+      "first_ge_045_gen": 7,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "x",
+          0
+        ],
+        [
+          "swap",
+          0,
+          2
+        ],
+        [
+          "crx",
+          1.0,
+          2,
+          0
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ]
+    },
+    "37": {
+      "crossed": true,
+      "first_ge_045_gen": 3,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "cx",
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "exp015_comparator": "archives hold verify>0 elites (max 0.248) champion search discarded every gen",
+  "guard_exp001_reproduced": true,
+  "mutate_equivalence_pin": "800/800 states (4 genomes x 200 seeds): genome equality + rng state equality, 0 failures; pin ALSO surfaced a latent harness quirk: search.mutate's indel-insert branch calls random_gate(rng) with NO n_qubits \u2014 the insert pool is hard-wired 2-wire even in n=3 lanes, so insert can never introduce wire 2; all observed win2 draws flowed through the replace class (witness_rng bug class)",
+  "runs": [
+    {
+      "root_seed": 29,
+      "hard_class": true,
+      "win2_children_total": 14,
+      "win2_drawn_total": 14,
+      "win2_drawn_by_class": {
+        "replace": 14
+      },
+      "first_win2_gen": 1,
+      "win2_ever_promoted": false,
+      "final_champion_win2": false,
+      "final_champion": [
+        [
+          "rx",
+          0.75,
+          2
+        ],
+        [
+          "rx",
+          1.0,
+          1
+        ],
+        [
+          "x",
+          0
+        ]
+      ],
+      "final_champion_verify": 0.0,
+      "max_win2_child_verify": 0.0,
+      "max_win2_child_train": 0.0,
+      "max_cloud_verify": 0.0,
+      "class_histogram": {
+        "replace": 48,
+        "indel-insert": 50,
+        "indel-delete": 27,
+        "jitter": 55
+      },
+      "birth_champion_win2": false,
+      "birth_champion": [
+        [
+          "rx",
+          0.75,
+          2
+        ],
+        [
+          "rx",
+          1.0,
+          1
+        ],
+        [
+          "x",
+          0
+        ]
+      ],
+      "exp016_archive_hybrid": {
+        "crossed": true,
+        "first_ge_045_gen": 4,
+        "max_elite_genome": [
+          [
+            "swap",
+            0,
+            2
+          ],
+          [
+            "h",
+            0
+          ],
+          [
+            "cx",
+            0,
+            2
+          ],
+          [
+            "cx",
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "root_seed": 31,
+      "hard_class": true,
+      "win2_children_total": 157,
+      "win2_drawn_total": 13,
+      "win2_drawn_by_class": {
+        "replace": 13
+      },
+      "first_win2_gen": 0,
+      "win2_ever_promoted": true,
+      "final_champion_win2": true,
+      "final_champion": [
+        [
+          "x",
+          1
+        ],
+        [
+          "x",
+          0
+        ],
+        [
+          "crx",
+          0.5,
+          0,
+          2
+        ]
+      ],
+      "final_champion_verify": 0.0,
+      "max_win2_child_verify": 0.0,
+      "max_win2_child_train": 0.0,
+      "max_cloud_verify": 0.0,
+      "class_histogram": {
+        "replace": 47,
+        "indel-insert": 37,
+        "indel-delete": 39,
+        "jitter": 57
+      },
+      "birth_champion_win2": true,
+      "birth_champion": [
+        [
+          "x",
+          1
+        ],
+        [
+          "x",
+          0
+        ],
+        [
+          "crx",
+          0.5,
+          0,
+          2
+        ]
+      ],
+      "exp016_archive_hybrid": {
+        "crossed": true,
+        "first_ge_045_gen": 7,
+        "max_elite_genome": [
+          [
+            "h",
+            0
+          ],
+          [
+            "x",
+            0
+          ],
+          [
+            "swap",
+            0,
+            2
+          ],
+          [
+            "crx",
+            1.0,
+            2,
+            0
+          ],
+          [
+            "cx",
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "root_seed": 37,
+      "hard_class": true,
+      "win2_children_total": 180,
+      "win2_drawn_total": 17,
+      "win2_drawn_by_class": {
+        "replace": 17
+      },
+      "first_win2_gen": 0,
+      "win2_ever_promoted": true,
+      "final_champion_win2": true,
+      "final_champion": [
+        [
+          "cx",
+          2,
+          0
+        ],
+        [
+          "swap",
+          1,
+          0
+        ],
+        [
+          "swap",
+          2,
+          1
+        ]
+      ],
+      "final_champion_verify": 0.0,
+      "max_win2_child_verify": 0.0,
+      "max_win2_child_train": 0.0,
+      "max_cloud_verify": 0.0,
+      "class_histogram": {
+        "replace": 52,
+        "indel-insert": 55,
+        "indel-delete": 29,
+        "jitter": 44
+      },
+      "birth_champion_win2": true,
+      "birth_champion": [
+        [
+          "cx",
+          2,
+          0
+        ],
+        [
+          "swap",
+          1,
+          0
+        ],
+        [
+          "swap",
+          2,
+          1
+        ]
+      ],
+      "exp016_archive_hybrid": {
+        "crossed": true,
+        "first_ge_045_gen": 3,
+        "max_elite_genome": [
+          [
+            "h",
+            0
+          ],
+          [
+            "cx",
+            0,
+            2
+          ],
+          [
+            "cx",
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "root_seed": 13,
+      "hard_class": false,
+      "win2_children_total": 147,
+      "win2_drawn_total": 14,
+      "win2_drawn_by_class": {
+        "replace": 14
+      },
+      "first_win2_gen": 0,
+      "win2_ever_promoted": true,
+      "final_champion_win2": true,
+      "final_champion": [
+        [
+          "h",
+          0
+        ],
+        [
+          "h",
+          1
+        ],
+        [
+          "cx",
+          0,
+          2
+        ]
+      ],
+      "final_champion_verify": 0.2422,
+      "max_win2_child_verify": 0.2422,
+      "max_win2_child_train": 0.2559,
+      "max_cloud_verify": 0.2422,
+      "class_histogram": {
+        "replace": 51,
+        "indel-insert": 40,
+        "indel-delete": 47,
+        "jitter": 42
+      },
+      "birth_champion_win2": true,
+      "birth_champion": [
+        [
+          "h",
+          2
+        ],
+        [
+          "h",
+          0
+        ],
+        [
+          "cx",
+          0,
+          2
+        ]
+      ],
+      "exp016_archive_hybrid": null
+    }
+  ],
+  "verdict": "FITNESS DESERT AT THE BIRTH CLOUD on [29, 31, 37]: NOT a reach problem \u2014 the winning move class was drawn 13-17x per hard root (all via the ~30% replace class; the pin surfaced that search.mutate's indel-insert pool is hard-wired 2-wire, so insert can NEVER touch wire 2 \u2014 wire-2 reach flows only through replace). But every cloud child on all three hard roots sat at train=0.0 AND verify=0.0 for all 12 gens (0/540 child-sims produced ANY balanced target mass), INCLUDING wire-2-entangled birth champions (r37 opens with cx(2,0)+swap(2,1)+swap(1,0), a structural superset of exp016's r37 winner, and still pays zero at both seeds). The freeze is UPSTREAM of selection: selection has nothing to see, not a visibility failure. exp016's archive-hybrid crossing of 29/31/37 at the SAME seeds therefore unlocked FITNESS ASSEMBLY \u2014 multi-parent archive mixing reached payoff genomes the champion-local stream never assembled (consistent with exp015 ELITISM-ARTIFACT: archive cells held verify>0 elites champion search discarded). Contrast control r13: same draw counts (14, all replace), but its cloud shows signal from gen 0 (train 0.1289 -> 0.2559, verify plateau 0.2422) \u2014 the desert is ROOT-SPECIFIC, not lane-global (ROOT-LOTTERY doctrine). Promotion on r31/r37 (champion became win2) is tie-noise: 0.0 >= 0.0 promotes arbitrarily on a flat landscape; r29 additionally never promoted a win2 child at all"
+}
