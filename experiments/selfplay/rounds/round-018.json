@@ -1,0 +1,24 @@
+{
+  "round": 18,
+  "shape": "phase_sign_flip",
+  "mutation_desc": "[canary-05 seed=sha256('canary-05')] phaseturn drops the minus inside sin(-theta/2) for the y-component",
+  "roots": [
+    7,
+    11,
+    23
+  ],
+  "ts": "2026-09-29T00:12:13Z",
+  "caught": false,
+  "verdict": "missed",
+  "new_failures": [],
+  "baseline_failures_present": [
+    "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
+  ],
+  "rc": 1,
+  "battery_ms": 1440,
+  "failed_n": 1,
+  "passed_n": 143,
+  "error_n": 0,
+  "canary": "canary-05",
+  "canary_seed": "41b0d6249bfe09d3"
+}

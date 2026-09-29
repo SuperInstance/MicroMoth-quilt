@@ -1,0 +1,25 @@
+{
+  "round": 0,
+  "shape": "baseline",
+  "mutation_desc": "pristine kernel copy; delta reference for all rounds",
+  "roots": [
+    7,
+    11,
+    23
+  ],
+  "ts": "2026-09-29T00:11:45Z",
+  "harness_crash": false,
+  "reason": "",
+  "rc": 1,
+  "battery_ms": 1731,
+  "failed_n": 1,
+  "passed_n": 143,
+  "error_n": 0,
+  "failed_nodeids": [
+    "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
+  ],
+  "caught": null,
+  "baseline_failures": [
+    "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
+  ]
+}

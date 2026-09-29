@@ -1,0 +1,26 @@
+{
+  "round": 13,
+  "shape": "theta_rescale",
+  "mutation_desc": "[canary-04 seed=sha256('canary-04')] rx branch passes 2*theta to turn (theta/2 halving defeated)",
+  "roots": [
+    7,
+    11,
+    23
+  ],
+  "ts": "2026-09-29T00:12:06Z",
+  "caught": true,
+  "verdict": "caught",
+  "new_failures": [
+    "tests/test_exp011_receipt.py::TestExp011Receipt::test_crossing_champion_executable_and_pi_expansion"
+  ],
+  "baseline_failures_present": [
+    "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
+  ],
+  "rc": 1,
+  "battery_ms": 1342,
+  "failed_n": 2,
+  "passed_n": 142,
+  "error_n": 0,
+  "canary": "canary-04",
+  "canary_seed": "37eb3dc0137fe1fd"
+}
