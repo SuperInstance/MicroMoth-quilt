@@ -1,0 +1,26 @@
+{
+  "round": 9,
+  "shape": "literal_rewrite",
+  "mutation_desc": "[canary-03 seed=sha256('canary-03')] r2 constant truncated 0.70710678118 -> 0.7071",
+  "roots": [
+    7,
+    11,
+    23
+  ],
+  "ts": "2026-09-29T00:12:00Z",
+  "caught": true,
+  "verdict": "caught",
+  "new_failures": [
+    "tests/test_cell_mapping.py::TestViewPurity::test_probabilities_dict_is_pure"
+  ],
+  "baseline_failures_present": [
+    "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
+  ],
+  "rc": 1,
+  "battery_ms": 1302,
+  "failed_n": 2,
+  "passed_n": 142,
+  "error_n": 0,
+  "canary": "canary-03",
+  "canary_seed": "69e36b7ee15d3e97"
+}
