@@ -1,0 +1,64 @@
+{
+ "schema": "micromoth-quilt/exp-receipt@v1",
+ "receipt_kind": "results",
+ "experiment": "exp013-curriculum",
+ "status": "SEALED",
+ "title": "Curriculum transplant 1/4 \u2014 earned slope at wrong scale is the trap, not the ladder",
+ "directive": "2026-09-28: iterate locally on MicroMoth-quilt (qcells lab, workspace/labs/qcells)",
+ "engine": {
+  "name": "micromoth",
+  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
+  "note": "matches the import-baseline manifest pin on main"
+ },
+ "seeds": {
+  "roots": [
+   7,
+   11,
+   23,
+   42
+  ],
+  "shots": 512,
+  "train": 101,
+  "verify": 202
+ },
+ "artifacts": [
+  "exp013.results.json",
+  "exp013.telemetry.guard.jsonl",
+  "exp013.telemetry.r11.guard.jsonl",
+  "exp013.telemetry.r11.phase1_bell.jsonl",
+  "exp013.telemetry.r11.phase2_curriculum.jsonl",
+  "exp013.telemetry.r11.phase2_unaided.jsonl",
+  "exp013.telemetry.r23.phase1_bell.jsonl",
+  "exp013.telemetry.r23.phase2_curriculum.jsonl",
+  "exp013.telemetry.r23.phase2_unaided.jsonl",
+  "exp013.telemetry.r42.phase1_bell.jsonl",
+  "exp013.telemetry.r42.phase2_curriculum.jsonl",
+  "exp013.telemetry.r42.phase2_unaided.jsonl",
+  "exp013.telemetry.r7.guard.jsonl",
+  "exp013.telemetry.r7.phase1_bell.jsonl",
+  "exp013.telemetry.r7.phase2_curriculum.jsonl",
+  "exp013.telemetry.r7.phase2_unaided.jsonl",
+  "exp013_curriculum_bell_to_ghz.py"
+ ],
+ "integrity": {
+  "exp013.results.json": "03d014ecc01e9d655eba091f776fc0a617fc040db55ae0127aad5fa2392e7a5b",
+  "exp013.telemetry.guard.jsonl": "ae0f1bbfc6e57ddeedb2aff9e131f1d4b89fabd10274e6dad301efd346261c8c",
+  "exp013.telemetry.r11.guard.jsonl": "9db7642c9c47a2bdb87fb86e69dff4512de127a0f297bca96b1d5225ace643a6",
+  "exp013.telemetry.r11.phase1_bell.jsonl": "3799b4d14d6a4a58fa963f5fdf04e18721296784b4ae11fb48d83b3b421d4b9d",
+  "exp013.telemetry.r11.phase2_curriculum.jsonl": "e075d6fd26ba8292a9c7cb1766d0c4753998662fa40d9e8070780b2211d3df8b",
+  "exp013.telemetry.r11.phase2_unaided.jsonl": "f00dd2a360dbaed9fe8bcbc57e4043f4f5e42a6f9b632a248e477f01cbb70c52",
+  "exp013.telemetry.r23.phase1_bell.jsonl": "61ca6f00e86de7f132663820cfb55214b19eb4011627280cc8a78c545c5f2441",
+  "exp013.telemetry.r23.phase2_curriculum.jsonl": "908bccc2ca3ed7c7a67ebf46d0f06e49a6695d467b2b1371fdb98f1f0e9e163a",
+  "exp013.telemetry.r23.phase2_unaided.jsonl": "3c517071c5190db97fe56d9ec36e2d2fa45099bf7cfca022ece4bf6f2ce73318",
+  "exp013.telemetry.r42.phase1_bell.jsonl": "15cc7cf278866b57a877f0ca87a505fe5574e2cf0df5ff603d2679107ecfb121",
+  "exp013.telemetry.r42.phase2_curriculum.jsonl": "8100f23c4230aa490387a57ba5ea77916956a3a1d847994f0e8b7872e2a3bd52",
+  "exp013.telemetry.r42.phase2_unaided.jsonl": "bae9557096c5fb976f7710d4f6ff373d8f8f7bd90aafe6b8b05a5d79febcb8d1",
+  "exp013.telemetry.r7.guard.jsonl": "ae0f1bbfc6e57ddeedb2aff9e131f1d4b89fabd10274e6dad301efd346261c8c",
+  "exp013.telemetry.r7.phase1_bell.jsonl": "e5ab7a8282f5199892e76b857409916812350618323e514f1ab373627d71a1b4",
+  "exp013.telemetry.r7.phase2_curriculum.jsonl": "a1f02101d6776271ca150c6805a1aba9f03fa2e806d9c7a9d9d456ca4e3b0531",
+  "exp013.telemetry.r7.phase2_unaided.jsonl": "75ec5426b2c758bff8351afa477746e22971ba4998d00e81d8ebe44bd5b95ff5",
+  "exp013_curriculum_bell_to_ghz.py": "c3bd0861597af7073773f06404155dd7e2b029cc3ebb8b03be7d4b264c8c5a9d"
+ },
+ "honest_limits": "multi-root at birth per exp012 doctrine; per-root guard bug caught and fixed BEFORE results were read",
+ "note": "results-style receipt: the sealed artifacts are the experiment runner + results.json + telemetry jsonl; re-execute the runner to reproduce. exp001 remains the lane's only witness-LEDGER receipt (13-row PROOF chain)."
+}

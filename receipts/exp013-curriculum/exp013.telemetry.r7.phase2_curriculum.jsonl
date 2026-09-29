@@ -1,0 +1,12 @@
+{"gen": 0, "genome": [["x", 1], ["h", 0], ["cx", 0, 1]], "promoted": true, "train_p": 0.0, "verify_p": 0.0}
+{"gen": 1, "genome": [["x", 1], ["h", 0], ["cx", 0, 1]], "promoted": true, "train_p": 0.0, "verify_p": 0.0}
+{"gen": 2, "genome": [["x", 1], ["h", 0], ["cx", 0, 1]], "promoted": true, "train_p": 0.0, "verify_p": 0.0}
+{"gen": 3, "genome": [["x", 1], ["h", 0], ["cx", 0, 1]], "promoted": true, "train_p": 0.0, "verify_p": 0.0}
+{"gen": 4, "genome": [["x", 1], ["h", 0], ["cx", 0, 1]], "promoted": true, "train_p": 0.0, "verify_p": 0.0}
+{"gen": 5, "genome": [["x", 1], ["h", 0], ["cx", 0, 1]], "promoted": true, "train_p": 0.0, "verify_p": 0.0}
+{"gen": 6, "genome": [["x", 1], ["h", 0], ["cx", 0, 1]], "promoted": true, "train_p": 0.0, "verify_p": 0.0}
+{"gen": 7, "genome": [["rx", 0.5, 2], ["h", 0], ["cx", 0, 1]], "promoted": true, "train_p": 0.2559, "verify_p": 0.2422}
+{"gen": 8, "genome": [["rx", 0.5, 2], ["h", 0], ["cx", 0, 1]], "promoted": true, "train_p": 0.2559, "verify_p": 0.2422}
+{"gen": 9, "genome": [["rx", 0.5, 2], ["h", 0], ["cx", 0, 1]], "promoted": true, "train_p": 0.2559, "verify_p": 0.2422}
+{"gen": 10, "genome": [["rx", 0.5, 2], ["h", 0], ["crx", 0.5, 0, 2], ["cx", 0, 1]], "promoted": true, "train_p": 0.2734, "verify_p": 0.248}
+{"gen": 11, "genome": [["rx", 0.5, 2], ["h", 0], ["crx", 0.5, 0, 2], ["cx", 0, 1]], "promoted": true, "train_p": 0.2734, "verify_p": 0.248}
