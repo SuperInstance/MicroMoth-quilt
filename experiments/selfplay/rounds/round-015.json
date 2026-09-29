@@ -1,0 +1,25 @@
+{
+  "round": 15,
+  "shape": "literal_rewrite",
+  "mutation_desc": "r2 constant truncated 0.70710678118 -> 0.7071",
+  "roots": [
+    7,
+    11,
+    23
+  ],
+  "ts": "2026-09-29T00:12:09Z",
+  "caught": true,
+  "verdict": "caught",
+  "new_failures": [
+    "tests/test_cell_mapping.py::TestViewPurity::test_probabilities_dict_is_pure"
+  ],
+  "baseline_failures_present": [
+    "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
+  ],
+  "rc": 1,
+  "battery_ms": 1357,
+  "failed_n": 2,
+  "passed_n": 142,
+  "error_n": 0,
+  "canary": null
+}
