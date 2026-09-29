@@ -1,0 +1,6796 @@
+{
+  "experiment": "exp015_qd_mapelites",
+  "question": "does MAP-Elites coverage over the exp005 lane reveal occupied cells at held-out balance > 0 that single-fitness champion search never promoted (freeze = elitism artifact), or is coverage empty above 0 (freeze = illumination-invariant engine law)?",
+  "design": "A1 BD=(verify_balance_bucket x circuit_length) 36 cells, A2 BD=(balance_bucket x verify-counts entropy) 30 cells; fitness=train balance only (verify is descriptor-only, selection never sees the held-out seed); emitter=one-move mutate_classed cloud off uniform A1 cell parents; configs (a) unaided birth (b) skeleton birth (c) unaided + least-visited-cell elite transplant every 4 gens; roots 7/11/23; exact exp005 lane (targets 000/111, balance, n=3, train101/verify202/shots512, budget 6, restrict=('replace','indel')); 12 gens x pop16",
+  "success_threshold_verify_balance": 0.45,
+  "pre_run_pin": "occupied verify>0 cells in config (a) on >=1 root = ELITISM-ARTIFACT; >0 cells only in (b)/(c) = signal manufactured by seeding; all 9 runs empty above 0 = FREEZE IS ILLUMINATION-INVARIANT",
+  "guard_exp001_reproduced": true,
+  "runs": [
+    {
+      "root_seed": 7,
+      "config": "unaided",
+      "a1_final_coverage": 14,
+      "a2_final_coverage": 6,
+      "a1_coverage_gt0": 8,
+      "a2_coverage_gt0": 2,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "max_elite_verify": 0.248,
+      "max_elite_genome": [
+        [
+          "h",
+          1
+        ],
+        [
+          "cx",
+          2,
+          0
+        ],
+        [
+          "rx",
+          0.5,
+          2
+        ],
+        [
+          "cx",
+          1,
+          0
+        ],
+        [
+          "crx",
+          0.25,
+          0,
+          2
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "transplant_events": [],
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r7-unaided-4",
+            "lineage": "r7-unaided-39"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-unaided-1",
+            "lineage": "r7-unaided-4"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r7-unaided-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-unaided-1",
+            "lineage": "r7-unaided-6"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "rz",
+              1.0,
+              1
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r7-unaided-6",
+            "lineage": "r7-unaided-28"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "rz",
+              1.0,
+              1
+            ],
+            [
+              "rx",
+              1.0,
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r7-unaided-28",
+            "lineage": "r7-unaided-37"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r7-unaided-19",
+            "lineage": "r7-unaided-165"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r7-unaided-6",
+            "lineage": "r7-unaided-19"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r7-unaided-19",
+            "lineage": "r7-unaided-38"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 6,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              1
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r7-unaided-38",
+            "lineage": "r7-unaided-107"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r7-unaided-68",
+            "lineage": "r7-unaided-192"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-unaided-59",
+            "lineage": "r7-unaided-68"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2734,
+          "verify": 0.248,
+          "train": 0.2734,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-unaided-59",
+            "lineage": "r7-unaided-81"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2734,
+          "verify": 0.248,
+          "train": 0.2734,
+          "len": 6,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-unaided-81",
+            "lineage": "r7-unaided-100"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-unaided-1",
+            "lineage": "r7-unaided-5"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r7-unaided-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "crx",
+              0.75,
+              1,
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-unaided-1",
+            "lineage": "r7-unaided-118"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-unaided-1",
+            "lineage": "r7-unaided-2"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r7-unaided-6",
+            "lineage": "r7-unaided-19"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2734,
+          "verify": 0.248,
+          "train": 0.2734,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-unaided-59",
+            "lineage": "r7-unaided-81"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 7,
+      "config": "skeleton",
+      "a1_final_coverage": 12,
+      "a2_final_coverage": 6,
+      "a1_coverage_gt0": 6,
+      "a2_coverage_gt0": 3,
+      "a1_cells_gt0": [
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "max_elite_verify": 0.4824,
+      "max_elite_genome": [
+        [
+          "cx",
+          0,
+          2
+        ],
+        [
+          "h",
+          0
+        ],
+        [
+          "cx",
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": true,
+      "first_ge_045_gen": 10,
+      "deadlock": null,
+      "transplant_events": [],
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r7-skeleton-1",
+            "lineage": "r7-skeleton-2"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r7-skeleton-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r7-skeleton-1",
+            "lineage": "r7-skeleton-3"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "rz",
+              1.0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-skeleton-3",
+            "lineage": "r7-skeleton-27"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rz",
+              1.0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r7-skeleton-27",
+            "lineage": "r7-skeleton-36"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "x",
+              1
+            ],
+            [
+              "rz",
+              1.0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r7-skeleton-36",
+            "lineage": "r7-skeleton-62"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-skeleton-105",
+            "lineage": "r7-skeleton-157"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              0
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r7-skeleton-157",
+            "lineage": "r7-skeleton-185"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "rx",
+              0.5,
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-skeleton-3",
+            "lineage": "r7-skeleton-107"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r7-skeleton-36",
+            "lineage": "r7-skeleton-105"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-skeleton-105",
+            "lineage": "r7-skeleton-129"
+          }
+        },
+        "[4, 4]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 4,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-skeleton-105",
+            "lineage": "r7-skeleton-168"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r7-skeleton-1",
+            "lineage": "r7-skeleton-2"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r7-skeleton-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r7-skeleton-1",
+            "lineage": "r7-skeleton-8"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-skeleton-105",
+            "lineage": "r7-skeleton-157"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r7-skeleton-36",
+            "lineage": "r7-skeleton-105"
+          }
+        },
+        "[4, 2]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 4,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-skeleton-105",
+            "lineage": "r7-skeleton-168"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 7,
+      "config": "transplant",
+      "a1_final_coverage": 14,
+      "a2_final_coverage": 7,
+      "a1_coverage_gt0": 8,
+      "a2_coverage_gt0": 3,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "max_elite_verify": 0.4355,
+      "max_elite_genome": [
+        [
+          "h",
+          1
+        ],
+        [
+          "cx",
+          2,
+          0
+        ],
+        [
+          "cx",
+          1,
+          2
+        ],
+        [
+          "cx",
+          1,
+          0
+        ],
+        [
+          "crx",
+          0.25,
+          0,
+          2
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "transplant_events": [
+        {
+          "gen": 4,
+          "src_cell": [
+            0,
+            6
+          ],
+          "src_fitness": 0.0,
+          "src_verify": 0.0,
+          "src_lineage": "r7-transplant-37"
+        },
+        {
+          "gen": 8,
+          "src_cell": [
+            2,
+            4
+          ],
+          "src_fitness": 0.2559,
+          "src_verify": 0.2422,
+          "src_lineage": "r7-transplant-69"
+        }
+      ],
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r7-transplant-4",
+            "lineage": "r7-transplant-39"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-transplant-1",
+            "lineage": "r7-transplant-4"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r7-transplant-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-transplant-1",
+            "lineage": "r7-transplant-6"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "rz",
+              1.0,
+              1
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r7-transplant-6",
+            "lineage": "r7-transplant-28"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "rz",
+              1.0,
+              1
+            ],
+            [
+              "rx",
+              1.0,
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r7-transplant-28",
+            "lineage": "r7-transplant-37"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r7-transplant-19",
+            "lineage": "r7-transplant-167"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r7-transplant-6",
+            "lineage": "r7-transplant-19"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r7-transplant-19",
+            "lineage": "r7-transplant-38"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 6,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              1
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r7-transplant-38",
+            "lineage": "r7-transplant-108"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-transplant-59",
+            "lineage": "r7-transplant-69"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2734,
+          "verify": 0.248,
+          "train": 0.2734,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-transplant-59",
+            "lineage": "r7-transplant-82"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2734,
+          "verify": 0.248,
+          "train": 0.2734,
+          "len": 6,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-transplant-82",
+            "lineage": "r7-transplant-101"
+          }
+        },
+        "[4, 5]": {
+          "fitness": 0.4414,
+          "verify": 0.4355,
+          "train": 0.4414,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-transplant-82",
+            "lineage": "r7-transplant-181"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-transplant-1",
+            "lineage": "r7-transplant-5"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r7-transplant-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "crx",
+              0.75,
+              1,
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-transplant-1",
+            "lineage": "r7-transplant-119"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r7-transplant-1",
+            "lineage": "r7-transplant-2"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r7-transplant-6",
+            "lineage": "r7-transplant-19"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2734,
+          "verify": 0.248,
+          "train": 0.2734,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-transplant-59",
+            "lineage": "r7-transplant-82"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.4414,
+          "verify": 0.4355,
+          "train": 0.4414,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "cx",
+              1,
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r7-transplant-82",
+            "lineage": "r7-transplant-181"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 11,
+      "config": "unaided",
+      "a1_final_coverage": 12,
+      "a2_final_coverage": 7,
+      "a1_coverage_gt0": 6,
+      "a2_coverage_gt0": 3,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "max_elite_verify": 0.1309,
+      "max_elite_genome": [
+        [
+          "rx",
+          0.75,
+          2
+        ],
+        [
+          "crx",
+          1.0,
+          2,
+          0
+        ],
+        [
+          "crx",
+          0.5,
+          2,
+          0
+        ],
+        [
+          "rz",
+          0.5,
+          2
+        ],
+        [
+          "cx",
+          2,
+          1
+        ],
+        [
+          "rz",
+          0.25,
+          0
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "transplant_events": [],
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r11-unaided-2",
+            "lineage": "r11-unaided-31"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-unaided-1",
+            "lineage": "r11-unaided-2"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r11-unaided-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-unaided-1",
+            "lineage": "r11-unaided-9"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r11-unaided-9",
+            "lineage": "r11-unaided-20"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r11-unaided-20",
+            "lineage": "r11-unaided-39"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 3,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r11-unaided-32",
+            "lineage": "r11-unaided-35"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r11-unaided-9",
+            "lineage": "r11-unaided-32"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r11-unaided-56",
+            "lineage": "r11-unaided-72"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "crx",
+              1.0,
+              2,
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r11-unaided-72",
+            "lineage": "r11-unaided-97"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.1562,
+          "verify": 0.1309,
+          "train": 0.1562,
+          "len": 4,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "crx",
+              0.75,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r11-unaided-32",
+            "lineage": "r11-unaided-184"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.1562,
+          "verify": 0.1309,
+          "train": 0.1562,
+          "len": 6,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "crx",
+              1.0,
+              2,
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rz",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              6
+            ],
+            "parent_lineage": "r11-unaided-97",
+            "lineage": "r11-unaided-154"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-unaided-1",
+            "lineage": "r11-unaided-3"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r11-unaided-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "x",
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r11-unaided-32",
+            "lineage": "r11-unaided-48"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-unaided-1",
+            "lineage": "r11-unaided-15"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r11-unaided-9",
+            "lineage": "r11-unaided-32"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              0
+            ],
+            [
+              "crx",
+              0.75,
+              2,
+              0
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r11-unaided-72",
+            "lineage": "r11-unaided-147"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.1562,
+          "verify": 0.1309,
+          "train": 0.1562,
+          "len": 6,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "crx",
+              1.0,
+              2,
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rz",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              6
+            ],
+            "parent_lineage": "r11-unaided-97",
+            "lineage": "r11-unaided-154"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 11,
+      "config": "skeleton",
+      "a1_final_coverage": 15,
+      "a2_final_coverage": 6,
+      "a1_coverage_gt0": 9,
+      "a2_coverage_gt0": 3,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "max_elite_verify": 0.4824,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "crx",
+          1.0,
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": true,
+      "first_ge_045_gen": 2,
+      "deadlock": null,
+      "transplant_events": [],
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r11-skeleton-1",
+            "lineage": "r11-skeleton-4"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r11-skeleton-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r11-skeleton-1",
+            "lineage": "r11-skeleton-2"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-skeleton-2",
+            "lineage": "r11-skeleton-24"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r11-skeleton-24",
+            "lineage": "r11-skeleton-40"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r11-skeleton-40",
+            "lineage": "r11-skeleton-116"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.0664,
+          "verify": 0.082,
+          "train": 0.0664,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.25,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r11-skeleton-41",
+            "lineage": "r11-skeleton-61"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "rx",
+              0.5,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r11-skeleton-106",
+            "lineage": "r11-skeleton-123"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.5,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r11-skeleton-21",
+            "lineage": "r11-skeleton-106"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.5,
+              1
+            ],
+            [
+              "crx",
+              0.75,
+              0,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r11-skeleton-106",
+            "lineage": "r11-skeleton-156"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-skeleton-2",
+            "lineage": "r11-skeleton-18"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-skeleton-2",
+            "lineage": "r11-skeleton-21"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r11-skeleton-21",
+            "lineage": "r11-skeleton-48"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              1.0,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r11-skeleton-1",
+            "lineage": "r11-skeleton-43"
+          }
+        },
+        "[4, 4]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 4,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r11-skeleton-21",
+            "lineage": "r11-skeleton-186"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r11-skeleton-1",
+            "lineage": "r11-skeleton-4"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r11-skeleton-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r11-skeleton-1",
+            "lineage": "r11-skeleton-12"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.5,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r11-skeleton-21",
+            "lineage": "r11-skeleton-106"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-skeleton-2",
+            "lineage": "r11-skeleton-18"
+          }
+        },
+        "[4, 2]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              1.0,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r11-skeleton-1",
+            "lineage": "r11-skeleton-43"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 11,
+      "config": "transplant",
+      "a1_final_coverage": 12,
+      "a2_final_coverage": 7,
+      "a1_coverage_gt0": 6,
+      "a2_coverage_gt0": 3,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "max_elite_verify": 0.1309,
+      "max_elite_genome": [
+        [
+          "rx",
+          0.75,
+          2
+        ],
+        [
+          "crx",
+          1.0,
+          2,
+          0
+        ],
+        [
+          "crx",
+          0.5,
+          2,
+          0
+        ],
+        [
+          "rz",
+          0.5,
+          2
+        ],
+        [
+          "cx",
+          2,
+          1
+        ],
+        [
+          "rz",
+          0.25,
+          0
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "transplant_events": [
+        {
+          "gen": 4,
+          "src_cell": [
+            1,
+            6
+          ],
+          "src_fitness": 0.0215,
+          "src_verify": 0.0234,
+          "src_lineage": "r11-transplant-63"
+        },
+        {
+          "gen": 8,
+          "src_cell": [
+            1,
+            3
+          ],
+          "src_fitness": 0.1289,
+          "src_verify": 0.1074,
+          "src_lineage": "r11-transplant-35"
+        }
+      ],
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r11-transplant-2",
+            "lineage": "r11-transplant-31"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-transplant-1",
+            "lineage": "r11-transplant-2"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r11-transplant-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-transplant-1",
+            "lineage": "r11-transplant-9"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r11-transplant-9",
+            "lineage": "r11-transplant-20"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r11-transplant-20",
+            "lineage": "r11-transplant-39"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 3,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r11-transplant-32",
+            "lineage": "r11-transplant-35"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r11-transplant-9",
+            "lineage": "r11-transplant-32"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r11-transplant-56",
+            "lineage": "r11-transplant-73"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "crx",
+              1.0,
+              2,
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r11-transplant-73",
+            "lineage": "r11-transplant-98"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.1562,
+          "verify": 0.1309,
+          "train": 0.1562,
+          "len": 4,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "crx",
+              0.75,
+              1,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r11-transplant-32",
+            "lineage": "r11-transplant-185"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.1562,
+          "verify": 0.1309,
+          "train": 0.1562,
+          "len": 6,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "crx",
+              1.0,
+              2,
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rz",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              6
+            ],
+            "parent_lineage": "r11-transplant-98",
+            "lineage": "r11-transplant-156"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-transplant-1",
+            "lineage": "r11-transplant-3"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r11-transplant-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "x",
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r11-transplant-32",
+            "lineage": "r11-transplant-48"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r11-transplant-1",
+            "lineage": "r11-transplant-15"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r11-transplant-9",
+            "lineage": "r11-transplant-32"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              0
+            ],
+            [
+              "crx",
+              0.75,
+              2,
+              0
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r11-transplant-73",
+            "lineage": "r11-transplant-149"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.1562,
+          "verify": 0.1309,
+          "train": 0.1562,
+          "len": 6,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "crx",
+              1.0,
+              2,
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              2,
+              1
+            ],
+            [
+              "rz",
+              0.25,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              6
+            ],
+            "parent_lineage": "r11-transplant-98",
+            "lineage": "r11-transplant-156"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 23,
+      "config": "unaided",
+      "a1_final_coverage": 8,
+      "a2_final_coverage": 5,
+      "a1_coverage_gt0": 2,
+      "a2_coverage_gt0": 2,
+      "a1_cells_gt0": [
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "max_elite_verify": 0.2422,
+      "max_elite_genome": [
+        [
+          "crx",
+          0.75,
+          1,
+          2
+        ],
+        [
+          "h",
+          1
+        ],
+        [
+          "cx",
+          1,
+          2
+        ],
+        [
+          "rz",
+          0.75,
+          1
+        ],
+        [
+          "swap",
+          1,
+          0
+        ],
+        [
+          "h",
+          1
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "transplant_events": [],
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r23-unaided-5",
+            "lineage": "r23-unaided-41"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-unaided-1",
+            "lineage": "r23-unaided-5"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r23-unaided-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-unaided-1",
+            "lineage": "r23-unaided-3"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r23-unaided-3",
+            "lineage": "r23-unaided-27"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r23-unaided-27",
+            "lineage": "r23-unaided-40"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 6,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              6
+            ],
+            "parent_lineage": "r23-unaided-173",
+            "lineage": "r23-unaided-188"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              6
+            ],
+            "parent_lineage": "r23-unaided-40",
+            "lineage": "r23-unaided-173"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "x",
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-unaided-1",
+            "lineage": "r23-unaided-2"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r23-unaided-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-unaided-1",
+            "lineage": "r23-unaided-9"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 6,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              6
+            ],
+            "parent_lineage": "r23-unaided-173",
+            "lineage": "r23-unaided-188"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              6
+            ],
+            "parent_lineage": "r23-unaided-40",
+            "lineage": "r23-unaided-173"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 23,
+      "config": "skeleton",
+      "a1_final_coverage": 15,
+      "a2_final_coverage": 7,
+      "a1_coverage_gt0": 9,
+      "a2_coverage_gt0": 3,
+      "a1_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "max_elite_verify": 0.4824,
+      "max_elite_genome": [
+        [
+          "h",
+          2
+        ],
+        [
+          "cx",
+          2,
+          0
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": true,
+      "first_ge_045_gen": 8,
+      "deadlock": null,
+      "transplant_events": [],
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r23-skeleton-1",
+            "lineage": "r23-skeleton-5"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r23-skeleton-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r23-skeleton-1",
+            "lineage": "r23-skeleton-3"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-skeleton-3",
+            "lineage": "r23-skeleton-26"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r23-skeleton-26",
+            "lineage": "r23-skeleton-36"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r23-skeleton-36",
+            "lineage": "r23-skeleton-60"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r23-skeleton-56",
+            "lineage": "r23-skeleton-114"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r23-skeleton-61",
+            "lineage": "r23-skeleton-104"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.0664,
+          "verify": 0.0762,
+          "train": 0.0664,
+          "len": 6,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r23-skeleton-36",
+            "lineage": "r23-skeleton-91"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-skeleton-3",
+            "lineage": "r23-skeleton-56"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-skeleton-3",
+            "lineage": "r23-skeleton-61"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "crx",
+              1.0,
+              1,
+              2
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r23-skeleton-61",
+            "lineage": "r23-skeleton-119"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              6
+            ],
+            "parent_lineage": "r23-skeleton-91",
+            "lineage": "r23-skeleton-145"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r23-skeleton-56",
+            "lineage": "r23-skeleton-132"
+          }
+        },
+        "[4, 6]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 6,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "swap",
+              0,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              6
+            ],
+            "parent_lineage": "r23-skeleton-91",
+            "lineage": "r23-skeleton-158"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r23-skeleton-1",
+            "lineage": "r23-skeleton-5"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r23-skeleton-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r23-skeleton-36",
+            "lineage": "r23-skeleton-55"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r23-skeleton-1",
+            "lineage": "r23-skeleton-10"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r23-skeleton-61",
+            "lineage": "r23-skeleton-104"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-skeleton-3",
+            "lineage": "r23-skeleton-56"
+          }
+        },
+        "[4, 2]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              2,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r23-skeleton-56",
+            "lineage": "r23-skeleton-132"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 23,
+      "config": "transplant",
+      "a1_final_coverage": 8,
+      "a2_final_coverage": 5,
+      "a1_coverage_gt0": 2,
+      "a2_coverage_gt0": 2,
+      "a1_cells_gt0": [
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "max_elite_verify": 0.2422,
+      "max_elite_genome": [
+        [
+          "crx",
+          0.75,
+          1,
+          2
+        ],
+        [
+          "h",
+          1
+        ],
+        [
+          "cx",
+          1,
+          2
+        ],
+        [
+          "rz",
+          0.75,
+          1
+        ],
+        [
+          "swap",
+          1,
+          0
+        ],
+        [
+          "h",
+          1
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "transplant_events": [
+        {
+          "gen": 4,
+          "src_cell": [
+            0,
+            1
+          ],
+          "src_fitness": 0.0,
+          "src_verify": 0.0,
+          "src_lineage": "r23-transplant-41"
+        },
+        {
+          "gen": 8,
+          "src_cell": [
+            0,
+            1
+          ],
+          "src_fitness": 0.0,
+          "src_verify": 0.0,
+          "src_lineage": "r23-transplant-41"
+        }
+      ],
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r23-transplant-5",
+            "lineage": "r23-transplant-41"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-transplant-1",
+            "lineage": "r23-transplant-5"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r23-transplant-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-transplant-1",
+            "lineage": "r23-transplant-3"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r23-transplant-3",
+            "lineage": "r23-transplant-27"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r23-transplant-27",
+            "lineage": "r23-transplant-40"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 6,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              6
+            ],
+            "parent_lineage": "r23-transplant-175",
+            "lineage": "r23-transplant-191"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              6
+            ],
+            "parent_lineage": "r23-transplant-40",
+            "lineage": "r23-transplant-175"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "x",
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-transplant-1",
+            "lineage": "r23-transplant-2"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "born",
+            "parent": null,
+            "lineage": "r23-transplant-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r23-transplant-1",
+            "lineage": "r23-transplant-9"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 6,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              2,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              6
+            ],
+            "parent_lineage": "r23-transplant-175",
+            "lineage": "r23-transplant-191"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "crx",
+              0.75,
+              1,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "rz",
+              0.75,
+              1
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              6
+            ],
+            "parent_lineage": "r23-transplant-40",
+            "lineage": "r23-transplant-175"
+          }
+        }
+      }
+    }
+  ],
+  "verdict": "ELITISM-ARTIFACT (partial): unaided archive holds verify>0 cells champion search discarded",
+  "unaided_gt0_runs": [
+    7,
+    11,
+    23
+  ],
+  "crossing_table": {
+    "r7.unaided": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.248,
+      "a1_coverage_gt0": 8,
+      "deadlock": null
+    },
+    "r7.skeleton": {
+      "crossed": true,
+      "first_ge_045_gen": 10,
+      "max_elite_verify": 0.4824,
+      "a1_coverage_gt0": 6,
+      "deadlock": null
+    },
+    "r7.transplant": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.4355,
+      "a1_coverage_gt0": 8,
+      "deadlock": null
+    },
+    "r11.unaided": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.1309,
+      "a1_coverage_gt0": 6,
+      "deadlock": null
+    },
+    "r11.skeleton": {
+      "crossed": true,
+      "first_ge_045_gen": 2,
+      "max_elite_verify": 0.4824,
+      "a1_coverage_gt0": 9,
+      "deadlock": null
+    },
+    "r11.transplant": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.1309,
+      "a1_coverage_gt0": 6,
+      "deadlock": null
+    },
+    "r23.unaided": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.2422,
+      "a1_coverage_gt0": 2,
+      "deadlock": null
+    },
+    "r23.skeleton": {
+      "crossed": true,
+      "first_ge_045_gen": 8,
+      "max_elite_verify": 0.4824,
+      "a1_coverage_gt0": 9,
+      "deadlock": null
+    },
+    "r23.transplant": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.2422,
+      "a1_coverage_gt0": 2,
+      "deadlock": null
+    }
+  }
+}

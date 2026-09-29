@@ -1,0 +1,31 @@
+{
+  "round": 60,
+  "shape": "return_value_perturb",
+  "mutation_desc": "probs drops the imaginary-amplitude contribution (e[0]**2 only)",
+  "roots": [
+    7,
+    11,
+    23
+  ],
+  "ts": "2026-09-29T00:13:40Z",
+  "caught": true,
+  "verdict": "caught",
+  "new_failures": [
+    "tests/test_cell_mapping.py::TestExecutableArity::test_simulator_dispatches_exactly_the_native_op_set",
+    "tests/test_exp006_receipt.py::TestExp006Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp008_receipt.py::TestExp008Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp009_receipt.py::TestExp009Receipt::test_sealed_champion_program_executable",
+    "tests/test_exp011_receipt.py::TestExp011Receipt::test_crossing_champion_executable_and_pi_expansion",
+    "tests/test_exp012_receipt.py::TestExp012Receipt::test_pi_expansion_honesty_on_best_new_root_champion",
+    "tests/test_exp013_receipt.py::TestExp013Receipt::test_pi_expansion_root42_champion_reproduces_sealed_counts"
+  ],
+  "baseline_failures_present": [
+    "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
+  ],
+  "rc": 1,
+  "battery_ms": 1306,
+  "failed_n": 8,
+  "passed_n": 136,
+  "error_n": 0,
+  "canary": null
+}

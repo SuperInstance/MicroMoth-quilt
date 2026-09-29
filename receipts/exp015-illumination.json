@@ -1,0 +1,235 @@
+{
+  "schema": "micromoth-quilt/exp-receipt@v1",
+  "receipt_kind": "results",
+  "experiment": "exp015-illumination",
+  "status": "SEALED",
+  "title": "MAP-Elites illumination of the freeze \u2014 ELITISM-ARTIFACT (partial): illumination lifts the unaided ceiling 0 -> 0.248, seeding lifts 0.248 -> 0.4824; the 0.45 crossing stays selection-regime-invariant",
+  "directive": "2026-09-29: iterate locally on MicroMoth-quilt (qcells lab, workspace/labs/qcells)",
+  "engine": {
+    "name": "micromoth",
+    "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
+    "note": "matches the import-baseline manifest pin on main"
+  },
+  "seeds": {
+    "roots": [
+      7,
+      11,
+      23
+    ],
+    "shots": 512,
+    "train": 101,
+    "verify": 202
+  },
+  "question": "does MAP-Elites coverage over the exp005 lane reveal occupied cells at held-out balance > 0 that single-fitness champion search never promoted (freeze = elitism artifact), or is coverage empty above 0 (freeze = illumination-invariant engine law)?",
+  "design": "A1 BD=(verify_balance_bucket x circuit_length) 36 cells, A2 BD=(balance_bucket x verify-counts entropy) 30 cells; fitness=train balance only (verify is descriptor-only, selection never sees the held-out seed); emitter=one-move mutate_classed cloud off uniform A1 cell parents; configs (a) unaided birth (b) skeleton birth (c) unaided + least-visited-cell elite transplant every 4 gens; roots 7/11/23; exact exp005 lane (targets 000/111, balance, n=3, train101/verify202/shots512, budget 6, restrict=('replace','indel')); 12 gens x pop16",
+  "success_threshold_verify_balance": 0.45,
+  "pre_run_pin": "occupied verify>0 cells in config (a) on >=1 root = ELITISM-ARTIFACT; >0 cells only in (b)/(c) = signal manufactured by seeding; all 9 runs empty above 0 = FREEZE IS ILLUMINATION-INVARIANT",
+  "artifacts": [
+    "exp015.results.json",
+    "exp015.telemetry.control.jsonl",
+    "exp015.telemetry.r11.skeleton.jsonl",
+    "exp015.telemetry.r11.transplant.jsonl",
+    "exp015.telemetry.r11.unaided.jsonl",
+    "exp015.telemetry.r23.skeleton.jsonl",
+    "exp015.telemetry.r23.transplant.jsonl",
+    "exp015.telemetry.r23.unaided.jsonl",
+    "exp015.telemetry.r7.skeleton.jsonl",
+    "exp015.telemetry.r7.transplant.jsonl",
+    "exp015.telemetry.r7.unaided.jsonl",
+    "exp015_qd_mapelites.py"
+  ],
+  "integrity": {
+    "exp015.results.json": "7ee7c6aafdd5be093882cd45f0b382a744bd7ae4e4d2feb80be8c38e6a3e79ad",
+    "exp015.telemetry.control.jsonl": "ae0f1bbfc6e57ddeedb2aff9e131f1d4b89fabd10274e6dad301efd346261c8c",
+    "exp015.telemetry.r11.skeleton.jsonl": "dc7ab1cac171ee8d3bd3f41ee5ef8fc0e8dcc57b183c8c7ee6fb58b94bbe3548",
+    "exp015.telemetry.r11.transplant.jsonl": "09705a5662b7aba25217875251cac1aa0bca6f1452c7e4c78eeacb1fd27ab3a2",
+    "exp015.telemetry.r11.unaided.jsonl": "2b8b07c9afc813c38ff3d6563c7bcf8060dfa2f343b1d809b65b5fffadd7c80f",
+    "exp015.telemetry.r23.skeleton.jsonl": "d4ccc22ae0b750a7ef4b5118f0b36c322c1dfdbc2fed07f2f9096932db1ecb0c",
+    "exp015.telemetry.r23.transplant.jsonl": "77ef32229e38102f5359dd8cab16b54e7b02dc2f41f7b62577969a0c2b6aa1a2",
+    "exp015.telemetry.r23.unaided.jsonl": "02c1fca0e01b4ff46c49b823f38375b3c4a765cff08b144c0d0f8ff79354876c",
+    "exp015.telemetry.r7.skeleton.jsonl": "b569928e82b5154469ef2771dc9f00a4a95e83edb51b05bbec7e6a2f58344d18",
+    "exp015.telemetry.r7.transplant.jsonl": "33632a655c9d8b308b0b82d6780ace4366c9d515aad7286983c35b50fc06a85b",
+    "exp015.telemetry.r7.unaided.jsonl": "1a83ab8caae9ec58da617d6b3b857be6714dbd188ecfef0f9999cbf8bbded2c4",
+    "exp015_qd_mapelites.py": "39fc1d46953b6b82411624174f1ee2e4c5e1936d81df94c8f670e5414a5656a9"
+  },
+  "results": {
+    "verdict": "ELITISM-ARTIFACT (partial): unaided archive holds verify>0 cells champion search discarded",
+    "guard_exp001_reproduced": true,
+    "unaided_gt0_runs": [
+      7,
+      11,
+      23
+    ],
+    "crossing_table": {
+      "r7.unaided": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.248,
+        "a1_coverage_gt0": 8,
+        "deadlock": null
+      },
+      "r7.skeleton": {
+        "crossed": true,
+        "first_ge_045_gen": 10,
+        "max_elite_verify": 0.4824,
+        "a1_coverage_gt0": 6,
+        "deadlock": null
+      },
+      "r7.transplant": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.4355,
+        "a1_coverage_gt0": 8,
+        "deadlock": null
+      },
+      "r11.unaided": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.1309,
+        "a1_coverage_gt0": 6,
+        "deadlock": null
+      },
+      "r11.skeleton": {
+        "crossed": true,
+        "first_ge_045_gen": 2,
+        "max_elite_verify": 0.4824,
+        "a1_coverage_gt0": 9,
+        "deadlock": null
+      },
+      "r11.transplant": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.1309,
+        "a1_coverage_gt0": 6,
+        "deadlock": null
+      },
+      "r23.unaided": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.2422,
+        "a1_coverage_gt0": 2,
+        "deadlock": null
+      },
+      "r23.skeleton": {
+        "crossed": true,
+        "first_ge_045_gen": 8,
+        "max_elite_verify": 0.4824,
+        "a1_coverage_gt0": 9,
+        "deadlock": null
+      },
+      "r23.transplant": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.2422,
+        "a1_coverage_gt0": 2,
+        "deadlock": null
+      }
+    },
+    "per_run": [
+      {
+        "root_seed": 7,
+        "config": "unaided",
+        "a1_final_coverage": 14,
+        "a1_coverage_gt0": 8,
+        "a2_coverage_gt0": 2,
+        "max_elite_verify": 0.248,
+        "crossed": false,
+        "first_ge_045_gen": null
+      },
+      {
+        "root_seed": 7,
+        "config": "skeleton",
+        "a1_final_coverage": 12,
+        "a1_coverage_gt0": 6,
+        "a2_coverage_gt0": 3,
+        "max_elite_verify": 0.4824,
+        "crossed": true,
+        "first_ge_045_gen": 10
+      },
+      {
+        "root_seed": 7,
+        "config": "transplant",
+        "a1_final_coverage": 14,
+        "a1_coverage_gt0": 8,
+        "a2_coverage_gt0": 3,
+        "max_elite_verify": 0.4355,
+        "crossed": false,
+        "first_ge_045_gen": null
+      },
+      {
+        "root_seed": 11,
+        "config": "unaided",
+        "a1_final_coverage": 12,
+        "a1_coverage_gt0": 6,
+        "a2_coverage_gt0": 3,
+        "max_elite_verify": 0.1309,
+        "crossed": false,
+        "first_ge_045_gen": null
+      },
+      {
+        "root_seed": 11,
+        "config": "skeleton",
+        "a1_final_coverage": 15,
+        "a1_coverage_gt0": 9,
+        "a2_coverage_gt0": 3,
+        "max_elite_verify": 0.4824,
+        "crossed": true,
+        "first_ge_045_gen": 2
+      },
+      {
+        "root_seed": 11,
+        "config": "transplant",
+        "a1_final_coverage": 12,
+        "a1_coverage_gt0": 6,
+        "a2_coverage_gt0": 3,
+        "max_elite_verify": 0.1309,
+        "crossed": false,
+        "first_ge_045_gen": null
+      },
+      {
+        "root_seed": 23,
+        "config": "unaided",
+        "a1_final_coverage": 8,
+        "a1_coverage_gt0": 2,
+        "a2_coverage_gt0": 2,
+        "max_elite_verify": 0.2422,
+        "crossed": false,
+        "first_ge_045_gen": null
+      },
+      {
+        "root_seed": 23,
+        "config": "skeleton",
+        "a1_final_coverage": 15,
+        "a1_coverage_gt0": 9,
+        "a2_coverage_gt0": 3,
+        "max_elite_verify": 0.4824,
+        "crossed": true,
+        "first_ge_045_gen": 8
+      },
+      {
+        "root_seed": 23,
+        "config": "transplant",
+        "a1_final_coverage": 8,
+        "a1_coverage_gt0": 2,
+        "a2_coverage_gt0": 2,
+        "max_elite_verify": 0.2422,
+        "crossed": false,
+        "first_ge_045_gen": null
+      }
+    ]
+  },
+  "cross_receipts": {
+    "exp005": "the freeze being illuminated: unaided single-fitness champion search stays at champion_verify_balance 0.0 on this lane",
+    "exp012": "ROOT-LOTTERY doctrine (merged PR #17): any crossing claim needs 2+ roots agreeing \u2014 applied to the skeleton arm (3/3 roots) and against the transplant arm (0/3)",
+    "exp013": "trap-at-wrong-scale doctrine (merged PR #18): the ~0.2422/0.248 partial plateau is the Finding-4 class, not progress toward the bar",
+    "exp014": "SKELETON IS A RATE (PR #19, Casey-gated at seal time): skeleton crossing replicated here 3/3 at the same 0.4824 balance"
+  },
+  "honest_limits": [
+    "ELITISM-ARTIFACT is PARTIAL, not a freeze refutation: unaided MAP-Elites archives hold verify>0 elites (max 0.248046875, root 7) that single-fitness champion search discarded every generation \u2014 the zero-signal claim fails. But no config on any root crosses the 0.45 bar without skeleton birth: the CROSSING claim is selection-regime-invariant.",
+    "Illumination moves the unaided ceiling 0 -> 0.248 (Finding-4 partial-plateau class); seeding moves it 0.248 -> 0.482421875. Selection-regime-invariance holds for the crossing claim, fails for the zero-signal claim.",
+    "Archive-elite transplant (config c, least-visited-cell injection every 4 gens) is NOT a third crossing class: 0/3 roots crossed; r7 reached 0.4355 \u2014 below the 0.45 bar, named rather than rounded.",
+    "Descriptor-honesty caveat: verify balance is a DESCRIPTOR in both archives (selection never sees the held-out seed 202); elites with verify>0 were promoted on train fitness alone, so their verify values are not selection bias \u2014 but they are also single-seed (verify 202) measurements, not replicated per-root in this design.",
+    "Results-style receipt (no witness LEDGER; exp001 remains the lane's only LEDGER receipt): sealed artifacts are the runner + results.json + telemetry jsonl, sha256-pinned.",
+    "exp014's receipt (PR #19) was still Casey-gated at seal time; its verdict is named in cross_receipts but no pin in tests/test_exp015_receipt.py depends on exp014 files being on main."
+  ]
+}
