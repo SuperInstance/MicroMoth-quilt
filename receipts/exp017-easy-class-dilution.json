@@ -1,0 +1,141 @@
+{
+  "schema": "micromoth-quilt/exp-receipt@v1",
+  "receipt_kind": "results",
+  "experiment": "exp017-easy-class-dilution",
+  "status": "SEALED",
+  "title": "easy-class dilution + champion-rescue on roots 13/17/19 \u2014 EASY CLASS DECOMPOSES + RESCUE IS NOT A RESCUE: uniform archive arm byte-reproduces exp016 (13 crosses gen 4, 17 peaks 0.4355, 19 plateaus 0.2422); champion-rescue (50% fittest-elite parents) fails everywhere including robust root 13 (max 0.4355) \u2014 archive dilution REFUTED as the 17/19 explanation, champion locality is not bolt-on recoverable",
+  "directive": "2026-09-29: iterate locally on MicroMoth-quilt (qcells lab, workspace/labs/qcells)",
+  "engine": {
+    "name": "micromoth",
+    "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
+    "note": "matches the import-baseline manifest pin on main"
+  },
+  "seeds": {
+    "roots": [
+      13,
+      17,
+      19
+    ],
+    "shots": 512,
+    "train": 101,
+    "verify": 202
+  },
+  "question": "is the exp014/exp016 disagreement on easy-class roots 17/19 (champion-local search crossed them, the uniform archive hybrid did not) archive DILUTION of the seed signal, or a root-lottery draw?",
+  "design": "exact exp005 lane (targets 000/111, balance, n=3, train101/verify202/shots512, budget 6, restrict=('replace','indel')); exp006 skeleton birth [h(0),cx(0,1)]; exp015/016 archive regime (A1 verify_balance_bucket x length drives emission, A2 passive; fitness=train only, verify descriptor-only); TWO arms x roots 13/17/19: uniform (exp016 verbatim \u2014 deterministic replay per root, same rng stream; new draws come only from the rescue arm) + rescue (every 2nd emission parents from the single fittest A1 elite); lineage telemetry tracks birth-skeleton descendant survival per gen; 12 gens x pop 16",
+  "success_threshold_verify_balance": 0.45,
+  "pre_run_pin": "rescue crosses 17/19 below-bar-under-uniform = DILUTION VERIFIED (champion locality load-bearing); uniform replicates a new cross = LOTTERY DRAW (ARCHIVE NEUTRAL reinforced); both arms fail 17/19 w/ r13 control crossing = EASY CLASS DECOMPOSES (13 regime-robust, 17/19 champion-local-only rates)",
+  "artifacts": [
+    "exp017.results.json",
+    "exp017.telemetry.control.jsonl",
+    "exp017.telemetry.r13.rescue.jsonl",
+    "exp017.telemetry.r13.uniform.jsonl",
+    "exp017.telemetry.r17.rescue.jsonl",
+    "exp017.telemetry.r17.uniform.jsonl",
+    "exp017.telemetry.r19.rescue.jsonl",
+    "exp017.telemetry.r19.uniform.jsonl",
+    "exp017_easy_class_dilution.py"
+  ],
+  "integrity": {
+    "exp017.results.json": "35bf4d76ed374f76030b9fc8bc58f604af32f2121252f1207d4c5c484105eadb",
+    "exp017.telemetry.control.jsonl": "ae0f1bbfc6e57ddeedb2aff9e131f1d4b89fabd10274e6dad301efd346261c8c",
+    "exp017.telemetry.r13.rescue.jsonl": "1a757e92e5bc625c24fc33ed6c16923649624164de73c2708e26ba4c37967a3c",
+    "exp017.telemetry.r13.uniform.jsonl": "b4bc462979dd95d48e95fbc4410689e3e226982c60968a4d113c701d9640f344",
+    "exp017.telemetry.r17.rescue.jsonl": "6f0c34203f63770129814f26bd3b3263069f760511b138cf3fb5faf9e7fed0ff",
+    "exp017.telemetry.r17.uniform.jsonl": "024b67b5023f9c62629a9abf3b81b9fe879fc537ff2be031c1061230901be1bc",
+    "exp017.telemetry.r19.rescue.jsonl": "9afa1aedf03b2390fd9c43a2384e6d227712e3a943ab11f0a1498f67600c14d5",
+    "exp017.telemetry.r19.uniform.jsonl": "7f63643868cbc6ba28583985688f45e72bd52e53839e39ef78a6c9505a34ea35",
+    "exp017_easy_class_dilution.py": "118aaa66a8f203d19929c72edf0129d009a631f4ddf4034043f964f9505888ce"
+  },
+  "results": {
+    "verdict": "EASY CLASS DECOMPOSES + RESCUE IS NOT A RESCUE: the uniform arm is a deterministic replay of exp016 (same rng stream per root \u2014 13 crosses gen 4, 17 peaks 0.4355, 19 plateaus 0.2422, all byte-identical; the new signal is lineage telemetry, not new draws), and champion-rescue fails EVERYWHERE including the robust root 13 (max 0.4355) \u2014 bolting fittest-elite parenting onto the archive regime is actively harmful, so archive dilution is REFUTED as the 17/19 explanation and 'rescue' is not a mechanism. 13 is uniform-archive-robust; 17/19 remain champion-local-SEARCH-only crossings at measured rates (N/M doctrine, never mechanism victory)",
+    "guard_exp001_reproduced": true,
+    "crossing_table": {
+      "r13.uniform": {
+        "crossed": true,
+        "first_ge_045_gen": 4,
+        "max_elite_verify": 0.4824,
+        "skel_lineages_alive_final": 18,
+        "skel_final_max_verify": 0.4824,
+        "deadlock": null
+      },
+      "r17.uniform": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.4355,
+        "skel_lineages_alive_final": 15,
+        "skel_final_max_verify": 0.4355,
+        "deadlock": null
+      },
+      "r19.uniform": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.2422,
+        "skel_lineages_alive_final": 14,
+        "skel_final_max_verify": 0.2422,
+        "deadlock": null
+      },
+      "r13.rescue": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.4355,
+        "skel_lineages_alive_final": 10,
+        "skel_final_max_verify": 0.4355,
+        "deadlock": null
+      },
+      "r17.rescue": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.2422,
+        "skel_lineages_alive_final": 14,
+        "skel_final_max_verify": 0.2422,
+        "deadlock": null
+      },
+      "r19.rescue": {
+        "crossed": false,
+        "first_ge_045_gen": null,
+        "max_elite_verify": 0.2422,
+        "skel_lineages_alive_final": 13,
+        "skel_final_max_verify": 0.2422,
+        "deadlock": null
+      }
+    },
+    "exp016_comparator": {
+      "source": "exp016-qcells-hybrid results + sealed receipt commit fba4ec7 (PR #22 Casey-gated, not merged at seal time)",
+      "uniform_hybrid": {
+        "13": {
+          "crossed": true
+        },
+        "17": {
+          "crossed": false,
+          "note": "max 0.4355 below bar"
+        },
+        "19": {
+          "crossed": false,
+          "note": "0.2422 partial plateau"
+        }
+      },
+      "exp014_champion_local_crosses": [
+        3,
+        13,
+        17,
+        19
+      ]
+    }
+  },
+  "cross_receipts": {
+    "exp005": "the freeze under all of this: unaided single-fitness champion search stays at champion_verify_balance 0.0 on this lane",
+    "exp012": "ROOT-LOTTERY doctrine (merged PR #17): crossing claims carry N/M roots + measured rate, never bare 'crosses' \u2014 the 17/19 champion-local-only reading is an N/M rate read",
+    "exp013": "partial-plateau class (merged PR #18): r19's 0.2422 max under BOTH arms here is that class, named not rounded",
+    "exp014": "the champion-local comparator: SKELETON IS A RATE, 4/8 on the fresh panel incl. 17/19 (receipt commit 793a771, PR #19 Casey-gated at seal time \u2014 comparator data embedded in results.json with provenance)",
+    "exp016": "the uniform-hybrid comparator: ARCHIVE NEUTRAL 6/8 with agreement only {3,13} (receipt commit fba4ec7, PR #22 Casey-gated at seal time \u2014 this experiment's uniform arm byte-reproduces its 13/17/19 rows; embedded constants, not files-on-main)"
+  },
+  "honest_limits": [
+    "The uniform arm is a DETERMINISTIC REPLAY of exp016, not a fresh sample: same lane, same archive regime, same rng stream per root (random.Random(root)) \u2014 r13 crosses at gen 4, r17 peaks at exactly 0.4355, r19 plateaus at exactly 0.2422, byte-identical to exp016. The replication confirms harness determinism; it adds NO new independent draws on that arm. The new evidence is (a) lineage telemetry and (b) the rescue arm's different rng stream (random.Random(root+1000)).",
+    "RESCUE IS NOT A RESCUE: bolting 50% fittest-elite parenting onto the archive regime LOWERS performance everywhere \u2014 the robust root 13, which crosses under the uniform archive in both exp016 and this replay, STOPS crossing under rescue (max 0.4355, below bar). Champion-local pressure inside a coverage-driven archive is actively harmful, not restorative. Archive dilution is REFUTED as the explanation for 17/19; 'just add champion pressure' is not a mechanism.",
+    "Root 13 is uniform-archive-robust (crosses at gen 4 twice, deterministic); roots 17/19 remain champion-local-SEARCH-only crossings at measured rates under every archive-regime arm tried (uniform, hybrid, rescue, transplant). Per exp012 ROOT-LOTTERY this is an N/M rate read per root, never a mechanism victory \u2014 the easy class itself decomposes (13 regime-robust; 17/19 champion-local-search-specific).",
+    "Roots 17's 0.4355 and 19's 0.2422 are NAMED at their measured values under both arms, never rounded up to the 0.45 bar.",
+    "results-style receipt (no witness LEDGER; exp001 remains the lane's only LEDGER receipt) \u2014 sealed artifacts are runner + results.json + telemetry jsonl, and the receipt's sha256 table must match every file byte-for-byte or the seal is void. The runner is sealed as the exact bytes executed in the qcells lab (workspace/labs/qcells).",
+    "The exp016 comparator is embedded with provenance (commit fba4ec7, PR #22 Casey-gated, NOT merged at seal time); if exp016's merged numbers ever disagree, this receipt's comparator pins must be re-audited, not silently trusted.",
+    "12 gens x pop 16 is the established archive budget, not an asymptotic sample; the rescue arm is ONE draw per root \u2014 a rescue-success rate on 17/19 is below this experiment's resolution, and the verdict does not claim one."
+  ]
+}

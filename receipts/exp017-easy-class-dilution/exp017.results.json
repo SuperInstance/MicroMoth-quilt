@@ -1,0 +1,277 @@
+{
+  "experiment": "exp017_easy_class_dilution",
+  "question": "is the exp014/exp016 disagreement on easy-class roots 17/19 (champion-local crossed, uniform archive hybrid did not) archive dilution of the seed signal, or a root-lottery draw?",
+  "design": "exact exp005 lane (targets 000/111, balance, n=3, train101/verify202/shots512, budget 6, restrict=('replace','indel')); exp006 skeleton birth [h(0),cx(0,1)]; exp015/016 archive regime (A1 verify_balance_bucket x length drives emission, A2 passive; fitness=train only); TWO arms x roots 13/17/19: uniform (exp016 verbatim \u2014 deterministic replay per root, same rng stream; new draws come only from the rescue arm) + rescue (every 2nd emission parents from the single fittest A1 elite); lineage telemetry tracks birth-skeleton descendant survival per gen; 12 gens x pop 16",
+  "success_threshold_verify_balance": 0.45,
+  "pre_run_pin": "rescue crosses 17/19 below-bar-under-uniform = DILUTION VERIFIED (champion locality load-bearing); uniform replicates a new cross = LOTTERY DRAW (ARCHIVE NEUTRAL reinforced); both arms fail 17/19 w/ r13 control crossing = EASY CLASS DECOMPOSES (13 regime-robust, 17/19 champion-local-only rates)",
+  "exp016_comparator": {
+    "source": "exp016-qcells-hybrid results + sealed receipt commit fba4ec7 (PR #22 Casey-gated, not merged at seal time)",
+    "uniform_hybrid": {
+      "13": {
+        "crossed": true
+      },
+      "17": {
+        "crossed": false,
+        "note": "max 0.4355 below bar"
+      },
+      "19": {
+        "crossed": false,
+        "note": "0.2422 partial plateau"
+      }
+    },
+    "exp014_champion_local_crosses": [
+      3,
+      13,
+      17,
+      19
+    ]
+  },
+  "guard_exp001_reproduced": true,
+  "runs": [
+    {
+      "root_seed": 13,
+      "arm": "uniform",
+      "a1_final_coverage": 18,
+      "a1_coverage_gt0": 12,
+      "max_elite_verify": 0.4824,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "rx",
+          0.25,
+          0
+        ],
+        [
+          "cx",
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": true,
+      "first_ge_045_gen": 4,
+      "deadlock": null,
+      "rescue_parent_uses": 0,
+      "skel_lineages_alive_final": 18,
+      "skel_final_max_verify": 0.4824
+    },
+    {
+      "root_seed": 17,
+      "arm": "uniform",
+      "a1_final_coverage": 15,
+      "a1_coverage_gt0": 9,
+      "max_elite_verify": 0.4355,
+      "max_elite_genome": [
+        [
+          "h",
+          2
+        ],
+        [
+          "crx",
+          0.75,
+          2,
+          0
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "rescue_parent_uses": 0,
+      "skel_lineages_alive_final": 15,
+      "skel_final_max_verify": 0.4355
+    },
+    {
+      "root_seed": 19,
+      "arm": "uniform",
+      "a1_final_coverage": 14,
+      "a1_coverage_gt0": 8,
+      "max_elite_verify": 0.2422,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "rx",
+          0.5,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "rescue_parent_uses": 0,
+      "skel_lineages_alive_final": 14,
+      "skel_final_max_verify": 0.2422
+    },
+    {
+      "root_seed": 13,
+      "arm": "rescue",
+      "a1_final_coverage": 10,
+      "a1_coverage_gt0": 4,
+      "max_elite_verify": 0.4355,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "crx",
+          0.75,
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "rescue_parent_uses": 96,
+      "skel_lineages_alive_final": 10,
+      "skel_final_max_verify": 0.4355
+    },
+    {
+      "root_seed": 17,
+      "arm": "rescue",
+      "a1_final_coverage": 14,
+      "a1_coverage_gt0": 8,
+      "max_elite_verify": 0.2422,
+      "max_elite_genome": [
+        [
+          "rz",
+          0.25,
+          1
+        ],
+        [
+          "h",
+          2
+        ],
+        [
+          "h",
+          0
+        ],
+        [
+          "rx",
+          0.75,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "rescue_parent_uses": 96,
+      "skel_lineages_alive_final": 14,
+      "skel_final_max_verify": 0.2422
+    },
+    {
+      "root_seed": 19,
+      "arm": "rescue",
+      "a1_final_coverage": 13,
+      "a1_coverage_gt0": 7,
+      "max_elite_verify": 0.2422,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "swap",
+          2,
+          0
+        ],
+        [
+          "h",
+          0
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "rescue_parent_uses": 96,
+      "skel_lineages_alive_final": 13,
+      "skel_final_max_verify": 0.2422
+    }
+  ],
+  "verdict": "EASY CLASS DECOMPOSES + RESCUE IS NOT A RESCUE: the uniform arm is a deterministic replay of exp016 (same rng stream per root \u2014 13 crosses gen 4, 17 peaks 0.4355, 19 plateaus 0.2422, all byte-identical; the new signal is lineage telemetry, not new draws), and champion-rescue fails EVERYWHERE including the robust root 13 (max 0.4355) \u2014 bolting fittest-elite parenting onto the archive regime is actively harmful, so archive dilution is REFUTED as the 17/19 explanation and 'rescue' is not a mechanism. 13 is uniform-archive-robust; 17/19 remain champion-local-SEARCH-only crossings at measured rates (N/M doctrine, never mechanism victory)",
+  "crossing_table": {
+    "r13.uniform": {
+      "crossed": true,
+      "first_ge_045_gen": 4,
+      "max_elite_verify": 0.4824,
+      "skel_lineages_alive_final": 18,
+      "skel_final_max_verify": 0.4824,
+      "deadlock": null
+    },
+    "r17.uniform": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.4355,
+      "skel_lineages_alive_final": 15,
+      "skel_final_max_verify": 0.4355,
+      "deadlock": null
+    },
+    "r19.uniform": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.2422,
+      "skel_lineages_alive_final": 14,
+      "skel_final_max_verify": 0.2422,
+      "deadlock": null
+    },
+    "r13.rescue": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.4355,
+      "skel_lineages_alive_final": 10,
+      "skel_final_max_verify": 0.4355,
+      "deadlock": null
+    },
+    "r17.rescue": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.2422,
+      "skel_lineages_alive_final": 14,
+      "skel_final_max_verify": 0.2422,
+      "deadlock": null
+    },
+    "r19.rescue": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.2422,
+      "skel_lineages_alive_final": 13,
+      "skel_final_max_verify": 0.2422,
+      "deadlock": null
+    }
+  }
+}
