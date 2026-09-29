@@ -1,0 +1,7159 @@
+{
+  "experiment": "exp016_qd_seed_archive_hybrid",
+  "question": "does the MAP-Elites archive regime (exp015) change the skeleton-seed crossing rate that exp014 pinned at 4/8 under champion-local search on the same 8 fresh roots (3/5/13/17/19/29/31/37)?",
+  "design": "hybrid ONLY: exp006 skeleton birth [h(0),cx(0,1)] + exp015's exact archive regime (A1 BD=verify_balance_bucket x circuit_length 36 cells drives emission, A2 balance x verify-counts entropy passive; fitness=train balance only, verify descriptor-only; uniform occupied-cell parents, one mutate_classed move); NO transplant; roots = exp014's exact fresh panel 3/5/13/17/19/29/31/37; 12 gens x pop 16; exact exp005 lane (targets 000/111, balance, n=3, train101/verify202/shots512, budget 6, restrict=('replace','indel'))",
+  "success_threshold_verify_balance": 0.45,
+  "pre_run_pin": ">=7/8 cross = ARCHIVE AMPLIFIES SEEDING (coverage retains discarded signal, rate moves up); 3-6/8 = ARCHIVE NEUTRAL (SKELETON-IS-A-RATE stands, root-disjoint draws read as N/M per ROOT-LOTTERY); <=2/8 = CHAMPION LOCALITY IS THE LAW (archive dilutes the seed signal)",
+  "exp014_comparator": {
+    "source": "exp014-skeleton-multiroot receipt, commit 793a771 (PR #19 Casey-gated, not merged at seal time)",
+    "champion_local_skeleton_crosses": [
+      3,
+      13,
+      17,
+      19
+    ],
+    "champion_local_skeleton_fraction": "4/8"
+  },
+  "guard_exp001_reproduced": true,
+  "runs": [
+    {
+      "root_seed": 3,
+      "config": "hybrid",
+      "a1_final_coverage": 16,
+      "a2_final_coverage": 6,
+      "a1_coverage_gt0": 10,
+      "a2_coverage_gt0": 3,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "max_elite_verify": 0.4824,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "cx",
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": true,
+      "first_ge_045_gen": 5,
+      "deadlock": null,
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r3-hybrid-1",
+            "lineage": "r3-hybrid-2"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r3-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "swap",
+              1,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r3-hybrid-1",
+            "lineage": "r3-hybrid-8"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "swap",
+              1,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r3-hybrid-8",
+            "lineage": "r3-hybrid-19"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "swap",
+              1,
+              2
+            ],
+            [
+              "rx",
+              1.0,
+              0
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r3-hybrid-19",
+            "lineage": "r3-hybrid-76"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "swap",
+              1,
+              2
+            ],
+            [
+              "rx",
+              1.0,
+              0
+            ],
+            [
+              "rx",
+              1.0,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r3-hybrid-76",
+            "lineage": "r3-hybrid-83"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.082,
+          "verify": 0.0762,
+          "train": 0.082,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r3-hybrid-1",
+            "lineage": "r3-hybrid-77"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.082,
+          "verify": 0.0762,
+          "train": 0.082,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              3
+            ],
+            "parent_lineage": "r3-hybrid-77",
+            "lineage": "r3-hybrid-90"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.082,
+          "verify": 0.0762,
+          "train": 0.082,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rz",
+              0.25,
+              1
+            ],
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r3-hybrid-90",
+            "lineage": "r3-hybrid-116"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              1
+            ],
+            [
+              "rx",
+              1.0,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              6
+            ],
+            "parent_lineage": "r3-hybrid-177",
+            "lineage": "r3-hybrid-187"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r3-hybrid-8",
+            "lineage": "r3-hybrid-103"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              3
+            ],
+            "parent_lineage": "r3-hybrid-96",
+            "lineage": "r3-hybrid-134"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r3-hybrid-90",
+            "lineage": "r3-hybrid-98"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "swap",
+              1,
+              2
+            ],
+            [
+              "rx",
+              1.0,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              6
+            ],
+            "parent_lineage": "r3-hybrid-83",
+            "lineage": "r3-hybrid-177"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              3
+            ],
+            "parent_lineage": "r3-hybrid-77",
+            "lineage": "r3-hybrid-96"
+          }
+        },
+        "[4, 4]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 4,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              3
+            ],
+            "parent_lineage": "r3-hybrid-96",
+            "lineage": "r3-hybrid-115"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r3-hybrid-1",
+            "lineage": "r3-hybrid-2"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r3-hybrid-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "swap",
+              1,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r3-hybrid-8",
+            "lineage": "r3-hybrid-35"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              1
+            ],
+            [
+              "rx",
+              1.0,
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              6
+            ],
+            "parent_lineage": "r3-hybrid-177",
+            "lineage": "r3-hybrid-187"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r3-hybrid-90",
+            "lineage": "r3-hybrid-98"
+          }
+        },
+        "[4, 2]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              3
+            ],
+            "parent_lineage": "r3-hybrid-77",
+            "lineage": "r3-hybrid-96"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 5,
+      "config": "hybrid",
+      "a1_final_coverage": 14,
+      "a2_final_coverage": 8,
+      "a1_coverage_gt0": 8,
+      "a2_coverage_gt0": 4,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "max_elite_verify": 0.4824,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "crx",
+          1.0,
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": true,
+      "first_ge_045_gen": 5,
+      "deadlock": null,
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r5-hybrid-1",
+            "lineage": "r5-hybrid-2"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r5-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r5-hybrid-1",
+            "lineage": "r5-hybrid-4"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "x",
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r5-hybrid-4",
+            "lineage": "r5-hybrid-31"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "x",
+              2
+            ],
+            [
+              "rz",
+              1.0,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r5-hybrid-31",
+            "lineage": "r5-hybrid-41"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "x",
+              2
+            ],
+            [
+              "rz",
+              1.0,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r5-hybrid-41",
+            "lineage": "r5-hybrid-71"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.082,
+          "verify": 0.0762,
+          "train": 0.082,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r5-hybrid-1",
+            "lineage": "r5-hybrid-38"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.082,
+          "verify": 0.0762,
+          "train": 0.082,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              1,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              3
+            ],
+            "parent_lineage": "r5-hybrid-38",
+            "lineage": "r5-hybrid-66"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r5-hybrid-112",
+            "lineage": "r5-hybrid-115"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "x",
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              1
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r5-hybrid-112",
+            "lineage": "r5-hybrid-151"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r5-hybrid-115",
+            "lineage": "r5-hybrid-155"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "x",
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r5-hybrid-41",
+            "lineage": "r5-hybrid-112"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "x",
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              1,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r5-hybrid-112",
+            "lineage": "r5-hybrid-119"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              1.0,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r5-hybrid-1",
+            "lineage": "r5-hybrid-87"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r5-hybrid-1",
+            "lineage": "r5-hybrid-2"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r5-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "x",
+              2
+            ],
+            [
+              "rz",
+              1.0,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "swap",
+              1,
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              1,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              6
+            ],
+            "parent_lineage": "r5-hybrid-71",
+            "lineage": "r5-hybrid-126"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r5-hybrid-1",
+            "lineage": "r5-hybrid-8"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.0234,
+          "verify": 0.0215,
+          "train": 0.0234,
+          "len": 6,
+          "genome": [
+            [
+              "rx",
+              0.75,
+              0
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "rz",
+              1.0,
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              6
+            ],
+            "parent_lineage": "r5-hybrid-64",
+            "lineage": "r5-hybrid-129"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r5-hybrid-112",
+            "lineage": "r5-hybrid-115"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "x",
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r5-hybrid-41",
+            "lineage": "r5-hybrid-112"
+          }
+        },
+        "[4, 2]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              1.0,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r5-hybrid-1",
+            "lineage": "r5-hybrid-87"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 13,
+      "config": "hybrid",
+      "a1_final_coverage": 18,
+      "a2_final_coverage": 9,
+      "a1_coverage_gt0": 12,
+      "a2_coverage_gt0": 5,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "max_elite_verify": 0.4824,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "rx",
+          0.25,
+          0
+        ],
+        [
+          "cx",
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": true,
+      "first_ge_045_gen": 4,
+      "deadlock": null,
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r13-hybrid-1",
+            "lineage": "r13-hybrid-5"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r13-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r13-hybrid-1",
+            "lineage": "r13-hybrid-32"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.25,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r13-hybrid-32",
+            "lineage": "r13-hybrid-35"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "swap",
+              0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r13-hybrid-50",
+            "lineage": "r13-hybrid-81"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "swap",
+              0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r13-hybrid-81",
+            "lineage": "r13-hybrid-94"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.0664,
+          "verify": 0.082,
+          "train": 0.0664,
+          "len": 3,
+          "genome": [
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r13-hybrid-32",
+            "lineage": "r13-hybrid-56"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.082,
+          "verify": 0.0762,
+          "train": 0.082,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "crx",
+              0.25,
+              1,
+              2
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r13-hybrid-70",
+            "lineage": "r13-hybrid-113"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "swap",
+              0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r13-hybrid-81",
+            "lineage": "r13-hybrid-89"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "swap",
+              0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r13-hybrid-89",
+            "lineage": "r13-hybrid-157"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r13-hybrid-32",
+            "lineage": "r13-hybrid-34"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              4
+            ],
+            "parent_lineage": "r13-hybrid-42",
+            "lineage": "r13-hybrid-50"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              1.0,
+              1,
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r13-hybrid-50",
+            "lineage": "r13-hybrid-72"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              6
+            ],
+            "parent_lineage": "r13-hybrid-66",
+            "lineage": "r13-hybrid-108"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r13-hybrid-50",
+            "lineage": "r13-hybrid-120"
+          }
+        },
+        "[4, 4]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r13-hybrid-32",
+            "lineage": "r13-hybrid-91"
+          }
+        },
+        "[4, 5]": {
+          "fitness": 0.4375,
+          "verify": 0.418,
+          "train": 0.4375,
+          "len": 5,
+          "genome": [
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              4
+            ],
+            "parent_lineage": "r13-hybrid-42",
+            "lineage": "r13-hybrid-60"
+          }
+        },
+        "[4, 6]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 6,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              5
+            ],
+            "parent_lineage": "r13-hybrid-60",
+            "lineage": "r13-hybrid-66"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r13-hybrid-1",
+            "lineage": "r13-hybrid-2"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r13-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              1.0,
+              1
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r13-hybrid-34",
+            "lineage": "r13-hybrid-53"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r13-hybrid-1",
+            "lineage": "r13-hybrid-15"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.0234,
+          "verify": 0.0215,
+          "train": 0.0234,
+          "len": 6,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.25,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              6
+            ],
+            "parent_lineage": "r13-hybrid-66",
+            "lineage": "r13-hybrid-102"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "swap",
+              0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r13-hybrid-81",
+            "lineage": "r13-hybrid-89"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r13-hybrid-32",
+            "lineage": "r13-hybrid-34"
+          }
+        },
+        "[4, 2]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 6,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              5
+            ],
+            "parent_lineage": "r13-hybrid-60",
+            "lineage": "r13-hybrid-66"
+          }
+        },
+        "[4, 4]": {
+          "fitness": 0.4375,
+          "verify": 0.418,
+          "train": 0.4375,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r13-hybrid-32",
+            "lineage": "r13-hybrid-42"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 17,
+      "config": "hybrid",
+      "a1_final_coverage": 15,
+      "a2_final_coverage": 8,
+      "a1_coverage_gt0": 9,
+      "a2_coverage_gt0": 4,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "max_elite_verify": 0.4355,
+      "max_elite_genome": [
+        [
+          "h",
+          2
+        ],
+        [
+          "crx",
+          0.75,
+          2,
+          0
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r17-hybrid-1",
+            "lineage": "r17-hybrid-7"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r17-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r17-hybrid-1",
+            "lineage": "r17-hybrid-5"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r17-hybrid-5",
+            "lineage": "r17-hybrid-23"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r17-hybrid-23",
+            "lineage": "r17-hybrid-48"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r17-hybrid-34",
+            "lineage": "r17-hybrid-64"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r17-hybrid-45",
+            "lineage": "r17-hybrid-90"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r17-hybrid-54",
+            "lineage": "r17-hybrid-77"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 5,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r17-hybrid-54",
+            "lineage": "r17-hybrid-74"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 6,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.25,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r17-hybrid-74",
+            "lineage": "r17-hybrid-83"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r17-hybrid-1",
+            "lineage": "r17-hybrid-45"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r17-hybrid-34",
+            "lineage": "r17-hybrid-54"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r17-hybrid-23",
+            "lineage": "r17-hybrid-34"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              6
+            ],
+            "parent_lineage": "r17-hybrid-64",
+            "lineage": "r17-hybrid-142"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.4414,
+          "verify": 0.4355,
+          "train": 0.4414,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "crx",
+              0.75,
+              2,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r17-hybrid-45",
+            "lineage": "r17-hybrid-148"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r17-hybrid-1",
+            "lineage": "r17-hybrid-7"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r17-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r17-hybrid-5",
+            "lineage": "r17-hybrid-33"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r17-hybrid-5",
+            "lineage": "r17-hybrid-32"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 5,
+          "genome": [
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r17-hybrid-54",
+            "lineage": "r17-hybrid-74"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r17-hybrid-54",
+            "lineage": "r17-hybrid-77"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "x",
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.5,
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r17-hybrid-23",
+            "lineage": "r17-hybrid-34"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.4414,
+          "verify": 0.4355,
+          "train": 0.4414,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "crx",
+              0.75,
+              2,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r17-hybrid-45",
+            "lineage": "r17-hybrid-148"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 19,
+      "config": "hybrid",
+      "a1_final_coverage": 14,
+      "a2_final_coverage": 6,
+      "a1_coverage_gt0": 8,
+      "a2_coverage_gt0": 2,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "max_elite_verify": 0.2422,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "rx",
+          0.5,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "deadlock": null,
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r19-hybrid-1",
+            "lineage": "r19-hybrid-7"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r19-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r19-hybrid-1",
+            "lineage": "r19-hybrid-9"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r19-hybrid-9",
+            "lineage": "r19-hybrid-23"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rz",
+              0.25,
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r19-hybrid-23",
+            "lineage": "r19-hybrid-59"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "x",
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r19-hybrid-39",
+            "lineage": "r19-hybrid-66"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "rx",
+              0.5,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r19-hybrid-2",
+            "lineage": "r19-hybrid-118"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r19-hybrid-2",
+            "lineage": "r19-hybrid-176"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r19-hybrid-25",
+            "lineage": "r19-hybrid-74"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "crx",
+              0.25,
+              1,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r19-hybrid-74",
+            "lineage": "r19-hybrid-86"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r19-hybrid-1",
+            "lineage": "r19-hybrid-2"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r19-hybrid-2",
+            "lineage": "r19-hybrid-25"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "rx",
+              0.25,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r19-hybrid-28",
+            "lineage": "r19-hybrid-50"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "crx",
+              1.0,
+              0,
+              1
+            ],
+            [
+              "rx",
+              0.25,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r19-hybrid-50",
+            "lineage": "r19-hybrid-79"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r19-hybrid-1",
+            "lineage": "r19-hybrid-4"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r19-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              1,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              6
+            ],
+            "parent_lineage": "r19-hybrid-86",
+            "lineage": "r19-hybrid-141"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "cx",
+              1,
+              2
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r19-hybrid-39",
+            "lineage": "r19-hybrid-53"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r19-hybrid-25",
+            "lineage": "r19-hybrid-74"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r19-hybrid-1",
+            "lineage": "r19-hybrid-2"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 29,
+      "config": "hybrid",
+      "a1_final_coverage": 18,
+      "a2_final_coverage": 8,
+      "a1_coverage_gt0": 12,
+      "a2_coverage_gt0": 4,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "max_elite_verify": 0.4824,
+      "max_elite_genome": [
+        [
+          "swap",
+          0,
+          2
+        ],
+        [
+          "h",
+          0
+        ],
+        [
+          "cx",
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": true,
+      "first_ge_045_gen": 4,
+      "deadlock": null,
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r29-hybrid-1",
+            "lineage": "r29-hybrid-6"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r29-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              1.0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r29-hybrid-1",
+            "lineage": "r29-hybrid-2"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "rx",
+              1.0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r29-hybrid-2",
+            "lineage": "r29-hybrid-26"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "swap",
+              1,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r29-hybrid-34",
+            "lineage": "r29-hybrid-64"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              1.0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "swap",
+              1,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r29-hybrid-64",
+            "lineage": "r29-hybrid-77"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.0371,
+          "verify": 0.0312,
+          "train": 0.0371,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r29-hybrid-23",
+            "lineage": "r29-hybrid-38"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              3
+            ],
+            "parent_lineage": "r29-hybrid-38",
+            "lineage": "r29-hybrid-93"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r29-hybrid-93",
+            "lineage": "r29-hybrid-111"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              1.0,
+              1
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r29-hybrid-111",
+            "lineage": "r29-hybrid-114"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r29-hybrid-1",
+            "lineage": "r29-hybrid-23"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r29-hybrid-23",
+            "lineage": "r29-hybrid-34"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r29-hybrid-34",
+            "lineage": "r29-hybrid-98"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              1.0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rz",
+              0.5,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              6
+            ],
+            "parent_lineage": "r29-hybrid-77",
+            "lineage": "r29-hybrid-132"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              4
+            ],
+            "parent_lineage": "r29-hybrid-69",
+            "lineage": "r29-hybrid-88"
+          }
+        },
+        "[4, 4]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r29-hybrid-34",
+            "lineage": "r29-hybrid-69"
+          }
+        },
+        "[4, 5]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 5,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rz",
+              1.0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              4
+            ],
+            "parent_lineage": "r29-hybrid-69",
+            "lineage": "r29-hybrid-103"
+          }
+        },
+        "[4, 6]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 6,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rz",
+              0.25,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "rz",
+              1.0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              5
+            ],
+            "parent_lineage": "r29-hybrid-103",
+            "lineage": "r29-hybrid-116"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "swap",
+              2,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r29-hybrid-1",
+            "lineage": "r29-hybrid-4"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r29-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.75,
+              0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r29-hybrid-2",
+            "lineage": "r29-hybrid-82"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r29-hybrid-1",
+            "lineage": "r29-hybrid-7"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              3
+            ],
+            "parent_lineage": "r29-hybrid-38",
+            "lineage": "r29-hybrid-93"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r29-hybrid-1",
+            "lineage": "r29-hybrid-23"
+          }
+        },
+        "[4, 2]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r29-hybrid-34",
+            "lineage": "r29-hybrid-69"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.4414,
+          "verify": 0.4355,
+          "train": 0.4414,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              1
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              3
+            ],
+            "parent_lineage": "r29-hybrid-88",
+            "lineage": "r29-hybrid-123"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 31,
+      "config": "hybrid",
+      "a1_final_coverage": 15,
+      "a2_final_coverage": 6,
+      "a1_coverage_gt0": 9,
+      "a2_coverage_gt0": 3,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "max_elite_verify": 0.4824,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "x",
+          0
+        ],
+        [
+          "swap",
+          0,
+          2
+        ],
+        [
+          "crx",
+          1.0,
+          2,
+          0
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": true,
+      "first_ge_045_gen": 7,
+      "deadlock": null,
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r31-hybrid-1",
+            "lineage": "r31-hybrid-8"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r31-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r31-hybrid-1",
+            "lineage": "r31-hybrid-2"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r31-hybrid-2",
+            "lineage": "r31-hybrid-23"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r31-hybrid-23",
+            "lineage": "r31-hybrid-39"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "rx",
+              0.25,
+              0
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r31-hybrid-39",
+            "lineage": "r31-hybrid-101"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.0352,
+          "verify": 0.0371,
+          "train": 0.0352,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r31-hybrid-149",
+            "lineage": "r31-hybrid-173"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.25,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              3
+            ],
+            "parent_lineage": "r31-hybrid-173",
+            "lineage": "r31-hybrid-188"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r31-hybrid-39",
+            "lineage": "r31-hybrid-84"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "rx",
+              0.5,
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              5
+            ],
+            "parent_lineage": "r31-hybrid-84",
+            "lineage": "r31-hybrid-120"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r31-hybrid-2",
+            "lineage": "r31-hybrid-29"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r31-hybrid-29",
+            "lineage": "r31-hybrid-40"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.75,
+              0
+            ],
+            [
+              "rz",
+              0.5,
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r31-hybrid-40",
+            "lineage": "r31-hybrid-72"
+          }
+        },
+        "[4, 5]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "crx",
+              1.0,
+              2,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r31-hybrid-39",
+            "lineage": "r31-hybrid-126"
+          }
+        },
+        "[4, 6]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 6,
+          "genome": [
+            [
+              "rz",
+              0.75,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "crx",
+              1.0,
+              2,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              4,
+              5
+            ],
+            "parent_lineage": "r31-hybrid-126",
+            "lineage": "r31-hybrid-164"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r31-hybrid-1",
+            "lineage": "r31-hybrid-8"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r31-hybrid-1"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r31-hybrid-1",
+            "lineage": "r31-hybrid-4"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1387,
+          "verify": 0.1152,
+          "train": 0.1387,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "rx",
+              0.25,
+              2
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "crx",
+              0.25,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              3
+            ],
+            "parent_lineage": "r31-hybrid-173",
+            "lineage": "r31-hybrid-188"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r31-hybrid-2",
+            "lineage": "r31-hybrid-29"
+          }
+        },
+        "[4, 2]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 5,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "crx",
+              1.0,
+              2,
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r31-hybrid-39",
+            "lineage": "r31-hybrid-126"
+          }
+        }
+      }
+    },
+    {
+      "root_seed": 37,
+      "config": "hybrid",
+      "a1_final_coverage": 15,
+      "a2_final_coverage": 7,
+      "a1_coverage_gt0": 9,
+      "a2_coverage_gt0": 3,
+      "a1_cells_gt0": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "a2_cells_gt0": [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "max_elite_verify": 0.4824,
+      "max_elite_genome": [
+        [
+          "h",
+          0
+        ],
+        [
+          "cx",
+          0,
+          2
+        ],
+        [
+          "cx",
+          0,
+          1
+        ]
+      ],
+      "crossed": true,
+      "first_ge_045_gen": 3,
+      "deadlock": null,
+      "a1_final": {
+        "[0, 1]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "h",
+              0
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r37-hybrid-1",
+            "lineage": "r37-hybrid-2"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r37-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r37-hybrid-1",
+            "lineage": "r37-hybrid-3"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r37-hybrid-30",
+            "lineage": "r37-hybrid-52"
+          }
+        },
+        "[0, 5]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 5,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "rz",
+              1.0,
+              1
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              4
+            ],
+            "parent_lineage": "r37-hybrid-52",
+            "lineage": "r37-hybrid-77"
+          }
+        },
+        "[0, 6]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 6,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "rz",
+              1.0,
+              1
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              5
+            ],
+            "parent_lineage": "r37-hybrid-77",
+            "lineage": "r37-hybrid-84"
+          }
+        },
+        "[1, 3]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r37-hybrid-51",
+            "lineage": "r37-hybrid-142"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r37-hybrid-38",
+            "lineage": "r37-hybrid-51"
+          }
+        },
+        "[1, 5]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 5,
+          "genome": [
+            [
+              "swap",
+              0,
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              1,
+              4
+            ],
+            "parent_lineage": "r37-hybrid-51",
+            "lineage": "r37-hybrid-71"
+          }
+        },
+        "[1, 6]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 6,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "rz",
+              1.0,
+              1
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              6
+            ],
+            "parent_lineage": "r37-hybrid-84",
+            "lineage": "r37-hybrid-100"
+          }
+        },
+        "[2, 3]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r37-hybrid-30",
+            "lineage": "r37-hybrid-38"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r37-hybrid-3",
+            "lineage": "r37-hybrid-30"
+          }
+        },
+        "[2, 5]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 5,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              4
+            ],
+            "parent_lineage": "r37-hybrid-30",
+            "lineage": "r37-hybrid-59"
+          }
+        },
+        "[2, 6]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 6,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "x",
+              2
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "crx",
+              0.25,
+              1,
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              5
+            ],
+            "parent_lineage": "r37-hybrid-59",
+            "lineage": "r37-hybrid-79"
+          }
+        },
+        "[4, 3]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r37-hybrid-1",
+            "lineage": "r37-hybrid-53"
+          }
+        }
+      },
+      "a2_final": {
+        "[0, 0]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 1,
+          "genome": [
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r37-hybrid-1",
+            "lineage": "r37-hybrid-5"
+          }
+        },
+        "[0, 2]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "skeleton-seed",
+            "parent": null,
+            "lineage": "r37-hybrid-1"
+          }
+        },
+        "[0, 3]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 2,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "crx",
+              0.75,
+              0,
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r37-hybrid-1",
+            "lineage": "r37-hybrid-43"
+          }
+        },
+        "[0, 4]": {
+          "fitness": 0.0,
+          "verify": 0.0,
+          "train": 0.0,
+          "len": 3,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              2
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r37-hybrid-3",
+            "lineage": "r37-hybrid-20"
+          }
+        },
+        "[1, 4]": {
+          "fitness": 0.1289,
+          "verify": 0.1074,
+          "train": 0.1289,
+          "len": 4,
+          "genome": [
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "h",
+              1
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              2,
+              3
+            ],
+            "parent_lineage": "r37-hybrid-38",
+            "lineage": "r37-hybrid-51"
+          }
+        },
+        "[2, 4]": {
+          "fitness": 0.2559,
+          "verify": 0.2422,
+          "train": 0.2559,
+          "len": 4,
+          "genome": [
+            [
+              "swap",
+              2,
+              1
+            ],
+            [
+              "h",
+              2
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              3
+            ],
+            "parent_lineage": "r37-hybrid-3",
+            "lineage": "r37-hybrid-30"
+          }
+        },
+        "[4, 2]": {
+          "fitness": 0.498,
+          "verify": 0.4824,
+          "train": 0.498,
+          "len": 3,
+          "genome": [
+            [
+              "h",
+              0
+            ],
+            [
+              "cx",
+              0,
+              2
+            ],
+            [
+              "cx",
+              0,
+              1
+            ]
+          ],
+          "provenance": {
+            "kind": "evo",
+            "parent": [
+              0,
+              2
+            ],
+            "parent_lineage": "r37-hybrid-1",
+            "lineage": "r37-hybrid-53"
+          }
+        }
+      }
+    }
+  ],
+  "hybrid_crosses": [
+    3,
+    5,
+    13,
+    29,
+    31,
+    37
+  ],
+  "hybrid_cross_fraction": "6/8",
+  "root_agreement_with_exp014": {
+    "both_cross": [
+      3,
+      13
+    ],
+    "hybrid_only": [
+      5,
+      29,
+      31,
+      37
+    ],
+    "champion_local_only": [
+      17,
+      19
+    ]
+  },
+  "verdict": "ARCHIVE NEUTRAL: hybrid crosses 6/8 ([3, 5, 13, 29, 31, 37]) vs champion-local 4/8 ([3, 13, 17, 19]); agreement [3, 13], hybrid-only [5, 29, 31, 37], champion-only [17, 19] \u2014 SKELETON-IS-A-RATE stands, the crossing rides the birth seed alone (exp012 ROOT-LOTTERY doctrine: N/M, never mechanism victory)",
+  "crossing_table": {
+    "r3.hybrid": {
+      "crossed": true,
+      "first_ge_045_gen": 5,
+      "max_elite_verify": 0.4824,
+      "a1_coverage_gt0": 10,
+      "deadlock": null
+    },
+    "r5.hybrid": {
+      "crossed": true,
+      "first_ge_045_gen": 5,
+      "max_elite_verify": 0.4824,
+      "a1_coverage_gt0": 8,
+      "deadlock": null
+    },
+    "r13.hybrid": {
+      "crossed": true,
+      "first_ge_045_gen": 4,
+      "max_elite_verify": 0.4824,
+      "a1_coverage_gt0": 12,
+      "deadlock": null
+    },
+    "r17.hybrid": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.4355,
+      "a1_coverage_gt0": 9,
+      "deadlock": null
+    },
+    "r19.hybrid": {
+      "crossed": false,
+      "first_ge_045_gen": null,
+      "max_elite_verify": 0.2422,
+      "a1_coverage_gt0": 8,
+      "deadlock": null
+    },
+    "r29.hybrid": {
+      "crossed": true,
+      "first_ge_045_gen": 4,
+      "max_elite_verify": 0.4824,
+      "a1_coverage_gt0": 12,
+      "deadlock": null
+    },
+    "r31.hybrid": {
+      "crossed": true,
+      "first_ge_045_gen": 7,
+      "max_elite_verify": 0.4824,
+      "a1_coverage_gt0": 9,
+      "deadlock": null
+    },
+    "r37.hybrid": {
+      "crossed": true,
+      "first_ge_045_gen": 3,
+      "max_elite_verify": 0.4824,
+      "a1_coverage_gt0": 9,
+      "deadlock": null
+    }
+  }
+}
