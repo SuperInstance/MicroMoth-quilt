@@ -198,3 +198,15 @@ limits inside the receipt (single root seed — the later multi-root
 crossing-rate doctrine post-dates this experiment; the seeded lanes
 answer SEEDING, exp005's unaided freeze stands; lane B's trap is a
 120-draw negative search result, not a universal claim).
+
+## Qcells lab — canonical home (RECORDED 2026-09-30)
+
+The sealed experiment receipts (exp001–exp022) carry directive strings
+naming the lab's local workspace path (`workspace/labs/qcells`). That path
+was true at seal time but is not durable provenance: the qcells lab's
+canonical, addressable home is the org repo **`SuperInstance/micrograd-quilt`**
+(labs/qcells tree; sealed lineage exp018–exp022 mirrored there as receipt
+PRs #5–#7, MM↔mgq first lab↔ledger bidirectional pair). Future receipts
+should cite the repo, not the local path. RECORDED (repo metadata, PR
+merge stream 2026-09-30). Sealed receipts are immutable — this note
+amends provenance without touching them.
