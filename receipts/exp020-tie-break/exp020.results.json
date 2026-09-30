@@ -1,0 +1,348 @@
+{
+ "arms": {
+  "incumbent": "max() first-wins (exp014 semantics)",
+  "tiesample": "uniform rng.choice among exact-fitness gen-max ties"
+ },
+ "comparator": {
+  "champion_local_incumbent_crosses": [
+   3,
+   13,
+   17,
+   19
+  ],
+  "champion_local_incumbent_hard_class": "0/3 on {29,31,37}",
+  "source": "exp014-skeleton-multiroot receipt, commit 793a771 (PR #19; merged 2026-09-29 per queue log #17-#22 burst)"
+ },
+ "easy_control_root13_crossed": {
+  "incumbent": true,
+  "tiesample": true
+ },
+ "experiment": "exp020-tie-break-ablation",
+ "guard": {
+  "control_reproduces_exp001": true,
+  "note": "guard covers shared machinery on default lane; tiesample arm diverges by definition, not guard-covered (stated)"
+ },
+ "hard_class": {
+  "incumbent_crossed": [],
+  "tiesample_crossed": [
+   29,
+   37
+  ],
+  "tiesample_only": [
+   29,
+   37
+  ]
+ },
+ "lane": {
+  "bar": 0.45,
+  "birth": [
+   [
+    "h",
+    0
+   ],
+   [
+    "cx",
+    0,
+    1
+   ]
+  ],
+  "budget": 6,
+  "gens": 12,
+  "mode": "balance",
+  "mutate": "classed(replace,indel)",
+  "n_qubits": 3,
+  "pop": 16,
+  "shots": 512,
+  "targets": [
+   "000",
+   "111"
+  ],
+  "train_seed": 101,
+  "verify_seed": 202
+ },
+ "runs": {
+  "incumbent.r13": {
+   "arm": "incumbent",
+   "champion_genome": [
+    [
+     "h",
+     0
+    ],
+    [
+     "cx",
+     0,
+     2
+    ],
+    [
+     "cx",
+     0,
+     1
+    ]
+   ],
+   "champion_train": 0.498,
+   "champion_verify": 0.4824,
+   "crossed": true,
+   "gens_any_promotion": 12,
+   "max_verify_seen": 0.4824,
+   "root": 13,
+   "tie_gens": 10,
+   "tie_gens_incumbent_tied": 10
+  },
+  "incumbent.r29": {
+   "arm": "incumbent",
+   "champion_genome": [
+    [
+     "h",
+     2
+    ],
+    [
+     "h",
+     0
+    ],
+    [
+     "cx",
+     0,
+     1
+    ]
+   ],
+   "champion_train": 0.2559,
+   "champion_verify": 0.2422,
+   "crossed": false,
+   "gens_any_promotion": 12,
+   "max_verify_seen": 0.2422,
+   "root": 29,
+   "tie_gens": 10,
+   "tie_gens_incumbent_tied": 10
+  },
+  "incumbent.r31": {
+   "arm": "incumbent",
+   "champion_genome": [
+    [
+     "h",
+     0
+    ],
+    [
+     "rx",
+     0.5,
+     2
+    ],
+    [
+     "cx",
+     0,
+     1
+    ]
+   ],
+   "champion_train": 0.2559,
+   "champion_verify": 0.2422,
+   "crossed": false,
+   "gens_any_promotion": 12,
+   "max_verify_seen": 0.2422,
+   "root": 31,
+   "tie_gens": 11,
+   "tie_gens_incumbent_tied": 11
+  },
+  "incumbent.r37": {
+   "arm": "incumbent",
+   "champion_genome": [
+    [
+     "rx",
+     0.5,
+     2
+    ],
+    [
+     "h",
+     0
+    ],
+    [
+     "cx",
+     0,
+     1
+    ]
+   ],
+   "champion_train": 0.2559,
+   "champion_verify": 0.2422,
+   "crossed": false,
+   "gens_any_promotion": 12,
+   "max_verify_seen": 0.2422,
+   "root": 37,
+   "tie_gens": 11,
+   "tie_gens_incumbent_tied": 11
+  },
+  "tiesample.r13": {
+   "arm": "tiesample",
+   "champion_genome": [
+    [
+     "cx",
+     1,
+     2
+    ],
+    [
+     "h",
+     0
+    ],
+    [
+     "crx",
+     1.0,
+     1,
+     0
+    ],
+    [
+     "cx",
+     0,
+     2
+    ],
+    [
+     "crx",
+     0.75,
+     1,
+     2
+    ],
+    [
+     "cx",
+     0,
+     1
+    ]
+   ],
+   "champion_train": 0.498,
+   "champion_verify": 0.4824,
+   "crossed": true,
+   "gens_any_promotion": 12,
+   "max_verify_seen": 0.4824,
+   "root": 13,
+   "tie_gens": 10,
+   "tie_gens_incumbent_tied": 10
+  },
+  "tiesample.r29": {
+   "arm": "tiesample",
+   "champion_genome": [
+    [
+     "h",
+     2
+    ],
+    [
+     "cx",
+     1,
+     0
+    ],
+    [
+     "swap",
+     0,
+     2
+    ],
+    [
+     "crx",
+     1.0,
+     0,
+     2
+    ],
+    [
+     "cx",
+     1,
+     2
+    ],
+    [
+     "cx",
+     0,
+     1
+    ]
+   ],
+   "champion_train": 0.498,
+   "champion_verify": 0.4824,
+   "crossed": true,
+   "gens_any_promotion": 12,
+   "max_verify_seen": 0.4824,
+   "root": 29,
+   "tie_gens": 10,
+   "tie_gens_incumbent_tied": 10
+  },
+  "tiesample.r31": {
+   "arm": "tiesample",
+   "champion_genome": [
+    [
+     "h",
+     0
+    ],
+    [
+     "crx",
+     0.5,
+     0,
+     2
+    ],
+    [
+     "crx",
+     0.5,
+     2,
+     0
+    ],
+    [
+     "rx",
+     0.5,
+     2
+    ],
+    [
+     "rz",
+     1.0,
+     0
+    ],
+    [
+     "cx",
+     0,
+     1
+    ]
+   ],
+   "champion_train": 0.3379,
+   "champion_verify": 0.3027,
+   "crossed": false,
+   "gens_any_promotion": 12,
+   "max_verify_seen": 0.3027,
+   "root": 31,
+   "tie_gens": 7,
+   "tie_gens_incumbent_tied": 7
+  },
+  "tiesample.r37": {
+   "arm": "tiesample",
+   "champion_genome": [
+    [
+     "crx",
+     1.0,
+     2,
+     0
+    ],
+    [
+     "h",
+     0
+    ],
+    [
+     "rx",
+     1.0,
+     0
+    ],
+    [
+     "crx",
+     0.25,
+     2,
+     0
+    ],
+    [
+     "cx",
+     0,
+     2
+    ],
+    [
+     "cx",
+     0,
+     1
+    ]
+   ],
+   "champion_train": 0.498,
+   "champion_verify": 0.4824,
+   "crossed": true,
+   "gens_any_promotion": 12,
+   "max_verify_seen": 0.4824,
+   "root": 37,
+   "tie_gens": 11,
+   "tie_gens_incumbent_tied": 10
+  }
+ },
+ "verdict": "TIE-BAND-DIVERSITY REPLICATED: tiesample crossed hard root(s) [29, 37] that incumbent missed (per-root N/M per ROOT-LOTTERY, not a law); exp019 post-hoc tie-aware read upgrades to run-tested mechanism"
+}
