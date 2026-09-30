@@ -1,0 +1,136 @@
+{
+ "exp020_comparator": {
+  "incumbent_r31": {
+   "crossed": false,
+   "final_verify": 0.2422
+  },
+  "source": "exp020 tie-break ablation, lab commit 2e741ee",
+  "tiesample_r29_r37": "crossed @0.4824 (both arms' discriminating contrast)",
+  "tiesample_r31": {
+   "crossed": false,
+   "final_verify": 0.3027,
+   "tie_gens": 7
+  }
+ },
+ "experiment": "exp021 r31-specific tie-context autopsy",
+ "guard": {
+  "exp001_reproduced_byte_identical": true
+ },
+ "honesty": "census evals consume no rng; guard pins the instrumented loop to exp001 byte-identical; Q2 arms replicate exp020 champion/max verify exactly (replicate_ok flags); post-hoc reads labeled; no archive, no retention anywhere in this experiment",
+ "lane": {
+  "bar": 0.45,
+  "budget": 6,
+  "gens": 12,
+  "mode": "balance",
+  "n_qubits": 3,
+  "pop": 16,
+  "restrict": [
+   "replace",
+   "indel"
+  ],
+  "shots": 512,
+  "skeleton": [
+   [
+    "h",
+    0
+   ],
+   [
+    "cx",
+    0,
+    1
+   ]
+  ],
+  "targets": [
+   "000",
+   "111"
+  ],
+  "train_seed": 101,
+  "verify_seed": 202
+ },
+ "q1_rate_vs_wall": {
+  "K": 8,
+  "crossings": 3,
+  "runs": {
+   "k0": {
+    "champion_verify": 0.2422,
+    "crossed": false,
+    "max_verify_seen": 0.2422,
+    "seed": 31000,
+    "tie_gens": 12
+   },
+   "k1": {
+    "champion_verify": 0.2422,
+    "crossed": false,
+    "max_verify_seen": 0.2422,
+    "seed": 31001,
+    "tie_gens": 11
+   },
+   "k2": {
+    "champion_verify": 0.2422,
+    "crossed": false,
+    "max_verify_seen": 0.2422,
+    "seed": 31002,
+    "tie_gens": 10
+   },
+   "k3": {
+    "champion_verify": 0.4824,
+    "crossed": true,
+    "max_verify_seen": 0.4824,
+    "seed": 31003,
+    "tie_gens": 11
+   },
+   "k4": {
+    "champion_verify": 0.418,
+    "crossed": false,
+    "max_verify_seen": 0.418,
+    "seed": 31004,
+    "tie_gens": 10
+   },
+   "k5": {
+    "champion_verify": 0.4824,
+    "crossed": true,
+    "max_verify_seen": 0.4824,
+    "seed": 31005,
+    "tie_gens": 11
+   },
+   "k6": {
+    "champion_verify": 0.4824,
+    "crossed": true,
+    "max_verify_seen": 0.4824,
+    "seed": 31006,
+    "tie_gens": 8
+   },
+   "k7": {
+    "champion_verify": 0.0,
+    "crossed": false,
+    "max_verify_seen": 0.0,
+    "seed": 31007,
+    "tie_gens": 12
+   }
+  },
+  "seeds_base": 31000,
+  "verdict": "RATE NOT WALL: 3/8 salted streams crossed r31 \u2014 31's resistance is a per-stream lottery draw, consistent with the ROOT-LOTTERY doctrine (exp012/exp014); N/M honest read, not a law"
+ },
+ "q2_opportunity_census": {
+  "incumbent": {
+   "band_opportunity_gens": [],
+   "champion_verify": 0.2422,
+   "cloud_opportunity_gens": [],
+   "crossed": false,
+   "exp020_replicate_ok": true,
+   "max_band_verify": 0.2422,
+   "max_cloud_verify": 0.2422
+  },
+  "tiesample": {
+   "band_opportunity_gens": [],
+   "champion_verify": 0.3027,
+   "cloud_opportunity_gens": [],
+   "crossed": false,
+   "exp020_replicate_ok": true,
+   "max_band_verify": 0.3027,
+   "max_cloud_verify": 0.3027
+  }
+ },
+ "q2_verdict": "DESERT-EXTENDS-TO-CLOUD: no cloud cell reached verify>=0.45 in any of 12 gens on the canonical stream \u2014 the exp016 archive crossing on 31 necessarily assembled fitness across generations via retention; exp019 RETENTION-ASSEMBLY verdict is the only remaining mechanism",
+ "question": "why does root 31 alone resist tie-band diversity (exp020 crossed 29+37, 31 stayed closed @0.3027)"
+}
