@@ -1,0 +1,393 @@
+{
+  "bar_verify_balance": 0.45,
+  "data_provenance": "exp016 sealed receipt commit fba4ec7 (PR #22, Casey-gated at seal time); telemetry read here is the byte-frozen artifact copied into the MicroMoth-quilt receipts dir by that seal",
+  "doctrine_read": "FITNESS ASSEMBLY REFINED, not refuted: on >=1 root the route rides through strictly-discarded ancestors (archive retention load-bearing at gate level); on >=1 root all ancestors sat at gen train-max (ties) - the archive's uniform parent-cell sampling, not retention, is the load-bearing difference; champion-local keeps the incumbent on ties and never crosses between tied elites (comparator exp014 0/3 hard roots). The archive is load-bearing on every hard root, via retention where fitness is strict, via tie-band diversity where the desert ties.",
+  "experiment": "exp019",
+  "guard": {
+    "exp001_reproduces": true
+  },
+  "headline_post_hoc_tie_aware": {
+    "29": "TIE-BAND-DIVERSITY",
+    "31": "RETENTION-ASSEMBLY",
+    "37": "TIE-BAND-DIVERSITY"
+  },
+  "headline_verdicts": {
+    "29": "HILL-CLIMB",
+    "31": "MIXED",
+    "37": "HILL-CLIMB"
+  },
+  "kind": "genealogy-read-of-sealed-artifacts",
+  "plateau_band": 0.3,
+  "roots": {
+    "29": {
+      "ancestor_at_bar_count": 0,
+      "chain_length_ancestors": 3,
+      "chain_table": [
+        {
+          "born_gen": 4,
+          "genome_len": 4,
+          "lineage": "r29-hybrid-69",
+          "train": 0.498,
+          "verify": 0.4824
+        },
+        {
+          "born_gen": 2,
+          "genome_len": 4,
+          "lineage": "r29-hybrid-34",
+          "train": 0.2559,
+          "verify": 0.2422
+        },
+        {
+          "born_gen": 1,
+          "genome_len": 3,
+          "lineage": "r29-hybrid-23",
+          "train": 0.2559,
+          "verify": 0.2422
+        },
+        {
+          "born_gen": 0,
+          "genome_len": 2,
+          "lineage": "r29-hybrid-1",
+          "train": 0.0,
+          "verify": 0.0
+        }
+      ],
+      "champion_discarded_carriers": [],
+      "crossing": {
+        "born_gen": 4,
+        "genome": [
+          [
+            "swap",
+            0,
+            2
+          ],
+          [
+            "h",
+            0
+          ],
+          [
+            "cx",
+            0,
+            2
+          ],
+          [
+            "cx",
+            0,
+            1
+          ]
+        ],
+        "lineage": "r29-hybrid-69",
+        "train": 0.498,
+        "verify": 0.4824
+      },
+      "partial_plateau_ancestors": [
+        {
+          "born_gen": 2,
+          "lineage": "r29-hybrid-34",
+          "verify": 0.2422
+        },
+        {
+          "born_gen": 1,
+          "lineage": "r29-hybrid-23",
+          "verify": 0.2422
+        }
+      ],
+      "post_hoc_tie_aware": {
+        "label": "POST-HOC (pre-registered verdict above stands)",
+        "note": "every ancestor sat at its gen's train max (ties), but champion-local keeps the INCUMBENT on ties and never crosses between tied elites; the archive's uniform parent-cell sampling is the load-bearing difference (empirical comparator: exp014 champion-local 0/3 on hard roots at same seeds).",
+        "read": "TIE-BAND-DIVERSITY",
+        "rows": [
+          {
+            "born_gen": 4,
+            "gen_max_train": 0.498,
+            "lineage": "r29-hybrid-69",
+            "strictly_discarded": false,
+            "tie_band": true,
+            "train": 0.498,
+            "verify": 0.4824
+          },
+          {
+            "born_gen": 2,
+            "gen_max_train": 0.2559,
+            "lineage": "r29-hybrid-34",
+            "strictly_discarded": false,
+            "tie_band": true,
+            "train": 0.2559,
+            "verify": 0.2422
+          },
+          {
+            "born_gen": 1,
+            "gen_max_train": 0.2559,
+            "lineage": "r29-hybrid-23",
+            "strictly_discarded": false,
+            "tie_band": true,
+            "train": 0.2559,
+            "verify": 0.2422
+          },
+          {
+            "born_gen": 0,
+            "gen_max_train": 0.0,
+            "lineage": "r29-hybrid-1",
+            "strictly_discarded": false,
+            "tie_band": true,
+            "train": 0.0,
+            "verify": 0.0
+          }
+        ]
+      },
+      "root": 29,
+      "status": "ANALYZED",
+      "verdict": "HILL-CLIMB"
+    },
+    "31": {
+      "ancestor_at_bar_count": 0,
+      "chain_length_ancestors": 4,
+      "chain_table": [
+        {
+          "born_gen": 7,
+          "genome_len": 5,
+          "lineage": "r31-hybrid-126",
+          "train": 0.498,
+          "verify": 0.4824
+        },
+        {
+          "born_gen": 2,
+          "genome_len": 5,
+          "lineage": "r31-hybrid-39",
+          "train": 0.0,
+          "verify": 0.0
+        },
+        {
+          "born_gen": 1,
+          "genome_len": 4,
+          "lineage": "r31-hybrid-23",
+          "train": 0.0,
+          "verify": 0.0
+        },
+        {
+          "born_gen": 0,
+          "genome_len": 3,
+          "lineage": "r31-hybrid-2",
+          "train": 0.0,
+          "verify": 0.0
+        },
+        {
+          "born_gen": 0,
+          "genome_len": 2,
+          "lineage": "r31-hybrid-1",
+          "train": 0.0,
+          "verify": 0.0
+        }
+      ],
+      "champion_discarded_carriers": [
+        {
+          "born_gen": 2,
+          "carried_gates": [
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "swap",
+              0,
+              2
+            ],
+            [
+              "x",
+              0
+            ]
+          ],
+          "gen_max_train": 0.2559,
+          "lineage": "r31-hybrid-39",
+          "train": 0.0
+        },
+        {
+          "born_gen": 1,
+          "carried_gates": [
+            [
+              "cx",
+              0,
+              1
+            ],
+            [
+              "h",
+              0
+            ],
+            [
+              "x",
+              0
+            ]
+          ],
+          "gen_max_train": 0.2559,
+          "lineage": "r31-hybrid-23",
+          "train": 0.0
+        }
+      ],
+      "crossing": {
+        "born_gen": 7,
+        "genome": [
+          [
+            "h",
+            0
+          ],
+          [
+            "x",
+            0
+          ],
+          [
+            "swap",
+            0,
+            2
+          ],
+          [
+            "crx",
+            1.0,
+            2,
+            0
+          ],
+          [
+            "cx",
+            0,
+            1
+          ]
+        ],
+        "lineage": "r31-hybrid-126",
+        "train": 0.498,
+        "verify": 0.4824
+      },
+      "partial_plateau_ancestors": [],
+      "post_hoc_tie_aware": {
+        "label": "POST-HOC (pre-registered verdict above stands)",
+        "note": "crossing route rides through ancestor(s) with STRICTLY lower train than the gen max - only archive cell retention keeps them; champion-local would have dropped them.",
+        "read": "RETENTION-ASSEMBLY",
+        "rows": [
+          {
+            "born_gen": 7,
+            "gen_max_train": 0.498,
+            "lineage": "r31-hybrid-126",
+            "strictly_discarded": false,
+            "tie_band": true,
+            "train": 0.498,
+            "verify": 0.4824
+          },
+          {
+            "born_gen": 2,
+            "gen_max_train": 0.2559,
+            "lineage": "r31-hybrid-39",
+            "strictly_discarded": true,
+            "tie_band": false,
+            "train": 0.0,
+            "verify": 0.0
+          },
+          {
+            "born_gen": 1,
+            "gen_max_train": 0.2559,
+            "lineage": "r31-hybrid-23",
+            "strictly_discarded": true,
+            "tie_band": false,
+            "train": 0.0,
+            "verify": 0.0
+          },
+          {
+            "born_gen": 0,
+            "gen_max_train": 0.0,
+            "lineage": "r31-hybrid-2",
+            "strictly_discarded": false,
+            "tie_band": true,
+            "train": 0.0,
+            "verify": 0.0
+          },
+          {
+            "born_gen": 0,
+            "gen_max_train": 0.0,
+            "lineage": "r31-hybrid-1",
+            "strictly_discarded": false,
+            "tie_band": true,
+            "train": 0.0,
+            "verify": 0.0
+          }
+        ]
+      },
+      "root": 31,
+      "status": "ANALYZED",
+      "verdict": "MIXED"
+    },
+    "37": {
+      "ancestor_at_bar_count": 0,
+      "chain_length_ancestors": 1,
+      "chain_table": [
+        {
+          "born_gen": 3,
+          "genome_len": 3,
+          "lineage": "r37-hybrid-53",
+          "train": 0.498,
+          "verify": 0.4824
+        },
+        {
+          "born_gen": 0,
+          "genome_len": 2,
+          "lineage": "r37-hybrid-1",
+          "train": 0.0,
+          "verify": 0.0
+        }
+      ],
+      "champion_discarded_carriers": [],
+      "crossing": {
+        "born_gen": 3,
+        "genome": [
+          [
+            "h",
+            0
+          ],
+          [
+            "cx",
+            0,
+            2
+          ],
+          [
+            "cx",
+            0,
+            1
+          ]
+        ],
+        "lineage": "r37-hybrid-53",
+        "train": 0.498,
+        "verify": 0.4824
+      },
+      "partial_plateau_ancestors": [],
+      "post_hoc_tie_aware": {
+        "label": "POST-HOC (pre-registered verdict above stands)",
+        "note": "every ancestor sat at its gen's train max (ties), but champion-local keeps the INCUMBENT on ties and never crosses between tied elites; the archive's uniform parent-cell sampling is the load-bearing difference (empirical comparator: exp014 champion-local 0/3 on hard roots at same seeds).",
+        "read": "TIE-BAND-DIVERSITY",
+        "rows": [
+          {
+            "born_gen": 3,
+            "gen_max_train": 0.498,
+            "lineage": "r37-hybrid-53",
+            "strictly_discarded": false,
+            "tie_band": true,
+            "train": 0.498,
+            "verify": 0.4824
+          },
+          {
+            "born_gen": 0,
+            "gen_max_train": 0.0,
+            "lineage": "r37-hybrid-1",
+            "strictly_discarded": false,
+            "tie_band": true,
+            "train": 0.0,
+            "verify": 0.0
+          }
+        ]
+      },
+      "root": 37,
+      "status": "ANALYZED",
+      "verdict": "HILL-CLIMB"
+    }
+  }
+}
