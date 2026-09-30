@@ -1,0 +1,146 @@
+{
+  "schema": "micromoth-quilt/exp-receipt@v1",
+  "receipt_kind": "results",
+  "experiment": "exp020-tie-break-ablation",
+  "status": "SEALED",
+  "title": "TIE-BAND-DIVERSITY REPLICATED \u2014 uniform gen-max tie-break alone converts 2/3 of the hard class (29/37), no archive, no retention",
+  "directive": "Upgrade exp019's POST-HOC tie-aware mechanism read to a run-tested mechanism: flip ONLY the gen-max tie-break rule (uniform sampling among exact-fitness ties vs incumbent-first) on the exact exp016 champion-local lane; archive and retention absent by construction.",
+  "engine": {
+    "name": "micromoth",
+    "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
+    "note": "matches the import-baseline manifest pin on main; runner executes against the qcells lab package (labs/qcells), same engine family as exp016-exp019"
+  },
+  "seeds": {
+    "roots": [
+      13,
+      29,
+      31,
+      37
+    ],
+    "shots": 512,
+    "train": 101,
+    "verify": 202,
+    "panel": "easy control 13 (harness sanity, expected crossing in BOTH arms) + hard class 29/31/37 (the discriminating comparison); root_seed = root value, identical for paired arms"
+  },
+  "question": "Is tie-band diversity ALONE sufficient for the hard-root crossing \u2014 i.e. does the exp019 post-hoc TIE-BAND-DIVERSITY read on roots 29/37 survive as a run mechanism when the only change is the gen-max tie-break rule?",
+  "design": "Champion-local skeleton, the exact exp016 lane (targets 000/111, mode balance, n_qubits 3, gate budget 6, jitter-dropped restrict replace/indel, one-move classed cloud, pop 16, gens 12), birth skeleton [[h,0],[cx,0,1]] in every run. Two arms, arm the ONLY difference between paired runs: ARM-INCUMBENT = max() first-wins (train ties freeze on the incumbent, exact exp014 semantics); ARM-TIESAMPLE = all candidates at exact gen-max fitness (exact float equality) sampled uniformly via the run rng, extra draw part of the arm definition. Single champion carried forward \u2014 NO archive, NO non-champion retention; verify gate unchanged. Guard: exp001 default lane (2-qubit |01>, targets (01,), mode any, root 7) reproduced byte-identical through the SAME instrumented loop BEFORE any results were written; the loop's default tie behavior is incumbent, so the guard pins shared machinery; the tiesample arm diverges by definition and is not guard-covered (stated in the pre-registration).",
+  "success_threshold_verify_balance": 0.45,
+  "pre_run_pin": "Interpretation pinned BEFORE running: INCUMBENT must reproduce exp014's class (cross 13, 0/3 hard); TIESAMPLE >=1 hard-root crossing that INCUMBENT missed -> TIE-BAND-DIVERSITY REPLICATED (exp019 post-hoc read upgrades to run mechanism, still N/M per ROOT-LOTTERY, not a law); TIESAMPLE 0/3 -> TIE SAMPLING ALONE INSUFFICIENT (archive advantage NOT explained by tie-band diversity; exp019 assembly verdict stands on retention alone).",
+  "artifacts": [
+    "receipts/exp020-tie-break/exp020.results.json",
+    "receipts/exp020-tie-break/exp020.telemetry.incumbent.r13.jsonl",
+    "receipts/exp020-tie-break/exp020.telemetry.incumbent.r29.jsonl",
+    "receipts/exp020-tie-break/exp020.telemetry.incumbent.r31.jsonl",
+    "receipts/exp020-tie-break/exp020.telemetry.incumbent.r37.jsonl",
+    "receipts/exp020-tie-break/exp020.telemetry.tiesample.r13.jsonl",
+    "receipts/exp020-tie-break/exp020.telemetry.tiesample.r29.jsonl",
+    "receipts/exp020-tie-break/exp020.telemetry.tiesample.r31.jsonl",
+    "receipts/exp020-tie-break/exp020.telemetry.tiesample.r37.jsonl",
+    "receipts/exp020-tie-break/exp020_tie_break_ablation.py"
+  ],
+  "integrity": {
+    "exp020.results.json": "9e3227235f7a37afbbc3e8cf40f99dfdb5e9757221f0bf37f1c8005b3b18c96b",
+    "exp020.telemetry.incumbent.r13.jsonl": "fcbcc4e7f416ea130b2e89eac6dc0d001245393f0b54723fbd0eccfa10b3da63",
+    "exp020.telemetry.incumbent.r29.jsonl": "360d56f0f1bfcd13a7e070852336340ac81ea5df4fe2dce56ca041f9c4aa5816",
+    "exp020.telemetry.incumbent.r31.jsonl": "bbe660e8a22ce3c9144fc56aab6984cb6aa88fa96ca6dddc10361e519ee15317",
+    "exp020.telemetry.incumbent.r37.jsonl": "5949f55c4044f4ae47fe8f9397305ae25235951b3ba948574e5657ed8db5a1f2",
+    "exp020.telemetry.tiesample.r13.jsonl": "98c274f00a7d2f4f501d73c055cee5ca55280b788442ece8e842dc7212a4d3f2",
+    "exp020.telemetry.tiesample.r29.jsonl": "9dfaa9b249905cf7e67fd736ec4b3b74f5a07a9386af0a1617b8b2f1d0ca5b4f",
+    "exp020.telemetry.tiesample.r31.jsonl": "a84875a214f820d944f2808a02bffbf62b230b2d497f97e0dfaa58df9556ded1",
+    "exp020.telemetry.tiesample.r37.jsonl": "613a1038b044f9653d1971bd5b8c25f5fba2ea3387b4f42cbbe62d9a19c16653",
+    "exp020_tie_break_ablation.py": "3e70d5ed0c891cbdfea71ade21fac537152120cf8953bc2d380c874292aa79d5"
+  },
+  "results": {
+    "verdict": "TIE-BAND-DIVERSITY REPLICATED: tiesample crossed 2/3 hard roots ([29, 37] @0.4824) that incumbent missed; incumbent reproduced exp014's class exactly (0/3 hard at the 0.2422 plateau, easy 13 crossed 0.4824); tiesample r31 peaked 0.3027 \u2014 per-root N/M per ROOT-LOTTERY, not a law. No archive, no retention: tie sampling alone converts 2/3 of the hard class.",
+    "guard_exp001_reproduced": true,
+    "guard_coverage_note": "guard pins shared machinery on the default (incumbent tie) lane only; tiesample arm diverges by definition, stated pre-run",
+    "arms": {
+      "incumbent": "max() first-wins (exp014 semantics)",
+      "tiesample": "uniform rng.choice among exact-fitness gen-max ties"
+    },
+    "hard_class": {
+      "incumbent_crossed": [],
+      "tiesample_crossed": [
+        29,
+        37
+      ],
+      "tiesample_only": [
+        29,
+        37
+      ],
+      "neither_crossed": [
+        31
+      ]
+    },
+    "easy_control_root13": {
+      "incumbent_crossed": true,
+      "tiesample_crossed": true,
+      "both_at": 0.4824
+    },
+    "per_root": {
+      "incumbent.r13": {
+        "crossed": true,
+        "max_verify": 0.4824,
+        "tie_gens": 10,
+        "tie_gens_incumbent_tied": 10
+      },
+      "incumbent.r29": {
+        "crossed": false,
+        "max_verify": 0.2422,
+        "tie_gens": 10,
+        "tie_gens_incumbent_tied": 10
+      },
+      "incumbent.r31": {
+        "crossed": false,
+        "max_verify": 0.2422,
+        "tie_gens": 11,
+        "tie_gens_incumbent_tied": 11
+      },
+      "incumbent.r37": {
+        "crossed": false,
+        "max_verify": 0.2422,
+        "tie_gens": 11,
+        "tie_gens_incumbent_tied": 11
+      },
+      "tiesample.r13": {
+        "crossed": true,
+        "max_verify": 0.4824,
+        "tie_gens": 10,
+        "tie_gens_incumbent_tied": 10
+      },
+      "tiesample.r29": {
+        "crossed": true,
+        "max_verify": 0.4824,
+        "tie_gens": 10,
+        "tie_gens_incumbent_tied": 10
+      },
+      "tiesample.r31": {
+        "crossed": false,
+        "max_verify": 0.3027,
+        "tie_gens": 7,
+        "tie_gens_incumbent_tied": 7
+      },
+      "tiesample.r37": {
+        "crossed": true,
+        "max_verify": 0.4824,
+        "tie_gens": 11,
+        "tie_gens_incumbent_tied": 10
+      }
+    },
+    "mechanism_read": "exp019's post-hoc tie-aware read (29/37 TIE-BAND-DIVERSITY) upgrades to run-tested mechanism; r31 remains the resistant root (exp021 sealed follow-up in the qcells lab: 3/8 salted streams crossed r31 \u2014 a per-stream ROOT-LOTTERY draw, not a wall)",
+    "comparator_exp014_reproduced_in_arm": "incumbent arm = exp014 champion-local semantics on the overlapping panel: 0/3 hard roots at the 0.2422 plateau, easy root crossed \u2014 the harness reproduces the comparator class live in-arm"
+  },
+  "cross_receipts": {
+    "exp014": "comparator class live in-arm: champion-local 0/3 hard (MERGED PR #19); no pin depends on exp014 files beyond the embedded comparator block",
+    "exp016": "the lane and the hybrid crossing this ablation decomposes (MERGED PR #22)",
+    "exp018": "the desert premise: freeze upstream of selection on 29/31/37 (MERGED PR #24)",
+    "exp019": "the post-hoc mechanism read this run upgrades (PR #25 Casey-gated at seal time \u2014 read cited from sealed artifacts with named provenance; this receipt anchors only on merged receipts for its load-bearing pins)",
+    "exp012": "ROOT-LOTTERY doctrine (MERGED PR #17): 2/3-vs-0/3 is an N/M rate read, never a mechanism law"
+  },
+  "honest_limits": [
+    "N/M, NOT A LAW: 2/3 hard roots (29/37) under tiesample vs 0/3 incumbent is a root-disjoint draw of 3 roots per exp012 ROOT-LOTTERY doctrine; the mechanism claim is 'tie-band diversity is sufficient to convert SOME of the hard class', not 'the archive's advantage is tie-breaking'.",
+    "r31 UNEXPLAINED BY THIS RUN: tiesample r31 peaked 0.3027 and still did not cross; the per-stream ROOT-LOTTERY follow-up (exp021: 3/8 salted streams crossed r31) is sealed in the qcells lab, not in this receipt.",
+    "GUARD COVERAGE STATED: the guard reproduces exp001 on the default (incumbent) tie lane only; the tiesample arm diverges from the guard lane by definition and is not guard-covered \u2014 stated pre-run, not discovered post-hoc.",
+    "The extra rng draw in the tiesample arm is part of the arm definition (documented stream divergence); arms are not draw-matched beyond the shared birth/root/lane, by design pin."
+  ]
+}
