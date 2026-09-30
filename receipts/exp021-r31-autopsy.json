@@ -1,0 +1,95 @@
+{
+ "schema": "micromoth-quilt/exp-receipt@v1",
+ "receipt_kind": "results",
+ "experiment": "exp021-r31-tie-context-autopsy",
+ "status": "SEALED",
+ "title": "RATE NOT WALL + DESERT-EXTENDS-TO-CLOUD — r31's resistance is a per-stream lottery draw (3/8 salted streams cross @0.4824), and the canonical stream's whole cloud holds no verify>=0.45 cell in any of 12 gens",
+ "directive": "Autopsy root 31's lone resistance to tie-band diversity (exp020 crossed 29+37, 31 stayed closed @0.3027): Q1 replicate the exact exp020 tiesample lane on r31 across K=8 salted rng streams (rate vs wall); Q2 passively census EVERY cloud cell's held-out verify per gen on the canonical seed-31 stream (opportunity census, zero rng consumption).",
+ "engine": {
+  "name": "micromoth",
+  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
+  "note": "matches the import-baseline manifest pin on main; runner executes against the qcells lab package (labs/qcells), same engine family as exp016-exp020"
+ },
+ "seeds": {
+  "q1_salts": "rng seed = 31000+k for k=0..7 (8 salted streams, exact exp020 tiesample lane, root 31)",
+  "q2_canonical": "rng seed=31 (the exact exp020 stream, rerun as instrumented census; plus one incumbent-arm run seed=31 for contrast)",
+  "train": 101,
+  "verify": 202,
+  "shots": 512,
+  "panel": "root 31 only — the single hard-class root exp020's tiesample arm left closed"
+ },
+ "question": "Why does root 31 alone resist tie-band diversity: is its resistance a per-stream RATE (ROOT-LOTTERY) or an absolute WALL at this panel (Q1), and did the canonical stream ever birth a crossing cell the tie rule failed to pick (Q2)?",
+ "design": "Q1: K=8 replicates of the exact exp020 tiesample lane on root 31, rng seed=31000+k; no pooling across streams; per-stream N/M honest read. Q2: single instrumented run seed=31 tie_sample=True + one incumbent-arm run seed=31; census records per gen per-candidate train_p and verify_p for EVERY cloud cell (not just the tie band, not just the promoted pick); census evals use p_target's deterministic seeds and consume NO rng draws — the child stream and tie-break sequence are byte-identical to exp020 (census is a passive observer). Lane: targets ('000','111'), mode balance, n_qubits 3, train_seed 101, verify_seed 202, shots 512, gate budget 6, exp004 policy restrict=('replace','indel'), pop 16, gens 12, birth skeleton [['h',0],['cx',0,1]], BAR 0.45. NO archive, NO retention anywhere in this experiment.",
+ "success_threshold_verify_balance": 0.45,
+ "pre_run_pin": "Q1 pinned BEFORE running: >=1 crossing in 8 salted streams -> RATE NOT WALL (resistance is a per-stream ROOT-LOTTERY draw; exp019 retention verdict for 31 stands on rate grounds, not uniqueness); 0/8 -> WALL AT K=8 POWER (desert read stands absolute at this panel). Q2 pinned BEFORE running, three outcomes: (a) some gen's TIE BAND contains a verify>=0.45 cell -> OPPORTUNITY-MISSED (tie sampling failed to draw an existing crossing cell; rate-supporting); (b) cloud contains a verify>=0.45 cell but NEVER in any tie band -> STRUCTURAL MISMATCH (crossing fitness invisible to gen-max train selection on 31); (c) cloud NEVER contains a verify>=0.45 cell across all 12 gens -> DESERT-EXTENDS-TO-CLOUD (exp016's r31 crossing necessarily assembled fitness ACROSS generations via retention; exp019 RETENTION-ASSEMBLY verdict is the only remaining mechanism).",
+ "artifacts": [
+  "receipts/exp021-r31-autopsy/exp021.results.json",
+  "receipts/exp021-r31-autopsy/exp021.telemetry.q1.k0.jsonl",
+  "receipts/exp021-r31-autopsy/exp021.telemetry.q1.k1.jsonl",
+  "receipts/exp021-r31-autopsy/exp021.telemetry.q1.k2.jsonl",
+  "receipts/exp021-r31-autopsy/exp021.telemetry.q1.k3.jsonl",
+  "receipts/exp021-r31-autopsy/exp021.telemetry.q1.k4.jsonl",
+  "receipts/exp021-r31-autopsy/exp021.telemetry.q1.k5.jsonl",
+  "receipts/exp021-r31-autopsy/exp021.telemetry.q1.k6.jsonl",
+  "receipts/exp021-r31-autopsy/exp021.telemetry.q1.k7.jsonl",
+  "receipts/exp021-r31-autopsy/exp021.telemetry.q2.incumbent.r31.jsonl",
+  "receipts/exp021-r31-autopsy/exp021.telemetry.q2.tiesample.r31.jsonl",
+  "receipts/exp021-r31-autopsy/exp021_r31_tie_context.py"
+ ],
+ "integrity": {
+  "exp021.results.json": "9ff62e2f886a58f9ce86b017d5c3c53844c785b5513ad2613e8e7ab20662467b",
+  "exp021.telemetry.q1.k0.jsonl": "10b4099094812d4a7cafdf098ee1eed0c335afcab7ed0cca3609586c9a6f4138",
+  "exp021.telemetry.q1.k1.jsonl": "64691bd3ae52e4426b771d74a3bb90bc643525ff49008cca7204c9e29c9a1cef",
+  "exp021.telemetry.q1.k2.jsonl": "3c8e4f00d24376ff351320acd97c20e8cc5e817474569c7121cc63b67c7a7e3f",
+  "exp021.telemetry.q1.k3.jsonl": "6c04c80f71f0633bd770a99845afd2eb6ce5168e61182ed5a7b5a6267f7b5398",
+  "exp021.telemetry.q1.k4.jsonl": "6e7d1d2f7ba487d076264c4d013da7375407c5204035b5f62e212064e52a37ea",
+  "exp021.telemetry.q1.k5.jsonl": "46619217f429d014877073008cb3142024fcc8a30e6fa15e29c4c634c1e7e4a6",
+  "exp021.telemetry.q1.k6.jsonl": "d642c965d8d1f530b20175cdc0cfd137487b620adf0b8a17ec7a3ac0c42a775c",
+  "exp021.telemetry.q1.k7.jsonl": "03a76a6a91e0e8c6b3ca63131f6474893781aff05a9fbf839e05c6f9cbd97693",
+  "exp021.telemetry.q2.incumbent.r31.jsonl": "032c89cd42d399030bd9b8fd3049f8ad7c8a14f3f3e250347be698d7a6de44e7",
+  "exp021.telemetry.q2.tiesample.r31.jsonl": "c6b097b0bad935e511be95e2c97dbfedb12bc6aef8ce5cd08dcea5f9d9b1da75",
+  "exp021_r31_tie_context.py": "14acbd1b9ff03a3ee61439efc4ebb45fd68db11d833eb94d102b2edde186f2b4"
+ },
+ "results": {
+  "verdict": "RATE NOT WALL + DESERT-EXTENDS-TO-CLOUD: 3/8 salted streams crossed r31 @0.4824 (k3/k5/k6) — 31's resistance is a per-stream ROOT-LOTTERY draw, not a wall; and on the canonical seed-31 stream NO cloud cell reached verify>=0.45 in any of 12 gens under either tie arm (max cloud verify = champion itself: 0.3027 tiesample / 0.2422 incumbent, opportunity gens empty in both arms) — the exp016 archive crossing on 31 necessarily assembled fitness ACROSS generations via retention; exp019's RETENTION-ASSEMBLY verdict is the only remaining mechanism.",
+  "guard_exp001_reproduced": true,
+  "guard_coverage_note": "guard pins the instrumented loop (census active) to exp001 byte-identical on the default lane; Q2 arms replicate exp020's r31 finals exactly (exp020_replicate_ok flags in sealed results)",
+  "q1_rate_vs_wall": {
+   "K": 8,
+   "crossings": 3,
+   "crossed_streams": ["k3", "k5", "k6"],
+   "non_crossed": {
+    "k0": 0.2422, "k1": 0.2422, "k2": 0.2422,
+    "k4": 0.418, "k7": 0.0
+   },
+   "seeds_base": 31000,
+   "band_verdict": "RATE NOT WALL: >=1 crossing in 8 -> the pre-registered RATE band; 3/8 is an N/M rate read per ROOT-LOTTERY, not a law"
+  },
+  "q2_opportunity_census": {
+   "incumbent": {"crossed": false, "champion_verify": 0.2422, "max_cloud_verify": 0.2422, "max_band_verify": 0.2422, "cloud_opportunity_gens": [], "band_opportunity_gens": [], "exp020_replicate_ok": true},
+   "tiesample": {"crossed": false, "champion_verify": 0.3027, "max_cloud_verify": 0.3027, "max_band_verify": 0.3027, "cloud_opportunity_gens": [], "band_opportunity_gens": [], "exp020_replicate_ok": true},
+   "band_verdict": "DESERT-EXTENDS-TO-CLOUD: outcome (c) of the pre-registered Q2 bands — the cloud NEVER held a verify>=0.45 cell in 12 gens on the canonical stream, in either arm; not opportunity-missed (a), not structural mismatch (b)"
+  },
+  "exp020_comparator": {
+   "source": "exp020 tie-break ablation, MERGED PR #26 (commit 43355036)",
+   "tiesample_r31": {"crossed": false, "final_verify": 0.3027, "tie_gens": 7},
+   "incumbent_r31": {"crossed": false, "final_verify": 0.2422}
+  }
+ },
+ "cross_receipts": {
+  "exp012": "ROOT-LOTTERY doctrine (MERGED PR #17): 3/8 vs 0/1 is a per-stream draw, never a mechanism law",
+  "exp014": "champion-local class on the hard roots (MERGED PR #19): incumbent r31 final 0.2422 matches the sealed comparator",
+  "exp016": "the archive crossing on 31 this census explains (MERGED PR #22): retention assembled what no single-gen cloud held",
+  "exp018": "FITNESS DESERT AT THE BIRTH CLOUD premise (MERGED PR #24): Q2 extends the desert read from the birth cloud to the whole per-gen cloud on the canonical stream",
+  "exp019": "RETENTION-ASSEMBLY mechanism read for root 31 (MERGED PR #25): Q2 outcome (c) leaves it as the only remaining mechanism; Q1 makes it a rate claim, not a uniqueness claim",
+  "exp020": "the experiment under autopsy (MERGED PR #26): Q2 arms replicate its r31 finals byte-exactly (replicate_ok flags); both of its hard-class crossings (29/37) are outside this receipt's panel"
+ },
+ "honest_limits": [
+  "N/M, NOT A LAW: 3/8 salted streams crossing r31 is a per-stream draw under ROOT-LOTTERY (exp012); the claim is '31's resistance is rate-explicable', not 'every salted stream crosses'.",
+  "k4 NAMED, NOT HIDDEN: seed 31004 peaked 0.418 — the closest non-crosser — reported in the sealed table rather than rounded into the crossers.",
+  "k7 DEAD STREAM NAMED: seed 31007 never left 0.0 (birth cloud held nothing all 12 gens) — the desert has a per-stream severity range, stated not smoothed.",
+  "GUARD COVERAGE STATED: the guard reproduces exp001 on the default lane with the census instrument active; the Q2 arms diverge from the guard lane by definition (tie_sample=True) and are covered only by the exp020 replicate_ok flags, stated pre-run.",
+  "CENSUS IS PASSIVE: census evals consume no rng draws; the child stream and tie-break sequence are byte-identical to exp020's r31 runs — the instrument observed, never steered.",
+  "SINGLE PANEL: Q1 replicates only root 31 (the exp020 holdout); no claim is made about 29/37's stream rates from this experiment."
+ ]
+}
