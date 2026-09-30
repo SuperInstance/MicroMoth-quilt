@@ -1,8 +1,8 @@
 {
   "schema": "micromoth-quilt/import-baseline@v1",
   "upstream": "moth-quantum/MicroMoth",
-  "baseline_commit": "accfb68f205d1512292e17d2e22abd4de113b655",
-  "generated_at": "2026-09-30T03:07:37.810316+00:00",
+  "baseline_commit": "5106a14e04b04d73bb1239362b7f2671ad71a8b1",
+  "generated_at": "2026-09-30T03:23:25.146751+00:00",
   "self": "receipts/import-baseline.json (excluded: sha256 fixed-point, cannot embed own digest)",
   "doctrine": "regenerate via tools/import_manifest.py; never edit by hand",
   "files": {

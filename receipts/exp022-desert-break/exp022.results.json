@@ -1,0 +1,204 @@
+{
+ "contrast_read": {
+  "k4": {
+   "band_bar_gens": [],
+   "bar_cell_gens": [],
+   "champion_verify": 0.418,
+   "window_gens": null
+  },
+  "k7": {
+   "band_bar_gens": [],
+   "bar_cell_gens": [],
+   "champion_verify": 0.0,
+   "window_gens": null
+  }
+ },
+ "experiment": "exp022 crossing-stream census",
+ "guard": {
+  "exp001_reproduced_byte_identical": true
+ },
+ "honesty": "census evals consume no rng; replicate pins vs exp021.results.json champion/crossed values verbatim prove stream-inertness per stream, not assumed; post-hoc reads labeled; no archive, no retention anywhere in this experiment; verdict sharpened post-hoc from telemetry band sizes (n_tied at pick gen), labeled here",
+ "lane": {
+  "bar": 0.45,
+  "budget": 6,
+  "gens": 12,
+  "mode": "balance",
+  "n_qubits": 3,
+  "pop": 16,
+  "restrict": [
+   "replace",
+   "indel"
+  ],
+  "shots": 512,
+  "skeleton": [
+   [
+    "h",
+    0
+   ],
+   [
+    "cx",
+    0,
+    1
+   ]
+  ],
+  "targets": [
+   "000",
+   "111"
+  ],
+  "tie_sample": true,
+  "train_seed": 101,
+  "verify_seed": 202
+ },
+ "question": "does the k3/k5/k6 crossing band hold the >=0.45 cell, and how is it promoted (exp021 Q2 covered only the non-crossing canonical stream)",
+ "streams": {
+  "k3": {
+   "band_bar_gens": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "bar_cell_gens": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "bar_cells_gen_max_values": [
+    0.498047
+   ],
+   "bar_cells_in_band_only": true,
+   "bar_cells_train_values": [
+    0.498047
+   ],
+   "champion_verify": 0.4824,
+   "class": "crossing",
+   "crossed": true,
+   "exp021_replicate_ok": true,
+   "first_bar_cell_gen": 0,
+   "n_bar_cells_total": 54,
+   "pick_gen": 0,
+   "seed": 31003,
+   "window_gens": 0
+  },
+  "k4": {
+   "band_bar_gens": [],
+   "bar_cell_gens": [],
+   "bar_cells_gen_max_values": [],
+   "bar_cells_in_band_only": null,
+   "bar_cells_train_values": [],
+   "champion_verify": 0.418,
+   "class": "contrast_near_miss",
+   "crossed": false,
+   "exp021_replicate_ok": true,
+   "first_bar_cell_gen": null,
+   "n_bar_cells_total": 0,
+   "pick_gen": null,
+   "seed": 31004,
+   "window_gens": null
+  },
+  "k5": {
+   "band_bar_gens": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "bar_cell_gens": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ],
+   "bar_cells_gen_max_values": [
+    0.498047
+   ],
+   "bar_cells_in_band_only": true,
+   "bar_cells_train_values": [
+    0.498047
+   ],
+   "champion_verify": 0.4824,
+   "class": "crossing",
+   "crossed": true,
+   "exp021_replicate_ok": true,
+   "first_bar_cell_gen": 3,
+   "n_bar_cells_total": 50,
+   "pick_gen": 3,
+   "seed": 31005,
+   "window_gens": 0
+  },
+  "k6": {
+   "band_bar_gens": [
+    8,
+    9,
+    10,
+    11
+   ],
+   "bar_cell_gens": [
+    8,
+    9,
+    10,
+    11
+   ],
+   "bar_cells_gen_max_values": [
+    0.498047
+   ],
+   "bar_cells_in_band_only": true,
+   "bar_cells_train_values": [
+    0.498047
+   ],
+   "champion_verify": 0.4824,
+   "class": "crossing",
+   "crossed": true,
+   "exp021_replicate_ok": true,
+   "first_bar_cell_gen": 8,
+   "n_bar_cells_total": 14,
+   "pick_gen": 8,
+   "seed": 31006,
+   "window_gens": 0
+  },
+  "k7": {
+   "band_bar_gens": [],
+   "bar_cell_gens": [],
+   "bar_cells_gen_max_values": [],
+   "bar_cells_in_band_only": null,
+   "bar_cells_train_values": [],
+   "champion_verify": 0.0,
+   "class": "contrast_dead",
+   "crossed": false,
+   "exp021_replicate_ok": true,
+   "first_bar_cell_gen": null,
+   "n_bar_cells_total": 0,
+   "pick_gen": null,
+   "seed": 31007,
+   "window_gens": null
+  }
+ },
+ "verdict": "TRAIN-VISIBLE CROSSING, TIE-BREAK-INVARIANT (pre-registered outcome (b) fired, sharpened by telemetry): on all three crossing streams the >=0.45 cell appeared with train_p=0.498 AND verify_p=0.482 at a single desert-break gen (k3 gen0, k5 gen3, k6 gen8), as the gen-max \u2014 n_tied=1 on k3/k5 (unique max, ANY tie rule picks it) and n_tied=2 on k6 (band = two identical 0.4824 twins, either draw crosses). Pick window = 0 gens in all three; subsequent bar_gens are the promoted champion sitting in the cloud. READ: on r31 the crossing is NOT a tie-band lottery \u2014 it is a per-stream DESERT-BREAK RATE: 5/8 streams never birth a train-visible high cell in 12 gens (k0-k2, k4 near-miss 0.418 train-visible but under BAR, k7 fully dead), 3/8 break and then selection is trivial. exp020's tie-sampling contrast (29/37) is root-specific and does not govern 31; exp021 RATE-NOT-WALL upgraded from 'band draw odds' to 'desert-break odds'; exp016's archive crossing on the canonical 31 stream (desert all 12 gens per exp021 Q2) = RETENTION-ASSEMBLY still stands as the only no-desert-break mechanism."
+}

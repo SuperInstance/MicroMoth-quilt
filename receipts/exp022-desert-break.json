@@ -1,0 +1,77 @@
+{
+ "schema": "micromoth-quilt/exp-receipt@v1",
+ "receipt_kind": "results",
+ "experiment": "exp022-crossing-stream-census",
+ "status": "SEALED",
+ "title": "TRAIN-VISIBLE CROSSING, TIE-BREAK-INVARIANT — on every r31 crossing stream the >=0.45 cell appeared train-visible (0.498/0.482) at a single desert-break gen as the gen-max (n_tied=1,1,2), so root 31's crossing is a per-stream DESERT-BREAK RATE (5/8 never birth one), not a tie-band lottery; RETENTION-ASSEMBLY stands as the only no-break mechanism",
+ "directive": "exp021's Q2 opportunity census ran on exactly one stream — the canonical NON-crossing one (seed 31). Run the SAME passive census on the crossing band k3/k5/k6 (exp021 Q1 salts, seeds 31003/31005/31006) plus the two named contrast non-crossers (k4 near-miss 0.418, k7 dead 0.0), asking: on streams that DID cross, where did the >=0.45 cell come from and how was it promoted?",
+ "engine": {
+  "name": "micromoth",
+  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
+  "note": "matches the import-baseline manifest pin on main; runner executes against the qcells lab package (labs/qcells), same engine family as exp016-exp021"
+ },
+ "seeds": {
+  "streams": "rng seed = 31000+k for k in {3,4,5,6,7} — the exact exp021 Q1 salted streams (crossing band k3/k5/k6, contrasts k4/k7)",
+  "train": 101,
+  "verify": 202,
+  "shots": 512,
+  "panel": "root 31 only — the exp020 holdout that exp021 autopsied"
+ },
+ "question": "Does the k3/k5/k6 crossing band hold the >=0.45 cell, and how is it promoted? Specifically: did the crossing cell appear as a desert-floor cell inside an all-floor tie band (promoted purely by tie-sample rng — the tie-band lottery), or train-visible at its promotion gen (exp018's desert is root-specific, not stream-specific)?",
+ "design": "Five instrumented replicates of the exact exp020/exp021 tiesample lane (targets ('000','111'), mode balance, n_qubits 3, train_seed 101, verify_seed 202, shots 512, gate budget 6, exp004 policy restrict=('replace','indel'), pop 16, gens 12, birth skeleton [['h',0],['cx',0,1]], BAR 0.45, tie_sample=True), each carrying the exp021 passive census: per gen, EVERY cloud cell's train_p and verify_p recorded (census evals use p_target's deterministic seeds and consume NO rng — the child stream and tie-break sequence are byte-identical to exp020/exp021, proven per stream by the replicate pins, not assumed). Replicate pins BEFORE running: k3/k5/k6 champions finish @0.4824 crossed, k4 @0.418 not crossed, k7 @0.0 (exp021.results.json values verbatim). Guard: exp001 default lane through the SAME instrumented loop (census ACTIVE) must reproduce experiments/exp001.results.json byte-identical. NO archive, NO retention anywhere in this experiment.",
+ "success_threshold_verify_balance": 0.45,
+ "pre_run_pin": "Pinned outcome (a) DESERT-FLOOR TIE-BAND LOTTERY: the crossing cell appeared in the cloud with train=0 (desert-floor), sat inside an all-floor tie band (gen_max = floor), and was promoted purely by the tie-sample rng draw — TIE-BAND-DIVERSITY refines from 'mechanism' to 'lottery odds': P(cross) = P(>=BAR cell born) x P(drawn within its window); window length (gens the cell sat in the cloud before pick) reported per stream. Pinned outcome (b) TRAIN-VISIBLE CROSSING: the crossing cell carried train > 0 in its promotion gen — exp018's desert is root-specific, not stream-specific, and crossing streams simply escape the desert; reported honestly if so. Contrast expectation (not a verdict condition): k4's near-miss cloud should top out just under BAR; k7's cloud should hold nothing — if k4/k7 clouds DO hold >=BAR cells that were never drawn, that is OPPORTUNITY-MISSED evidence sharpening the lottery read.",
+ "artifacts": [
+  "receipts/exp022-desert-break/exp022.results.json",
+  "receipts/exp022-desert-break/exp022.telemetry.k3.jsonl",
+  "receipts/exp022-desert-break/exp022.telemetry.k4.jsonl",
+  "receipts/exp022-desert-break/exp022.telemetry.k5.jsonl",
+  "receipts/exp022-desert-break/exp022.telemetry.k6.jsonl",
+  "receipts/exp022-desert-break/exp022.telemetry.k7.jsonl",
+  "receipts/exp022-desert-break/exp022_crossing_stream_census.py"
+ ],
+ "integrity": {
+  "exp022.results.json": "ac9666af23232165add204a7023ffe5a6a7981de9b649a85d45d7ea2d59349eb",
+  "exp022.telemetry.k3.jsonl": "b4ebee963aad1f2502eb816b11dc235bac04f492c96d023891a25015ae30b565",
+  "exp022.telemetry.k4.jsonl": "fb70fbabd119a57bd0d3abe3732861639988aa9984e871247baff347578a993f",
+  "exp022.telemetry.k5.jsonl": "c61aaec3c86fd889740e6e047a390ccf1ba8c46a6dfa09747313706430eeed49",
+  "exp022.telemetry.k6.jsonl": "7c6a131d96eaa9e467ba2c10b04756d53c06969cc735d64b2b3301357364b266",
+  "exp022.telemetry.k7.jsonl": "a3029418444d68cfa11c7dedb2ba0bf3e0b16a59677a4e0c1f4963fbd03a8ef8",
+  "exp022_crossing_stream_census.py": "38dbd1a7a8285f1405d581d2a743e58b82f1dfcea9f7d55b8255cad715f82001"
+ },
+ "results": {
+  "verdict": "TRAIN-VISIBLE CROSSING, TIE-BREAK-INVARIANT (pre-registered outcome (b) fired, sharpened by telemetry): on all three crossing streams the >=0.45 cell appeared with train_p=0.498 AND verify_p=0.482 at a single desert-break gen (k3 gen0, k5 gen3, k6 gen8), as the gen-max — n_tied=1 on k3/k5 (unique max, ANY tie rule picks it) and n_tied=2 on k6 (band = two identical 0.4824 twins, either draw crosses). Pick window = 0 gens in all three; subsequent bar_gens are the promoted champion sitting in the cloud. READ: on r31 the crossing is NOT a tie-band lottery — it is a per-stream DESERT-BREAK RATE: 5/8 streams never birth a train-visible high cell in 12 gens (k0-k2, k4 near-miss 0.418 train-visible but under BAR, k7 fully dead), 3/8 break and then selection is trivial. exp020's tie-sampling contrast (29/37) is root-specific and does not govern 31; exp021 RATE-NOT-WALL upgraded from 'band draw odds' to 'desert-break odds'; exp016's archive crossing on the canonical 31 stream (desert all 12 gens per exp021 Q2) = RETENTION-ASSEMBLY still stands as the only no-desert-break mechanism.",
+  "guard_exp001_reproduced": true,
+  "guard_coverage_note": "guard pins the instrumented loop (census active) to exp001 byte-identical on the default lane; the five census streams diverge from the guard lane by design (n_qubits=3 balance lane) and are covered by the exp021 replicate_ok flags, stated pre-run",
+  "streams": {
+   "k3": {"seed": 31003, "class": "crossing", "crossed": true, "champion_verify": 0.4824, "pick_gen": 0, "first_bar_cell_gen": 0, "window_gens": 0, "n_tied_at_pick": 1, "n_bar_cells_total": 54, "exp021_replicate_ok": true},
+   "k5": {"seed": 31005, "class": "crossing", "crossed": true, "champion_verify": 0.4824, "pick_gen": 3, "first_bar_cell_gen": 3, "window_gens": 0, "n_tied_at_pick": 1, "n_bar_cells_total": 50, "exp021_replicate_ok": true},
+   "k6": {"seed": 31006, "class": "crossing", "crossed": true, "champion_verify": 0.4824, "pick_gen": 8, "first_bar_cell_gen": 8, "window_gens": 0, "n_tied_at_pick": 2, "n_bar_cells_total": 14, "exp021_replicate_ok": true},
+   "k4": {"seed": 31004, "class": "contrast_near_miss", "crossed": false, "champion_verify": 0.418, "max_cloud_verify": 0.417969, "max_cloud_train": 0.4375, "n_bar_cells_total": 0, "exp021_replicate_ok": true},
+   "k7": {"seed": 31007, "class": "contrast_dead", "crossed": false, "champion_verify": 0.0, "max_cloud_verify": 0.0, "max_cloud_train": 0.0, "n_bar_cells_total": 0, "exp021_replicate_ok": true}
+  },
+  "crossing_cell_fingerprint": {"train_p": 0.498047, "verify_p": 0.482422, "promotion": "gen-max at birth gen; band held ONLY the >=BAR cell(s) (bar_cells_in_band_only=true on all three crossing streams)"},
+  "exp021_comparator": {
+   "source": "exp021 r31 tie-context autopsy (PR #27, branch exp021-r31-autopsy-receipt)",
+   "q1_crossed_streams": ["k3", "k5", "k6"],
+   "q1_non_crossed": {"k0": 0.2422, "k1": 0.2422, "k2": 0.2422, "k4": 0.418, "k7": 0.0},
+   "note": "exp022 censuses five of the eight exp021 Q1 streams (the three crossers + the two named contrasts); k0/k1/k2 remain censused only by exp021's Q1 finals, stated not smoothed"
+  }
+ },
+ "cross_receipts": {
+  "exp018": "FITNESS DESERT AT THE BIRTH CLOUD premise (MERGED PR #24): outcome (b) shows the desert is ROOT-SPECIFIC, not stream-specific — the three crossing streams all escaped it; the five non-crossers did not",
+  "exp019": "RETENTION-ASSEMBLY mechanism read for root 31 (MERGED PR #25): on the crossing streams NO retention was needed (train-visible gen-max, window 0); on the canonical stream it remains the only no-desert-break mechanism — the mechanism read is now conditional, not universal",
+  "exp020": "TIE-BAND-DIVERSITY experiment under refinement (MERGED PR #26): its tie-sampling arm governs 29/37, NOT 31 — on 31 selection is trivial once the desert breaks (n_tied<=2, any rule picks the cell)",
+  "exp021": "the autopsy this census extends (OPEN PR #27 on this branch stack, not yet merged): Q1 supplied the five streams + finals this experiment replicates verbatim; Q2's DESERT-EXTENDS-TO-CLOUD on the canonical stream plus this census's crossing-stream reads give the full 8-stream picture",
+  "exp016": "the archive crossing being explained (MERGED PR #22): canonical 31 never breaks (exp021 Q2) and no stream crosses without a desert-break gen — the archive's cross-generation assembly is the only mechanism observed crossing 31"
+ },
+ "honest_limits": [
+  "N/M, NOT A LAW: 3/8 streams break the desert in 12 gens is a per-stream draw under ROOT-LOTTERY (exp012); the claim is 'crossing waits on a desert-break gen', not 'every stream breaks'.",
+  "k0/k1/k2 NOT CENSUSED HERE: only k3-k7 carry the per-gen cloud census; the non-crossing salt panel's cloud interiors remain unobserved (exp021 Q2 covered the canonical stream only) — stated, not smoothed.",
+  "k4 NAMED, NOT HIDDEN: 0.418 champion with cloud max train 0.4375 — the closest non-crosser is a genuine near-miss, reported in the sealed table rather than rounded into the dead class.",
+  "k7 DEAD STREAM NAMED: never left 0.0 (cloud max train 0.0) — the desert has a per-stream severity range, stated not smoothed.",
+  "n_tied READ POST-HOC: the tie-invariance read (n_tied=1,1,2 at pick gens) is a telemetry read, not a pre-registered condition; the pre-registered fired outcome is (b) TRAIN-VISIBLE CROSSING, labeled in results.json honesty.",
+  "CENSUS IS PASSIVE: census evals consume no rng draws; replicate_ok flags prove stream-inertness per stream, not assumed; the instrument observed, never steered.",
+  "SINGLE PANEL: five streams, root 31 only; no claim is made about 29/37's desert-break rates from this experiment."
+ ]
+}
