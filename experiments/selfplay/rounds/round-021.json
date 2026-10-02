@@ -7,22 +7,23 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:12:19Z",
+  "ts": "2026-10-02T02:05:23Z",
   "caught": true,
   "verdict": "caught",
   "new_failures": [
     "tests/test_exp006_receipt.py::TestExp006Receipt::test_sealed_champion_program_executable",
     "tests/test_exp008_receipt.py::TestExp008Receipt::test_sealed_champion_program_executable",
     "tests/test_exp009_receipt.py::TestExp009Receipt::test_sealed_champion_program_executable",
-    "tests/test_exp012_receipt.py::TestExp012Receipt::test_pi_expansion_honesty_on_best_new_root_champion"
+    "tests/test_exp012_receipt.py::TestExp012Receipt::test_pi_expansion_honesty_on_best_new_root_champion",
+    "tests/test_exp014_receipt.py::TestExp014Receipt::test_every_crossing_champion_reproduces_sealed_balance"
   ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 1338,
-  "failed_n": 5,
-  "passed_n": 139,
+  "battery_ms": 511,
+  "failed_n": 6,
+  "passed_n": 250,
   "error_n": 0,
   "canary": null
 }

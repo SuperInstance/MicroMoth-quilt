@@ -7,19 +7,20 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:12:06Z",
+  "ts": "2026-10-02T02:05:18Z",
   "caught": true,
   "verdict": "caught",
   "new_failures": [
-    "tests/test_exp011_receipt.py::TestExp011Receipt::test_crossing_champion_executable_and_pi_expansion"
+    "tests/test_exp011_receipt.py::TestExp011Receipt::test_crossing_champion_executable_and_pi_expansion",
+    "tests/test_widening_pins.py::TestNoiseIsPerQubit::test_two_qubit_asymmetric_pins_the_per_qubit_mixing"
   ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 1342,
-  "failed_n": 2,
-  "passed_n": 142,
+  "battery_ms": 519,
+  "failed_n": 3,
+  "passed_n": 253,
   "error_n": 0,
   "canary": "canary-04",
   "canary_seed": "37eb3dc0137fe1fd"
