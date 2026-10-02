@@ -14,6 +14,13 @@ one pre-existing RED, test_import_baseline manifest drift — see PIN.md).
 Run: python3 tools/selfplay.py          # baseline + 60 rounds + summary
      python3 tools/selfplay.py --rounds-per-shape 2 --canaries 12
 Stdlib only. Receipts land in experiments/selfplay/rounds/.
+
+Widening (2026-10-01, seal-pin lane, PR#30 follow-up): phase_sign_flip
+gains a |1>-branch variant (rz degenerates to a global phase) and
+noise_mixing_swap gains a per-qubit mis-index variant (noise_model[0]);
+both are caught by the widening pins in tests/test_widening_pins.py,
+which also carry the boundary-draw canary (r == cumu equality injected
+deliberately at interior and total boundaries).
 """
 from __future__ import annotations
 
@@ -89,6 +96,10 @@ SHAPES = {
         {"desc": "phaseturn drops the minus inside sin(-theta/2) for the y-component",
          "edits": [("x[1]*cos(theta/2) + x[0]*sin(-theta/2)",
                     "x[1]*cos(theta/2) + x[0]*sin(theta/2)", 0)]},
+        {"desc": "phaseturn conjugates the |1> branch (both sin(+theta/2) -> "
+                 "sin(-theta/2)): rz degenerates to a GLOBAL phase",
+         "edits": [("[y[0]*cos(theta/2) - y[1]*sin(+theta/2),y[1]*cos(theta/2) + y[0]*sin(+theta/2)]",
+                    "[y[0]*cos(theta/2) - y[1]*sin(-theta/2),y[1]*cos(theta/2) + y[0]*sin(-theta/2)]", 0)]},
     ],
     "boundary_offbyone": [
         {"desc": "shot-sampling loop drops the final shot (range(shots) -> range(shots-1))",
@@ -102,6 +113,9 @@ SHAPES = {
                     "probs[b0] = p_meas*p0 + (1-p_meas)*p1", 0),
                    ("probs[b1] = (1-p_meas)*p1 + p_meas*p0",
                     "probs[b1] = (1-p_meas)*p0 + p_meas*p1", 0)]},
+        {"desc": "per-qubit mis-index: every qubit reads noise_model[0] "
+                 "(invisible to uniform noise and to re-label-invariant Bell pins)",
+         "edits": [("p_meas = noise_model[j]", "p_meas = noise_model[0]", 0)]},
     ],
     "comparison_flip": [
         {"desc": "sampling acceptance r<cumu -> r<=cumu (boundary double-count risk)",
@@ -405,13 +419,17 @@ def main() -> int:
         neg_items.append(f"- Harness crashes: {honest['harness_crash']}")
     if honest["ambiguous"]:
         neg_items.append(f"- Ambiguous verdicts (errors but no new nodeid): {honest['ambiguous']}")
-    neg_items.append("- `tests/test_import_baseline.py::BaselineSealed::"
-                     "test_manifest_exists_and_matches` fails on pristine main "
-                     "(pre-existing manifest drift) — excluded from catch deltas; "
-                     "a mutation that FIXES it would be flagged as a new pass, "
-                     "not a new failure.")
+    neg_items.append("- In staged (temp-copy) worlds the manifest pin fails "
+                     "ENVIRONMENTALLY, not semantically: the staged copy has "
+                     "no .git, so import_manifest.build()'s `git ls-files` "
+                     "cannot run — the pin is always in baseline_failures and "
+                     "excluded from catch deltas. The real tree's seal is "
+                     "owned by tests/test_import_baseline.py, the CI "
+                     "seal-check job (.github/workflows/seal.yml) and the "
+                     "pre-push hook (tools/install_hooks.sh).")
     neg_items.append("- `qcells/` named in the lane spec does not exist on any "
-                     "branch; the instrument ran against `tests/` (16 files). "
+                     f"branch; the instrument ran against `tests/` "
+                     f"({len(list(BATTERY.glob('test_*.py')))} files). "
                      "Deviation D1.")
     neg_items.append("- receipts always carry roots [7,11,23]; the battery's own "
                      "seeded tests self-seed (exp012/exp013 use roots 7/11/23 "
@@ -421,8 +439,9 @@ def main() -> int:
         "",
         "## Next probes",
         "",
-        "- Diff `receipts/import-baseline.json` vs `tools/import_manifest.py` "
-        "output on main and re-seal or fix the drift (the one baseline RED).",
+        "- RESOLVED (PR#30): the baseline manifest drift was root-caused "
+        "(auto-push writer commits without re-sealing) and pinned — "
+        "tools/import_manifest.py --check + CI seal-check + pre-push hook.",
         "- Boundary_offbyone variant 2 (extra low index) targets arithmetic, not "
         "semantics — measure whether any battery test pins loop-trip counts.",
         "- Add shapes for crx-only paths and memory-output ordering; both are "

@@ -7,25 +7,27 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:13:32Z",
+  "ts": "2026-10-02T02:05:42Z",
   "caught": true,
   "verdict": "caught",
   "new_failures": [
-    "tests/test_cell_mapping.py::TestExecutableArity::test_simulator_dispatches_exactly_the_native_op_set",
     "tests/test_exp006_receipt.py::TestExp006Receipt::test_sealed_champion_program_executable",
     "tests/test_exp008_receipt.py::TestExp008Receipt::test_sealed_champion_program_executable",
     "tests/test_exp009_receipt.py::TestExp009Receipt::test_sealed_champion_program_executable",
     "tests/test_exp011_receipt.py::TestExp011Receipt::test_crossing_champion_executable_and_pi_expansion",
     "tests/test_exp012_receipt.py::TestExp012Receipt::test_pi_expansion_honesty_on_best_new_root_champion",
-    "tests/test_exp013_receipt.py::TestExp013Receipt::test_pi_expansion_root42_champion_reproduces_sealed_counts"
+    "tests/test_exp013_receipt.py::TestExp013Receipt::test_pi_expansion_root42_champion_reproduces_sealed_counts",
+    "tests/test_exp014_receipt.py::TestExp014Receipt::test_every_crossing_champion_reproduces_sealed_balance",
+    "tests/test_widening_pins.py::TestBoundaryDrawCanary::test_interior_boundary_draw_falls_to_the_next_outcome",
+    "tests/test_widening_pins.py::TestNoiseIsPerQubit::test_two_qubit_asymmetric_pins_the_per_qubit_mixing"
   ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 1389,
-  "failed_n": 8,
-  "passed_n": 136,
+  "battery_ms": 532,
+  "failed_n": 10,
+  "passed_n": 246,
   "error_n": 0,
   "canary": "canary-12",
   "canary_seed": "ebed84a19ad9d4f6"

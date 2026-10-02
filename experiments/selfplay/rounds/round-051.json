@@ -7,7 +7,7 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:13:27Z",
+  "ts": "2026-10-02T02:05:40Z",
   "caught": true,
   "verdict": "caught",
   "new_failures": [
@@ -16,15 +16,16 @@
     "tests/test_exp004_receipt.py::TestExp004Receipt::test_sealed_champion_program_executable",
     "tests/test_exp005_receipt.py::TestExp005Receipt::test_frozen_champion_program_executable",
     "tests/test_exp007_receipt.py::TestExp007Receipt::test_sealed_champion_program_executable",
-    "tests/test_exp010_receipt.py::TestExp010Receipt::test_frozen_champion_executable_and_zero_balance"
+    "tests/test_exp010_receipt.py::TestExp010Receipt::test_frozen_champion_executable_and_zero_balance",
+    "tests/test_widening_pins.py::TestPhaseOnOneBranch::test_rz_on_one_keeps_the_analytic_imaginary_sign"
   ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 1342,
-  "failed_n": 7,
-  "passed_n": 137,
+  "battery_ms": 531,
+  "failed_n": 8,
+  "passed_n": 248,
   "error_n": 0,
   "canary": null
 }

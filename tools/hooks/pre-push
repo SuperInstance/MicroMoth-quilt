@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# pre-push seal pin — MicroMoth-quilt import manifest.
+#
+# Blocks `git push` when the import baseline has drifted from the tracked
+# tree, so an artifact-writer (e.g. the overnight auto-push) cannot ship
+# commits it forgot to re-seal. Install once per clone:
+#
+#     tools/install_hooks.sh
+#
+# Remedy on block: `python3 tools/import_manifest.py` (re-seal) and commit
+# receipts/import-baseline.json WITH the change, then push again.
+set -euo pipefail
+
+root="$(git rev-parse --show-toplevel)"
+
+if ! python3 "$root/tools/import_manifest.py" --check; then
+  cat >&2 <<'EOF'
+
+PUSH BLOCKED: import-manifest drift (see SEAL DRIFT above).
+The import baseline must be re-sealed WITH every tree change:
+    python3 tools/import_manifest.py
+    git add receipts/import-baseline.json && git commit --amend --no-edit   # or a follow-up commit
+EOF
+  exit 1
+fi

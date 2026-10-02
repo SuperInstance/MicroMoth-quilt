@@ -23,7 +23,18 @@ B) the synthetic-bug shapes the synthesizer can build against those pins.
 - `test_exp011_receipt.py`: 24 hit(s)
 - `test_exp012_receipt.py`: 7 hit(s)
 - `test_exp013_receipt.py`: 16 hit(s)
+- `test_exp014_receipt.py`: 12 hit(s)
+- `test_exp015_receipt.py`: 3 hit(s)
+- `test_exp016_receipt.py`: 1 hit(s)
+- `test_exp017_receipt.py`: 1 hit(s)
+- `test_exp018_receipt.py`: 3 hit(s)
+- `test_exp019_receipt.py`: 1 hit(s)
+- `test_exp020_receipt.py`: 1 hit(s)
+- `test_exp021_receipt.py`: 1 hit(s)
+- `test_exp022_receipt.py`: 1 hit(s)
+- `test_grader_blindspots.py`: 3 hit(s)
 - `test_import_baseline.py`: 10 hit(s)
+- `test_widening_pins.py`: 3 hit(s)
 
 ### seeded-rng / root replication pins
 - `test_cell_mapping.py`: 14 hit(s)
@@ -41,11 +52,23 @@ B) the synthetic-bug shapes the synthesizer can build against those pins.
 - `test_exp011_receipt.py`: 29 hit(s)
 - `test_exp012_receipt.py`: 64 hit(s)
 - `test_exp013_receipt.py`: 85 hit(s)
+- `test_exp014_receipt.py`: 73 hit(s)
+- `test_exp015_receipt.py`: 45 hit(s)
+- `test_exp016_receipt.py`: 37 hit(s)
+- `test_exp017_receipt.py`: 31 hit(s)
+- `test_exp018_receipt.py`: 48 hit(s)
+- `test_exp019_receipt.py`: 47 hit(s)
+- `test_exp020_receipt.py`: 26 hit(s)
+- `test_exp021_receipt.py`: 12 hit(s)
+- `test_exp022_receipt.py`: 7 hit(s)
+- `test_grader_blindspots.py`: 2 hit(s)
 
 ### statevector / probability pins
 - `test_cell_mapping.py`: 7 hit(s)
 - `test_exp008_receipt.py`: 1 hit(s)
 - `test_exp010_receipt.py`: 2 hit(s)
+- `test_grader_blindspots.py`: 8 hit(s)
+- `test_widening_pins.py`: 6 hit(s)
 
 ### balance / symmetry pins (Bell, GHZ)
 - `test_cell_mapping.py`: 6 hit(s)
@@ -59,7 +82,18 @@ B) the synthetic-bug shapes the synthesizer can build against those pins.
 - `test_exp011_receipt.py`: 25 hit(s)
 - `test_exp012_receipt.py`: 6 hit(s)
 - `test_exp013_receipt.py`: 25 hit(s)
+- `test_exp014_receipt.py`: 16 hit(s)
+- `test_exp015_receipt.py`: 10 hit(s)
+- `test_exp016_receipt.py`: 4 hit(s)
+- `test_exp017_receipt.py`: 4 hit(s)
+- `test_exp018_receipt.py`: 4 hit(s)
+- `test_exp019_receipt.py`: 1 hit(s)
+- `test_exp020_receipt.py`: 1 hit(s)
+- `test_exp021_receipt.py`: 1 hit(s)
+- `test_exp022_receipt.py`: 1 hit(s)
+- `test_grader_blindspots.py`: 10 hit(s)
 - `test_import_baseline.py`: 3 hit(s)
+- `test_widening_pins.py`: 5 hit(s)
 
 ### hash-chain / receipt tamper pins
 - `test_cell_mapping.py`: 3 hit(s)
@@ -77,14 +111,30 @@ B) the synthetic-bug shapes the synthesizer can build against those pins.
 - `test_exp011_receipt.py`: 17 hit(s)
 - `test_exp012_receipt.py`: 19 hit(s)
 - `test_exp013_receipt.py`: 23 hit(s)
+- `test_exp014_receipt.py`: 28 hit(s)
+- `test_exp015_receipt.py`: 19 hit(s)
+- `test_exp016_receipt.py`: 19 hit(s)
+- `test_exp017_receipt.py`: 19 hit(s)
+- `test_exp018_receipt.py`: 18 hit(s)
+- `test_exp019_receipt.py`: 18 hit(s)
+- `test_exp020_receipt.py`: 17 hit(s)
+- `test_exp021_receipt.py`: 19 hit(s)
+- `test_exp022_receipt.py`: 10 hit(s)
 - `test_import_baseline.py`: 3 hit(s)
+- `test_lab_home_citation.py`: 2 hit(s)
+- `test_widening_pins.py`: 1 hit(s)
 
 ### noise-model pins
 - `test_collapse_ledger.py`: 8 hit(s)
+- `test_exp018_receipt.py`: 4 hit(s)
+- `test_grader_blindspots.py`: 6 hit(s)
+- `test_widening_pins.py`: 12 hit(s)
 
 ### memory-output / ordering pins
 - `test_exp001_receipt.py`: 1 hit(s)
+- `test_grader_blindspots.py`: 1 hit(s)
 - `test_import_baseline.py`: 1 hit(s)
+- `test_widening_pins.py`: 9 hit(s)
 
 ## B) Synthetic-bug shape catalog (synthesizer vocabulary)
 
@@ -102,15 +152,17 @@ B) the synthetic-bug shapes the synthesizer can build against those pins.
 - rx branch passes 2*theta to turn (theta/2 halving defeated)
 - crx branch passes 2*theta to turn
 
-### `phase_sign_flip` (1 variant(s))
+### `phase_sign_flip` (2 variant(s))
 - phaseturn drops the minus inside sin(-theta/2) for the y-component
+- phaseturn conjugates the |1> branch (both sin(+theta/2) -> sin(-theta/2)): rz degenerates to a GLOBAL phase
 
 ### `boundary_offbyone` (2 variant(s))
 - shot-sampling loop drops the final shot (range(shots) -> range(shots-1))
 - single-qubit pair loop iterates one extra low index
 
-### `noise_mixing_swap` (1 variant(s))
+### `noise_mixing_swap` (2 variant(s))
 - measurement-error mixing weights inverted on both branches
+- per-qubit mis-index: every qubit reads noise_model[0] (invisible to uniform noise and to re-label-invariant Bell pins)
 
 ### `comparison_flip` (1 variant(s))
 - sampling acceptance r<cumu -> r<=cumu (boundary double-count risk)

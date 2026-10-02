@@ -7,17 +7,21 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:12:58Z",
-  "caught": false,
-  "verdict": "missed",
-  "new_failures": [],
+  "ts": "2026-10-02T02:05:30Z",
+  "caught": true,
+  "verdict": "caught",
+  "new_failures": [
+    "tests/test_grader_blindspots.py::TestSamplingBoundaryIsStrict::test_boundary_draw_falls_through_under_strict_comparison",
+    "tests/test_widening_pins.py::TestBoundaryDrawCanary::test_interior_boundary_draw_falls_to_the_next_outcome",
+    "tests/test_widening_pins.py::TestBoundaryDrawCanary::test_total_boundary_draw_is_dropped"
+  ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 2978,
-  "failed_n": 1,
-  "passed_n": 143,
+  "battery_ms": 574,
+  "failed_n": 4,
+  "passed_n": 252,
   "error_n": 0,
   "canary": "canary-08",
   "canary_seed": "ce4dbcd8d016e46a"

@@ -7,17 +7,20 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:12:54Z",
-  "caught": false,
-  "verdict": "missed",
-  "new_failures": [],
+  "ts": "2026-10-02T02:05:29Z",
+  "caught": true,
+  "verdict": "caught",
+  "new_failures": [
+    "tests/test_grader_blindspots.py::TestMeasurementErrorIsLabelled::test_asymmetric_distribution_pins_the_mixing_orientation",
+    "tests/test_widening_pins.py::TestNoiseIsPerQubit::test_two_qubit_asymmetric_pins_the_per_qubit_mixing"
+  ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 4800,
-  "failed_n": 1,
-  "passed_n": 143,
+  "battery_ms": 598,
+  "failed_n": 3,
+  "passed_n": 253,
   "error_n": 0,
   "canary": null
 }
