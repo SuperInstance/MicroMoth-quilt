@@ -7,7 +7,7 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:12:46Z",
+  "ts": "2026-10-02T02:05:28Z",
   "caught": true,
   "verdict": "caught",
   "new_failures": [
@@ -29,15 +29,18 @@
     "tests/test_exp011_receipt.py::TestExp011Receipt::test_crossing_champion_executable_and_pi_expansion",
     "tests/test_exp012_receipt.py::TestExp012Receipt::test_pi_expansion_honesty_on_best_new_root_champion",
     "tests/test_exp013_receipt.py::TestExp013Receipt::test_pi_expansion_root42_champion_reproduces_sealed_counts",
-    "tests/test_import_baseline.py::ImportFunctional::test_bell_circuit_entangles"
+    "tests/test_exp014_receipt.py::TestExp014Receipt::test_every_crossing_champion_reproduces_sealed_balance",
+    "tests/test_grader_blindspots.py::TestSamplingBoundaryIsStrict::test_boundary_draw_falls_through_under_strict_comparison",
+    "tests/test_import_baseline.py::ImportFunctional::test_bell_circuit_entangles",
+    "tests/test_widening_pins.py::TestBoundaryDrawCanary::test_interior_boundary_draw_falls_to_the_next_outcome"
   ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 2580,
-  "failed_n": 20,
-  "passed_n": 124,
+  "battery_ms": 584,
+  "failed_n": 23,
+  "passed_n": 233,
   "error_n": 0,
   "canary": null
 }

@@ -7,7 +7,7 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:11:56Z",
+  "ts": "2026-10-02T02:05:14Z",
   "caught": true,
   "verdict": "caught",
   "new_failures": [
@@ -31,15 +31,17 @@
     "tests/test_exp009_receipt.py::TestExp009Receipt::test_seed_genome_birth_is_zero_fitness",
     "tests/test_exp010_receipt.py::TestExp010Receipt::test_frozen_champion_executable_and_zero_balance",
     "tests/test_exp012_receipt.py::TestExp012Receipt::test_pi_expansion_honesty_on_best_new_root_champion",
-    "tests/test_exp013_receipt.py::TestExp013Receipt::test_pi_expansion_root42_champion_reproduces_sealed_counts"
+    "tests/test_exp013_receipt.py::TestExp013Receipt::test_pi_expansion_root42_champion_reproduces_sealed_counts",
+    "tests/test_exp014_receipt.py::TestExp014Receipt::test_every_crossing_champion_reproduces_sealed_balance",
+    "tests/test_widening_pins.py::TestPhaseOnOneBranch::test_rz_on_one_keeps_the_analytic_imaginary_sign"
   ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 3502,
-  "failed_n": 22,
-  "passed_n": 122,
+  "battery_ms": 522,
+  "failed_n": 24,
+  "passed_n": 232,
   "error_n": 0,
   "canary": null
 }

@@ -7,7 +7,7 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:13:17Z",
+  "ts": "2026-10-02T02:05:37Z",
   "caught": true,
   "verdict": "caught",
   "new_failures": [
@@ -22,15 +22,16 @@
     "tests/test_exp008_receipt.py::TestExp008Receipt::test_seed_prelude_live",
     "tests/test_exp009_receipt.py::TestExp009Receipt::test_seed_genome_birth_is_zero_fitness",
     "tests/test_exp010_receipt.py::TestExp010Receipt::test_frozen_champion_executable_and_zero_balance",
-    "tests/test_exp012_receipt.py::TestExp012Receipt::test_pi_expansion_honesty_on_best_new_root_champion"
+    "tests/test_exp012_receipt.py::TestExp012Receipt::test_pi_expansion_honesty_on_best_new_root_champion",
+    "tests/test_widening_pins.py::TestBoundaryDrawCanary::test_interior_boundary_draw_falls_to_the_next_outcome"
   ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 1348,
-  "failed_n": 13,
-  "passed_n": 131,
+  "battery_ms": 544,
+  "failed_n": 14,
+  "passed_n": 242,
   "error_n": 0,
   "canary": null
 }

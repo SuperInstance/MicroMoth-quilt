@@ -7,7 +7,7 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:12:04Z",
+  "ts": "2026-10-02T02:05:18Z",
   "caught": true,
   "verdict": "caught",
   "new_failures": [
@@ -17,9 +17,9 @@
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 1306,
+  "battery_ms": 522,
   "failed_n": 2,
-  "passed_n": 142,
+  "passed_n": 254,
   "error_n": 0,
   "canary": null
 }

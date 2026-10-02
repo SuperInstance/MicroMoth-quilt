@@ -1,23 +1,25 @@
 {
   "round": 26,
   "shape": "phase_sign_flip",
-  "mutation_desc": "phaseturn drops the minus inside sin(-theta/2) for the y-component",
+  "mutation_desc": "phaseturn conjugates the |1> branch (both sin(+theta/2) -> sin(-theta/2)): rz degenerates to a GLOBAL phase",
   "roots": [
     7,
     11,
     23
   ],
-  "ts": "2026-09-29T00:12:34Z",
-  "caught": false,
-  "verdict": "missed",
-  "new_failures": [],
+  "ts": "2026-10-02T02:05:26Z",
+  "caught": true,
+  "verdict": "caught",
+  "new_failures": [
+    "tests/test_widening_pins.py::TestPhaseOnOneBranch::test_rz_on_one_keeps_the_analytic_imaginary_sign"
+  ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 3787,
-  "failed_n": 1,
-  "passed_n": 143,
+  "battery_ms": 527,
+  "failed_n": 2,
+  "passed_n": 254,
   "error_n": 0,
   "canary": null
 }

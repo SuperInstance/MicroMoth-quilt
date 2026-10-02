@@ -7,19 +7,21 @@
     11,
     23
   ],
-  "ts": "2026-09-29T00:13:24Z",
+  "ts": "2026-10-02T02:05:39Z",
   "caught": true,
   "verdict": "caught",
   "new_failures": [
-    "tests/test_cell_mapping.py::TestTickMonotonicityNuance::test_state_returns_but_clock_must_not"
+    "tests/test_cell_mapping.py::TestTickMonotonicityNuance::test_state_returns_but_clock_must_not",
+    "tests/test_grader_blindspots.py::TestPhaseIsRelativeNotGlobal::test_rz_on_zero_keeps_the_analytic_imaginary_sign",
+    "tests/test_widening_pins.py::TestPhaseOnOneBranch::test_rz_on_one_keeps_the_analytic_imaginary_sign"
   ],
   "baseline_failures_present": [
     "tests/test_import_baseline.py::BaselineSealed::test_manifest_exists_and_matches"
   ],
   "rc": 1,
-  "battery_ms": 1301,
-  "failed_n": 2,
-  "passed_n": 142,
+  "battery_ms": 525,
+  "failed_n": 4,
+  "passed_n": 252,
   "error_n": 0,
   "canary": "canary-11",
   "canary_seed": "c96333e2bb004d21"
