@@ -1,0 +1,26 @@
+name: seal-check
+
+# Import-manifest seal pin (remote half; the local half is the pre-push
+# hook installed via tools/install_hooks.sh). Fails any push/PR whose
+# tree is not re-sealed: receipts/import-baseline.json must match the
+# tracked tree exactly. This is the check the overnight auto-push writer
+# must satisfy — drift can no longer merge silently.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  seal-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Import-manifest seal check (fail on drift)
+        run: python3 tools/import_manifest.py --check
