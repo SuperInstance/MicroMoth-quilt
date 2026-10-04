@@ -1,8 +1,8 @@
 {
   "schema": "micromoth-quilt/import-baseline@v1",
   "upstream": "moth-quantum/MicroMoth",
-  "baseline_commit": "dc419e86755b95113a692ae7fd8c955ad91521c6",
-  "generated_at": "2026-10-04T11:11:36.216205+00:00",
+  "baseline_commit": "7f7c7947d922067fa30bf4a5f5e3fde5931e4669",
+  "generated_at": "2026-10-04T12:11:59.392270+00:00",
   "self": "receipts/import-baseline.json (excluded: sha256 fixed-point, cannot embed own digest)",
   "doctrine": "regenerate via tools/import_manifest.py; never edit by hand",
   "files": {
@@ -228,6 +228,7 @@
     "tests/test_cell_mapping.py": "176ee2f882da19c629956e3a08dc30c2045a4727d45d9acf2755b779e657974f",
     "tests/test_cell_receipts.py": "a014bc4205d366a241da9227d8f6a1a807f0e816b6fd99ae25cf89132d3d5b5d",
     "tests/test_collapse_ledger.py": "eb53fae5d9334dcb7e94f0c286c04705618226ea443b3587d13124d7132d3f24",
+    "tests/test_emit_artifact.py": "4ffee261f268a055d31574b4c6fc7a8678a0248df04e67418076eb8ab2511a82",
     "tests/test_exp001_receipt.py": "394dd8e957db3477b73fdc5291765152a81ec082250ea15eff62c069db658eed",
     "tests/test_exp002_receipt.py": "42c4bab94abfa12d561368e2c927f5ffa83be8970290c0f2626233bc11ec4ea3",
     "tests/test_exp003_receipt.py": "2fe3dafdee217c10baa85d48f3c86e2fce457ff55650b141fd25fa55397d6857",
@@ -259,7 +260,7 @@
     "tests/test_widening_pins.py": "17bc2d9f16a37aa61f5fe80c78823c460f966b0297ef21b5013a7d723f7a1f16",
     "tests/test_witness_collapse_seam.py": "aaa00e0b0e81139e5f94fa13b1c57044a750f9bbd3ca614c7cffd0ba01f90353",
     "tools/build_exp016_receipt.py": "ba862444cdb9bf05b0ae68fe2cf017b24979ce7d7a12ad54432130ca1fb2722a",
-    "tools/cell_receipts.py": "32d4fa279e0303ab0a412563ba4d9da77061b65f71228f840359490ba1cb6b1b",
+    "tools/cell_receipts.py": "252b461e1e94c70f9263b616a0b923b82971a55062c3c7a409b6a73e8f02c5c9",
     "tools/collapse_ledger.py": "9e027da0eb2c5d5994bac2eaf4b545599268e6a8e1e4ea422984d55a4d926d37",
     "tools/hooks/pre-push": "81c35bebe52b3ce71b1f8b737dd0f36cc4b72b1beea12c17a1776a9d631598b2",
     "tools/import_manifest.py": "6777f77cfaaa47ab697f2fb6951ec47e91f356742bb6d21accedc08e7de22f5c",

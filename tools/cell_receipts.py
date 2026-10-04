@@ -40,7 +40,16 @@ Honest limits (kept from CELL-MAPPING.md):
 - the ledger is cheap, the VIEW is not; PROOF witnesses are the
   mitigation, not a license to simulate big.
 
+Emit artifact driver: write_artifact() serializes one receipt to a JSONL
+artifact (one header line naming the run + one canonical cell per line,
+chain order = file order); read_artifact() parses it back with honesty
+checks (header vs WORLD cell divergence is refused, not laundered) and
+returns a receipt verify() accepts. The CLI driver
+(`cell_receipts.py emit --out PATH`) writes the artifact and verifies it
+by replay in the same run — the artifact is never trusted unread.
+
 Run: python3 tools/cell_receipts.py   (self-check: Bell emit + verify)
+     python3 tools/cell_receipts.py emit --out artifacts/bell.jsonl
 """
 
 from __future__ import annotations
@@ -287,6 +296,89 @@ def verify(receipt: dict, qc: QuantumCircuit = None) -> dict:
     return {"ok": True, "why": "ok"}
 
 
+ARTIFACT_KIND = "micromoth-emit-artifact"
+
+
+def write_artifact(receipt: dict, path) -> Path:
+    """Serialize one receipt to a JSONL artifact.
+
+    Line 1: header naming the run (dialect, version, name, seed, shots,
+    histogram, depth, cell count). Lines 2..N: the cells, one canonical
+    JSON object per line, in chain order — file order IS ledger order,
+    so reordering the lines is a chain break, never a style issue.
+    """
+    p = Path(path)
+    if p.parent and not p.parent.exists():
+        p.parent.mkdir(parents=True, exist_ok=True)
+    header = {
+        "artifact": ARTIFACT_KIND,
+        "dialect": receipt["dialect"],
+        "micromoth_version": receipt["micromoth_version"],
+        "name": receipt["name"],
+        "seed": receipt["seed"],
+        "shots": receipt["shots"],
+        "histogram": receipt["histogram"],
+        "depth": receipt["depth"],
+        "cells": len(receipt["cells"]),
+    }
+    with p.open("w", encoding="utf-8") as f:
+        f.write(json.dumps(header, sort_keys=True) + "\n")
+        for c in receipt["cells"]:
+            f.write(json.dumps(c, sort_keys=True) + "\n")
+    return p
+
+
+def read_artifact(path) -> dict:
+    """Parse a JSONL artifact back into a receipt dict.
+
+    Refused, not faked: unknown artifact kind, header cell-count
+    divergence, a non-cell line among the cells, or header fields that
+    disagree with the on-chain WORLD witness (seed / shots / histogram)
+    — a header may summarize the chain but never outvote it.
+    """
+    lines = Path(path).read_text(encoding="utf-8").splitlines()
+    if len(lines) < 2:
+        raise ValueError("artifact %r: need a header + at least one cell" % path)
+    header = json.loads(lines[0])
+    if header.get("artifact") != ARTIFACT_KIND:
+        raise ValueError("artifact %r: kind %r is not %r"
+                         % (path, header.get("artifact"), ARTIFACT_KIND))
+    cells = []
+    for i, line in enumerate(lines[1:]):
+        if not line.strip():
+            raise ValueError("artifact %r: blank line at cell %d" % (path, i))
+        c = json.loads(line)
+        for k in ("op", "prev", "args", "id"):
+            if k not in c:
+                raise ValueError("artifact %r: line %d is not a cell "
+                                 "(missing %r)" % (path, i + 2, k))
+        cells.append(c)
+    if header["cells"] != len(cells):
+        raise ValueError("artifact %r: header counts %d cells, file has %d"
+                         % (path, header["cells"], len(cells)))
+    worlds = [c for c in cells if c["op"] == "WORLD"]
+    if not worlds:
+        raise ValueError("artifact %r: no WORLD witness on chain" % path)
+    world = worlds[-1]
+    for k in ("seed", "shots"):
+        if header[k] != world["args"][k]:
+            raise ValueError("artifact %r: header %s=%r outvotes on-chain %r"
+                             % (path, k, header[k], world["args"][k]))
+    if header["histogram"] != world["args"]["histogram"]:
+        raise ValueError("artifact %r: header histogram outvotes the on-chain "
+                         "WORLD witness" % path)
+    return {
+        "dialect": header["dialect"],
+        "micromoth_version": header["micromoth_version"],
+        "name": header["name"],
+        "depth": header["depth"],
+        "seed": header["seed"],
+        "shots": header["shots"],
+        "histogram": header["histogram"],
+        "cells": cells,
+    }
+
+
 def _selfcheck() -> None:
     qc = QuantumCircuit(2, 2)
     qc.h(0)
@@ -302,5 +394,52 @@ def _selfcheck() -> None:
         print(json.dumps(c, sort_keys=True))
 
 
+def _emit_cli(argv) -> int:
+    """Driver: build the Bell probe, emit, write the artifact, verify
+the artifact by replay — the file is never trusted unread."""
+    out = None
+    shots, seed, name = 256, 42, "bell"
+    i = 0
+    while i < len(argv):
+        a = argv[i]
+        if a == "--out":
+            i += 1
+            out = argv[i]
+        elif a == "--shots":
+            i += 1
+            shots = int(argv[i])
+        elif a == "--seed":
+            i += 1
+            seed = int(argv[i])
+        elif a == "--name":
+            i += 1
+            name = argv[i]
+        i += 1
+    if not out:
+        print("usage: cell_receipts.py emit --out PATH [--shots N] "
+              "[--seed S] [--name NAME]")
+        return 2
+    qc = QuantumCircuit(2, 2)
+    qc.h(0)
+    qc.cx(0, 1)
+    qc.measure(0, 0)
+    qc.measure(1, 1)
+    receipt = emit(qc, shots=shots, seed=seed, name=name)
+    path = write_artifact(receipt, out)
+    print("wrote %s (%d cells)" % (path, len(receipt["cells"])))
+    from_file = read_artifact(path)
+    v_mem = verify(receipt, qc)
+    v_file = verify(from_file, qc)
+    print("verify (in-memory):", v_mem)
+    print("verify (artifact): ", v_file)
+    if from_file["cells"] != receipt["cells"]:
+        print("round-trip: DIVERGED")
+        return 1
+    print("round-trip: byte-identical")
+    return 0 if (v_mem["ok"] and v_file["ok"]) else 1
+
+
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "emit":
+        raise SystemExit(_emit_cli(sys.argv[2:]))
     _selfcheck()
