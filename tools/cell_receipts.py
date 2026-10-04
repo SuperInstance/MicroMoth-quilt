@@ -18,6 +18,17 @@ against the import baseline (micromoth.py):
   gate chain moment by moment with per-TICK state hashes (verbatim
   kernels via state_witness), PROOF the final state, WORLD(seed, shots)
   the histogram. Verify by replay, not by trust; tamper is named.
+- FORGET (CELL-MAPPING.md adopted opcode, the erasure unit): shot-level
+  collapse EFFECT cells are journaled per shot after the WORLD witness;
+  forget() exercises the "right to be erased" by REPLACING a named shot's
+  EFFECT cell with a FORGET cell in place. The chain continues (every
+  downstream id moves — the tamper-evidence property working FOR
+  erasure: the erasure event is itself on-chain, never silent), the
+  FORGET cell's args carry the erased cell's original id + reason so an
+  auditor holding an unforgotten copy can diff exactly what went away,
+  and the WORLD histogram (aggregate counts) is retained per the design
+  ("counts may be retained while individual collapse records are
+  FORGET-table").
 
 Cell algebra (canonical source: SuperInstance/AI-Writings algebra.md):
 five opcodes BIND / LINK / EFFECT / VIEW / TICK (+ adopted WORLD, PROOF),
@@ -132,6 +143,16 @@ def emit(qc: QuantumCircuit, shots: int = 256, seed: int = 42,
     world_args = seeded_counts(qc, shots, seed)
     world = _cell("WORLD", prev, world_args)
     cells = [link, bind] + welded + [world]
+    prev = world["id"]
+    # Shot-level collapse EFFECT cells (FORGET's erasure unit,
+    # CELL-MAPPING.md): one EFFECT per shot, outcomes from the seeded
+    # memory sample — same seed, so replay re-derives them exactly.
+    for shot, outcome in enumerate(_shot_outcomes(qc, shots, seed)):
+        c = _cell("EFFECT", prev, {
+            "kind": "collapse", "shot": shot, "outcome": outcome, "seed": seed,
+        })
+        cells.append(c)
+        prev = c["id"]
     return {
         "dialect": DIALECT,
         "micromoth_version": _baseline_version(),
@@ -144,6 +165,84 @@ def emit(qc: QuantumCircuit, shots: int = 256, seed: int = 42,
     }
 
 
+def _shot_outcomes(qc: QuantumCircuit, shots: int, seed: int) -> list:
+    """Seeded per-shot memory sample — the collapse EFFECT payloads.
+    Same seed-plumbing contract as seeded_counts: restore caller RNG."""
+    state = random.getstate()
+    try:
+        random.seed(seed)
+        memory = simulate(qc, shots=shots, get="memory")
+    finally:
+        random.setstate(state)
+    return [str(bit) for bit in memory]
+
+
+def forget(receipt: dict, shots, reason: str) -> dict:
+    """Exercise the right to be erased (CELL-MAPPING.md FORGET clause).
+
+    Replaces each named shot's collapse EFFECT cell with a FORGET cell
+    IN PLACE: same chain position, args carry {shot, reason,
+    erased_id} — the erased cell's original id, so erasure is receipted
+    and diffable against any unforgotten copy. Refused, not faked:
+    unknown shot, already-forgotten shot, empty reason, or a shot with
+    no EFFECT cell (nothing to erase). The WORLD histogram (aggregate
+    counts) is retained per design; verify() still passes on the
+    result — nothing was silently changed, the erasure is ON the chain.
+    """
+    if not reason or not reason.strip():
+        raise ValueError("FORGET refuses an empty reason: erasure must say why")
+    if isinstance(shots, int):
+        shots = [shots]
+    shots = list(shots)
+    by_shot = {}
+    for c in receipt["cells"]:
+        if c["op"] == "EFFECT" and c["args"].get("kind") == "collapse":
+            by_shot[c["args"]["shot"]] = c
+        if c["op"] == "FORGET":
+            by_shot[c["args"]["shot"]] = None  # already erased
+    cells = []
+    forgotten = set()
+    prev = None  # None until the first erasure; then the re-derive cursor
+    for orig in receipt["cells"]:
+        target = (orig["op"] == "EFFECT"
+                  and orig["args"].get("kind") == "collapse"
+                  and orig["args"]["shot"] in shots)
+        if target:
+            shot = orig["args"]["shot"]
+            if shot in forgotten:
+                raise ValueError("shot %r appears twice in ledger" % shot)
+            forgotten.add(shot)
+            # erased_id = the id this cell carried in the INPUT receipt,
+            # so an auditor diffs against the ledger as handed over; the
+            # chain position follows the re-derive cursor when earlier
+            # erasures already moved the chain
+            f = _cell("FORGET", prev if prev is not None else orig["prev"], {
+                "shot": shot,
+                "reason": reason.strip(),
+                "erased_id": orig["id"],
+                "erased_kind": "collapse",
+            })
+            cells.append(f)
+            prev = f["id"]
+            continue
+        # non-target: semantics byte-identical; id re-derived iff it sits
+        # downstream of an erasure (tamper-evidence working FOR erasure)
+        c = _cell(orig["op"], prev, orig["args"]) if prev is not None else orig
+        cells.append(c)
+        if prev is not None:
+            prev = c["id"]
+    for shot in shots:
+        if shot not in forgotten:
+            if shot in by_shot and by_shot[shot] is None:
+                raise ValueError("shot %r already forgotten" % shot)
+            raise ValueError("shot %r has no collapse EFFECT cell to erase" % shot)
+    out = dict(receipt)
+    out["cells"] = cells
+    out["forgotten_shots"] = sorted(
+        set(receipt.get("forgotten_shots", [])) | set(forgotten))
+    return out
+
+
 def verify(receipt: dict, qc: QuantumCircuit = None) -> dict:
     """Re-derive every cell id; re-run the prediction; compare. Tamper
     is named; never fake green."""
@@ -152,6 +251,16 @@ def verify(receipt: dict, qc: QuantumCircuit = None) -> dict:
     for i, c in enumerate(cells):
         body = {"op": c["op"], "prev": c["prev"], "args": c["args"]}
         want = "0x%016x" % state_witness.fnv1a64(_canon(body))
+        if c["op"] == "FORGET":
+            # Erasure is receipted, not silent: a FORGET cell must name
+            # the shot, why, and the erased cell's original id.
+            for k in ("shot", "reason", "erased_id", "erased_kind"):
+                if k not in c["args"]:
+                    return {"ok": False, "why": "forget_args_incomplete@%d" % i}
+            if not str(c["args"]["reason"]).strip():
+                return {"ok": False, "why": "forget_reason_empty@%d" % i}
+            if c["args"].get("erased_kind") != "collapse":
+                return {"ok": False, "why": "forget_target_not_collapse@%d" % i}
         if c["op"] == "WORLD":
             h = c["args"]["histogram"]
             if sum(h.values()) != c["args"]["shots"]:
@@ -187,7 +296,9 @@ def _selfcheck() -> None:
     r = emit(qc, shots=256, seed=42, name="bell")
     v = verify(r, qc)
     print("verify:", v)
-    for c in r["cells"]:
+    r2 = forget(r, [0, 3], "demo erasure (self-check)")
+    print("verify after forget:", verify(r2, qc))
+    for c in r2["cells"]:
         print(json.dumps(c, sort_keys=True))
 
 
