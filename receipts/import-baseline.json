@@ -1,8 +1,8 @@
 {
   "schema": "micromoth-quilt/import-baseline@v1",
   "upstream": "moth-quantum/MicroMoth",
-  "baseline_commit": "9eb8dbff9c11ea1eaf0360199a44a3a79579cc02",
-  "generated_at": "2026-10-04T16:11:01.977936+00:00",
+  "baseline_commit": "b6547c769ea78c029bb6dbd79942b50f514e4b9e",
+  "generated_at": "2026-10-04T19:05:54.383185+00:00",
   "self": "receipts/import-baseline.json (excluded: sha256 fixed-point, cannot embed own digest)",
   "doctrine": "regenerate via tools/import_manifest.py; never edit by hand",
   "files": {
@@ -259,6 +259,7 @@
     "tests/test_seam_adoption_rng.py": "e101ba42c2a5fe3f60579fca0b8fd558794937fcf863042fe8d82aa35aa27df5",
     "tests/test_simulate_injected_rng.py": "8abc0965d5f2d6e78414c660bbab428ecb54e21ab40be12c73727252af89d9b5",
     "tests/test_state_witness.py": "0562c8ee65bca1eb608540498e90cefd467131c584c121c3a9f786e608c2cdd8",
+    "tests/test_view_receipt.py": "320b1843a8e6cf17aaf9d3a93264c07e11b542354c223fdde9f8f3afa34d7ffc",
     "tests/test_widening_pins.py": "17bc2d9f16a37aa61f5fe80c78823c460f966b0297ef21b5013a7d723f7a1f16",
     "tests/test_witness_collapse_seam.py": "aaa00e0b0e81139e5f94fa13b1c57044a750f9bbd3ca614c7cffd0ba01f90353",
     "tools/build_exp016_receipt.py": "ba862444cdb9bf05b0ae68fe2cf017b24979ce7d7a12ad54432130ca1fb2722a",
@@ -270,6 +271,7 @@
     "tools/midcircuit_boundary.py": "dd31400b3603a6215331535c3b6a66b3467e5e4c8d4965519482b654fe95f8a0",
     "tools/selfplay.py": "1f4b993288d964645d283589a21a00245b3240bf28f4baa728df513065d814af",
     "tools/state_witness.py": "bbc37e791c84af3f400758f1d2d3a0776ded0e571c4eee7db13d5f7efedf95e1",
+    "tools/view_receipt.py": "0a20e0b520ee5476441feb20b4b8f4f9b6e7a62d4c0a37d4cf0226b8911f70ed",
     "tools/witness_collapse_seam.py": "c98eb6d0464965ee929c1c8cc064e6635f53e6da1c73fc92b98c2e8166911399",
     "versions/Arduino/MicroMothArduino.h": "563f7c237cb59704a040dfc8870d5fe0c3969bc74f02af1106d48b7882f03d17",
     "versions/Arduino/MicroMothArduino.ino": "97da36f48e0f55ba8de62cc81bd44bc6ba98d5dcef92cdfa3142dfa5336b98ba",
