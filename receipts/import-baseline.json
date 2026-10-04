@@ -1,8 +1,8 @@
 {
   "schema": "micromoth-quilt/import-baseline@v1",
   "upstream": "moth-quantum/MicroMoth",
-  "baseline_commit": "8ce12fa068e882e4dcc4d9e855a8ad709b1e8769",
-  "generated_at": "2026-10-04T21:48:34.820233+00:00",
+  "baseline_commit": "188f990f278a96e6e2df67aac3413a76a7f5c717",
+  "generated_at": "2026-10-04T23:07:45.108744+00:00",
   "self": "receipts/import-baseline.json (excluded: sha256 fixed-point, cannot embed own digest)",
   "doctrine": "regenerate via tools/import_manifest.py; never edit by hand",
   "files": {
@@ -17,6 +17,7 @@
     "docs/CTO-BRIEF.md": "b73caeb2c616f9b4bf3fecb04f9996f0ab80763c8ead99cd6114da7cc6f2a5e4",
     "docs/DEVELOPER-GUIDE.md": "6bf0601078a196eec74c09b1f9823cf7a2d7d876ab73b611936d20d391edb096",
     "docs/ENGINEERING-NOTES.md": "7be85b8733d1beddb053ad310ed22e4241a72a150e3422d4eefc658f8eaf6598",
+    "docs/IONQ-RECON.md": "d9e433303743a89c2aeec492ae08aa93293dd2634b33037c9b0bf2beb9a3832d",
     "docs/KNOWLEDGE-MAP.md": "69f0923ce2581d47507e8c528b8d72b2adc685d160104d6db09f5a5329fb5970",
     "docs/ONBOARDING.md": "6d90ea7c047af1b1055744b546b4cef1e64f97d5097ad8512c4e2f7c57767533",
     "docs/USER-GUIDE.md": "1d5274e2c273008a1bb65e6d3047b4ffd9d58a2f364b528b43dcd5c313dc2b41",
