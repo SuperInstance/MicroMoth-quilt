@@ -132,14 +132,13 @@ def circuit_cells(qc: QuantumCircuit, shots: int) -> list:
 
 
 def _sample_seeded(qc: QuantumCircuit, shots: int, seed: int, noise_model) -> list:
-    """The seed plumbing: simulate() reads the module-global RNG, so we
-    seed it, run, and restore — the seed IS the EFFECT parameter."""
-    state = random.getstate()
-    try:
-        random.seed(seed)
-        return simulate(qc, shots=shots, get="memory", noise_model=noise_model)
-    finally:
-        random.setstate(state)
+    """Seeded sampling through simulate()'s injected-rng seam
+    (CELL-MAPPING.md step 3 adoption): the module-global RNG is never
+    seeded or restored; the seed IS the EFFECT parameter. The injected
+    Random(seed) stream is byte-identical to the old seed/restore
+    plumbing (same MT19937 sequence), so outcomes are unchanged."""
+    return simulate(qc, shots=shots, get="memory", noise_model=noise_model,
+                    rng=random.Random(seed))
 
 
 def collapse_receipt(qc: QuantumCircuit, shots: int, seed, noise_model=None) -> dict:
