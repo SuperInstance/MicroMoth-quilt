@@ -112,13 +112,14 @@ def _collapse(k, n, q, outcome, precision=PRECISION):
 
 
 def _sample_outcome(p_zero, seed):
-    """One seeded draw against P(0); collapse_ledger seed doctrine."""
-    st = random.getstate()
-    try:
-        random.seed(seed)
-        draw = random.random()
-    finally:
-        random.setstate(st)
+    """One seeded draw against P(0); collapse_ledger seed doctrine.
+
+    Draws from an injected `random.Random(seed)` instead of the retired
+    seed/run/restore global plumbing (CELL-MAPPING.md step-3 adoption):
+    the fresh Random(seed) stream is the same MT19937 sequence the
+    module-global RNG draws after random.seed(seed), so outcomes are
+    byte-identical, and receipt lanes no longer mutate global state."""
+    draw = random.Random(seed).random()
     return "0" if draw < p_zero else "1"
 
 
