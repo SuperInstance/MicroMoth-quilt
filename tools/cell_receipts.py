@@ -83,11 +83,11 @@ def seeded_counts(qc: QuantumCircuit, shots: int, seed: int) -> dict:
     """WORLD entrypoint: the only public sampling op the WORLD witness
     ever needs (CELL-MAPPING.md smallest-build step 1).
 
-    Seeds the module-global RNG, samples counts, restores the caller's
-    RNG state. Sealed-only by construction: an unseeded prediction is
-    refused, not faked. (Pre-step-3 plumbing; simulate() now accepts an
-    injected `rng` — adoption of that seam here is the booked follow-on,
-    this wrapper's results are byte-identical either way.)
+    Samples through simulate()'s injected-rng seam (CELL-MAPPING.md
+    step 3 adoption): the module-global RNG is never touched, so no
+    seed/restore plumbing remains. Sealed-only by construction: an
+    unseeded prediction is refused, not faked. The injected
+    Random(seed) stream is byte-identical to the old plumbing.
     """
     if seed is None:
         raise ValueError(
@@ -97,12 +97,8 @@ def seeded_counts(qc: QuantumCircuit, shots: int, seed: int) -> dict:
         raise ValueError("seed must be a non-negative int")
     if not isinstance(shots, int) or shots <= 0:
         raise ValueError("shots must be a positive int")
-    state = random.getstate()
-    try:
-        random.seed(seed)
-        counts = simulate(qc, shots=shots, get="counts")
-    finally:
-        random.setstate(state)
+    counts = simulate(qc, shots=shots, get="counts",
+                      rng=random.Random(seed))
     histogram = {bit: int(n) for bit, n in counts.items()}
     return {"histogram": histogram, "seed": seed, "shots": shots}
 
@@ -177,13 +173,9 @@ def emit(qc: QuantumCircuit, shots: int = 256, seed: int = 42,
 
 def _shot_outcomes(qc: QuantumCircuit, shots: int, seed: int) -> list:
     """Seeded per-shot memory sample — the collapse EFFECT payloads.
-    Same seed-plumbing contract as seeded_counts: restore caller RNG."""
-    state = random.getstate()
-    try:
-        random.seed(seed)
-        memory = simulate(qc, shots=shots, get="memory")
-    finally:
-        random.setstate(state)
+    Same injected-rng seam as seeded_counts: no global seed/restore."""
+    memory = simulate(qc, shots=shots, get="memory",
+                      rng=random.Random(seed))
     return [str(bit) for bit in memory]
 
 
