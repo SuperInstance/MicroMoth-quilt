@@ -1,44 +1,44 @@
 {
- "schema": "micromoth-quilt/exp-receipt@v1",
- "receipt_kind": "results",
- "experiment": "exp012-root-replication",
- "status": "SEALED",
- "title": "Root-lottery: the unaided crossing does NOT replicate; multi-root doctrine minted",
- "directive": "2026-09-28: iterate locally on MicroMoth-quilt (qcells lab, workspace/labs/qcells)",
- "engine": {
-  "name": "micromoth",
-  "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
-  "note": "matches the import-baseline manifest pin on main"
- },
- "seeds": {
-  "root": 7,
-  "train": 101,
-  "verify": 202,
-  "shots": 512,
-  "note": "see receipt results.json for per-arm/per-root seed detail"
- },
- "artifacts": [
-  "exp012.results.json",
-  "exp012.telemetry.control.jsonl",
-  "exp012.telemetry.r11.poolB.jsonl",
-  "exp012.telemetry.r11.unaided.jsonl",
-  "exp012.telemetry.r23.poolB.jsonl",
-  "exp012.telemetry.r23.unaided.jsonl",
-  "exp012.telemetry.r42.poolB.jsonl",
-  "exp012.telemetry.r42.unaided.jsonl",
-  "exp012_seed_replication.py"
- ],
- "integrity": {
-  "exp012.results.json": "00b2ed28866b0e9e93b2dd5c9a6099d1e937a62f1f6313f14513dd43d99d933e",
-  "exp012.telemetry.control.jsonl": "ae0f1bbfc6e57ddeedb2aff9e131f1d4b89fabd10274e6dad301efd346261c8c",
-  "exp012.telemetry.r11.poolB.jsonl": "201a758e6038efd181a06a0872c28acb8de5a29d13b79618c3fd269aaa185b55",
-  "exp012.telemetry.r11.unaided.jsonl": "f00dd2a360dbaed9fe8bcbc57e4043f4f5e42a6f9b632a248e477f01cbb70c52",
-  "exp012.telemetry.r23.poolB.jsonl": "3c517071c5190db97fe56d9ec36e2d2fa45099bf7cfca022ece4bf6f2ce73318",
-  "exp012.telemetry.r23.unaided.jsonl": "3c517071c5190db97fe56d9ec36e2d2fa45099bf7cfca022ece4bf6f2ce73318",
-  "exp012.telemetry.r42.poolB.jsonl": "bae9557096c5fb976f7710d4f6ff373d8f8f7bd90aafe6b8b05a5d79febcb8d1",
-  "exp012.telemetry.r42.unaided.jsonl": "bae9557096c5fb976f7710d4f6ff373d8f8f7bd90aafe6b8b05a5d79febcb8d1",
-  "exp012_seed_replication.py": "d5a1b7bd4cb06c8d0301b62a19c94c2c3fc5559f0497e3c540176d03cf4f9f0a"
- },
- "honest_limits": "design pin pre-run: only root seed varies; per-root unaided baseline arm as freeze control",
- "note": "results-style receipt: the sealed artifacts are the experiment runner + results.json + telemetry jsonl; re-execute the runner to reproduce. exp001 remains the lane's only witness-LEDGER receipt (13-row PROOF chain)."
+  "schema": "micromoth-quilt/exp-receipt@v1",
+  "receipt_kind": "results",
+  "experiment": "exp012-root-replication",
+  "status": "SEALED",
+  "title": "Root-lottery: the unaided crossing does NOT replicate; multi-root doctrine minted",
+  "directive": "2026-09-28: iterate locally on MicroMoth-quilt (qcells lab, workspace/labs/qcells)",
+  "engine": {
+    "name": "micromoth",
+    "vendored_sha256": "7cf98a6cf3e5afd8d0a3fa3ae434c23a6438816fd4a3eb4fea0cb9f6f6d16534",
+    "note": "altered baseline 2026-10: simulate() gained an optional injected rng (CELL-MAPPING.md step 3); default path byte-identical, Apache notices intact (pin: tests/test_simulate_injected_rng.py)"
+  },
+  "seeds": {
+    "root": 7,
+    "train": 101,
+    "verify": 202,
+    "shots": 512,
+    "note": "see receipt results.json for per-arm/per-root seed detail"
+  },
+  "artifacts": [
+    "exp012.results.json",
+    "exp012.telemetry.control.jsonl",
+    "exp012.telemetry.r11.poolB.jsonl",
+    "exp012.telemetry.r11.unaided.jsonl",
+    "exp012.telemetry.r23.poolB.jsonl",
+    "exp012.telemetry.r23.unaided.jsonl",
+    "exp012.telemetry.r42.poolB.jsonl",
+    "exp012.telemetry.r42.unaided.jsonl",
+    "exp012_seed_replication.py"
+  ],
+  "integrity": {
+    "exp012.results.json": "00b2ed28866b0e9e93b2dd5c9a6099d1e937a62f1f6313f14513dd43d99d933e",
+    "exp012.telemetry.control.jsonl": "ae0f1bbfc6e57ddeedb2aff9e131f1d4b89fabd10274e6dad301efd346261c8c",
+    "exp012.telemetry.r11.poolB.jsonl": "201a758e6038efd181a06a0872c28acb8de5a29d13b79618c3fd269aaa185b55",
+    "exp012.telemetry.r11.unaided.jsonl": "f00dd2a360dbaed9fe8bcbc57e4043f4f5e42a6f9b632a248e477f01cbb70c52",
+    "exp012.telemetry.r23.poolB.jsonl": "3c517071c5190db97fe56d9ec36e2d2fa45099bf7cfca022ece4bf6f2ce73318",
+    "exp012.telemetry.r23.unaided.jsonl": "3c517071c5190db97fe56d9ec36e2d2fa45099bf7cfca022ece4bf6f2ce73318",
+    "exp012.telemetry.r42.poolB.jsonl": "bae9557096c5fb976f7710d4f6ff373d8f8f7bd90aafe6b8b05a5d79febcb8d1",
+    "exp012.telemetry.r42.unaided.jsonl": "bae9557096c5fb976f7710d4f6ff373d8f8f7bd90aafe6b8b05a5d79febcb8d1",
+    "exp012_seed_replication.py": "d5a1b7bd4cb06c8d0301b62a19c94c2c3fc5559f0497e3c540176d03cf4f9f0a"
+  },
+  "honest_limits": "design pin pre-run: only root seed varies; per-root unaided baseline arm as freeze control",
+  "note": "results-style receipt: the sealed artifacts are the experiment runner + results.json + telemetry jsonl; re-execute the runner to reproduce. exp001 remains the lane's only witness-LEDGER receipt (13-row PROOF chain)."
 }

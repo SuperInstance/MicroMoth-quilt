@@ -23,6 +23,11 @@
 import random
 from math import cos,sin,pi
 
+# Altered from the original by the SuperInstance fleet (2026-10):
+# simulate() gains an optional injected `rng` parameter used only for
+# shot sampling (docs/CELL-MAPPING.md smallest-build step 3). Default
+# rng=None preserves the original module-global `random` pattern.
+
 r2=0.70710678118 # 1/sqrt(2) will come in handy
 
 class QuantumCircuit:
@@ -115,8 +120,16 @@ class QuantumCircuit:
     self.x(q)
   
 
-def simulate(qc,shots=1024,get='counts',noise_model=[]):
-  '''Simulates the given circuit `qc`, and outputs the results in the form specified by `shots` and `get`.'''
+def simulate(qc,shots=1024,get='counts',noise_model=[],rng=None):
+  '''Simulates the given circuit `qc`, and outputs the results in the form specified by `shots` and `get`.
+
+  `rng` is an optional injected RNG (any object exposing `.random()`
+  returning floats in [0,1)); it is used ONLY for the shot-sampling
+  loop. When `rng` is None (default), sampling reads the module-global
+  `random`, preserving the classic beginner pattern. Receipt lanes pass
+  a seeded RNG object instead of mutating global state (CELL-MAPPING.md
+  smallest-build step 3); an unseeded global run stays exactly as
+  unseeded as before.'''
   
   def superpose(x,y):
     '''For two elements of the statevector, x and y, return (x+y)/sqrt(2) and (x-y)/sqrt(2)'''
@@ -255,7 +268,7 @@ def simulate(qc,shots=1024,get='counts',noise_model=[]):
       for _ in range(shots):
         cumu=0
         un=True
-        r=random.random()
+        r=(rng.random() if rng is not None else random.random())
         for j,p in enumerate(probs):
           cumu += p
           if r<cumu and un:    
