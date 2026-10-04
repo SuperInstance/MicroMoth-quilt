@@ -142,3 +142,14 @@ To drop this into another project (quilt, cargo-line, qthe, ...), copy the two f
 
 **Note on the "real" mode:** `api.mothquantum.com` does not currently send CORS headers, so a real-mode call made directly from client-side JS in a browser will be blocked by the browser itself (visible as a fast network-level failure, which the adapter treats like any other failure and degrades from) — a production deployment wanting the real upgrade to actually complete in-browser would route it through a small server-side proxy (a Cloudflare Pages Function/Worker), which is also where the `keyProvider`/secrets-store pattern is meant to be used. Separately, even server-to-server, the `comet-qrng-v1` engine's certified hardware (`mode: 'qpu'`) path can legitimately return zero extractable bytes for modest shot counts, since its NIST SP 800-90B extractor subtracts a large "ordering penalty" when the backend returns counts only (no per-shot memory) — that's a real, honest "no usable output" outcome from a job that did run for real on IBM hardware, not a bug, and it degrades the same way a scope/permission error would.
 
+
+## Documentation
+
+Wave-69 docs layer (added; nothing above was changed). Route by audience:
+
+- Zero-shot agent entry point: [docs/ONBOARDING.md](docs/ONBOARDING.md)
+- End users of the simulator / receipt tools / quantum-wow: [docs/USER-GUIDE.md](docs/USER-GUIDE.md)
+- Developers extending the code: [docs/DEVELOPER-GUIDE.md](docs/DEVELOPER-GUIDE.md)
+- Engineers operating / reviewing the system: [docs/ENGINEERING-NOTES.md](docs/ENGINEERING-NOTES.md)
+- Executives deciding investment: [docs/CTO-BRIEF.md](docs/CTO-BRIEF.md)
+- Index of all deeper knowledge: [docs/KNOWLEDGE-MAP.md](docs/KNOWLEDGE-MAP.md)
