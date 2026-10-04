@@ -42,18 +42,19 @@ print(micromoth.simulate(q, shots=256, get='counts'))
 #    run (unseeded sampling by design); every shot lands in {'00','11'}.
 
 # 2. The pin suite (pytest needed; run from repo root):
+python3 -m pip install pytest        # only for the test suite
 python3 -m pytest tests/ -q
-# -> 255 passed, 1 failed: tests/test_import_baseline.py manifest drift is a
-#    PRE-EXISTING, by-design RED (see gotchas). Everything else green.
+# -> 256 passed — green since the wave-69 re-seal; the import-baseline pin is
+#    the tripwire (drift turns it RED again, see gotchas).
 
 # 3. The seeded collapse-receipt tool (self-check, prints a receipt):
 python3 tools/collapse_ledger.py
 # -> {"cells":21,"sealed":true,"shots":16,"status":"EFFECT/SEALED","verify":{"ok":true,"why":"ok"}}
 
-# 4. The manifest drift checker (currently trips RED on purpose):
+# 4. The manifest drift checker:
 python3 tools/import_manifest.py --check
-# -> exit 1: sealed=498 tracked=502 unsealed=4 (seal.yml, test_widening_pins.py,
-#    pre-push hook, install_hooks.sh), drifted=0; remedy named in output.
+# -> exit 0: SEAL OK: sealed=508 tracked=508 unsealed=0 drifted=0 orphaned=0
+#    (any unsealed/drifted file is named, with the re-seal remedy).
 ```
 
 No external credentials are needed for anything in this repo. The only
@@ -79,13 +80,14 @@ at runtime; never committed; degrades to local simulation on any failure).
 
 ## The things that will bite you (gotchas)
 
-- **One pre-existing RED.** `tests/test_import_baseline.py::test_manifest_
-  exists_and_matches` fails on pristine main: four files were added after the
-  seal (seal.yml, test_widening_pins.py, tools/hooks/pre-push,
-  tools/install_hooks.sh) and the manifest was not re-sealed. The pin is
-  working as designed — it fails loudly and names the remedy
-  (`python3 tools/import_manifest.py`, committed with the change). Do not
-  hand-edit `receipts/import-baseline.json`.
+- **The import-baseline pin is a tripwire, not a broken test.** It was the
+  suite's one standing RED (files added post-seal, manifest not re-sealed)
+  until the wave-69 close ran `python3 tools/import_manifest.py` — the
+  declared re-embed — and the suite went green. Any tree change without a
+  re-seal turns it RED again (new tracked file = unsealed, edited file =
+  drifted) and names the remedy (`python3 tools/import_manifest.py`,
+  committed with the change). Do not hand-edit
+  `receipts/import-baseline.json`.
 - **Sampling is unseeded by design.** `simulate(get='counts'|'memory')` draws
   from the global `random` module; the same circuit gives different counts on
   every run. This is the documented "determinism hole" (CELL-MAPPING.md).
@@ -104,6 +106,13 @@ at runtime; never committed; degrades to local simulation on any failure).
   or `measure_all()`.
 - **`get='probability_dictionary'` (as one preserved README line says) does
   not exist** — the code accepts `'probabilities_dict'` exactly.
+- **A typo'd `get=` value falls back silently.** `simulate(get=…)` does no
+  enum validation: an unrecognized value is treated as the default and you
+  get sampled counts with no error (verified by the wave-69 drill). Check
+  your `get` spelling before trusting a histogram.
+- **The upstream docstring lies about the t-gate**: `micromoth.py:108` says
+  the t-gate "Applies a z gate" — it actually applies `rz(pi/4)`. The
+  docstring is wrong (upstream verbatim); the decomposition is right.
 - **Measurement remapping is last-writer-wins.** `outputnum_clbitsap` is a
   dict keyed by clbit; two measures into the same clbit keep only the last.
 - **Statevector cost is 2^n amplitude pairs.** The ledger is cheap; the VIEW
@@ -141,8 +150,9 @@ at runtime; never committed; degrades to local simulation on any failure).
 
 ## Current frontier (what is open right now)
 
-- Re-seal the import manifest (4 unsealed tracked files; the checker names
-  them). This is the standing RED and the first chore of any new lane.
+- Keep the import manifest sealed: after any intentional tree change, re-run
+  `python3 tools/import_manifest.py` and commit the manifest WITH the change
+  (the wave-69 close re-sealed the docs layer + README drift).
 - PROOF statevector witness cell at a TICK — the next cell in the ledger
   (README roadmap). `tools/collapse_ledger.py` does LINK/BIND/EFFECT; PROOF
   (rounded-amplitude sha256 witness) is specced in CELL-MAPPING.md and

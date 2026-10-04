@@ -10,8 +10,8 @@
 - `tools/import_manifest.py` — manifest builder/checker (`--check` exits 1 with a named drift report; excludes itself by name and records the exclusion).
 - `tools/collapse_ledger.py` — seed-plumbed collapse receipts: LINK + BIND + EFFECT cells, fnv1a-64 chain, `verify()` with live re-execution; self-check entry point.
 - `tools/selfplay.py` — exp015 bug-injection instrument (temp-copy mutation only, delta-based catching, 12 shapes).
-- `tools/install_hooks.sh`, `tools/hooks/pre-push` — pre-push manifest guard (one of the 4 files currently unsealed).
-- `tests/` — 24 pin files: import baseline, cell mapping (doc≡dispatch), collapse ledger, one pin file per experiment receipt (test_exp001…test_exp022), grader blindspots, widening pins, lab-home citation.
+- `tools/install_hooks.sh`, `tools/hooks/pre-push` — pre-push manifest guard (a former unsealed file; sealed by the wave-69 re-seal).
+- `tests/` — 28 pin files: import baseline, cell mapping (doc≡dispatch), collapse ledger, one pin file per experiment receipt (test_exp001…test_exp022), grader blindspots, widening pins, lab-home citation.
 - `experiments/selfplay/` — PIN.md (pre-registration, honest-negative policy), SHAPES.md (mutation vocabulary), SUMMARY.md (58/60 caught, 0.97; canaries 12/12), `rounds/` (61 JSON round receipts).
 - `quantum-wow/` — `micromoth.js` (zero-dependency ES-module port; adds a `crz` extension), `quantum-wow.js` (QuantumWow: quantumSeed/quantumCoin/quantumField/setApiKey/mountWidget; simulated vs real-BYO-key with honest degradation), `index.html` (click-and-play demo).
 - `versions/` — upstream ports: Python/ (template + tutorial), Lua/ (PICO-8), Arduino/, Csharp/ (with built test binaries), JavaScript/; `versions/update_required/` holds legacy MicroQiskit ports (Godot, Ruby, Kotlin, C++, Racket, Processing, Dart) not yet upgraded.
@@ -51,7 +51,7 @@ SuperInstance/superinstance-lab → worklog.md, grep 'MicroMoth-quilt' (and 'mic
 
 ## Receipts of record
 
-- `receipts/import-baseline.json` — proves what was imported: sha256 per tracked file at seal (AUDIT: baseline commit 491e8819e681…, 260 tracked files at seal; README's table says 267 — counts drift as files were added; the checker's live numbers this wave: sealed=498, tracked=502, unsealed=4, drifted=0).
+- `receipts/import-baseline.json` — proves what was imported: sha256 per tracked file at seal (AUDIT: baseline commit 491e8819e681…, 260 tracked files at seal; README's table says 267 — counts drift as files were added; the checker's live numbers after the wave-69 re-seal: sealed=508, tracked=508, unsealed=0, drifted=0).
 - `receipts/exp001-bias-search.json` — first experiment: champion-seeded search toward |01⟩ (8 gens × pop 16, train/verify split), 13 witness rows, PROOF head `7417f8a8ad75a2aa`, replay OK.
 - `receipts/exp002-parsimony-sweep.json` — parsimony penalty sweep (λ 0.00/0.02/0.05): both pressure arms collapse to the len-1 champion [x(0)] at verify 1.0; PROOF head `c5e9be966abaf0db`.
 - `receipts/exp003-mutation-ablation.json` / `exp004-jitter-drop.json` — ablation arms on identical named seeds; replace-only crosses earlier; policy "drop jitter" adopted (gen 2 vs gen 4); PROOF heads `ade3dc62f7e589e9`, `7bffc7144b684ccb`.

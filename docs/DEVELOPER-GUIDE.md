@@ -13,7 +13,8 @@ The paths that matter, file by file:
 | `tools/import_manifest.py` | Manifest builder/checker: sha256 per `git ls-files` entry, excludes itself by name, `--check` mode exits 1 with a named drift report. |
 | `tools/collapse_ledger.py` | Seed-plumbing receipt tool: `circuit_cells`, `collapse_receipt`, `verify`, fnv1a-64 chaining, SEALED vs EFFECT/UNSEALED policy. |
 | `tools/selfplay.py` | exp015 bug-injection instrument (12 mutation shapes against `tests/`, delta-based catching, temp-copy only). |
-| `tests/` | 24 pin files: `test_import_baseline.py`, `test_cell_mapping.py`, `test_collapse_ledger.py`, `test_exp001..022_receipt.py` (one per receipt), `test_grader_blindspots.py`, `test_widening_pins.py`, `test_lab_home_citation.py`. |
+| `tools/build_exp016_receipt.py` | One-shot sealer for `receipts/exp016-hybrid.json` (results-kind receipt): rebuilds it from the sealed artifacts in `receipts/exp016-hybrid/` with a byte-for-byte sha256 integrity table. |
+| `tests/` | 28 pin files: `test_import_baseline.py`, `test_cell_mapping.py`, `test_collapse_ledger.py`, `test_exp001..022_receipt.py` (one per receipt), `test_grader_blindspots.py`, `test_widening_pins.py`, `test_lab_home_citation.py`. |
 | `receipts/` | exp001–exp022 sealed receipts (`micromoth-quilt/exp-receipt@v1`); larger experiments have subdirectories with `*.telemetry.*.jsonl`, `*.results.json`, and the generating `*.py` script kept next to the outputs. |
 | `experiments/selfplay/` | PIN.md (pre-registration), SHAPES.md (mutation vocabulary), SUMMARY.md (catch-rate report), `rounds/` (61 per-round receipts). |
 | `quantum-wow/` | `micromoth.js` (faithful ES-module JS port) + `quantum-wow.js` (QuantumWow adapter, widget) + `index.html` demo. |
@@ -112,12 +113,13 @@ key from config; keys arrive at runtime via `setApiKey` or a server-side
 python3 -m pytest tests/ -q
 ```
 
-Green means: 255 passing pins — import baseline structure, cell-mapping
+Green means: 256 passing pins — import baseline structure, cell-mapping
 doc≡dispatch equivalence, collapse-ledger id re-derivation + tamper naming +
 live re-execution, all 22 experiment receipts, grader-blindspot and widening
-pins. One test (`test_import_baseline.py::test_manifest_exists_and_matches`)
-is a pre-existing, by-design RED (manifest drift: 4 tracked files added
-post-seal; `python3 tools/import_manifest.py --check` names them). The
+pins. The import-baseline pin (`test_import_baseline.py::
+test_manifest_exists_and_matches`) was a pre-existing, by-design RED until
+the wave-69 re-seal; it re-trips RED on any drift, and
+`python3 tools/import_manifest.py --check` names the rows. The
 selfplay instrument's own report (experiments/selfplay/SUMMARY.md) was
 generated from a baseline of "255 passed / 1 pre-existing failed" — treat
 any other delta as yours.
