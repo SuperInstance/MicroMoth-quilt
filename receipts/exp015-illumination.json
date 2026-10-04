@@ -7,8 +7,8 @@
   "directive": "2026-09-29: iterate locally on MicroMoth-quilt (qcells lab, workspace/labs/qcells)",
   "engine": {
     "name": "micromoth",
-    "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
-    "note": "matches the import-baseline manifest pin on main"
+    "vendored_sha256": "7cf98a6cf3e5afd8d0a3fa3ae434c23a6438816fd4a3eb4fea0cb9f6f6d16534",
+    "note": "altered baseline 2026-10: simulate() gained an optional injected rng (CELL-MAPPING.md step 3); default path byte-identical, Apache notices intact (pin: tests/test_simulate_injected_rng.py)"
   },
   "seeds": {
     "roots": [

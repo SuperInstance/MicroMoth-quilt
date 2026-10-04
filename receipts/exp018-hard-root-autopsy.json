@@ -3,22 +3,33 @@
   "receipt_kind": "results",
   "experiment": "exp018-hard-root-autopsy",
   "status": "SEALED",
-  "title": "hard-root autopsy on 29/31/37 — FITNESS DESERT AT THE BIRTH CLOUD, not a reach problem: winning move class drawn 13-17x per root but every one of 540 hard-root child-sims sat at train=0 AND verify=0 all 12 gens (incl. wire-2-entangled birth champions); the freeze is UPSTREAM of selection; exp016's archive crossing unlocked FITNESS ASSEMBLY, and the desert is ROOT-SPECIFIC (control r13 signals from gen 0)",
+  "title": "hard-root autopsy on 29/31/37 \u2014 FITNESS DESERT AT THE BIRTH CLOUD, not a reach problem: winning move class drawn 13-17x per root but every one of 540 hard-root child-sims sat at train=0 AND verify=0 all 12 gens (incl. wire-2-entangled birth champions); the freeze is UPSTREAM of selection; exp016's archive crossing unlocked FITNESS ASSEMBLY, and the desert is ROOT-SPECIFIC (control r13 signals from gen 0)",
   "directive": "2026-09-29: iterate locally on MicroMoth-quilt (qcells lab, workspace/labs/qcells)",
   "engine": {
     "name": "micromoth",
-    "vendored_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
-    "note": "matches the import-baseline manifest pin on main"
+    "vendored_sha256": "7cf98a6cf3e5afd8d0a3fa3ae434c23a6438816fd4a3eb4fea0cb9f6f6d16534",
+    "note": "altered baseline 2026-10: simulate() gained an optional injected rng (CELL-MAPPING.md step 3); default path byte-identical, Apache notices intact (pin: tests/test_simulate_injected_rng.py)"
   },
   "seeds": {
-    "roots": [29, 31, 37, 13],
-    "hard_roots": [29, 31, 37],
-    "control_roots": [13],
+    "roots": [
+      29,
+      31,
+      37,
+      13
+    ],
+    "hard_roots": [
+      29,
+      31,
+      37
+    ],
+    "control_roots": [
+      13
+    ],
     "shots": 512,
     "train": 101,
     "verify": 202
   },
-  "question": "hard roots 29/31/37 resist champion-local skeleton and reach arms (exp014 0/3 frozen) but crossed under the exp016 archive regime (3/3) — did the winning move class (2q gate touching wire 2, pre-registered from exp016's actual hard-root champions) ever get drawn in the unaided birth cloud, and if so could selection see it? Reach problem vs fitness/witness problem.",
+  "question": "hard roots 29/31/37 resist champion-local skeleton and reach arms (exp014 0/3 frozen) but crossed under the exp016 archive regime (3/3) \u2014 did the winning move class (2q gate touching wire 2, pre-registered from exp016's actual hard-root champions) ever get drawn in the unaided birth cloud, and if so could selection see it? Reach problem vs fitness/witness problem.",
   "design": "exact exp005 unaided lane (targets 000/111, balance, n=3, train101/verify202/shots512, budget 6, DEFAULT unrestricted mutate, champion-local parenting, held-out promotion), 12 gens x pop 16, hard roots 29/31/37 + control root 13 under the identical instrumented harness; instrumented mutate_telem records move class + win2-draw per child with rng-stream equivalence pinned over 800 states; guard: instrumented loop reproduces exp001 curve+champion byte-identically; per-child verify computed post-hoc (reseeds global random, search stream untouched); win2 signature pre-registered from exp016 champions (r29 swap(0,2)+cx(0,2), r31 swap(0,2)+crx(2,0)+cx(0,1), r37 cx(0,2)); tier A = any 2q gate touching wire 2, tier B = tier A + h present",
   "success_threshold_verify_balance": 0.45,
   "pre_run_pin": "never-drawn = REACH PROBLEM; drawn-but-never-promoted = WITNESS/FITNESS PROBLEM (exp015 elitism-artifact mechanism at champion-search scale); promoted-but-stalled = SLOPE-TRAP AT SCALE; all reads are difference reads vs control r13 per ROOT-LOTTERY doctrine",
@@ -41,32 +52,72 @@
     "exp018_hard_root_autopsy.py": "67226a3137ad2808597bb4b7cc69806f260d1e0115302fe7b5d62eebcf9bccca"
   },
   "results": {
-    "verdict": "FITNESS DESERT AT THE BIRTH CLOUD on [29, 31, 37]: NOT a reach problem — the winning move class was drawn 13-17x per hard root (all via the ~30% replace class; the equivalence pin surfaced that search.mutate's indel-insert pool is hard-wired 2-wire, so insert can NEVER touch wire 2 — wire-2 reach flows only through replace). But every cloud child on all three hard roots sat at train=0.0 AND verify=0.0 for all 12 gens (0/540 child-sims produced ANY balanced target mass), INCLUDING wire-2-entangled birth champions (r37 opens with cx(2,0)+swap(2,1)+swap(1,0), a structural superset of exp016's r37 winner, and still pays zero at both seeds). The freeze is UPSTREAM of selection: selection has nothing to see, not a visibility failure. exp016's archive-hybrid crossing of 29/31/37 at the SAME seeds therefore unlocked FITNESS ASSEMBLY — multi-parent archive mixing reached payoff genomes the champion-local stream never assembled (consistent with exp015 ELITISM-ARTIFACT: archive cells held verify>0 elites champion search discarded). Contrast control r13: same draw counts (14, all replace), but its cloud shows signal from gen 0 (train 0.1289 -> 0.2559, verify plateau 0.2422) — the desert is ROOT-SPECIFIC, not lane-global (ROOT-LOTTERY doctrine). Promotion on r31/r37 (champion became win2) is tie-noise: 0.0 >= 0.0 promotes arbitrarily on a flat landscape; r29 additionally never promoted a win2 child at all.",
+    "verdict": "FITNESS DESERT AT THE BIRTH CLOUD on [29, 31, 37]: NOT a reach problem \u2014 the winning move class was drawn 13-17x per hard root (all via the ~30% replace class; the equivalence pin surfaced that search.mutate's indel-insert pool is hard-wired 2-wire, so insert can NEVER touch wire 2 \u2014 wire-2 reach flows only through replace). But every cloud child on all three hard roots sat at train=0.0 AND verify=0.0 for all 12 gens (0/540 child-sims produced ANY balanced target mass), INCLUDING wire-2-entangled birth champions (r37 opens with cx(2,0)+swap(2,1)+swap(1,0), a structural superset of exp016's r37 winner, and still pays zero at both seeds). The freeze is UPSTREAM of selection: selection has nothing to see, not a visibility failure. exp016's archive-hybrid crossing of 29/31/37 at the SAME seeds therefore unlocked FITNESS ASSEMBLY \u2014 multi-parent archive mixing reached payoff genomes the champion-local stream never assembled (consistent with exp015 ELITISM-ARTIFACT: archive cells held verify>0 elites champion search discarded). Contrast control r13: same draw counts (14, all replace), but its cloud shows signal from gen 0 (train 0.1289 -> 0.2559, verify plateau 0.2422) \u2014 the desert is ROOT-SPECIFIC, not lane-global (ROOT-LOTTERY doctrine). Promotion on r31/r37 (champion became win2) is tie-noise: 0.0 >= 0.0 promotes arbitrarily on a flat landscape; r29 additionally never promoted a win2 child at all.",
     "guard_exp001_reproduced": true,
-    "mutate_equivalence_pin": "800/800 states (4 genomes x 200 seeds): genome equality + rng state equality, 0 failures; pin ALSO surfaced a latent harness quirk: search.mutate's indel-insert branch calls random_gate(rng) with NO n_qubits — the insert pool is hard-wired 2-wire even in n=3 lanes, so insert can never introduce wire 2; all observed win2 draws flow through the ~30% replace class",
+    "mutate_equivalence_pin": "800/800 states (4 genomes x 200 seeds): genome equality + rng state equality, 0 failures; pin ALSO surfaced a latent harness quirk: search.mutate's indel-insert branch calls random_gate(rng) with NO n_qubits \u2014 the insert pool is hard-wired 2-wire even in n=3 lanes, so insert can never introduce wire 2; all observed win2 draws flow through the ~30% replace class",
     "crossing_table": {
-      "r29": {"win2_drawn_total": 14, "win2_drawn_by_class": {"replace": 14}, "win2_ever_promoted": false, "final_champion_win2": false, "max_win2_child_verify": 0.0, "max_cloud_verify": 0.0, "frozen_12_gens": true},
-      "r31": {"win2_drawn_total": 13, "win2_drawn_by_class": {"replace": 13}, "win2_ever_promoted": true, "max_win2_child_verify": 0.0, "max_cloud_verify": 0.0, "frozen_12_gens": true, "promotion_is_tie_noise": true},
-      "r37": {"win2_drawn_total": 17, "win2_drawn_by_class": {"replace": 17}, "win2_ever_promoted": true, "max_win2_child_verify": 0.0, "max_cloud_verify": 0.0, "frozen_12_gens": true, "promotion_is_tie_noise": true},
-      "r13.control": {"win2_drawn_total": 14, "win2_drawn_by_class": {"replace": 14}, "win2_ever_promoted": true, "max_win2_child_verify": 0.2422, "max_cloud_verify": 0.2422, "frozen_12_gens": false, "signal_from_gen0": true}
+      "r29": {
+        "win2_drawn_total": 14,
+        "win2_drawn_by_class": {
+          "replace": 14
+        },
+        "win2_ever_promoted": false,
+        "final_champion_win2": false,
+        "max_win2_child_verify": 0.0,
+        "max_cloud_verify": 0.0,
+        "frozen_12_gens": true
+      },
+      "r31": {
+        "win2_drawn_total": 13,
+        "win2_drawn_by_class": {
+          "replace": 13
+        },
+        "win2_ever_promoted": true,
+        "max_win2_child_verify": 0.0,
+        "max_cloud_verify": 0.0,
+        "frozen_12_gens": true,
+        "promotion_is_tie_noise": true
+      },
+      "r37": {
+        "win2_drawn_total": 17,
+        "win2_drawn_by_class": {
+          "replace": 17
+        },
+        "win2_ever_promoted": true,
+        "max_win2_child_verify": 0.0,
+        "max_cloud_verify": 0.0,
+        "frozen_12_gens": true,
+        "promotion_is_tie_noise": true
+      },
+      "r13.control": {
+        "win2_drawn_total": 14,
+        "win2_drawn_by_class": {
+          "replace": 14
+        },
+        "win2_ever_promoted": true,
+        "max_win2_child_verify": 0.2422,
+        "max_cloud_verify": 0.2422,
+        "frozen_12_gens": false,
+        "signal_from_gen0": true
+      }
     }
   },
   "cross_receipts": {
-    "exp005": "the freeze under all of this: unaided single-fitness champion search stays at champion_verify_balance 0.0 on this lane — exp018 locates the desert AT the birth cloud (train AND verify both zero from birth), one causal step upstream of the freeze as selection experiences it",
-    "exp012": "ROOT-LOTTERY doctrine (merged PR #17): the desert is ROOT-SPECIFIC (r13 signals from gen 0 under identical draws) — a per-root rate read, never a mechanism victory",
+    "exp005": "the freeze under all of this: unaided single-fitness champion search stays at champion_verify_balance 0.0 on this lane \u2014 exp018 locates the desert AT the birth cloud (train AND verify both zero from birth), one causal step upstream of the freeze as selection experiences it",
+    "exp012": "ROOT-LOTTERY doctrine (merged PR #17): the desert is ROOT-SPECIFIC (r13 signals from gen 0 under identical draws) \u2014 a per-root rate read, never a mechanism victory",
     "exp013": "partial-plateau class (merged PR #18): r13's 0.2422 verify plateau is that class, named not rounded",
-    "exp014": "the champion-local comparator: SKELETON IS A RATE, hard roots 0/3 frozen champion-local (receipt commit 793a771, PR #19 Casey-gated at seal time — comparator data embedded in results.json with provenance)",
-    "exp015": "ELITISM-ARTIFACT (partial) VERIFIED consistent: archive cells held verify>0 elites champion search discarded; exp018 adds the causal step — champion-local stream never ASSEMBLES payoff genomes on hard roots at all (fitness desert at birth)",
-    "exp016": "the archive comparator: ARCHIVE NEUTRAL 6/8, hard roots crossed 3/3 at the same seeds (receipt commit fba4ec7, PR #22 Casey-gated at seal time — comparator genomes embedded in results.json with provenance); exp018's read: the archive unlocked FITNESS ASSEMBLY (multi-parent mixing), not just visibility",
-    "exp017": "easy-class dilution (PR #23 Casey-gated at seal time): r13 regime-robust / 17-19 champion-local-only decomposition is consistent with the root-specific desert — the desert is a property of the root's birth cloud, not of the search regime"
+    "exp014": "the champion-local comparator: SKELETON IS A RATE, hard roots 0/3 frozen champion-local (receipt commit 793a771, PR #19 Casey-gated at seal time \u2014 comparator data embedded in results.json with provenance)",
+    "exp015": "ELITISM-ARTIFACT (partial) VERIFIED consistent: archive cells held verify>0 elites champion search discarded; exp018 adds the causal step \u2014 champion-local stream never ASSEMBLES payoff genomes on hard roots at all (fitness desert at birth)",
+    "exp016": "the archive comparator: ARCHIVE NEUTRAL 6/8, hard roots crossed 3/3 at the same seeds (receipt commit fba4ec7, PR #22 Casey-gated at seal time \u2014 comparator genomes embedded in results.json with provenance); exp018's read: the archive unlocked FITNESS ASSEMBLY (multi-parent mixing), not just visibility",
+    "exp017": "easy-class dilution (PR #23 Casey-gated at seal time): r13 regime-robust / 17-19 champion-local-only decomposition is consistent with the root-specific desert \u2014 the desert is a property of the root's birth cloud, not of the search regime"
   },
   "honest_limits": [
-    "The winning-move-class draw is a CLASS count, not a genome census: 13-17 draws per hard root across 12 gens x pop 16 (180 child-sims per root — the cloud rows carry 15 new children per gen, the champion is the 16th pop slot) means the class was amply reachable, but this experiment does not enumerate which full genomes were drawn or replay them individually beyond the telemetry jsonl.",
-    "0/540 counts CHILD-sims (180 cloud children per hard root x 3 roots); the birth champions are included in gen 0's rows. Per-child verify was computed POST-HOC by reseeding the global random module — the 800/800 mutate-equivalence pin plus the exp001 guard (byte-identical curve+champion) is the evidence the post-hoc pass did not perturb the search stream.",
-    "The indel-insert pool is hard-wired 2-wire — the quirk was surfaced by the equivalence pin, not by a separate targeted probe: all observed win2 draws flow through replace (~30% class share per telemetry), and the quirk means the harness's own reach into wire 2 via insert is structurally zero in n=3 lanes. It is named as a harness limitation, not a confounder of the desert read (replace reach alone was drawn 13-17x per root).",
-    "Promotion-as-tie-noise on r31/r37 (champion became win2 at 0.0 >= 0.0) is a flat-landscape artifact; it must NOT be read as 'selection promoted the winning class' — no win2 child ever scored above 0.0 on any hard root.",
-    "results-style receipt (no witness LEDGER; exp001 remains the lane's only LEDGER receipt) — sealed artifacts are runner + results.json + telemetry jsonl, and the receipt's sha256 table must match every file byte-for-byte or the seal is void. The runner is sealed as the exact bytes executed in the qcells lab (workspace/labs/qcells).",
+    "The winning-move-class draw is a CLASS count, not a genome census: 13-17 draws per hard root across 12 gens x pop 16 (180 child-sims per root \u2014 the cloud rows carry 15 new children per gen, the champion is the 16th pop slot) means the class was amply reachable, but this experiment does not enumerate which full genomes were drawn or replay them individually beyond the telemetry jsonl.",
+    "0/540 counts CHILD-sims (180 cloud children per hard root x 3 roots); the birth champions are included in gen 0's rows. Per-child verify was computed POST-HOC by reseeding the global random module \u2014 the 800/800 mutate-equivalence pin plus the exp001 guard (byte-identical curve+champion) is the evidence the post-hoc pass did not perturb the search stream.",
+    "The indel-insert pool is hard-wired 2-wire \u2014 the quirk was surfaced by the equivalence pin, not by a separate targeted probe: all observed win2 draws flow through replace (~30% class share per telemetry), and the quirk means the harness's own reach into wire 2 via insert is structurally zero in n=3 lanes. It is named as a harness limitation, not a confounder of the desert read (replace reach alone was drawn 13-17x per root).",
+    "Promotion-as-tie-noise on r31/r37 (champion became win2 at 0.0 >= 0.0) is a flat-landscape artifact; it must NOT be read as 'selection promoted the winning class' \u2014 no win2 child ever scored above 0.0 on any hard root.",
+    "results-style receipt (no witness LEDGER; exp001 remains the lane's only LEDGER receipt) \u2014 sealed artifacts are runner + results.json + telemetry jsonl, and the receipt's sha256 table must match every file byte-for-byte or the seal is void. The runner is sealed as the exact bytes executed in the qcells lab (workspace/labs/qcells).",
     "The exp014/exp015/exp016/exp017 comparators are embedded with provenance (PRs #19/#21/#22/#23 Casey-gated, NOT merged at seal time; exp014 receipt commit 793a771, exp016 receipt commit fba4ec7); if merged numbers ever disagree, this receipt's comparator pins must be re-audited, not silently trusted. Doctrine anchors used by the PINS are merged receipts only (exp012 PR #17, exp013 PR #18).",
-    "12 gens x pop 16 is the established lane budget, not an asymptotic sample; the desert read is ROOT-SPECIFIC — a per-root difference read against the r13 control under identical instrumentation, per ROOT-LOTTERY — it claims a mechanism location (birth-cloud fitness), not a crossing rate."
+    "12 gens x pop 16 is the established lane budget, not an asymptotic sample; the desert read is ROOT-SPECIFIC \u2014 a per-root difference read against the r13 control under identical instrumentation, per ROOT-LOTTERY \u2014 it claims a mechanism location (birth-cloud fitness), not a crossing rate."
   ]
 }

@@ -83,10 +83,11 @@ def seeded_counts(qc: QuantumCircuit, shots: int, seed: int) -> dict:
     """WORLD entrypoint: the only public sampling op the WORLD witness
     ever needs (CELL-MAPPING.md smallest-build step 1).
 
-    Seeds the module-global RNG (the documented plumbing — simulate()
-    accepts no seed argument on the import baseline), samples counts,
-    restores the caller's RNG state. Sealed-only by construction: an
-    unseeded prediction is refused, not faked.
+    Seeds the module-global RNG, samples counts, restores the caller's
+    RNG state. Sealed-only by construction: an unseeded prediction is
+    refused, not faked. (Pre-step-3 plumbing; simulate() now accepts an
+    injected `rng` — adoption of that seam here is the booked follow-on,
+    this wrapper's results are byte-identical either way.)
     """
     if seed is None:
         raise ValueError(

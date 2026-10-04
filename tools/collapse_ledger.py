@@ -7,12 +7,16 @@ docs/CELL-MAPPING.md against the import baseline (micromoth.py):
 1. The ledger pins `seed` and `shots` as EFFECT parameters.
 2. Re-running with the same circuit chain + same seed reproduces the
    same collapse EFFECT chain, byte for byte.
-3. Honest limit preserved: simulate() takes NO seed argument today and
-   reads the module-global `random`. The wrapper plumbs a seed through
-   exactly that source (seed -> simulate -> restore state), records the
-   plumbing as the EFFECT parameter, and refuses to call an unseeded
-   run sealed. If a future micromoth.py accepts a seed directly, this
-   wrapper must delegate to it (pin: test_plumbing_documented).
+3. Honest limit preserved: simulate() reads the module-global
+   `random` when called without an injected `rng` (default), and the
+   injected-rng path (CELL-MAPPING.md step 3) changes only WHOSE
+   randomness is read, never the honesty semantics - an unseeded
+   global run stays as unseeded as before. The wrapper plumbs a seed
+   through exactly that source (seed -> simulate -> restore state),
+   records the plumbing as the EFFECT parameter, and refuses to call
+   an unseeded run sealed. If a future micromoth.py accepts a seed
+   directly, this wrapper must delegate to it (pin:
+   test_plumbing_documented).
 
 Cell algebra (canonical source: SuperInstance/AI-Writings algebra.md):
 five opcodes BIND / LINK / EFFECT / VIEW / TICK, fnv1a-64 over the
