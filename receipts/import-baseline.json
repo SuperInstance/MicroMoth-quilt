@@ -1,8 +1,8 @@
 {
   "schema": "micromoth-quilt/import-baseline@v1",
   "upstream": "moth-quantum/MicroMoth",
-  "baseline_commit": "5efca21e0caf3329ec24d7f680cc75930eb5008a",
-  "generated_at": "2026-10-05T01:14:49.916294+00:00",
+  "baseline_commit": "ca15c138070053345e06f1d4caa04f5c5ac67d76",
+  "generated_at": "2026-10-05T05:33:31.689807+00:00",
   "self": "receipts/import-baseline.json (excluded: sha256 fixed-point, cannot embed own digest)",
   "doctrine": "regenerate via tools/import_manifest.py; never edit by hand",
   "files": {
@@ -21,6 +21,7 @@
     "docs/IONQ-RUNG1-PREFLIGHT.md": "6948d81230a3306211dd0d3baf29a677c882230d9b3c37b09f31ca250bb77f83",
     "docs/KNOWLEDGE-MAP.md": "69f0923ce2581d47507e8c528b8d72b2adc685d160104d6db09f5a5329fb5970",
     "docs/ONBOARDING.md": "6d90ea7c047af1b1055744b546b4cef1e64f97d5097ad8512c4e2f7c57767533",
+    "docs/PRISTINE-AUDIT-RUNG1-PR43.md": "e015926161fd276ef3ac672bd62a1ff744e62de6a95aea6be3fb9d19dda033f2",
     "docs/USER-GUIDE.md": "1d5274e2c273008a1bb65e6d3047b4ffd9d58a2f364b528b43dcd5c313dc2b41",
     "docs/conf.py": "18e69aec54924b53e018cd0ab6fb2ce64461c1ed835f73d644d60aa48cff7a32",
     "docs/index.rst": "fc68d7d7b09a7b53c9182a0cf52bf23c60dc15b8d87b6533bd49e3181da7d388",
