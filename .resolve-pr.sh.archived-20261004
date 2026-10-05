@@ -1,0 +1,35 @@
+#!/bin/bash
+# resolve-and-push <branch> — merge origin/main into PR branch, resolve manifest conflicts via doctrine tool, scan secrets, push
+set -e
+BR="$1"
+cd /home/eileen/projects/pr-wave-micromoth
+git checkout -q "$BR"
+git reset --hard -q "origin/$BR"
+if ! git merge origin/main --no-edit > /tmp/merge-out.txt 2>&1; then
+  CONFS=$(git diff --name-only --diff-filter=U)
+  echo "conflicted: $CONFS"
+  for f in $CONFS; do
+    case "$f" in
+      receipts/import-baseline.json)
+        # doctrine: regenerate via tools/import_manifest.py — take theirs then regenerate from merged tree
+        git checkout --theirs -- "$f"
+        python3 tools/import_manifest.py
+        git add "$f"
+        ;;
+      *)
+        echo "NON-MANIFEST CONFLICT: $f — needs manual eyes"
+        exit 3
+        ;;
+    esac
+  done
+  git -c user.name="openclaw-merge-bot" -c user.email="noreply@superinstance.local" commit -q --no-edit
+else
+  echo "merged clean"
+fi
+# secret gate on the net diff vs main
+if git diff origin/main HEAD | grep -E "sk-[A-Za-z0-9]{16,}|hf_[A-Za-z0-9]{16,}|ghp_[A-Za-z0-9]{16,}"; then
+  echo "SECRET PATTERN FOUND — ABORT, NOT PUSHING"
+  exit 4
+fi
+git push origin "$BR" 2>&1 | tail -1
+echo "PUSHED_OK"
