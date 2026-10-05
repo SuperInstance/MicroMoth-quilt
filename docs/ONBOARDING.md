@@ -162,3 +162,71 @@ at runtime; never committed; degrades to local simulation on any failure).
 - Selfplay next probes (experiments/selfplay/SUMMARY.md): crx-only-path and
   memory-output-ordering bug shapes are thinly pinned; boundary_offbyone
   variant 2 targets arithmetic, not semantics.
+
+---
+
+## Fleet seed (2026-10-06 handoff) — momentum, vision, roadmaps, mesh
+
+> Additive section for follow-up agents; the sections above are the
+> zero-shot mechanics. Mesh context: `SuperInstance/fleet-seeds` →
+> `docs/handoff-2026-10-06/ORG-MESH.md`.
+
+### Momentum since the doc above froze
+
+- **CELL-MAPPING is fully merged** (PRs #33–#42): FORGET shot-erasure,
+  `cell_receipts` JSONL artifact driver (write → verify-by-replay, refused-
+  not-faked on header/count/tamper divergence), the `simulate()` injected-RNG
+  seam (the global-`random` determinism hole, named then fixed, seeded
+  byte-identical), seeded plumbing adoption (concurrency-pinned), and VIEW
+  cells (per the CELL-MAPPING "we looked" clause — counts seeded, statevector
+  sha256-pinned, never inlined: *ledger cheap, VIEW not*). Suite 352/352 at
+  merge; import-baseline pin is the tripwire.
+- **The IonQ ladder climbed rungs 1–2** (both on main via #44):
+  rung-1 `tools/rung1_preflight.py` — forbidden-sum discriminator, P(01)+P(10)
+  = 0.49815 measured vs 0.50 coherent / 0.0 classical (200k shots, ~500σ
+  teeth); rung-2 `tools/rung2_preflight.py` — sin² bridge exact at π,
+  additivity 0.7494 vs 0.75 coherent / 0.50 accumulator flagged, cancellation
+  exact 0.0. Both sim-only pre-flights with honest limits documented.
+- **Manifest discipline is load-bearing:** every file sealed, reseal counts
+  pinned (524→527 across the lane), fresh-audit caught a real stale-manifest
+  ship once (the reseal-left-unstaged bug) — the tool earns its keep here.
+- **No credentials needed for anything in this repo** — the quantum work is
+  simulator-native. (The MothQuantum hardware token was revoked 2026-10-06;
+  it was never needed here.)
+
+### Vision
+
+Feature-poverty as a virtue: nine executable operations you can read in an
+afternoon, wrapped in the fleet's receipt discipline so that *a quantum
+circuit is a hash-chained ledger* — every gate a BIND cell, every measurement
+a sealed collapse event, every view a VIEW cell. The quantum lane is the
+sharpest possible test of "no receipt, no claim," because a sampled outcome
+is an event, not a state: an unseeded histogram is a claim nobody can
+re-verify. This repo refuses to launder that.
+
+### Roadmaps (several directions)
+
+1. **IonQ rung-3 (4–7q wsum/decoherence)** — the spend rung. Gated on
+   hardware credits AND the EFFECT/HARDWARE doctrine (rungs 1–2 sim
+   preflights PASS; do not attempt the hardware rung without Casey's go).
+2. **Extraction-style publishing** (mirror `coev`): the cell-ledger layer
+   could stand alone as `micromoth-ledger` for anyone's MicroQiskit fork.
+3. **More opcode adoption** — WORLD/TIME are named in the mapping doc; the
+   mid-circuit measurement seam (#41) is the natural next adopter.
+4. **QRC adjacency** — MothQuantum's public `qrc-train-v2` / `labyrinth-v1`
+   engines are conceptually adjacent (quantum-graph structures → receipts);
+   cite-not-build until a fresh key exists.
+5. **Champion-seeded search expansion** — exp001–exp022 seeded gate-search
+   receipts; new targets (larger entangled classes) are one seeded run each.
+
+### How it meshes
+
+- **One algebra, many substrates:** the five-opcode idiom (BIND/LINK/EFFECT/
+  VIEW/TICK + FORGET/PROOF/WORLD) is the same idiom as the fleet WAL
+  (fleet-witness), quilt-jev-toolkit organs, and quilt-in-git ticks. A gate
+  application and a WAL row are the same act in different materials.
+- **fresh-audit originated in quilt-tools#45** and is run on every PR here;
+  receipts committed on-branch.
+- **Referral graph:** edges to/from this lane land in `quilt-tools`; the
+  graph counts this repo in its 25-repo view.
+- Org state: `fleet-seeds` → `docs/handoff-2026-10-06/HANDOFF.md`.
