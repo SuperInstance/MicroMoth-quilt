@@ -1,8 +1,8 @@
 {
   "schema": "micromoth-quilt/import-baseline@v1",
   "upstream": "moth-quantum/MicroMoth",
-  "baseline_commit": "cc5e723fc809a8ded740d9c53e3d01b96c35ae9c",
-  "generated_at": "2026-10-05T04:19:17.013886+00:00",
+  "baseline_commit": "dd255498af9af9d0d754126f5ecce9b0d6f5e66c",
+  "generated_at": "2026-10-05T21:08:08.639085+00:00",
   "self": "receipts/import-baseline.json (excluded: sha256 fixed-point, cannot embed own digest)",
   "doctrine": "regenerate via tools/import_manifest.py; never edit by hand",
   "files": {
@@ -28,6 +28,7 @@
     "docs/index.rst": "fc68d7d7b09a7b53c9182a0cf52bf23c60dc15b8d87b6533bd49e3181da7d388",
     "docs/lua.rst": "858ada51892679247e762bf24c1aa962d33fec7468239444b8680106d1de85f4",
     "docs/micropython.rst": "c0e78a501c74e7d5f3cf3bd420f652d4d5681d9611a9a2b52d6af5069d87b843",
+    "docs/operation-fictions/README.md": "53815eb50280217a2a17092d11ffab70b03b79a0021292cdec57bd1d9f32bb9d",
     "docs/requirements.txt": "e9627a279b7dda4d41a2ca00e6a39527bb5c0ff8112de43678f2f50a028d71ac",
     "experiments/selfplay/PIN.md": "7cad894e2bc7e46ab743edbf7a0a7dcdcd3336554c8c1d0af26eb4f349375f44",
     "experiments/selfplay/SHAPES.md": "c76aa89f5671eb9d1e8c6f22e5ed685c2cfe08ca79921949540ac2c24ea1ed6c",
