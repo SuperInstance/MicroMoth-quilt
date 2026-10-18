@@ -11,8 +11,11 @@ Two things in one small repo:
    basic features and only the basic features — so you can learn and verify
    every line.
 2. **A receipt layer.** Fleet tools (`tools/`) turn circuits into hash-chained
-   ledgers: seeded, tamper-evident collapse receipts whose cell ids re-derive
-   and whose outcomes re-execute byte for byte. A 22-receipt experiment series
+   ledgers: seeded, attestable collapse receipts whose cell ids re-derive
+   and whose outcomes re-execute byte for byte. *Attestable* = the chain
+   re-derives, so a naive edit is named; there is no signed head published
+   out of band, so a re-chained rewrite or a truncation still verifies
+   (docs/ATTESTATION.md). A 22-receipt experiment series
    (`receipts/`) shows the discipline applied to a real gate-search campaign,
    and `quantum-wow/` gives web projects an honest "quantum random" widget
    with no key required.

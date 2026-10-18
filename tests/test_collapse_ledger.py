@@ -11,8 +11,11 @@ Pins:
      verifies against a live re-execution (FAIL-first: absent on main).
   2. Same circuit + same seed -> byte-identical cell-id chain; a
      different seed diverges (the seed IS the EFFECT parameter).
-  3. Tamper evidence: editing one collapse outcome or breaking the
+  3. Linkage class `chain`: editing one collapse outcome or breaking the
      prev chain is named (id_mismatch@i / chain_break@i), never green.
+     This is re-derivation, NOT tamper-evidence -- a re-chained rewrite
+     re-derives perfectly and a truncation still verifies. See
+     docs/ATTESTATION.md.
   4. seed=None -> status EFFECT/UNSEALED and verify() refuses to call
      it re-executable (honest limit, no laundering).
   5. noise_model is pinned as an EFFECT parameter: replay with the

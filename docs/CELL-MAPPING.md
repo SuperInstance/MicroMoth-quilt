@@ -42,8 +42,11 @@ One `QuantumCircuit.data` list **is** a cell ledger. Concretely:
   The first gate's `prev` is the genesis constant; every later gate's
   `prev` is the fnv1a-64 of the preceding gate cell. The circuit is
   therefore a hash chain — edit one gate and every downstream id moves,
-  which is exactly the tamper-evidence property the import manifest
-  already pins repo-wide.
+  which is exactly the re-derivation property the import manifest already
+  pins repo-wide. Re-derivation is not tamper-evidence: a rewrite that
+  recomputes every id re-derives perfectly, and the manifest is 530 flat
+  sha256 rows with no linkage, so it is a *row-checksum* object rather
+  than a chain (docs/ATTESTATION.md).
 - **LINK** — the `prev` chain above *is* LINK ("we are neighbors"),
   plus one explicit LINK cell per circuit boundary: (circuit, simulator
   version `__version__`, shots plan). Circuit↔circuit references

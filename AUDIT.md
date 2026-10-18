@@ -26,9 +26,12 @@ tool excludes it by name and records the exclusion inside the seal.
    permanent: `tests/test_import_baseline.py` reruns it on every invocation.
 2. **CI present** — `.github/workflows/build.yml` from the upstream import.
    RECORDED.
-3. **Ports tree intact** — Arduino, Csharp, JavaScript, Lua, Python,
+3. **Ports tree complete** — Arduino, Csharp, JavaScript, Lua, Python,
    update_required all present at seal; their digests are in the manifest.
-   VERIFIED via the manifest, not by eyeball.
+   VERIFIED via the manifest, not by eyeball. Note the property this is:
+   *re-derivation* of 530 file digests, not tamper-evidence — the manifest
+   is a row-checksum object with no linkage, so a rewrite that re-seals it
+   re-derives perfectly. See docs/ATTESTATION.md.
 
 ## Doctrine for the sleeping lane
 

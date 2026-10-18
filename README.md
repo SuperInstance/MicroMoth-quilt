@@ -10,7 +10,12 @@ This repo is two things, and this README says both up front:
 2. **The quilt-cell quantum lane** — a SuperInstance fleet experiment asking:
    what if a quantum circuit *were* a hash-chained receipt ledger? Every gate
    a BIND cell, every measurement a sealed collapse event, every view a VIEW
-   cell — fnv1a-64 chained, replayable, tamper-evident.
+   cell — fnv1a-64 chained, replayable, **attestable**.
+
+   *Attestable*, not tamper-evident: the chain re-derives, so an edit is
+   expensive and a naive edit is caught, but no signed head is published
+   outside this repo, so a re-chained rewrite and a tail-truncation both
+   still verify. See [docs/ATTESTATION.md](docs/ATTESTATION.md).
 
 A stranger's 60-second version: `micromoth.py` is pure Python you can read in
 an afternoon. The fleet's addition treats its circuits as **cell ledgers** in
