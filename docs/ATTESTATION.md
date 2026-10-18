@@ -28,7 +28,7 @@ A log earns the word **tamper-evident** only when all three hold:
 | artifact | linkage class | legs held | correct word |
 |---|---|---|---|
 | circuit cell ids (`tools/cell_receipts.py`, `tools/collapse_ledger.py`) | `chain` | **1** | **attestable** |
-| `receipts/import-baseline.json` | `row-checksum` (529 flat sha256 rows, no linkage) | **1** | **attestable** |
+| `receipts/import-baseline.json` | `row-checksum` (530 flat sha256 rows, no linkage) | **1** | **attestable** |
 | `receipts/exp0NN-*.json` | `chain` | **1** | **attestable** |
 
 **Leg 2: no.** Nothing here is signed. `tools/` has no signing path at all.
@@ -60,9 +60,9 @@ is a `rm` on the last lines.
 
 ## "intact" is not producible for a row-checksum object
 
-`receipts/import-baseline.json` is 529 independent sha256 rows. They do not
+`receipts/import-baseline.json` is 530 independent sha256 rows. They do not
 commit to each other, so there is no linkage to be "intact" *with respect to*.
-A verdict on it says **"529/529 digests match"** and names the class
+A verdict on it says **"530/530 digests match"** and names the class
 `row-checksum`. It does not say "intact".
 
 For a `chain`, **"chain-intact"** is available and means precisely: the chain

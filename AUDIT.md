@@ -29,7 +29,7 @@ tool excludes it by name and records the exclusion inside the seal.
 3. **Ports tree complete** — Arduino, Csharp, JavaScript, Lua, Python,
    update_required all present at seal; their digests are in the manifest.
    VERIFIED via the manifest, not by eyeball. Note the property this is:
-   *re-derivation* of 529 file digests, not tamper-evidence — the manifest
+   *re-derivation* of 530 file digests, not tamper-evidence — the manifest
    is a row-checksum object with no linkage, so a rewrite that re-seals it
    re-derives perfectly. See docs/ATTESTATION.md.
 

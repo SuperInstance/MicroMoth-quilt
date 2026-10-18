@@ -44,7 +44,7 @@ One `QuantumCircuit.data` list **is** a cell ledger. Concretely:
   therefore a hash chain — edit one gate and every downstream id moves,
   which is exactly the re-derivation property the import manifest already
   pins repo-wide. Re-derivation is not tamper-evidence: a rewrite that
-  recomputes every id re-derives perfectly, and the manifest is 529 flat
+  recomputes every id re-derives perfectly, and the manifest is 530 flat
   sha256 rows with no linkage, so it is a *row-checksum* object rather
   than a chain (docs/ATTESTATION.md).
 - **LINK** — the `prev` chain above *is* LINK ("we are neighbors"),
