@@ -77,7 +77,7 @@ it is the thing rung 1 attacks.
 |---|---|---|---|
 | State storage | IN cells (dials, weights, act), mutable, last-write-wins; eviction silently loses history | NOWHERE — fnv1a-64 chain of op records; statevector re-derived by replay; PROOF pins only its sha256 | IN the ions — physical amplitudes |
 | Read cost | free (view is passive) | free (recomputation) | **destructive**: measurement collapses; every view costs shots |
-| Tamper evidence | none (in-place mutation) | total (edit one gate → every downstream id moves) | none in the classical sense — but job ids + calibration snapshots are attestable |
+| Re-derivation | none (in-place mutation) | strong (edit one gate → every downstream id moves) — but a re-chain re-derives and a truncation still verifies, so *attestable*, not tamper-evident (docs/ATTESTATION.md) | none in the classical sense — but job ids + calibration snapshots are attestable |
 | Replay | deterministic | sealed (seeded WORLD) — byte-identical | **impossible** — see 3.3 |
 
 ### 3.3 The sealed-receipt doctrine breaks at the silicon boundary

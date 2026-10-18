@@ -22,6 +22,20 @@ Cell algebra (canonical source: SuperInstance/AI-Writings algebra.md):
 five opcodes BIND / LINK / EFFECT / VIEW / TICK, fnv1a-64 over the
 canonical cell encoding, genesis prev = 0x0000000000000000.
 
+WHAT THIS PROVES, PRECISELY (docs/ATTESTATION.md):
+
+  linkage class  `chain` -- leg 1 of 3 only
+  chain re-derives .............. YES. Every cell id re-derives from the
+                                 bodies, and verify() names a naive edit
+                                 (id_mismatch@i / chain_break@i).
+  head signed ................... NO. Nothing here is signed.
+  head published out of band .... NO. No published head exists anywhere.
+
+So the receipts this mints are ATTESTABLE, not tamper-evident. A rewrite
+that re-chains re-derives perfectly, and a truncated chain is a shorter
+valid chain. Detecting those needs a signed head published where this
+repo's writer cannot reach -- not a stronger hash.
+
 Run: python3 tools/collapse_ledger.py   (self-check, prints a receipt)
 """
 

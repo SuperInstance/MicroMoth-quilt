@@ -5,7 +5,11 @@
 MicroMoth-quilt is the fleet's reference implementation of "honest quantum
 simulation": a 289-line, zero-dependency quantum simulator (a maintained
 MicroQiskit fork) wrapped in a receipt discipline that makes every run
-tamper-evident and re-executable. It is small enough to audit line by line
+attestable and re-executable — every cell id re-derives from the bodies, so
+a naive edit is named rather than laundered. It is not tamper-evident: no
+signed head is published outside this repo, so a re-chained rewrite and a
+tail-truncation both still verify (docs/ATTESTATION.md). It is small enough
+to audit line by line
 and disciplined enough that 22 sealed experiment receipts plus their
 executable pins prove the method at scale. Its value to the organization is
 twofold: a teaching-and-verification simulator that cannot silently rot

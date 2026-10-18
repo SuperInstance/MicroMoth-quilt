@@ -22,7 +22,7 @@ against the import baseline (micromoth.py):
   collapse EFFECT cells are journaled per shot after the WORLD witness;
   forget() exercises the "right to be erased" by REPLACING a named shot's
   EFFECT cell with a FORGET cell in place. The chain continues (every
-  downstream id moves — the tamper-evidence property working FOR
+  downstream id moves — the re-derivation property working FOR
   erasure: the erasure event is itself on-chain, never silent), the
   FORGET cell's args carry the erased cell's original id + reason so an
   auditor holding an unforgotten copy can diff exactly what went away,
@@ -228,7 +228,7 @@ def forget(receipt: dict, shots, reason: str) -> dict:
             prev = f["id"]
             continue
         # non-target: semantics byte-identical; id re-derived iff it sits
-        # downstream of an erasure (tamper-evidence working FOR erasure)
+        # downstream of an erasure (re-derivation working FOR erasure)
         c = _cell(orig["op"], prev, orig["args"]) if prev is not None else orig
         cells.append(c)
         if prev is not None:

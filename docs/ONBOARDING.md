@@ -9,7 +9,9 @@ MicroMoth-quilt is the smallest, most feature-poor quantum computing framework
 quantum circuit as a hash-chained receipt ledger. The feature-poverty is the
 design point: nine executable operations, a dense statevector simulator you can
 read in an afternoon, and a receipt discipline that makes every run
-re-executable and tamper-evident.
+re-executable and attestable — the chain re-derives and a tamper is named,
+but the ledger ships no signed head published out of band, so it is not
+tamper-evident (docs/ATTESTATION.md).
 
 ## Why it exists (the fleet problem it solves)
 
